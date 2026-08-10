@@ -3656,3 +3656,677 @@ To analyse those situations, we need an even more powerful mathematical tool:
 
 ---
 
+# Singular Value Decomposition (SVD)
+
+Throughout this chapter we have repeatedly asked the same question:
+
+> **How does a matrix transform information?**
+
+Eigenvalues answered part of that question.
+
+But they have one important limitation.
+
+They are defined only for **square matrices**.
+
+Real Machine Learning datasets are rarely square.
+
+A dataset with
+
+- 10,000 observations
+- 200 features
+
+is represented by a
+
+$$
+10000\times200
+$$
+
+matrix.
+
+Eigenvectors alone are no longer sufficient.
+
+This is where **Singular Value Decomposition (SVD)** becomes one of the most powerful tools in Linear Algebra.
+
+---
+
+# The Big Idea
+
+Every matrix, regardless of its shape, can be decomposed into three simpler matrices.
+
+Mathematically,
+
+$$
+\mathbf{A}
+=
+\mathbf{U}
+\mathbf{\Sigma}
+\mathbf{V}^T
+$$
+
+This equation may look intimidating.
+
+Its interpretation is surprisingly intuitive.
+
+Imagine transforming a rubber sheet.
+
+Instead of performing one complicated transformation,
+
+SVD says we can think of it as three simpler steps.
+
+1. Rotate the space.
+2. Stretch or compress along special directions.
+3. Rotate again.
+
+Complex transformations become combinations of simple ones.
+
+---
+
+# Understanding the Three Matrices
+
+The decomposition
+
+$$
+\mathbf{A}
+=
+\mathbf{U}
+\mathbf{\Sigma}
+\mathbf{V}^T
+$$
+
+contains three parts.
+
+---
+
+## 1. Vᵀ — Rotate into a Convenient Coordinate System
+
+The first transformation changes our viewpoint.
+
+Instead of working in the original coordinate system,
+
+we rotate into one where the important directions become easier to describe.
+
+Nothing has been stretched yet.
+
+Only the perspective changes.
+
+---
+
+## 2. Σ — Stretch Along Independent Directions
+
+The middle matrix
+
+$$
+\mathbf{\Sigma}
+$$
+
+contains non-negative numbers called **singular values**.
+
+These numbers tell us how much stretching or shrinking occurs along each important direction.
+
+Large singular values correspond to important directions.
+
+Small singular values correspond to directions containing little information.
+
+---
+
+## 3. U — Rotate into the Final Orientation
+
+Finally,
+
+the transformed space is rotated into its final orientation.
+
+So the entire transformation becomes
+
+```text
+Rotate
+   ↓
+Stretch
+   ↓
+Rotate
+```
+
+A remarkably complicated matrix can therefore be understood using only rotations and scaling.
+
+---
+
+# Singular Values
+
+The diagonal entries of
+
+$$
+\mathbf{\Sigma}
+$$
+
+are called **singular values**.
+
+They play a role similar to eigenvalues.
+
+Large singular values indicate important directions.
+
+Very small singular values often correspond to:
+
+- noise
+- redundancy
+- weak patterns
+
+This observation is the basis of many dimensionality reduction techniques.
+
+---
+
+# Why SVD Matters
+
+Suppose we have a huge dataset.
+
+Much of its information may actually lie in only a handful of important directions.
+
+Instead of storing everything,
+
+we can keep only the largest singular values and discard the rest.
+
+Surprisingly,
+
+very little useful information is lost.
+
+This idea appears repeatedly throughout Machine Learning.
+
+---
+
+# A Picture Worth Remembering
+
+Imagine listening to an orchestra.
+
+Hundreds of instruments play simultaneously.
+
+Suppose you could somehow identify the few instruments carrying almost all the melody.
+
+You could remove many background sounds while preserving the music.
+
+SVD performs something similar for data.
+
+It separates important structure from less important detail.
+
+---
+
+# Machine Learning Connection — Dimensionality Reduction
+
+Many datasets contain hundreds or thousands of features.
+
+Often,
+
+those features are highly correlated.
+
+SVD discovers the underlying independent directions.
+
+This allows us to represent the same dataset using far fewer dimensions.
+
+Smaller representations are:
+
+- faster
+- cheaper
+- easier to visualize
+- often less noisy
+
+---
+
+# Machine Learning Connection — PCA
+
+Earlier we learned that PCA uses eigenvectors of the covariance matrix.
+
+There is another way to compute PCA.
+
+Modern software libraries usually perform PCA using **SVD**.
+
+Why?
+
+Because SVD is:
+
+- numerically stable
+- computationally efficient
+- applicable to rectangular datasets
+
+This is why many implementations of PCA never explicitly compute eigenvectors.
+
+Instead,
+
+they perform SVD under the hood.
+
+---
+
+# Machine Learning Connection — Recommendation Systems
+
+Suppose millions of users rate millions of movies.
+
+The ratings matrix is enormous.
+
+Yet many users have similar preferences.
+
+SVD helps discover hidden patterns.
+
+Instead of memorizing every rating,
+
+the system learns a much smaller set of latent factors.
+
+These factors capture concepts such as:
+
+- action preference
+- romance preference
+- comedy preference
+
+even though those labels were never explicitly provided.
+
+This idea became famous through the Netflix Prize competition.
+
+---
+
+# Machine Learning Connection — Natural Language Processing
+
+Modern NLP often represents documents using huge matrices.
+
+SVD can discover hidden semantic structure.
+
+Classical techniques such as **Latent Semantic Analysis (LSA)** rely directly on SVD.
+
+Even though today's Large Language Models use Transformers,
+
+many foundational ideas about embeddings and low-dimensional representations originate from techniques like SVD.
+
+---
+
+# Low-Rank Approximation
+
+One of SVD's greatest strengths is its ability to approximate a matrix.
+
+Instead of keeping every singular value,
+
+we retain only the largest ones.
+
+This produces a **low-rank approximation**.
+
+The approximation requires:
+
+- less memory
+- fewer computations
+
+while preserving most of the useful information.
+
+This is an important technique in data compression and model acceleration.
+
+---
+
+# Bringing Everything Together
+
+Notice the progression throughout this chapter.
+
+```text
+Scalars
+      ↓
+Vectors
+      ↓
+Matrices
+      ↓
+Transformations
+      ↓
+Eigenvectors
+      ↓
+SVD
+```
+
+Each concept built naturally upon the previous one.
+
+SVD is not an isolated algorithm.
+
+It is the culmination of everything we have learned about matrices and transformations.
+
+---
+
+# Summary
+
+Singular Value Decomposition factors any matrix into three simpler matrices.
+
+Conceptually,
+
+it performs:
+
+```text
+Rotate
+   ↓
+Stretch
+   ↓
+Rotate
+```
+
+The singular values reveal the importance of different directions within the data.
+
+SVD underpins:
+
+- PCA
+- LSA
+- Recommendation Systems
+- Low-rank Approximation
+- Data Compression
+- Dimensionality Reduction
+
+It is one of the most important tools in modern applied Linear Algebra.
+
+---
+
+# Looking Ahead
+
+We have now completed the mathematical foundations of Linear Algebra.
+
+Before moving on to Calculus,
+
+let us step back and ask one final question:
+
+> **Where exactly did every concept from this chapter appear inside Machine Learning?**
+
+That connection is the perfect way to conclude this chapter.
+
+---
+
+# Linear Algebra Through the Eyes of an ML Engineer
+
+At the beginning of this chapter, we said:
+
+> *"Linear Algebra is the mathematics of representing and transforming information."*
+
+By now, that statement should feel much more concrete.
+
+Almost every Machine Learning algorithm can be viewed as repeatedly representing data as vectors and transforming those vectors in useful ways.
+
+What once appeared to be a collection of unrelated mathematical topics is actually one connected story.
+
+---
+
+# The Journey So Far
+
+The chapter followed a natural progression.
+
+```text
+Scalars
+      ↓
+Vectors
+      ↓
+Matrices
+      ↓
+Vector Operations
+      ↓
+Dot Product
+      ↓
+Matrix Multiplication
+      ↓
+Linear Transformations
+      ↓
+Systems of Equations
+      ↓
+Span & Basis
+      ↓
+Orthogonality
+      ↓
+Norms & Distance
+      ↓
+Eigenvectors
+      ↓
+Singular Value Decomposition
+```
+
+Each idea depends on the ones before it.
+
+Nothing was introduced in isolation.
+
+---
+
+# Where Does Each Concept Appear?
+
+The following table summarizes where these ideas appear in Machine Learning.
+
+| Linear Algebra Concept | Machine Learning Applications |
+|-------------------------|-------------------------------|
+| Scalars | Learning rate, regularization strength, probabilities, loss values |
+| Vectors | Feature vectors, embeddings, model parameters |
+| Matrices | Datasets, weight matrices, covariance matrices |
+| Vector Addition | Parameter updates, feature aggregation |
+| Scalar Multiplication | Learning rates, feature scaling |
+| Dot Product | Linear Regression, Logistic Regression, Perceptrons, Neural Networks |
+| Matrix Multiplication | Neural Networks, Transformers, PCA |
+| Linear Transformations | Feature engineering, hidden layers, embeddings |
+| Systems of Equations | Least Squares, Linear Regression |
+| Span & Basis | Feature spaces, coordinate systems |
+| Linear Independence | Multicollinearity, redundant features |
+| Rank | Matrix invertibility, dimensionality reduction |
+| Orthogonality | PCA, optimization, QR decomposition |
+| Projection | Least Squares, PCA, optimization |
+| Norms | Distance metrics, regularization |
+| Eigenvalues & Eigenvectors | PCA, PageRank, spectral methods |
+| SVD | PCA, recommendation systems, LSA, compression |
+
+This table is worth revisiting throughout your Machine Learning journey.
+
+---
+
+# Revisiting Classical Machine Learning
+
+Think back to the models studied in Part I.
+
+## Linear Regression
+
+Linear Regression computes
+
+$$
+\hat{y}
+=
+\mathbf{w}^T\mathbf{x}+b
+$$
+
+Everything here is Linear Algebra.
+
+- vectors
+- dot products
+- matrices
+- least squares
+- projections
+
+---
+
+## Logistic Regression
+
+Logistic Regression begins exactly the same way.
+
+It first computes
+
+$$
+z
+=
+\mathbf{w}^T\mathbf{x}+b
+$$
+
+Only after that does it apply the sigmoid function.
+
+The underlying computation is still Linear Algebra.
+
+---
+
+## K-Nearest Neighbours
+
+KNN asks only one question.
+
+> Which observations are closest?
+
+To answer that question it computes distances between vectors.
+
+Distance is simply
+
+$$
+\|\mathbf{x}-\mathbf{y}\|
+$$
+
+---
+
+## Decision Trees
+
+Decision Trees depend much less on Linear Algebra.
+
+They split data using decision rules rather than vector transformations.
+
+This explains why tree-based models often require less feature scaling than linear models.
+
+---
+
+## Support Vector Machines
+
+Support Vector Machines rely heavily on:
+
+- vectors
+- dot products
+- projections
+- distances
+
+Kernel methods also build upon these same ideas.
+
+---
+
+## Principal Component Analysis
+
+PCA combines nearly everything from this chapter.
+
+It uses:
+
+- covariance matrices
+- eigenvectors
+- eigenvalues
+- orthogonal directions
+- projections
+
+PCA is almost a celebration of Linear Algebra.
+
+---
+
+# Revisiting Deep Learning
+
+Deep Learning looks intimidating because of its enormous scale.
+
+The mathematics, however, remains surprisingly familiar.
+
+Each layer performs
+
+$$
+\mathbf{z}
+=
+\mathbf{W}\mathbf{x}
++
+\mathbf{b}
+$$
+
+followed by a nonlinear activation.
+
+Every hidden layer repeats the same pattern.
+
+```text
+Input Vector
+        ↓
+Matrix Multiplication
+        ↓
+Bias Addition
+        ↓
+Activation Function
+        ↓
+Repeat
+```
+
+Deep Learning is therefore not a different branch of mathematics.
+
+It is Linear Algebra repeated many times.
+
+---
+
+# Revisiting Transformers
+
+Transformers appear enormously complex.
+
+Yet at their core they repeatedly perform:
+
+- matrix multiplication
+- dot products
+- projections
+- vector normalization
+- similarity calculations
+
+Even attention begins with a dot product.
+
+The famous attention equation
+
+$$
+QK^T
+$$
+
+is simply a large collection of dot products.
+
+The mathematics you learned in this chapter therefore scales all the way to today's largest language models.
+
+---
+
+# One Unifying Mental Model
+
+Whenever you encounter a new Machine Learning algorithm, ask yourself four questions.
+
+1. **How is the data represented?**
+   (Usually as vectors or matrices.)
+
+2. **How is the data transformed?**
+   (Usually using matrix multiplication.)
+
+3. **How is similarity measured?**
+   (Usually using dot products or distances.)
+
+4. **How is the best representation discovered?**
+   (Usually using optimization together with Linear Algebra.)
+
+Remarkably, these four questions explain a large fraction of modern Machine Learning.
+
+---
+
+# Key Takeaways
+
+By completing this chapter, you have learned to think about data mathematically.
+
+You now understand:
+
+- how information becomes vectors
+- how vectors become matrices
+- how matrices transform information
+- how similarity is measured
+- how dimensions are reduced
+- why certain directions are more important than others
+
+These ideas form the mathematical foundation upon which the rest of Machine Learning is built.
+
+---
+
+# Looking Ahead
+
+Linear Algebra taught us **how to represent and transform information**.
+
+The next question is equally important.
+
+> **How do we measure change?**
+
+Machine Learning learns by continuously adjusting its parameters.
+
+To understand how that learning happens, we need the mathematics of change itself.
+
+That mathematics is **Calculus**.
+
+In the next chapter, we will build the mathematical foundation that leads directly to:
+
+- derivatives
+- gradients
+- optimization
+- gradient descent
+- backpropagation
+
+Without Calculus, models cannot learn.
+
+Without Linear Algebra, they cannot represent what they have learned.
+
+Together, these two branches of mathematics form the backbone of modern Machine Learning.
+---
