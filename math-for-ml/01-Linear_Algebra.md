@@ -3214,3 +3214,445 @@ Those remarkable directions lead us to one of the most beautiful concepts in Lin
 > **Eigenvalues and Eigenvectors**
 
 ---
+# Eigenvalues and Eigenvectors
+
+We have seen that matrices transform vectors.
+
+Usually, a transformation changes both
+
+- the length of a vector
+- its direction
+
+Imagine grabbing a rubber sheet with a grid drawn on it.
+
+Now stretch and twist the sheet.
+
+Almost every arrow drawn on the sheet changes both its length and its direction.
+
+But something remarkable happens.
+
+A few very special arrows do **not rotate at all**.
+
+They may become longer.
+
+They may become shorter.
+
+They may even reverse direction.
+
+But they continue pointing along exactly the same line.
+
+Those special vectors are called **eigenvectors**.
+
+---
+
+# A Visual Intuition
+
+Imagine a square piece of rubber.
+
+You stretch it twice as much horizontally as vertically.
+
+Every arrow drawn on the square changes.
+
+Most arrows rotate while stretching.
+
+However,
+
+an arrow pointing exactly along the horizontal axis does not rotate.
+
+It simply becomes longer.
+
+Likewise,
+
+an arrow pointing exactly along the vertical axis keeps its direction.
+
+Only its length changes.
+
+These arrows are eigenvectors.
+
+They are the "preferred directions" of the transformation.
+
+---
+
+# The Big Idea
+
+An eigenvector is a vector whose direction remains unchanged after a linear transformation.
+
+Only its magnitude changes.
+
+The amount of stretching or shrinking is called the **eigenvalue**.
+
+Therefore,
+
+> **Eigenvectors tell us the important directions.**
+
+> **Eigenvalues tell us how strongly those directions are stretched or compressed.**
+
+---
+
+# The Mathematical Definition
+
+Suppose
+
+$$
+\mathbf{A}
+$$
+
+is a square matrix.
+
+A vector
+
+$$
+\mathbf{v}
+$$
+
+is called an eigenvector if
+
+$$
+\mathbf{A}\mathbf{v}
+=
+\lambda\mathbf{v}
+$$
+
+where
+
+$$
+\lambda
+$$
+
+is called the **eigenvalue**.
+
+This equation says something surprisingly simple.
+
+After applying the matrix,
+
+the vector still points in exactly the same direction.
+
+Only its length changes by a factor of
+
+$$
+\lambda
+$$
+
+---
+
+# Understanding the Equation
+
+Suppose
+
+$$
+\lambda=3
+$$
+
+Then
+
+$$
+\mathbf{A}\mathbf{v}
+=
+3\mathbf{v}
+$$
+
+The vector becomes three times longer.
+
+Its direction stays the same.
+
+---
+
+Suppose
+
+$$
+\lambda=\frac12
+$$
+
+Then
+
+$$
+\mathbf{A}\mathbf{v}
+=
+\frac12\mathbf{v}
+$$
+
+The vector shrinks to half its length.
+
+Again,
+
+its direction is unchanged.
+
+---
+
+Suppose
+
+$$
+\lambda=-2
+$$
+
+Now the vector becomes twice as long,
+
+but also reverses direction.
+
+Negative eigenvalues flip vectors.
+
+---
+
+Suppose
+
+$$
+\lambda=1
+$$
+
+The vector remains exactly the same.
+
+Neither its direction nor its length changes.
+
+---
+
+Suppose
+
+$$
+\lambda=0
+$$
+
+The transformation completely collapses that direction.
+
+The vector disappears to the origin.
+
+---
+
+# A Simple Example
+
+Consider
+
+$$
+\mathbf{A}
+=
+\begin{bmatrix}
+2 & 0\\
+0 & 1
+\end{bmatrix}
+$$
+
+Take the vector
+
+$$
+\mathbf{v}
+=
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+$$
+
+Then
+
+$$
+\mathbf{A}\mathbf{v}
+=
+\begin{bmatrix}
+2\\
+0
+\end{bmatrix}
+=
+2
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+$$
+
+So
+
+$$
+\lambda=2
+$$
+
+The direction did not change.
+
+Only the length doubled.
+
+Now try
+
+$$
+\mathbf{v}
+=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+$$
+
+Then
+
+$$
+\mathbf{A}\mathbf{v}
+=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+=
+1
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+$$
+
+So this is another eigenvector.
+
+Its eigenvalue is
+
+$$
+1
+$$
+
+---
+
+# Why Only Certain Directions?
+
+Most vectors are mixtures of several directions.
+
+When transformed,
+
+their components stretch by different amounts.
+
+As a result,
+
+their overall direction changes.
+
+Eigenvectors are special because they already lie along the natural stretching directions of the transformation.
+
+They require no "mixing."
+
+---
+
+# Machine Learning Connection — Principal Component Analysis
+
+Principal Component Analysis (PCA) searches for the directions in which data varies the most.
+
+Those directions are precisely the eigenvectors of the covariance matrix.
+
+The corresponding eigenvalues tell us how much variance exists along each direction.
+
+Large eigenvalue
+
+↓
+
+Important direction
+
+Small eigenvalue
+
+↓
+
+Less important direction
+
+PCA keeps the important directions and often discards the rest.
+
+This allows high-dimensional data to be represented using far fewer dimensions.
+
+---
+
+# Machine Learning Connection — Google PageRank
+
+Google's original PageRank algorithm is fundamentally an eigenvector problem.
+
+Each web page receives importance from other important pages.
+
+After repeated updates,
+
+the importance scores settle into a stable pattern.
+
+That stable pattern is an eigenvector.
+
+The associated eigenvalue is
+
+$$
+1
+$$
+
+Although modern search engines are much more sophisticated, the original PageRank algorithm introduced millions of engineers to eigenvectors.
+
+---
+
+# Machine Learning Connection — Stability
+
+Eigenvalues often tell us whether a system is stable.
+
+If repeated transformations continually increase vector lengths,
+
+the system may become unstable.
+
+If vectors shrink toward zero,
+
+the system becomes stable.
+
+Eigenvalues therefore appear in:
+
+- Optimization
+- Control Systems
+- Reinforcement Learning
+- Dynamical Systems
+
+---
+
+# A Mental Model
+
+Imagine every matrix asking the question:
+
+> "Which directions do I naturally like to stretch?"
+
+The answers are its eigenvectors.
+
+Then ask:
+
+> "By how much do I stretch each of those directions?"
+
+The answers are the corresponding eigenvalues.
+
+Once you think this way,
+
+the equation
+
+$$
+\mathbf{A}\mathbf{v}
+=
+\lambda\mathbf{v}
+$$
+
+becomes almost obvious.
+
+It simply formalizes that idea.
+
+---
+
+# Summary
+
+An eigenvector is a direction that remains unchanged by a transformation.
+
+An eigenvalue tells us how much that direction is stretched or compressed.
+
+Together they reveal the hidden geometric structure of a transformation.
+
+They are fundamental to:
+
+- PCA
+- Spectral Clustering
+- PageRank
+- Stability Analysis
+- Computer Vision
+- Quantum Mechanics
+
+Among many other fields.
+
+---
+
+# Looking Ahead
+
+Eigenvalues reveal the important directions of a transformation.
+
+But many real-world datasets are noisy, incomplete or rectangular rather than square.
+
+To analyse those situations, we need an even more powerful mathematical tool:
+
+> **Singular Value Decomposition (SVD)**
+
+---
+
