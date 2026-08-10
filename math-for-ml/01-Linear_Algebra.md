@@ -4,7 +4,9 @@
 
 ---
 
-# Why Should I Care?
+## 1. Orientation and Motivation
+
+### Why Should I Care?
 
 If Machine Learning had a native language, it would be Linear Algebra.
 
@@ -24,7 +26,7 @@ Understanding Linear Algebra means understanding the mathematical language spoke
 
 ---
 
-# Five-Minute Story
+### Five-Minute Story
 
 Imagine you're standing at the entrance of a large city.
 
@@ -81,7 +83,7 @@ Learning Linear Algebra is learning how machines "see" information.
 
 ---
 
-# Learning Objectives
+### Learning Objectives
 
 After completing this chapter, you should be able to:
 
@@ -97,7 +99,9 @@ After completing this chapter, you should be able to:
 
 ---
 
-# What Is Linear Algebra?
+## 2. Foundations: Scalars, Vectors, and Matrices
+
+### What Is Linear Algebra?
 
 Linear Algebra is the branch of mathematics concerned with representing information and transforming it.
 
@@ -118,7 +122,7 @@ Almost everything in AI is eventually expressed using these mathematical objects
 
 ---
 
-# The Three Building Blocks
+### The Three Building Blocks
 
 Everything in Linear Algebra begins with three simple objects.
 
@@ -132,7 +136,7 @@ Nearly every concept in this chapter is built by combining these three objects i
 
 ---
 
-# Scalar
+#### Scalar
 
 A scalar is a single numerical quantity.
 
@@ -163,7 +167,7 @@ It has no direction.
 
 ---
 
-# Vector
+#### Vector
 
 A vector is an ordered collection of numbers.
 
@@ -195,7 +199,7 @@ That idea appears everywhere in Machine Learning.
 
 ---
 
-# Matrix
+#### Matrix
 
 A matrix is a rectangular arrangement of numbers.
 
@@ -221,7 +225,7 @@ Every dataset used in Machine Learning can be represented as a matrix.
 
 ---
 
-# Machine Learning's View of Data
+### Machine Learning's View of Data
 
 Suppose you open a spreadsheet.
 
@@ -257,7 +261,7 @@ This matrix becomes the input to every learning algorithm.
 
 ---
 
-# Rows and Columns
+#### Rows and Columns
 
 Rows and columns have different meanings.
 
@@ -283,7 +287,7 @@ This convention appears in almost every ML library, including NumPy, pandas and 
 
 ---
 
-# Dimension
+#### Dimension
 
 The **dimension** tells us how many values are required to describe something.
 
@@ -309,7 +313,7 @@ Although impossible to visualize directly, the mathematics remains exactly the s
 
 ---
 
-# Why This Matters
+### Why This Matters
 
 From this point onward, almost every chapter in this handbook will reuse these ideas.
 
@@ -331,7 +335,7 @@ It is learning the common language spoken by all of them.
 
 ---
 
-# Looking Ahead
+### Looking Ahead
 
 Now that we know what vectors and matrices are, the next question naturally arises:
 
@@ -341,7 +345,9 @@ That is where vector addition, scalar multiplication and the dot product begin.
 
 ---
 
-# Vector Operations
+## 3. Working with Vectors
+
+### Vector Operations
 
 So far, we have learned what vectors are.
 
@@ -357,7 +363,7 @@ Many Machine Learning algorithms rely on nothing more than these simple operatio
 
 ---
 
-# Vector Addition
+#### Vector Addition
 
 Suppose two people push a car.
 
@@ -407,7 +413,7 @@ Notice that addition happens element by element.
 
 ---
 
-## Geometric Interpretation
+##### Geometric Interpretation
 
 Imagine placing the tail of the second vector at the head of the first.
 
@@ -419,7 +425,7 @@ Vector addition therefore combines movements.
 
 ---
 
-## Machine Learning Connection
+##### Machine Learning Connection
 
 Suppose a customer's profile is represented by a vector.
 
@@ -443,7 +449,7 @@ Many learning algorithms repeatedly update vectors in exactly this way.
 
 ---
 
-# Vector Subtraction
+#### Vector Subtraction
 
 Subtraction measures the difference between two vectors.
 
@@ -476,7 +482,7 @@ subtraction asks
 
 ---
 
-## Machine Learning Connection
+##### Machine Learning Connection
 
 Prediction errors are differences between vectors.
 
@@ -488,7 +494,7 @@ Vector subtraction appears almost everywhere.
 
 ---
 
-# Scalar Multiplication
+#### Scalar Multiplication
 
 A scalar can stretch or shrink a vector.
 
@@ -518,7 +524,7 @@ Every component is multiplied by the same scalar.
 
 ---
 
-## What Happens Geometrically?
+##### What Happens Geometrically?
 
 Multiplying by
 
@@ -531,7 +537,7 @@ The direction remains unchanged unless the scalar is negative.
 
 ---
 
-## Machine Learning Connection
+##### Machine Learning Connection
 
 Learning rates in Gradient Descent scale update vectors.
 
@@ -541,7 +547,7 @@ Weights inside neural networks are repeatedly scaled during training.
 
 ---
 
-# Vector Magnitude (Length)
+#### Vector Magnitude (Length)
 
 Sometimes we need to know not where a vector points, but **how long it is**.
 
@@ -572,7 +578,7 @@ This is simply Pythagoras' theorem.
 
 ---
 
-## Why Is Magnitude Important?
+##### Why Is Magnitude Important?
 
 Magnitude measures the "size" of a vector.
 
@@ -587,7 +593,7 @@ Many Machine Learning algorithms compare magnitudes before making decisions.
 
 ---
 
-# Unit Vectors
+#### Unit Vectors
 
 A **unit vector** has magnitude equal to exactly one.
 
@@ -608,7 +614,7 @@ Unit vectors become extremely important in optimization and geometry.
 
 ---
 
-# Summary
+### Vector Operations Summary
 
 We have now learned four fundamental vector operations.
 
@@ -623,7 +629,7 @@ These simple operations form the vocabulary upon which the rest of Linear Algebr
 
 ---
 
-# Looking Ahead
+### Looking Ahead
 
 So far, every operation has treated vectors independently.
 
@@ -637,7 +643,7 @@ Answering that question leads us to one of the most important ideas in all of Ma
 
 ---
 
-# Dot Product
+### Dot Product
 
 So far, we have learned how to add, subtract and scale vectors.
 
@@ -651,7 +657,7 @@ The dot product appears repeatedly throughout Machine Learning and Deep Learning
 
 ---
 
-# What Problem Does It Solve?
+#### What Problem Does It Solve?
 
 Suppose we have two vectors.
 
@@ -671,7 +677,7 @@ The dot product gives us a numerical measure of how much two vectors point in th
 
 ---
 
-# Mathematical Definition
+#### Mathematical Definition
 
 For two vectors
 
@@ -710,7 +716,7 @@ The answer is **a scalar**, not another vector.
 
 ---
 
-# Worked Example
+#### Worked Example
 
 Suppose
 
@@ -746,7 +752,7 @@ Notice that two vectors produced a single number.
 
 ---
 
-# Geometric Interpretation
+#### Geometric Interpretation
 
 The dot product is more than just multiplication.
 
@@ -772,7 +778,7 @@ It measures directional agreement.
 
 ---
 
-# Relationship with the Angle
+#### Relationship with the Angle
 
 The dot product can also be written as
 
@@ -801,7 +807,7 @@ It becomes negative when they point in opposite directions.
 
 ---
 
-# Why Perpendicular Means Zero
+#### Why Perpendicular Means Zero
 
 Suppose two movements are completely independent.
 
@@ -819,7 +825,7 @@ Orthogonality is one of the most important concepts in Linear Algebra.
 
 ---
 
-# Machine Learning Connection
+#### Machine Learning Connection
 
 Suppose a model has learned weights
 
@@ -865,7 +871,7 @@ The first step of modern AI is often just one very sophisticated dot product.
 
 ---
 
-# A Mental Model
+#### A Mental Model
 
 Think of the dot product as asking
 
@@ -885,7 +891,7 @@ the more negative the answer becomes.
 
 ---
 
-# Summary
+#### Dot Product Summary
 
 The dot product:
 
@@ -901,7 +907,9 @@ the dot product is one of its most frequently spoken words.
 
 ---
 
-# Matrix Multiplication
+## 4. Matrix Operations and Transformations
+
+### Matrix Multiplication
 
 The dot product lets us compare two vectors.
 
@@ -923,7 +931,7 @@ This single idea will eventually explain Linear Regression, Neural Networks, Pri
 
 ---
 
-# Matrix × Vector Multiplication
+#### Matrix × Vector Multiplication
 
 Suppose we have the vector
 
@@ -993,7 +1001,7 @@ This is the real purpose of matrix multiplication.
 
 ---
 
-# Where Does the Row-by-Column Rule Come From?
+#### Where Does the Row-by-Column Rule Come From?
 
 Suppose
 
@@ -1045,7 +1053,7 @@ Once you understand the dot product, matrix multiplication becomes much less mys
 
 ---
 
-# Worked Example
+#### Worked Example
 
 Let
 
@@ -1094,7 +1102,7 @@ Notice that one vector has been transformed into another vector.
 
 ---
 
-# Matrix × Matrix Multiplication
+#### Matrix × Matrix Multiplication
 
 Matrices can also transform other matrices.
 
@@ -1141,7 +1149,7 @@ Every element is computed by taking the dot product of
 
 ---
 
-# Shape Compatibility
+#### Shape Compatibility
 
 Unlike ordinary multiplication, matrices cannot always be multiplied.
 
@@ -1191,7 +1199,7 @@ This simple rule will save you from countless mistakes.
 
 ---
 
-# Why Order Matters
+#### Why Order Matters
 
 With ordinary numbers,
 
@@ -1235,7 +1243,7 @@ Changing the order changes the transformation.
 
 ---
 
-# Machine Learning Connection
+#### Machine Learning Connection
 
 Suppose a neural network receives an input vector
 
@@ -1297,7 +1305,7 @@ Whether the network contains one hundred parameters or one hundred billion param
 
 ---
 
-# A Better Mental Model
+#### A Better Mental Model
 
 Many students memorize:
 
@@ -1313,7 +1321,7 @@ Once you begin thinking this way, Linear Algebra becomes much more intuitive.
 
 ---
 
-# Summary
+#### Matrix Multiplication Summary
 
 Matrix multiplication:
 
@@ -1327,7 +1335,7 @@ Although the arithmetic may seem mechanical at first, its true meaning is geomet
 
 ---
 
-# Looking Ahead
+#### Looking Ahead
 
 We now know that matrices transform vectors.
 
@@ -1339,7 +1347,7 @@ To answer that, we move from arithmetic to geometry and study **Linear Transform
 
 ---
 
-# Linear Transformations
+### Linear Transformations
 
 We have already seen that a matrix can transform a vector.
 
@@ -1363,7 +1371,7 @@ But it does so in a structured way.
 
 ---
 
-# What Makes a Transformation Linear?
+#### What Makes a Transformation Linear?
 
 A transformation $begin:math:text$T$end:math:text$ is linear if it satisfies two rules.
 
@@ -1394,7 +1402,7 @@ Together they mean that the transformation respects vector addition and scalar m
 
 ---
 
-# Why This Matters
+#### Why This Matters
 
 Suppose
 
@@ -1424,7 +1432,7 @@ They preserve straight lines and relative structure.
 
 ---
 
-# A Matrix Represents a Linear Transformation
+#### A Matrix Represents a Linear Transformation
 
 Consider
 
@@ -1467,7 +1475,7 @@ Every point changes according to the same rule.
 
 ---
 
-# Scaling
+#### Scaling
 
 A simple scaling matrix is
 
@@ -1508,7 +1516,7 @@ The y-direction is stretched by a factor of 3.
 
 ---
 
-# Reflection
+#### Reflection
 
 Consider
 
@@ -1544,7 +1552,7 @@ The y-coordinate remains unchanged.
 
 ---
 
-# Rotation
+#### Rotation
 
 A two-dimensional rotation can also be represented using a matrix.
 
@@ -1565,7 +1573,7 @@ This is a beautiful example of how geometry becomes matrix multiplication.
 
 ---
 
-# Shearing
+#### Shearing
 
 A shear transformation shifts one coordinate according to another.
 
@@ -1601,7 +1609,7 @@ A square can become a slanted parallelogram.
 
 ---
 
-# The Origin Stays Fixed
+#### The Origin Stays Fixed
 
 A true linear transformation always maps the zero vector to the zero vector.
 
@@ -1633,7 +1641,7 @@ Mathematically, this is called an **affine transformation**, not a purely linear
 
 ---
 
-# Machine Learning Connection
+#### Machine Learning Connection
 
 This distinction appears constantly in Machine Learning.
 
@@ -1671,7 +1679,7 @@ That terminology is convenient, but mathematically the presence of bias makes it
 
 ---
 
-# Why Activation Functions Are Necessary
+#### Why Activation Functions Are Necessary
 
 Suppose a neural network contains several layers but no nonlinear activation functions.
 
@@ -1705,7 +1713,7 @@ That nonlinear step prevents the entire network from collapsing mathematically i
 
 ---
 
-# A Powerful Mental Model
+#### A Powerful Mental Model
 
 Think of a matrix as changing the coordinate space itself.
 
@@ -1732,7 +1740,7 @@ In all of these cases, learning often means discovering useful transformations o
 
 ---
 
-# Summary
+#### Linear Transformations Summary
 
 A linear transformation:
 
@@ -1755,7 +1763,7 @@ Neural Networks rely on repeated affine transformations combined with nonlinear 
 
 ---
 
-# Looking Ahead
+#### Looking Ahead
 
 Matrices transform vectors.
 
@@ -1767,7 +1775,9 @@ That problem leads directly to **Systems of Linear Equations**.
 
 ---
 
-# Systems of Linear Equations
+## 5. Solving Linear Systems
+
+### Systems of Linear Equations
 
 A system of linear equations contains several equations that must all be satisfied at the same time.
 
@@ -1787,7 +1797,7 @@ We are looking for values of $begin:math:text$x$end:math:text$ and $begin:math:t
 
 ---
 
-# Solving the Simple Way
+#### Solving the Simple Way
 
 From
 
@@ -1842,7 +1852,7 @@ $$
 
 ---
 
-# Matrix Form
+#### Matrix Form
 
 The same system can be written compactly as
 
@@ -1880,7 +1890,7 @@ This compact equation is one of the most important forms in Linear Algebra.
 
 ---
 
-# Geometric Interpretation
+#### Geometric Interpretation
 
 Each linear equation describes a line.
 
@@ -1906,11 +1916,11 @@ So solving a system of equations means finding the point that satisfies all cons
 
 ---
 
-# Three Possible Outcomes
+#### Three Possible Outcomes
 
 Two lines may behave in three different ways.
 
-## 1. One Unique Solution
+##### 1. One Unique Solution
 
 The lines intersect at exactly one point.
 
@@ -1918,7 +1928,7 @@ The system has one solution.
 
 ---
 
-## 2. No Solution
+##### 2. No Solution
 
 The lines are parallel.
 
@@ -1928,7 +1938,7 @@ The system is inconsistent.
 
 ---
 
-## 3. Infinitely Many Solutions
+##### 3. Infinitely Many Solutions
 
 The two equations describe the same line.
 
@@ -1936,7 +1946,7 @@ Every point on that line satisfies both equations.
 
 ---
 
-# Why This Matters in Machine Learning
+#### Why This Matters in Machine Learning
 
 Many Machine Learning problems eventually produce equations of the form
 
@@ -1969,7 +1979,7 @@ The familiar regression problem is therefore deeply connected to solving systems
 
 ---
 
-# Exact Solutions vs Approximate Solutions
+#### Exact Solutions vs Approximate Solutions
 
 In elementary mathematics, we often expect systems to have exact solutions.
 
@@ -1992,7 +2002,7 @@ That idea leads directly to **least squares**, which forms the basis of Linear R
 
 ---
 
-# Overdetermined Systems
+#### Overdetermined Systems
 
 Suppose we have many equations but only a few unknowns.
 
@@ -2010,7 +2020,7 @@ Linear Regression therefore finds the parameter values that minimize the overall
 
 ---
 
-# Underdetermined Systems
+#### Underdetermined Systems
 
 The opposite can also happen.
 
@@ -2024,7 +2034,7 @@ Modern Machine Learning frequently operates in very high-dimensional spaces, so 
 
 ---
 
-# Rank — A First Intuition
+#### Rank — A First Intuition
 
 The idea of **rank** tells us how much independent information a matrix contains.
 
@@ -2056,7 +2066,7 @@ We will revisit this idea when discussing:
 
 ---
 
-# Machine Learning Connection
+#### Machine Learning Connection
 
 Systems of equations appear behind many algorithms.
 
@@ -2083,7 +2093,7 @@ It is one of the fundamental patterns of applied Machine Learning.
 
 ---
 
-# Summary
+#### Linear Systems Summary
 
 A system of linear equations:
 
@@ -2106,7 +2116,7 @@ Instead, it searches for the **best approximate solution**.
 
 ---
 
-# Looking Ahead
+#### Looking Ahead
 
 We have now seen vectors, matrices, transformations and systems of equations.
 
@@ -2122,7 +2132,9 @@ That leads us to three closely related ideas:
 
 ---
 
-# Span
+## 6. Vector Spaces and Their Structure
+
+### Span and Linear Combinations
 
 We now know that vectors can be added and scaled.
 
@@ -2134,7 +2146,7 @@ The set of all vectors that can be produced from such combinations is called the
 
 ---
 
-# Linear Combinations
+#### Linear Combinations
 
 Suppose we have two vectors
 
@@ -2195,7 +2207,7 @@ Therefore these two vectors **span** the plane.
 
 ---
 
-# Geometric Intuition for Span
+#### Geometric Intuition for Span
 
 Consider just one non-zero vector:
 
@@ -2236,7 +2248,7 @@ The number of genuinely independent directions determines the dimensionality of 
 
 ---
 
-# When Vectors Fail to Add a New Direction
+#### When Vectors Fail to Add a New Direction
 
 Suppose
 
@@ -2274,7 +2286,7 @@ This leads naturally to **linear independence**.
 
 ---
 
-# Linear Independence
+### Linear Independence
 
 A collection of vectors is **linearly independent** if none of the vectors can be constructed from the others.
 
@@ -2304,7 +2316,7 @@ Together they introduce two distinct directions.
 
 ---
 
-# Linear Dependence
+#### Linear Dependence
 
 Now consider
 
@@ -2336,7 +2348,7 @@ One contains redundant information.
 
 ---
 
-# The Formal Test
+#### The Formal Test
 
 Vectors
 
@@ -2366,7 +2378,7 @@ The formal definition may look abstract, but the intuition remains simple:
 
 ---
 
-# Machine Learning Connection — Redundant Features
+#### Machine Learning Connection — Redundant Features
 
 Suppose a dataset contains these features:
 
@@ -2394,7 +2406,7 @@ So linear independence is not merely a geometric curiosity—it has direct pract
 
 ---
 
-# Basis
+### Basis and Dimension
 
 We are now ready for one of the central ideas in Linear Algebra.
 
@@ -2409,7 +2421,7 @@ A basis contains exactly enough directions to describe every vector in the space
 
 ---
 
-# The Standard Basis
+#### The Standard Basis
 
 In two dimensions, the most familiar basis is
 
@@ -2470,7 +2482,7 @@ The numbers 3 and 2 are the coordinates of the vector relative to this basis.
 
 ---
 
-# A Basis Is Not Unique
+#### A Basis Is Not Unique
 
 The standard basis is convenient, but it is not the only possible basis.
 
@@ -2500,7 +2512,7 @@ This idea becomes extremely important later.
 
 ---
 
-# Changing the Basis Changes the Description, Not the Vector
+#### Changing the Basis Changes the Description, Not the Vector
 
 Imagine describing the location of a building.
 
@@ -2520,7 +2532,7 @@ This is a powerful idea in Machine Learning because useful representations can m
 
 ---
 
-# Machine Learning Connection — PCA
+#### Machine Learning Connection — PCA
 
 Principal Component Analysis (PCA) can be understood partly as finding a more useful coordinate system for the data.
 
@@ -2534,7 +2546,7 @@ We will revisit this when discussing eigenvectors.
 
 ---
 
-# Dimension
+#### Dimension
 
 The **dimension** of a vector space is the number of vectors required in any basis for that space.
 
@@ -2552,7 +2564,7 @@ This distinction becomes very important in dimensionality reduction.
 
 ---
 
-# Rank Revisited
+### Rank
 
 Earlier, we introduced rank as the amount of independent information contained in a matrix.
 
@@ -2592,7 +2604,7 @@ The matrix has rank 2.
 
 ---
 
-# Full Rank
+#### Full Rank
 
 A matrix is called **full rank** when it contains the maximum possible number of independent rows or columns.
 
@@ -2612,7 +2624,7 @@ This fact becomes important when solving systems of equations and when computing
 
 ---
 
-# Rank and Redundancy
+#### Rank and Redundancy
 
 A useful mental model is:
 
@@ -2629,7 +2641,7 @@ The data may live in a large feature space while occupying a much smaller effect
 
 ---
 
-# Connecting the Ideas
+### Connecting the Ideas
 
 Span, linear independence, basis and rank are not separate topics.
 
@@ -2647,7 +2659,7 @@ Together, these ideas tell us how much information is really present in a vector
 
 ---
 
-# Machine Learning Connection
+#### Machine Learning Connection
 
 These concepts appear repeatedly in Machine Learning.
 
@@ -2668,7 +2680,7 @@ Finding those directions is one of the recurring themes of Machine Learning.
 
 ---
 
-# Summary
+### Vector Spaces Summary
 
 A **linear combination** is formed by scaling vectors and adding them.
 
@@ -2686,7 +2698,7 @@ These concepts give us the structural language required to understand high-dimen
 
 ---
 
-# Looking Ahead
+### Looking Ahead
 
 So far, we have asked whether vectors point in independent directions.
 
@@ -2705,7 +2717,9 @@ These ideas will connect Linear Algebra directly to similarity measures, least s
 
 ---
 
-# Orthogonality
+## 7. Orthogonality, Projections, and Distance
+
+### Orthogonality
 
 One of the most useful geometric relationships between vectors is **orthogonality**.
 
@@ -2752,7 +2766,7 @@ $$
 
 ---
 
-# Why Orthogonality Matters
+#### Why Orthogonality Matters
 
 Orthogonal vectors are completely independent directions.
 
@@ -2770,7 +2784,7 @@ Orthogonal vectors behave exactly this way.
 
 ---
 
-# Example
+#### Example
 
 Consider
 
@@ -2808,7 +2822,7 @@ Only the angle matters.
 
 ---
 
-# Orthonormal Vectors
+#### Orthonormal Vectors
 
 Sometimes vectors are not only perpendicular but also have unit length.
 
@@ -2843,7 +2857,7 @@ Orthonormal bases greatly simplify many calculations.
 
 ---
 
-# Projection
+### Projection
 
 Suppose someone shines a flashlight onto the floor.
 
@@ -2855,7 +2869,7 @@ A **projection** measures how much of one vector lies along another.
 
 ---
 
-# Intuition
+#### Intuition
 
 Suppose
 
@@ -2868,7 +2882,7 @@ Projection measures exactly that useful component.
 
 ---
 
-# Scalar Projection
+#### Scalar Projection
 
 The scalar projection of
 
@@ -2897,7 +2911,7 @@ The result is a scalar.
 
 ---
 
-# Vector Projection
+#### Vector Projection
 
 Sometimes we want the projected vector itself.
 
@@ -2923,7 +2937,7 @@ and has exactly the correct length.
 
 ---
 
-# Why Projection Matters
+#### Why Projection Matters
 
 Projection appears everywhere.
 
@@ -2939,7 +2953,7 @@ Many optimization algorithms repeatedly project vectors into different subspaces
 
 ---
 
-# Vector Norms
+### Vector Norms and Distance
 
 Earlier we introduced magnitude.
 
@@ -2951,7 +2965,7 @@ Different applications use different norms.
 
 ---
 
-# L2 Norm (Euclidean Norm)
+#### L2 Norm (Euclidean Norm)
 
 The most familiar norm is the Euclidean norm.
 
@@ -2980,7 +2994,7 @@ This is simply the ordinary geometric length.
 
 ---
 
-# L1 Norm
+#### L1 Norm
 
 Another important norm is the L1 norm.
 
@@ -3002,7 +3016,7 @@ It is often called the **Manhattan distance** because it resembles travelling th
 
 ---
 
-# L∞ Norm
+#### L∞ Norm
 
 The infinity norm measures only the largest absolute component.
 
@@ -3016,7 +3030,7 @@ It ignores every other coordinate.
 
 ---
 
-# Why Different Norms Exist
+#### Why Different Norms Exist
 
 Different notions of "distance" make sense in different problems.
 
@@ -3034,7 +3048,7 @@ Norms formalize these different notions of distance.
 
 ---
 
-# Distance Between Vectors
+#### Distance Between Vectors
 
 Distance is simply the norm of their difference.
 
@@ -3062,7 +3076,7 @@ Notice how vector subtraction and norms combine naturally.
 
 ---
 
-# Machine Learning Connection — K-Nearest Neighbours
+#### Machine Learning Connection — K-Nearest Neighbours
 
 K-Nearest Neighbours (KNN) predicts by finding observations closest to a query point.
 
@@ -3092,7 +3106,7 @@ The choice of norm can therefore change the model's predictions.
 
 ---
 
-# Machine Learning Connection — Regularization
+#### Machine Learning Connection — Regularization
 
 Norms also appear inside loss functions.
 
@@ -3116,7 +3130,7 @@ They literally penalize the corresponding vector norms of the parameter vector.
 
 ---
 
-# Machine Learning Connection — Cosine Similarity
+#### Machine Learning Connection — Cosine Similarity
 
 Earlier we saw that the dot product measures alignment.
 
@@ -3151,7 +3165,7 @@ This metric is heavily used in:
 
 ---
 
-# Bringing Everything Together
+### Bringing Everything Together
 
 Notice how several ideas now connect.
 
@@ -3185,7 +3199,7 @@ What originally appeared to be separate topics are actually pieces of one larger
 
 ---
 
-# Summary
+### Geometry and Distance Summary
 
 Orthogonality describes perpendicular directions.
 
@@ -3199,7 +3213,7 @@ These ideas underpin similarity measures, optimization, dimensionality reduction
 
 ---
 
-# Looking Ahead
+### Looking Ahead
 
 There is one final question.
 
@@ -3214,7 +3228,9 @@ Those remarkable directions lead us to one of the most beautiful concepts in Lin
 > **Eigenvalues and Eigenvectors**
 
 ---
-# Eigenvalues and Eigenvectors
+## 8. Spectral Methods and Matrix Decomposition
+
+### Eigenvalues and Eigenvectors
 
 We have seen that matrices transform vectors.
 
@@ -3245,7 +3261,7 @@ Those special vectors are called **eigenvectors**.
 
 ---
 
-# A Visual Intuition
+#### A Visual Intuition
 
 Imagine a square piece of rubber.
 
@@ -3273,7 +3289,7 @@ They are the "preferred directions" of the transformation.
 
 ---
 
-# The Big Idea
+#### The Big Idea
 
 An eigenvector is a vector whose direction remains unchanged after a linear transformation.
 
@@ -3289,7 +3305,7 @@ Therefore,
 
 ---
 
-# The Mathematical Definition
+#### The Mathematical Definition
 
 Suppose
 
@@ -3335,7 +3351,7 @@ $$
 
 ---
 
-# Understanding the Equation
+#### Understanding the Equation
 
 Suppose
 
@@ -3417,7 +3433,7 @@ The vector disappears to the origin.
 
 ---
 
-# A Simple Example
+#### A Simple Example
 
 Consider
 
@@ -3506,7 +3522,7 @@ $$
 
 ---
 
-# Why Only Certain Directions?
+#### Why Only Certain Directions?
 
 Most vectors are mixtures of several directions.
 
@@ -3524,7 +3540,7 @@ They require no "mixing."
 
 ---
 
-# Machine Learning Connection — Principal Component Analysis
+#### Machine Learning Connection — Principal Component Analysis
 
 Principal Component Analysis (PCA) searches for the directions in which data varies the most.
 
@@ -3550,7 +3566,7 @@ This allows high-dimensional data to be represented using far fewer dimensions.
 
 ---
 
-# Machine Learning Connection — Google PageRank
+#### Machine Learning Connection — Google PageRank
 
 Google's original PageRank algorithm is fundamentally an eigenvector problem.
 
@@ -3572,7 +3588,7 @@ Although modern search engines are much more sophisticated, the original PageRan
 
 ---
 
-# Machine Learning Connection — Stability
+#### Machine Learning Connection — Stability
 
 Eigenvalues often tell us whether a system is stable.
 
@@ -3593,7 +3609,7 @@ Eigenvalues therefore appear in:
 
 ---
 
-# A Mental Model
+#### A Mental Model
 
 Imagine every matrix asking the question:
 
@@ -3623,7 +3639,7 @@ It simply formalizes that idea.
 
 ---
 
-# Summary
+#### Eigenvalues and Eigenvectors Summary
 
 An eigenvector is a direction that remains unchanged by a transformation.
 
@@ -3644,7 +3660,7 @@ Among many other fields.
 
 ---
 
-# Looking Ahead
+#### Looking Ahead
 
 Eigenvalues reveal the important directions of a transformation.
 
@@ -3656,7 +3672,7 @@ To analyse those situations, we need an even more powerful mathematical tool:
 
 ---
 
-# Singular Value Decomposition (SVD)
+### Singular Value Decomposition (SVD)
 
 Throughout this chapter we have repeatedly asked the same question:
 
@@ -3689,7 +3705,7 @@ This is where **Singular Value Decomposition (SVD)** becomes one of the most pow
 
 ---
 
-# The Big Idea
+#### The Big Idea
 
 Every matrix, regardless of its shape, can be decomposed into three simpler matrices.
 
@@ -3721,7 +3737,7 @@ Complex transformations become combinations of simple ones.
 
 ---
 
-# Understanding the Three Matrices
+#### Understanding the Three Matrices
 
 The decomposition
 
@@ -3737,7 +3753,7 @@ contains three parts.
 
 ---
 
-## 1. Vᵀ — Rotate into a Convenient Coordinate System
+##### 1. Vᵀ — Rotate into a Convenient Coordinate System
 
 The first transformation changes our viewpoint.
 
@@ -3751,7 +3767,7 @@ Only the perspective changes.
 
 ---
 
-## 2. Σ — Stretch Along Independent Directions
+##### 2. Σ — Stretch Along Independent Directions
 
 The middle matrix
 
@@ -3769,7 +3785,7 @@ Small singular values correspond to directions containing little information.
 
 ---
 
-## 3. U — Rotate into the Final Orientation
+##### 3. U — Rotate into the Final Orientation
 
 Finally,
 
@@ -3789,7 +3805,7 @@ A remarkably complicated matrix can therefore be understood using only rotations
 
 ---
 
-# Singular Values
+#### Singular Values
 
 The diagonal entries of
 
@@ -3813,7 +3829,7 @@ This observation is the basis of many dimensionality reduction techniques.
 
 ---
 
-# Why SVD Matters
+#### Why SVD Matters
 
 Suppose we have a huge dataset.
 
@@ -3831,7 +3847,7 @@ This idea appears repeatedly throughout Machine Learning.
 
 ---
 
-# A Picture Worth Remembering
+#### A Picture Worth Remembering
 
 Imagine listening to an orchestra.
 
@@ -3847,7 +3863,7 @@ It separates important structure from less important detail.
 
 ---
 
-# Machine Learning Connection — Dimensionality Reduction
+#### Machine Learning Connection — Dimensionality Reduction
 
 Many datasets contain hundreds or thousands of features.
 
@@ -3868,7 +3884,7 @@ Smaller representations are:
 
 ---
 
-# Machine Learning Connection — PCA
+#### Machine Learning Connection — PCA
 
 Earlier we learned that PCA uses eigenvectors of the covariance matrix.
 
@@ -3892,7 +3908,7 @@ they perform SVD under the hood.
 
 ---
 
-# Machine Learning Connection — Recommendation Systems
+#### Machine Learning Connection — Recommendation Systems
 
 Suppose millions of users rate millions of movies.
 
@@ -3918,7 +3934,7 @@ This idea became famous through the Netflix Prize competition.
 
 ---
 
-# Machine Learning Connection — Natural Language Processing
+#### Machine Learning Connection — Natural Language Processing
 
 Modern NLP often represents documents using huge matrices.
 
@@ -3932,7 +3948,7 @@ many foundational ideas about embeddings and low-dimensional representations ori
 
 ---
 
-# Low-Rank Approximation
+#### Low-Rank Approximation
 
 One of SVD's greatest strengths is its ability to approximate a matrix.
 
@@ -3953,7 +3969,7 @@ This is an important technique in data compression and model acceleration.
 
 ---
 
-# Bringing Everything Together
+#### Bringing Everything Together
 
 Notice the progression throughout this chapter.
 
@@ -3979,7 +3995,7 @@ It is the culmination of everything we have learned about matrices and transform
 
 ---
 
-# Summary
+#### SVD Summary
 
 Singular Value Decomposition factors any matrix into three simpler matrices.
 
@@ -4010,7 +4026,7 @@ It is one of the most important tools in modern applied Linear Algebra.
 
 ---
 
-# Looking Ahead
+### Looking Ahead
 
 We have now completed the mathematical foundations of Linear Algebra.
 
@@ -4024,7 +4040,9 @@ That connection is the perfect way to conclude this chapter.
 
 ---
 
-# Linear Algebra from an ML Engineering perspective
+## 9. Linear Algebra in Machine Learning
+
+### An ML Engineering Perspective
 
 At the beginning of this chapter, we said:
 
@@ -4038,7 +4056,7 @@ What once appeared to be a collection of unrelated mathematical topics is actual
 
 ---
 
-# The Journey So Far
+### The Journey So Far
 
 The chapter followed a natural progression.
 
@@ -4076,7 +4094,7 @@ Nothing was introduced in isolation.
 
 ---
 
-# Where Does Each Concept Appear?
+### Where Does Each Concept Appear?
 
 The following table summarizes where these ideas appear in Machine Learning.
 
@@ -4104,11 +4122,11 @@ This table is worth revisiting throughout your Machine Learning journey.
 
 ---
 
-# Revisiting Classical Machine Learning
+### Classical Machine Learning
 
 Think back to the models studied in Part I.
 
-## Linear Regression
+#### Linear Regression
 
 Linear Regression computes
 
@@ -4128,7 +4146,7 @@ Everything here is Linear Algebra.
 
 ---
 
-## Logistic Regression
+#### Logistic Regression
 
 Logistic Regression begins exactly the same way.
 
@@ -4146,7 +4164,7 @@ The underlying computation is still Linear Algebra.
 
 ---
 
-## K-Nearest Neighbours
+#### K-Nearest Neighbours
 
 KNN asks only one question.
 
@@ -4162,7 +4180,7 @@ $$
 
 ---
 
-## Decision Trees
+#### Decision Trees
 
 Decision Trees depend much less on Linear Algebra.
 
@@ -4172,7 +4190,7 @@ This explains why tree-based models often require less feature scaling than line
 
 ---
 
-## Support Vector Machines
+#### Support Vector Machines
 
 Support Vector Machines rely heavily on:
 
@@ -4185,7 +4203,7 @@ Kernel methods also build upon these same ideas.
 
 ---
 
-## Principal Component Analysis
+#### Principal Component Analysis
 
 PCA combines nearly everything from this chapter.
 
@@ -4201,7 +4219,7 @@ PCA is almost a celebration of Linear Algebra.
 
 ---
 
-# Revisiting Deep Learning
+### Deep Learning
 
 Deep Learning looks intimidating because of its enormous scale.
 
@@ -4239,7 +4257,7 @@ It is Linear Algebra repeated many times.
 
 ---
 
-# Revisiting Transformers
+### Transformers
 
 Transformers appear enormously complex.
 
@@ -4265,7 +4283,7 @@ The mathematics you learned in this chapter therefore scales all the way to toda
 
 ---
 
-# One Unifying Mental Model
+### One Unifying Mental Model
 
 Whenever you encounter a new Machine Learning algorithm, ask yourself four questions.
 
@@ -4285,7 +4303,7 @@ Remarkably, these four questions explain a large fraction of modern Machine Lear
 
 ---
 
-# Key Takeaways
+### Key Takeaways
 
 By completing this chapter, you have learned to think about data mathematically.
 
@@ -4302,7 +4320,7 @@ These ideas form the mathematical foundation upon which the rest of Machine Lear
 
 ---
 
-# Looking Ahead
+### Looking Ahead: Calculus
 
 Linear Algebra taught us **how to represent and transform information**.
 
