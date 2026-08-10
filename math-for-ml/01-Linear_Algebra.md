@@ -2119,3 +2119,589 @@ That leads us to three closely related ideas:
 - Span
 - Basis
 - Linear Independence
+
+---
+
+# Span
+
+We now know that vectors can be added and scaled.
+
+That gives us a powerful idea:
+
+> **A small collection of vectors can be combined to generate many other vectors.**
+
+The set of all vectors that can be produced from such combinations is called the **span**.
+
+---
+
+# Linear Combinations
+
+Suppose we have two vectors
+
+$$
+\mathbf{v}_1=
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+$$
+
+and
+
+$$
+\mathbf{v}_2=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+$$
+
+We may multiply each vector by any scalar and add the results:
+
+$$
+a\mathbf{v}_1+b\mathbf{v}_2
+$$
+
+where $$a$$ and $$b$$ are scalars.
+
+This is called a **linear combination**.
+
+For example,
+
+$$
+3\mathbf{v}_1+2\mathbf{v}_2
+=
+3
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
++
+2
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+3\\
+2
+\end{bmatrix}
+$$
+
+By choosing different values of $begin:math:text$a$end:math:text$ and $begin:math:text$b$end:math:text$, we can generate every point in the two-dimensional plane.
+
+Therefore these two vectors **span** the plane.
+
+---
+
+# Geometric Intuition for Span
+
+Consider just one non-zero vector:
+
+$$
+\mathbf{v}=
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix}
+$$
+
+Multiplying it by different scalars gives
+
+$$
+\ldots,-2\mathbf{v},-\mathbf{v},0,\mathbf{v},2\mathbf{v},3\mathbf{v},\ldots
+$$
+
+Every resulting vector lies on the same straight line through the origin.
+
+So one non-zero vector spans a **line**.
+
+Now take two vectors pointing in genuinely different directions.
+
+By scaling and adding them, we can move throughout a **plane**.
+
+With three independent vectors in three-dimensional space, we can span the entire 3D space.
+
+This gives us an important intuition:
+
+```text
+1 independent direction  → line
+2 independent directions → plane
+3 independent directions → 3D space
+...
+```
+
+The number of genuinely independent directions determines the dimensionality of the space that can be generated.
+
+---
+
+# When Vectors Fail to Add a New Direction
+
+Suppose
+
+$$
+\mathbf{v}_1=
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix}
+$$
+
+and
+
+$$
+\mathbf{v}_2=
+\begin{bmatrix}
+2\\
+4
+\end{bmatrix}
+$$
+
+The second vector is simply
+
+$$
+\mathbf{v}_2=2\mathbf{v}_1
+$$
+
+Although we have two vectors, they point along the same direction.
+
+Their linear combinations still generate only a line.
+
+The second vector contributes no new direction.
+
+This leads naturally to **linear independence**.
+
+---
+
+# Linear Independence
+
+A collection of vectors is **linearly independent** if none of the vectors can be constructed from the others.
+
+Each vector contributes genuinely new information or a new direction.
+
+For example,
+
+$$
+\mathbf{v}_1=
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix},
+\qquad
+\mathbf{v}_2=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+$$
+
+are linearly independent.
+
+Neither can be produced by scaling the other.
+
+Together they introduce two distinct directions.
+
+---
+
+# Linear Dependence
+
+Now consider
+
+$$
+\mathbf{v}_1=
+\begin{bmatrix}
+1\\
+2
+\end{bmatrix},
+\qquad
+\mathbf{v}_2=
+\begin{bmatrix}
+2\\
+4
+\end{bmatrix}
+$$
+
+Since
+
+$$
+\mathbf{v}_2=2\mathbf{v}_1
+$$
+
+the second vector does not introduce any new direction.
+
+The vectors are therefore **linearly dependent**.
+
+One contains redundant information.
+
+---
+
+# The Formal Test
+
+Vectors
+
+$$
+\mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n
+$$
+
+are linearly independent if the equation
+
+$$
+c_1\mathbf{v}_1+c_2\mathbf{v}_2+\cdots+c_n\mathbf{v}_n
+=
+\mathbf{0}
+$$
+
+has only the trivial solution
+
+$$
+c_1=c_2=\cdots=c_n=0
+$$
+
+If there is some non-zero combination of coefficients that produces the zero vector, the vectors are linearly dependent.
+
+The formal definition may look abstract, but the intuition remains simple:
+
+> **Independent vectors each contribute something new. Dependent vectors contain redundancy.**
+
+---
+
+# Machine Learning Connection — Redundant Features
+
+Suppose a dataset contains these features:
+
+- Height in centimetres
+- Height in metres
+- Weight
+
+The first two features contain the same information because
+
+$$
+\text{height in metres}
+=
+0.01\times\text{height in centimetres}
+$$
+
+One feature is an exact linear combination of another.
+
+This creates **linear dependence**.
+
+In regression models, strong dependence between predictor variables is related to **multicollinearity**.
+
+Redundant features can make model coefficients unstable and matrix calculations difficult.
+
+So linear independence is not merely a geometric curiosity—it has direct practical importance in Machine Learning.
+
+---
+
+# Basis
+
+We are now ready for one of the central ideas in Linear Algebra.
+
+A **basis** is a minimal set of linearly independent vectors that spans a space.
+
+Two conditions must therefore hold:
+
+1. The vectors must span the entire space.
+2. The vectors must be linearly independent.
+
+A basis contains exactly enough directions to describe every vector in the space—no fewer and no redundant extras.
+
+---
+
+# The Standard Basis
+
+In two dimensions, the most familiar basis is
+
+$$
+\mathbf{e}_1=
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix},
+\qquad
+\mathbf{e}_2=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+$$
+
+These are called the **standard basis vectors**.
+
+Any vector
+
+$$
+\mathbf{x}=
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+$$
+
+can be written as
+
+$$
+\mathbf{x}=x\mathbf{e}_1+y\mathbf{e}_2
+$$
+
+For example,
+
+$$
+\begin{bmatrix}
+3\\
+2
+\end{bmatrix}
+=
+3
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
++
+2
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+$$
+
+The numbers 3 and 2 are the coordinates of the vector relative to this basis.
+
+---
+
+# A Basis Is Not Unique
+
+The standard basis is convenient, but it is not the only possible basis.
+
+For example,
+
+$$
+\mathbf{u}_1=
+\begin{bmatrix}
+1\\
+1
+\end{bmatrix},
+\qquad
+\mathbf{u}_2=
+\begin{bmatrix}
+1\\
+-1
+\end{bmatrix}
+$$
+
+also form a basis for the two-dimensional plane.
+
+They are linearly independent and together span the entire plane.
+
+So the same vector can be described using different coordinate systems depending on the chosen basis.
+
+This idea becomes extremely important later.
+
+---
+
+# Changing the Basis Changes the Description, Not the Vector
+
+Imagine describing the location of a building.
+
+One person may describe it using north-south and east-west directions.
+
+Another may use roads running diagonally across the city.
+
+The building itself has not moved.
+
+Only the coordinate system used to describe it has changed.
+
+A change of basis works in the same way.
+
+> **The underlying information stays the same; only its representation changes.**
+
+This is a powerful idea in Machine Learning because useful representations can make difficult problems much easier.
+
+---
+
+# Machine Learning Connection — PCA
+
+Principal Component Analysis (PCA) can be understood partly as finding a more useful coordinate system for the data.
+
+Instead of describing data using the original feature directions, PCA finds new directions that capture the greatest variation.
+
+The data is then represented relative to those new directions.
+
+In other words, PCA effectively changes the basis to one that is better aligned with the structure of the dataset.
+
+We will revisit this when discussing eigenvectors.
+
+---
+
+# Dimension
+
+The **dimension** of a vector space is the number of vectors required in any basis for that space.
+
+For example:
+
+- A line has dimension 1.
+- A plane has dimension 2.
+- Ordinary 3D space has dimension 3.
+
+A dataset containing 100 features is naturally represented in a 100-dimensional feature space.
+
+But its true information content may occupy fewer than 100 independent directions.
+
+This distinction becomes very important in dimensionality reduction.
+
+---
+
+# Rank Revisited
+
+Earlier, we introduced rank as the amount of independent information contained in a matrix.
+
+We can now state this more precisely.
+
+The **rank of a matrix** is the number of linearly independent directions represented by its rows or columns.
+
+Consider
+
+$$
+\mathbf{A}=
+\begin{bmatrix}
+1 & 2\\
+2 & 4
+\end{bmatrix}
+$$
+
+The second row is twice the first.
+
+Therefore only one row contributes genuinely new information.
+
+The matrix has rank 1.
+
+Now consider
+
+$$
+\mathbf{B}=
+\begin{bmatrix}
+1 & 0\\
+0 & 1
+\end{bmatrix}
+$$
+
+Its rows point in independent directions.
+
+The matrix has rank 2.
+
+---
+
+# Full Rank
+
+A matrix is called **full rank** when it contains the maximum possible number of independent rows or columns.
+
+For a square $begin:math:text$n\\times n$end:math:text$ matrix, full rank means
+
+$$
+\operatorname{rank}(\mathbf{A})=n
+$$
+
+Full-rank matrices behave particularly well.
+
+For example, a square full-rank matrix has an inverse.
+
+A rank-deficient matrix does not.
+
+This fact becomes important when solving systems of equations and when computing regression coefficients.
+
+---
+
+# Rank and Redundancy
+
+A useful mental model is:
+
+```text
+Matrix size  → how much space is available
+Matrix rank  → how much independent information is actually present
+```
+
+A matrix may have hundreds of columns but still have much lower rank if many features are redundant or correlated.
+
+This is one reason dimensionality reduction can work.
+
+The data may live in a large feature space while occupying a much smaller effective subspace.
+
+---
+
+# Connecting the Ideas
+
+Span, linear independence, basis and rank are not separate topics.
+
+They describe the same structure from different perspectives.
+
+| Concept | Main Question |
+|---------|---------------|
+| Span | What space can these vectors generate? |
+| Linear Independence | Does each vector add a genuinely new direction? |
+| Basis | What is the smallest independent set that spans the space? |
+| Dimension | How many basis vectors are required? |
+| Rank | How many independent directions does this matrix actually contain? |
+
+Together, these ideas tell us how much information is really present in a vector space or dataset.
+
+---
+
+# Machine Learning Connection
+
+These concepts appear repeatedly in Machine Learning.
+
+They help explain:
+
+- redundant features
+- multicollinearity
+- matrix invertibility
+- dimensionality reduction
+- PCA
+- low-rank approximations
+- embeddings
+- matrix factorization
+
+A dataset may contain thousands of measured features while its meaningful structure occupies far fewer independent directions.
+
+Finding those directions is one of the recurring themes of Machine Learning.
+
+---
+
+# Summary
+
+A **linear combination** is formed by scaling vectors and adding them.
+
+The **span** is the set of all vectors obtainable from those combinations.
+
+Vectors are **linearly independent** when none can be constructed from the others.
+
+A **basis** is a minimal independent set that spans the entire space.
+
+The **dimension** tells us how many vectors a basis contains.
+
+The **rank** of a matrix tells us how many independent directions or pieces of information the matrix actually contains.
+
+These concepts give us the structural language required to understand high-dimensional data.
+
+---
+
+# Looking Ahead
+
+So far, we have asked whether vectors point in independent directions.
+
+Now we ask a more precise geometric question:
+
+> **What happens when two directions are exactly perpendicular, and how can one vector be decomposed along another?**
+
+That leads to:
+
+- Orthogonality
+- Projections
+- Norms
+- Distance
+
+These ideas will connect Linear Algebra directly to similarity measures, least squares, K-Nearest Neighbours and PCA.
+
+---
+
