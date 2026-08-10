@@ -1339,3 +1339,783 @@ To answer that, we move from arithmetic to geometry and study **Linear Transform
 
 ---
 
+# Linear Transformations
+
+We have already seen that a matrix can transform a vector.
+
+Now we make that idea more precise.
+
+A **linear transformation** is a transformation that preserves the basic structure of vector space.
+
+That sounds abstract, but the intuition is simple.
+
+A linear transformation may:
+
+- stretch
+- shrink
+- rotate
+- reflect
+- shear
+
+vectors.
+
+But it does so in a structured way.
+
+---
+
+# What Makes a Transformation Linear?
+
+A transformation $begin:math:text$T$end:math:text$ is linear if it satisfies two rules.
+
+For vectors $begin:math:text$\\mathbf\{u\}$end:math:text$ and $begin:math:text$\\mathbf\{v\}$end:math:text$,
+
+$$
+T(\mathbf{u}+\mathbf{v})
+=
+T(\mathbf{u})
++
+T(\mathbf{v})
+$$
+
+and for any scalar $begin:math:text$c$end:math:text$,
+
+$$
+T(c\mathbf{u})
+=
+cT(\mathbf{u})
+$$
+
+These two properties are called:
+
+- **Additivity**
+- **Homogeneity**
+
+Together they mean that the transformation respects vector addition and scalar multiplication.
+
+---
+
+# Why This Matters
+
+Suppose
+
+$$
+\mathbf{v}
+=
+\mathbf{a}
++
+\mathbf{b}
+$$
+
+If the transformation is linear, we can transform the parts separately:
+
+$$
+T(\mathbf{v})
+=
+T(\mathbf{a})
++
+T(\mathbf{b})
+$$
+
+This gives linear transformations a predictable structure.
+
+They do not arbitrarily warp space.
+
+They preserve straight lines and relative structure.
+
+---
+
+# A Matrix Represents a Linear Transformation
+
+Consider
+
+$$
+\mathbf{A}
+=
+\begin{bmatrix}
+2 & 0\\
+0 & 1
+\end{bmatrix}
+$$
+
+and
+
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+$$
+
+Then
+
+$$
+\mathbf{A}\mathbf{x}
+=
+\begin{bmatrix}
+2x\\
+y
+\end{bmatrix}
+$$
+
+This transformation doubles the horizontal component while leaving the vertical component unchanged.
+
+Geometrically, the space has been stretched horizontally.
+
+Every point changes according to the same rule.
+
+---
+
+# Scaling
+
+A simple scaling matrix is
+
+$$
+\mathbf{S}
+=
+\begin{bmatrix}
+2 & 0\\
+0 & 3
+\end{bmatrix}
+$$
+
+Applying it to
+
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+$$
+
+gives
+
+$$
+\mathbf{S}\mathbf{x}
+=
+\begin{bmatrix}
+2x\\
+3y
+\end{bmatrix}
+$$
+
+The x-direction is stretched by a factor of 2.
+
+The y-direction is stretched by a factor of 3.
+
+---
+
+# Reflection
+
+Consider
+
+$$
+\mathbf{R}
+=
+\begin{bmatrix}
+-1 & 0\\
+0 & 1
+\end{bmatrix}
+$$
+
+Then
+
+$$
+\mathbf{R}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+-x\\
+y
+\end{bmatrix}
+$$
+
+This reflects every point across the y-axis.
+
+The x-coordinate changes sign.
+
+The y-coordinate remains unchanged.
+
+---
+
+# Rotation
+
+A two-dimensional rotation can also be represented using a matrix.
+
+For an angle $begin:math:text$\\theta$end:math:text$,
+
+$$
+\mathbf{R}
+=
+\begin{bmatrix}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{bmatrix}
+$$
+
+Multiplying a vector by this matrix rotates it by $begin:math:text$\\theta$end:math:text$.
+
+This is a beautiful example of how geometry becomes matrix multiplication.
+
+---
+
+# Shearing
+
+A shear transformation shifts one coordinate according to another.
+
+For example,
+
+$$
+\mathbf{H}
+=
+\begin{bmatrix}
+1 & k\\
+0 & 1
+\end{bmatrix}
+$$
+
+gives
+
+$$
+\mathbf{H}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+x+ky\\
+y
+\end{bmatrix}
+$$
+
+The y-coordinate remains unchanged, while the x-coordinate shifts according to $begin:math:text$y$end:math:text$.
+
+A square can become a slanted parallelogram.
+
+---
+
+# The Origin Stays Fixed
+
+A true linear transformation always maps the zero vector to the zero vector.
+
+That is,
+
+$$
+T(\mathbf{0})
+=
+\mathbf{0}
+$$
+
+This property is important.
+
+If a transformation shifts every point by some constant amount, it is not strictly linear.
+
+For example,
+
+$$
+\mathbf{y}
+=
+\mathbf{A}\mathbf{x}
++
+\mathbf{b}
+$$
+
+contains a translation due to $begin:math:text$\\mathbf\{b\}$end:math:text$.
+
+Mathematically, this is called an **affine transformation**, not a purely linear transformation.
+
+---
+
+# Machine Learning Connection
+
+This distinction appears constantly in Machine Learning.
+
+A neuron computes
+
+$$
+\mathbf{z}
+=
+\mathbf{W}\mathbf{x}
++
+\mathbf{b}
+$$
+
+The multiplication
+
+$$
+\mathbf{W}\mathbf{x}
+$$
+
+is a linear transformation.
+
+The addition of
+
+$$
+\mathbf{b}
+$$
+
+shifts the result.
+
+So the complete operation is technically **affine**.
+
+In Machine Learning, however, people often casually refer to this entire step as a "linear layer."
+
+That terminology is convenient, but mathematically the presence of bias makes it affine.
+
+---
+
+# Why Activation Functions Are Necessary
+
+Suppose a neural network contains several layers but no nonlinear activation functions.
+
+Then we may have
+
+$$
+\mathbf{W}_3
+\mathbf{W}_2
+\mathbf{W}_1
+\mathbf{x}
+$$
+
+Because multiplying matrices together produces another matrix, this becomes
+
+$$
+\mathbf{W}
+\mathbf{x}
+$$
+
+for some combined matrix $begin:math:text$\\mathbf\{W\}$end:math:text$.
+
+So stacking many purely linear transformations still produces only another linear transformation.
+
+The network would gain depth but not greater expressive power.
+
+This is why activation functions are essential.
+
+They introduce **nonlinearity**.
+
+That nonlinear step prevents the entire network from collapsing mathematically into one equivalent matrix multiplication.
+
+---
+
+# A Powerful Mental Model
+
+Think of a matrix as changing the coordinate space itself.
+
+A vector enters.
+
+The matrix:
+
+- stretches some directions
+- shrinks others
+- rotates some directions
+- mixes coordinates
+
+and produces a new representation.
+
+This idea becomes especially important later when studying:
+
+- PCA
+- Neural Networks
+- Embeddings
+- Computer Vision
+- Transformers
+
+In all of these cases, learning often means discovering useful transformations of the input space.
+
+---
+
+# Summary
+
+A linear transformation:
+
+- maps vectors to vectors
+- preserves vector addition
+- preserves scalar multiplication
+- can be represented using a matrix
+- can scale, rotate, reflect or shear space
+- always maps the origin to the origin
+
+When bias is added,
+
+$$
+\mathbf{W}\mathbf{x}+\mathbf{b}
+$$
+
+the transformation becomes affine.
+
+Neural Networks rely on repeated affine transformations combined with nonlinear activation functions.
+
+---
+
+# Looking Ahead
+
+Matrices transform vectors.
+
+But one of the oldest uses of matrices is solving equations.
+
+Suppose several unknown quantities must satisfy several relationships simultaneously.
+
+That problem leads directly to **Systems of Linear Equations**.
+
+---
+
+# Systems of Linear Equations
+
+A system of linear equations contains several equations that must all be satisfied at the same time.
+
+For example,
+
+$$
+x+y=5
+$$
+
+and
+
+$$
+2x-y=1
+$$
+
+We are looking for values of $begin:math:text$x$end:math:text$ and $begin:math:text$y$end:math:text$ that satisfy both equations simultaneously.
+
+---
+
+# Solving the Simple Way
+
+From
+
+$$
+x+y=5
+$$
+
+we get
+
+$$
+y=5-x
+$$
+
+Substitute this into
+
+$$
+2x-y=1
+$$
+
+to obtain
+
+$$
+2x-(5-x)=1
+$$
+
+Therefore,
+
+$$
+3x=6
+$$
+
+so
+
+$$
+x=2
+$$
+
+and therefore,
+
+$$
+y=3
+$$
+
+The solution is
+
+$$
+\begin{bmatrix}
+2\\
+3
+\end{bmatrix}
+$$
+
+---
+
+# Matrix Form
+
+The same system can be written compactly as
+
+$$
+\begin{bmatrix}
+1 & 1\\
+2 & -1
+\end{bmatrix}
+\begin{bmatrix}
+x\\
+y
+\end{bmatrix}
+=
+\begin{bmatrix}
+5\\
+1
+\end{bmatrix}
+$$
+
+or more generally,
+
+$$
+\mathbf{A}\mathbf{x}
+=
+\mathbf{b}
+$$
+
+where
+
+- $begin:math:text$\\mathbf\{A\}$end:math:text$ contains the coefficients
+- $begin:math:text$\\mathbf\{x\}$end:math:text$ contains the unknowns
+- $begin:math:text$\\mathbf\{b\}$end:math:text$ contains the results
+
+This compact equation is one of the most important forms in Linear Algebra.
+
+---
+
+# Geometric Interpretation
+
+Each linear equation describes a line.
+
+For example,
+
+$$
+x+y=5
+$$
+
+describes one line.
+
+And
+
+$$
+2x-y=1
+$$
+
+describes another.
+
+The solution occurs where the two lines intersect.
+
+So solving a system of equations means finding the point that satisfies all constraints at once.
+
+---
+
+# Three Possible Outcomes
+
+Two lines may behave in three different ways.
+
+## 1. One Unique Solution
+
+The lines intersect at exactly one point.
+
+The system has one solution.
+
+---
+
+## 2. No Solution
+
+The lines are parallel.
+
+They never meet.
+
+The system is inconsistent.
+
+---
+
+## 3. Infinitely Many Solutions
+
+The two equations describe the same line.
+
+Every point on that line satisfies both equations.
+
+---
+
+# Why This Matters in Machine Learning
+
+Many Machine Learning problems eventually produce equations of the form
+
+$$
+\mathbf{A}\mathbf{x}
+=
+\mathbf{b}
+$$
+
+For example, Linear Regression can be expressed using matrix equations.
+
+In its closed-form solution,
+
+$$
+\hat{\boldsymbol{\beta}}
+=
+(\mathbf{X}^T\mathbf{X})^{-1}
+\mathbf{X}^T\mathbf{y}
+$$
+
+the model is solving for the coefficient vector
+
+$$
+\hat{\boldsymbol{\beta}}
+$$
+
+using matrix operations.
+
+The familiar regression problem is therefore deeply connected to solving systems of linear equations.
+
+---
+
+# Exact Solutions vs Approximate Solutions
+
+In elementary mathematics, we often expect systems to have exact solutions.
+
+Machine Learning is different.
+
+Real-world datasets usually contain:
+
+- noise
+- measurement errors
+- imperfect relationships
+- redundant information
+
+So there may be no vector of parameters that satisfies every equation exactly.
+
+Instead, Machine Learning often asks:
+
+> **Which solution gets us as close as possible?**
+
+That idea leads directly to **least squares**, which forms the basis of Linear Regression.
+
+---
+
+# Overdetermined Systems
+
+Suppose we have many equations but only a few unknowns.
+
+For example,
+
+100 observations but only 3 model parameters.
+
+This creates an **overdetermined system**.
+
+There are more constraints than unknowns.
+
+Usually no exact solution exists.
+
+Linear Regression therefore finds the parameter values that minimize the overall error.
+
+---
+
+# Underdetermined Systems
+
+The opposite can also happen.
+
+Suppose we have fewer equations than unknowns.
+
+Then multiple solutions may satisfy the system.
+
+This is called an **underdetermined system**.
+
+Modern Machine Learning frequently operates in very high-dimensional spaces, so understanding this situation becomes increasingly important.
+
+---
+
+# Rank — A First Intuition
+
+The idea of **rank** tells us how much independent information a matrix contains.
+
+If several rows or columns carry redundant information, the effective dimensionality of the matrix is smaller than its apparent size.
+
+For example,
+
+$$
+\begin{bmatrix}
+1 & 2\\
+2 & 4
+\end{bmatrix}
+$$
+
+looks like a $begin:math:text$2\\times2$end:math:text$ matrix.
+
+But the second row is simply twice the first.
+
+So it does not contain completely new information.
+
+This matrix has lower rank.
+
+We will revisit this idea when discussing:
+
+- linear independence
+- basis
+- eigenvalues
+- dimensionality reduction
+
+---
+
+# Machine Learning Connection
+
+Systems of equations appear behind many algorithms.
+
+Examples include:
+
+- Linear Regression
+- Least Squares
+- PCA
+- Optimization
+- Matrix Factorization
+- Recommendation Systems
+
+The notation
+
+$$
+\mathbf{A}\mathbf{x}
+=
+\mathbf{b}
+$$
+
+is therefore not merely a classroom exercise.
+
+It is one of the fundamental patterns of applied Machine Learning.
+
+---
+
+# Summary
+
+A system of linear equations:
+
+- contains multiple relationships that must hold simultaneously
+- can be written compactly as
+
+$$
+\mathbf{A}\mathbf{x}
+=
+\mathbf{b}
+$$
+
+- may have one solution, no solution or infinitely many solutions
+- can be interpreted geometrically as intersections
+- forms the mathematical basis of least squares and Linear Regression
+
+Real-world Machine Learning frequently cannot solve systems exactly.
+
+Instead, it searches for the **best approximate solution**.
+
+---
+
+# Looking Ahead
+
+We have now seen vectors, matrices, transformations and systems of equations.
+
+The next question is more structural:
+
+> **How can a small collection of vectors describe an entire space?**
+
+That leads us to three closely related ideas:
+
+- Span
+- Basis
+- Linear Independence
