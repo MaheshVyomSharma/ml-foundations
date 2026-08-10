@@ -379,7 +379,7 @@ Two vectors are added by adding their corresponding components.
 
 For example,
 
-$$
+```math
 \mathbf{a} =
 \begin{bmatrix}
 2\\
@@ -391,11 +391,11 @@ $$
 4\\
 1
 \end{bmatrix}
-$$
+```
 
 Then,
 
-$$
+```math
 \mathbf{a}+\mathbf{b}
 =
 \begin{bmatrix}
@@ -407,7 +407,7 @@ $$
 6\\
 4
 \end{bmatrix}
-$$
+```
 
 Notice that addition happens element by element.
 
@@ -455,7 +455,7 @@ Subtraction measures the difference between two vectors.
 
 For example,
 
-$$
+```math
 \begin{bmatrix}
 7\\
 5
@@ -470,7 +470,7 @@ $$
 5\\
 4
 \end{bmatrix}
-$$
+```
 
 Instead of asking
 
@@ -500,25 +500,25 @@ A scalar can stretch or shrink a vector.
 
 Suppose
 
-$$
+```math
 \mathbf{x}
 =
 \begin{bmatrix}
 2\\
 4
 \end{bmatrix}
-$$
+```
 
 Multiplying by 3 gives
 
-$$
+```math
 3\mathbf{x}
 =
 \begin{bmatrix}
 6\\
 12
 \end{bmatrix}
-$$
+```
 
 Every component is multiplied by the same scalar.
 
@@ -555,24 +555,24 @@ The length of a vector is called its **magnitude** or **norm**.
 
 For
 
-$$
+```math
 \mathbf{x}
 =
 \begin{bmatrix}
 3\\
 4
 \end{bmatrix}
-$$
+```
 
 its magnitude is
 
-$$
+```math
 \lVert\mathbf{x}\rVert
 =
 \sqrt{3^2+4^2}
 =
 5
-$$
+```
 
 This is simply Pythagoras' theorem.
 
@@ -601,12 +601,12 @@ Instead of representing size, it represents only direction.
 
 For example,
 
-$$
+```math
 \begin{bmatrix}
 0\\
 1
 \end{bmatrix}
-$$
+```
 
 points upward with unit length.
 
@@ -681,7 +681,7 @@ The dot product gives us a numerical measure of how much two vectors point in th
 
 For two vectors
 
-$$
+```math
 \mathbf{a}=
 \begin{bmatrix}
 a_1\\
@@ -697,15 +697,15 @@ b_2\\
 \vdots\\
 b_n
 \end{bmatrix}
-$$
+```
 
 their dot product is
 
-$$
+```math
 \mathbf{a}\cdot\mathbf{b}
 =
 a_1b_1+a_2b_2+\cdots+a_nb_n
-$$
+```
 
 The process is simple.
 
@@ -720,7 +720,7 @@ The answer is **a scalar**, not another vector.
 
 Suppose
 
-$$
+```math
 \mathbf{a}=
 \begin{bmatrix}
 2\\
@@ -732,11 +732,11 @@ $$
 4\\
 5
 \end{bmatrix}
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{a}\cdot\mathbf{b}
 =
 2\times4
@@ -746,7 +746,7 @@ $$
 8+15
 =
 23
-$$
+```
 
 Notice that two vectors produced a single number.
 
@@ -782,14 +782,14 @@ It measures directional agreement.
 
 The dot product can also be written as
 
-$$
+```math
 \mathbf{a}\cdot\mathbf{b}
 =
 \lVert\mathbf{a}\rVert
 \\,
 \lVert\mathbf{b}\rVert
 \cos\theta
-$$
+```
 
 where
 
@@ -829,7 +829,7 @@ Orthogonality is one of the most important concepts in Linear Algebra.
 
 Suppose a model has learned weights
 
-$$
+```math
 \mathbf{w}
 =
 \begin{bmatrix}
@@ -837,11 +837,11 @@ $$
 1.2\\
 -0.8
 \end{bmatrix}
-$$
+```
 
 A new observation arrives
 
-$$
+```math
 \mathbf{x}
 =
 \begin{bmatrix}
@@ -849,13 +849,13 @@ $$
 68\\
 25
 \end{bmatrix}
-$$
+```
 
 The model computes
 
-$$
+```math
 z=\mathbf{w}^T\mathbf{x}
-$$
+```
 
 This is nothing more than a dot product.
 
@@ -935,27 +935,27 @@ This single idea will eventually explain Linear Regression, Neural Networks, Pri
 
 Suppose we have the vector
 
-$$
+```math
 \mathbf{x}=
 \begin{bmatrix}
 2\\
 3
 \end{bmatrix}
-$$
+```
 
 and the matrix
 
-$$
+```math
 \mathbf{A}=
 \begin{bmatrix}
 1 & 0\\
 0 & 2
 \end{bmatrix}
-$$
+```
 
 Multiplying them gives
 
-$$
+```math
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
@@ -971,27 +971,27 @@ $$
 2\\
 6
 \end{bmatrix}
-$$
+```
 
 Notice what happened.
 
 The original vector
 
-$$
+```math
 \begin{bmatrix}
 2\\
 3
 \end{bmatrix}
-$$
+```
 
 became
 
-$$
+```math
 \begin{bmatrix}
 2\\
 6
 \end{bmatrix}
-$$
+```
 
 The matrix stretched the second coordinate while leaving the first coordinate unchanged.
 
@@ -1005,40 +1005,40 @@ This is the real purpose of matrix multiplication.
 
 Suppose
 
-$$
+```math
 \mathbf{A}=
 \begin{bmatrix}
 a & b\\
 c & d
 \end{bmatrix}
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{x}=
 \begin{bmatrix}
 x_1\\
 x_2
 \end{bmatrix}
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
 ax_1+bx_2\\
 cx_1+dx_2
 \end{bmatrix}
-$$
+```
 
 Look carefully at the first output.
 
-$$
+```math
 ax_1+bx_2
-$$
+```
 
 That is simply the **dot product** between
 
@@ -1057,46 +1057,46 @@ Once you understand the dot product, matrix multiplication becomes much less mys
 
 Let
 
-$$
+```math
 \mathbf{A}=
 \begin{bmatrix}
 2 & 1\\
 3 & 4
 \end{bmatrix}
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{x}=
 \begin{bmatrix}
 5\\
 2
 \end{bmatrix}
-$$
+```
 
 The first element of the output is
 
-$$
+```math
 2\times5+1\times2=12
-$$
+```
 
 The second element is
 
-$$
+```math
 3\times5+4\times2=23
-$$
+```
 
 Therefore
 
-$$
+```math
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
 12\\
 23
 \end{bmatrix}
-$$
+```
 
 Notice that one vector has been transformed into another vector.
 
@@ -1108,27 +1108,27 @@ Matrices can also transform other matrices.
 
 Suppose
 
-$$
+```math
 \mathbf{A}=
 \begin{bmatrix}
 1 & 2\\
 3 & 4
 \end{bmatrix}
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{B}=
 \begin{bmatrix}
 5 & 6\\
 7 & 8
 \end{bmatrix}
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{A}\mathbf{B}
 =
 \begin{bmatrix}
@@ -1140,7 +1140,7 @@ $$
 19 & 22\\
 43 & 50
 \end{bmatrix}
-$$
+```
 
 Every element is computed by taking the dot product of
 
@@ -1157,31 +1157,31 @@ The number of columns in the first matrix **must equal** the number of rows in t
 
 If
 
-$$
+```math
 \mathbf{A}
 \text{ has shape }
 (m\times n)
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{B}
 \text{ has shape }
 (n\times p)
-$$
+```
 
 then
 
-$$
+```math
 \mathbf{A}\mathbf{B}
-$$
+```
 
 is valid and has shape
 
-$$
+```math
 (m\times p)
-$$
+```
 
 A useful memory trick is
 
@@ -1203,9 +1203,9 @@ This simple rule will save you from countless mistakes.
 
 With ordinary numbers,
 
-$$
+```math
 ab=ba
-$$
+```
 
 This property is called the **commutative property**.
 
@@ -1213,11 +1213,11 @@ Matrix multiplication is different.
 
 In general,
 
-$$
+```math
 \mathbf{A}\mathbf{B}
 \neq
 \mathbf{B}\mathbf{A}
-$$
+```
 
 Why?
 
@@ -1247,25 +1247,25 @@ Changing the order changes the transformation.
 
 Suppose a neural network receives an input vector
 
-$$
+```math
 \mathbf{x}
-$$
+```
 
 It also stores a matrix of learned weights
 
-$$
+```math
 \mathbf{W}
-$$
+```
 
 The first computation performed by the neuron is
 
-$$
+```math
 \mathbf{z}
 =
 \mathbf{W}\mathbf{x}
 +
 \mathbf{b}
-$$
+```
 
 where
 
@@ -1377,21 +1377,21 @@ A transformation $T$ is linear if it satisfies two rules.
 
 For vectors $\mathbf{u}$ and $\mathbf{v}$,
 
-$$
+```math
 T(\mathbf{u}+\mathbf{v})
 =
 T(\mathbf{u})
 +
 T(\mathbf{v})
-$$
+```
 
 and for any scalar $c$,
 
-$$
+```math
 T(c\mathbf{u})
 =
 cT(\mathbf{u})
-$$
+```
 
 These two properties are called:
 
@@ -1406,23 +1406,23 @@ Together they mean that the transformation respects vector addition and scalar m
 
 Suppose
 
-$$
+```math
 \mathbf{v}
 =
 \mathbf{a}
 +
 \mathbf{b}
-$$
+```
 
 If the transformation is linear, we can transform the parts separately:
 
-$$
+```math
 T(\mathbf{v})
 =
 T(\mathbf{a})
 +
 T(\mathbf{b})
-$$
+```
 
 This gives linear transformations a predictable structure.
 
@@ -1436,36 +1436,36 @@ They preserve straight lines and relative structure.
 
 Consider
 
-$$
+```math
 \mathbf{A}
 =
 \begin{bmatrix}
 2 & 0\\
 0 & 1
 \end{bmatrix}
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{x}
 =
 \begin{bmatrix}
 x\\
 y
 \end{bmatrix}
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
 2x\\
 y
 \end{bmatrix}
-$$
+```
 
 This transformation doubles the horizontal component while leaving the vertical component unchanged.
 
@@ -1479,36 +1479,36 @@ Every point changes according to the same rule.
 
 A simple scaling matrix is
 
-$$
+```math
 \mathbf{S}
 =
 \begin{bmatrix}
 2 & 0\\
 0 & 3
 \end{bmatrix}
-$$
+```
 
 Applying it to
 
-$$
+```math
 \mathbf{x}
 =
 \begin{bmatrix}
 x\\
 y
 \end{bmatrix}
-$$
+```
 
 gives
 
-$$
+```math
 \mathbf{S}\mathbf{x}
 =
 \begin{bmatrix}
 2x\\
 3y
 \end{bmatrix}
-$$
+```
 
 The x-direction is stretched by a factor of 2.
 
@@ -1520,18 +1520,18 @@ The y-direction is stretched by a factor of 3.
 
 Consider
 
-$$
+```math
 \mathbf{R}
 =
 \begin{bmatrix}
 -1 & 0\\
 0 & 1
 \end{bmatrix}
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{R}
 \begin{bmatrix}
 x\\
@@ -1542,7 +1542,7 @@ y
 -x\\
 y
 \end{bmatrix}
-$$
+```
 
 This reflects every point across the y-axis.
 
@@ -1558,14 +1558,14 @@ A two-dimensional rotation can also be represented using a matrix.
 
 For an angle $\theta$,
 
-$$
+```math
 \mathbf{R}
 =
 \begin{bmatrix}
 \cos\theta & -\sin\theta\\
 \sin\theta & \cos\theta
 \end{bmatrix}
-$$
+```
 
 Multiplying a vector by this matrix rotates it by $\theta$.
 
@@ -1579,18 +1579,18 @@ A shear transformation shifts one coordinate according to another.
 
 For example,
 
-$$
+```math
 \mathbf{H}
 =
 \begin{bmatrix}
 1 & k\\
 0 & 1
 \end{bmatrix}
-$$
+```
 
 gives
 
-$$
+```math
 \mathbf{H}
 \begin{bmatrix}
 x\\
@@ -1601,7 +1601,7 @@ y
 x+ky\\
 y
 \end{bmatrix}
-$$
+```
 
 The y-coordinate remains unchanged, while the x-coordinate shifts according to $y$.
 
@@ -1615,11 +1615,11 @@ A true linear transformation always maps the zero vector to the zero vector.
 
 That is,
 
-$$
+```math
 T(\mathbf{0})
 =
 \mathbf{0}
-$$
+```
 
 This property is important.
 
@@ -1627,13 +1627,13 @@ If a transformation shifts every point by some constant amount, it is not strict
 
 For example,
 
-$$
+```math
 \mathbf{y}
 =
 \mathbf{A}\mathbf{x}
 +
 \mathbf{b}
-$$
+```
 
 contains a translation due to $\mathbf{b}$.
 
@@ -1647,27 +1647,27 @@ This distinction appears constantly in Machine Learning.
 
 A neuron computes
 
-$$
+```math
 \mathbf{z}
 =
 \mathbf{W}\mathbf{x}
 +
 \mathbf{b}
-$$
+```
 
 The multiplication
 
-$$
+```math
 \mathbf{W}\mathbf{x}
-$$
+```
 
 is a linear transformation.
 
 The addition of
 
-$$
+```math
 \mathbf{b}
-$$
+```
 
 shifts the result.
 
@@ -1685,19 +1685,19 @@ Suppose a neural network contains several layers but no nonlinear activation fun
 
 Then we may have
 
-$$
+```math
 \mathbf{W}_3
 \mathbf{W}_2
 \mathbf{W}_1
 \mathbf{x}
-$$
+```
 
 Because multiplying matrices together produces another matrix, this becomes
 
-$$
+```math
 \mathbf{W}
 \mathbf{x}
-$$
+```
 
 for some combined matrix $\mathbf{W}$.
 
@@ -1753,9 +1753,9 @@ A linear transformation:
 
 When bias is added,
 
-$$
+```math
 \mathbf{W}\mathbf{x}+\mathbf{b}
-$$
+```
 
 the transformation becomes affine.
 
@@ -1783,15 +1783,15 @@ A system of linear equations contains several equations that must all be satisfi
 
 For example,
 
-$$
+```math
 x+y=5
-$$
+```
 
 and
 
-$$
+```math
 2x-y=1
-$$
+```
 
 We are looking for values of $x$ and $y$ that satisfy both equations simultaneously.
 
@@ -1801,54 +1801,54 @@ We are looking for values of $x$ and $y$ that satisfy both equations simultaneou
 
 From
 
-$$
+```math
 x+y=5
-$$
+```
 
 we get
 
-$$
+```math
 y=5-x
-$$
+```
 
 Substitute this into
 
-$$
+```math
 2x-y=1
-$$
+```
 
 to obtain
 
-$$
+```math
 2x-(5-x)=1
-$$
+```
 
 Therefore,
 
-$$
+```math
 3x=6
-$$
+```
 
 so
 
-$$
+```math
 x=2
-$$
+```
 
 and therefore,
 
-$$
+```math
 y=3
-$$
+```
 
 The solution is
 
-$$
+```math
 \begin{bmatrix}
 2\\
 3
 \end{bmatrix}
-$$
+```
 
 ---
 
@@ -1856,7 +1856,7 @@ $$
 
 The same system can be written compactly as
 
-$$
+```math
 \begin{bmatrix}
 1 & 1\\
 2 & -1
@@ -1870,15 +1870,15 @@ y
 5\\
 1
 \end{bmatrix}
-$$
+```
 
 or more generally,
 
-$$
+```math
 \mathbf{A}\mathbf{x}
 =
 \mathbf{b}
-$$
+```
 
 where
 
@@ -1896,17 +1896,17 @@ Each linear equation describes a line.
 
 For example,
 
-$$
+```math
 x+y=5
-$$
+```
 
 describes one line.
 
 And
 
-$$
+```math
 2x-y=1
-$$
+```
 
 describes another.
 
@@ -1950,28 +1950,28 @@ Every point on that line satisfies both equations.
 
 Many Machine Learning problems eventually produce equations of the form
 
-$$
+```math
 \mathbf{A}\mathbf{x}
 =
 \mathbf{b}
-$$
+```
 
 For example, Linear Regression can be expressed using matrix equations.
 
 In its closed-form solution,
 
-$$
+```math
 \hat{\boldsymbol{\beta}}
 =
 (\mathbf{X}^T\mathbf{X})^{-1}
 \mathbf{X}^T\mathbf{y}
-$$
+```
 
 the model is solving for the coefficient vector
 
-$$
+```math
 \hat{\boldsymbol{\beta}}
-$$
+```
 
 using matrix operations.
 
@@ -2042,12 +2042,12 @@ If several rows or columns carry redundant information, the effective dimensiona
 
 For example,
 
-$$
+```math
 \begin{bmatrix}
 1 & 2\\
 2 & 4
 \end{bmatrix}
-$$
+```
 
 looks like a $2\times2$ matrix.
 
@@ -2081,11 +2081,11 @@ Examples include:
 
 The notation
 
-$$
+```math
 \mathbf{A}\mathbf{x}
 =
 \mathbf{b}
-$$
+```
 
 is therefore not merely a classroom exercise.
 
@@ -2100,11 +2100,11 @@ A system of linear equations:
 - contains multiple relationships that must hold simultaneously
 - can be written compactly as
 
-$$
+```math
 \mathbf{A}\mathbf{x}
 =
 \mathbf{b}
-$$
+```
 
 - may have one solution, no solution or infinitely many solutions
 - can be interpreted geometrically as intersections
@@ -2150,29 +2150,29 @@ The set of all vectors that can be produced from such combinations is called the
 
 Suppose we have two vectors
 
-$$
+```math
 \mathbf{v}_1=
 \begin{bmatrix}
 1\\
 0
 \end{bmatrix}
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{v}_2=
 \begin{bmatrix}
 0\\
 1
 \end{bmatrix}
-$$
+```
 
 We may multiply each vector by any scalar and add the results:
 
-$$
+```math
 a\mathbf{v}_1+b\mathbf{v}_2
-$$
+```
 
 where $a$ and $b$ are scalars.
 
@@ -2180,7 +2180,7 @@ This is called a **linear combination**.
 
 For example,
 
-$$
+```math
 3\mathbf{v}_1+2\mathbf{v}_2
 =
 3
@@ -2199,7 +2199,7 @@ $$
 3\\
 2
 \end{bmatrix}
-$$
+```
 
 By choosing different values of $a$ and $b$, we can generate every point in the two-dimensional plane.
 
@@ -2211,19 +2211,19 @@ Therefore these two vectors **span** the plane.
 
 Consider just one non-zero vector:
 
-$$
+```math
 \mathbf{v}=
 \begin{bmatrix}
 1\\
 2
 \end{bmatrix}
-$$
+```
 
 Multiplying it by different scalars gives
 
-$$
+```math
 \ldots,-2\mathbf{v},-\mathbf{v},0,\mathbf{v},2\mathbf{v},3\mathbf{v},\ldots
-$$
+```
 
 Every resulting vector lies on the same straight line through the origin.
 
@@ -2252,29 +2252,29 @@ The number of genuinely independent directions determines the dimensionality of 
 
 Suppose
 
-$$
+```math
 \mathbf{v}_1=
 \begin{bmatrix}
 1\\
 2
 \end{bmatrix}
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{v}_2=
 \begin{bmatrix}
 2\\
 4
 \end{bmatrix}
-$$
+```
 
 The second vector is simply
 
-$$
+```math
 \mathbf{v}_2=2\mathbf{v}_1
-$$
+```
 
 Although we have two vectors, they point along the same direction.
 
@@ -2294,7 +2294,7 @@ Each vector contributes genuinely new information or a new direction.
 
 For example,
 
-$$
+```math
 \mathbf{v}_1=
 \begin{bmatrix}
 1\\
@@ -2306,7 +2306,7 @@ $$
 0\\
 1
 \end{bmatrix}
-$$
+```
 
 are linearly independent.
 
@@ -2320,7 +2320,7 @@ Together they introduce two distinct directions.
 
 Now consider
 
-$$
+```math
 \mathbf{v}_1=
 \begin{bmatrix}
 1\\
@@ -2332,13 +2332,13 @@ $$
 2\\
 4
 \end{bmatrix}
-$$
+```
 
 Since
 
-$$
+```math
 \mathbf{v}_2=2\mathbf{v}_1
-$$
+```
 
 the second vector does not introduce any new direction.
 
@@ -2352,23 +2352,23 @@ One contains redundant information.
 
 Vectors
 
-$$
+```math
 \mathbf{v}_1,\mathbf{v}_2,\ldots,\mathbf{v}_n
-$$
+```
 
 are linearly independent if the equation
 
-$$
+```math
 c_1\mathbf{v}_1+c_2\mathbf{v}_2+\cdots+c_n\mathbf{v}_n
 =
 \mathbf{0}
-$$
+```
 
 has only the trivial solution
 
-$$
+```math
 c_1=c_2=\cdots=c_n=0
-$$
+```
 
 If there is some non-zero combination of coefficients that produces the zero vector, the vectors are linearly dependent.
 
@@ -2388,11 +2388,11 @@ Suppose a dataset contains these features:
 
 The first two features contain the same information because
 
-$$
+```math
 \text{height in metres}
 =
 0.01\times\text{height in centimetres}
-$$
+```
 
 One feature is an exact linear combination of another.
 
@@ -2425,7 +2425,7 @@ A basis contains exactly enough directions to describe every vector in the space
 
 In two dimensions, the most familiar basis is
 
-$$
+```math
 \mathbf{e}_1=
 \begin{bmatrix}
 1\\
@@ -2437,29 +2437,29 @@ $$
 0\\
 1
 \end{bmatrix}
-$$
+```
 
 These are called the **standard basis vectors**.
 
 Any vector
 
-$$
+```math
 \mathbf{x}=
 \begin{bmatrix}
 x\\
 y
 \end{bmatrix}
-$$
+```
 
 can be written as
 
-$$
+```math
 \mathbf{x}=x\mathbf{e}_1+y\mathbf{e}_2
-$$
+```
 
 For example,
 
-$$
+```math
 \begin{bmatrix}
 3\\
 2
@@ -2476,7 +2476,7 @@ $$
 0\\
 1
 \end{bmatrix}
-$$
+```
 
 The numbers 3 and 2 are the coordinates of the vector relative to this basis.
 
@@ -2488,7 +2488,7 @@ The standard basis is convenient, but it is not the only possible basis.
 
 For example,
 
-$$
+```math
 \mathbf{u}_1=
 \begin{bmatrix}
 1\\
@@ -2500,7 +2500,7 @@ $$
 1\\
 -1
 \end{bmatrix}
-$$
+```
 
 also form a basis for the two-dimensional plane.
 
@@ -2574,13 +2574,13 @@ The **rank of a matrix** is the number of linearly independent directions repres
 
 Consider
 
-$$
+```math
 \mathbf{A}=
 \begin{bmatrix}
 1 & 2\\
 2 & 4
 \end{bmatrix}
-$$
+```
 
 The second row is twice the first.
 
@@ -2590,13 +2590,13 @@ The matrix has rank 1.
 
 Now consider
 
-$$
+```math
 \mathbf{B}=
 \begin{bmatrix}
 1 & 0\\
 0 & 1
 \end{bmatrix}
-$$
+```
 
 Its rows point in independent directions.
 
@@ -2610,9 +2610,9 @@ A matrix is called **full rank** when it contains the maximum possible number of
 
 For a square $n\times n$ matrix, full rank means
 
-$$
+```math
 \operatorname{rank}(\mathbf{A})=n
-$$
+```
 
 Full-rank matrices behave particularly well.
 
@@ -2727,9 +2727,9 @@ Two vectors are orthogonal if they meet at a right angle (90°).
 
 Mathematically,
 
-$$
+```math
 \mathbf{a}\cdot\mathbf{b}=0
-$$
+```
 
 provided neither vector is the zero vector.
 
@@ -2737,32 +2737,32 @@ This follows directly from the dot product equation.
 
 Since
 
-$$
+```math
 \mathbf{a}\cdot\mathbf{b}
 =
 \|\mathbf{a}\|
 \,
 \|\mathbf{b}\|
 \cos\theta
-$$
+```
 
 when
 
-$$
+```math
 \theta=90^\circ
-$$
+```
 
 we have
 
-$$
+```math
 \cos90^\circ=0
-$$
+```
 
 Therefore,
 
-$$
+```math
 \mathbf{a}\cdot\mathbf{b}=0
-$$
+```
 
 ---
 
@@ -2788,31 +2788,31 @@ Orthogonal vectors behave exactly this way.
 
 Consider
 
-$$
+```math
 \mathbf{a}
 =
 \begin{bmatrix}
 1\\
 0
 \end{bmatrix}
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{b}
 =
 \begin{bmatrix}
 0\\
 5
 \end{bmatrix}
-$$
+```
 
 Their dot product is
 
-$$
+```math
 1\times0+0\times5=0
-$$
+```
 
 Therefore the vectors are orthogonal.
 
@@ -2835,7 +2835,7 @@ An orthonormal set satisfies two conditions.
 
 The standard basis vectors
 
-$$
+```math
 \mathbf{e}_1
 =
 \begin{bmatrix}
@@ -2849,7 +2849,7 @@ $$
 0\\
 1
 \end{bmatrix}
-$$
+```
 
 form an orthonormal basis.
 
@@ -2886,22 +2886,22 @@ Projection measures exactly that useful component.
 
 The scalar projection of
 
-$$
+```math
 \mathbf{a}
-$$
+```
 
 onto
 
-$$
+```math
 \mathbf{b}
-$$
+```
 
 is
 
-$$
+```math
 \frac{\mathbf{a}\cdot\mathbf{b}}
 {\|\mathbf{b}\|}
-$$
+```
 
 It answers the question
 
@@ -2917,21 +2917,21 @@ Sometimes we want the projected vector itself.
 
 The vector projection is
 
-$$
+```math
 \operatorname{proj}_{\mathbf{b}}(\mathbf{a})
 =
 \frac{\mathbf{a}\cdot\mathbf{b}}
 {\mathbf{b}\cdot\mathbf{b}}
 \mathbf{b}
-$$
+```
 
 The result is another vector.
 
 It points in the direction of
 
-$$
+```math
 \mathbf{b}
-$$
+```
 
 and has exactly the correct length.
 
@@ -2971,7 +2971,7 @@ The most familiar norm is the Euclidean norm.
 
 For
 
-$$
+```math
 \mathbf{x}
 =
 \begin{bmatrix}
@@ -2980,15 +2980,15 @@ x_2\\
 \vdots\\
 x_n
 \end{bmatrix}
-$$
+```
 
 the L2 norm is
 
-$$
+```math
 \|\mathbf{x}\|_2
 =
 \sqrt{x_1^2+x_2^2+\cdots+x_n^2}
-$$
+```
 
 This is simply the ordinary geometric length.
 
@@ -2998,7 +2998,7 @@ This is simply the ordinary geometric length.
 
 Another important norm is the L1 norm.
 
-$$
+```math
 \|\mathbf{x}\|_1
 =
 |x_1|
@@ -3008,7 +3008,7 @@ $$
 \cdots
 +
 |x_n|
-$$
+```
 
 Instead of measuring straight-line distance, it sums the absolute values.
 
@@ -3020,11 +3020,11 @@ It is often called the **Manhattan distance** because it resembles travelling th
 
 The infinity norm measures only the largest absolute component.
 
-$$
+```math
 \|\mathbf{x}\|_\infty
 =
 \max_i |x_i|
-$$
+```
 
 It ignores every other coordinate.
 
@@ -3054,23 +3054,23 @@ Distance is simply the norm of their difference.
 
 For vectors
 
-$$
+```math
 \mathbf{a}
-$$
+```
 
 and
 
-$$
+```math
 \mathbf{b}
-$$
+```
 
 the Euclidean distance is
 
-$$
+```math
 d(\mathbf{a},\mathbf{b})
 =
 \|\mathbf{a}-\mathbf{b}\|
-$$
+```
 
 Notice how vector subtraction and norms combine naturally.
 
@@ -3088,17 +3088,17 @@ it means the smallest distance according to a chosen norm.
 
 Most commonly,
 
-$$
+```math
 L_2
-$$
+```
 
 distance is used.
 
 Sometimes
 
-$$
+```math
 L_1
-$$
+```
 
 distance performs better.
 
@@ -3142,14 +3142,14 @@ We want to compare their direction, not their length.
 
 Cosine similarity normalizes the dot product.
 
-$$
+```math
 \cos\theta
 =
 \frac{\mathbf{a}\cdot\mathbf{b}}
 {\|\mathbf{a}\|
 \,
 \|\mathbf{b}\|}
-$$
+```
 
 Notice that this is simply the dot product divided by both magnitudes.
 
@@ -3309,31 +3309,31 @@ Therefore,
 
 Suppose
 
-$$
+```math
 \mathbf{A}
-$$
+```
 
 is a square matrix.
 
 A vector
 
-$$
+```math
 \mathbf{v}
-$$
+```
 
 is called an eigenvector if
 
-$$
+```math
 \mathbf{A}\mathbf{v}
 =
 \lambda\mathbf{v}
-$$
+```
 
 where
 
-$$
+```math
 \lambda
-$$
+```
 
 is called the **eigenvalue**.
 
@@ -3345,9 +3345,9 @@ the vector still points in exactly the same direction.
 
 Only its length changes by a factor of
 
-$$
+```math
 \lambda
-$$
+```
 
 ---
 
@@ -3355,17 +3355,17 @@ $$
 
 Suppose
 
-$$
+```math
 \lambda=3
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{A}\mathbf{v}
 =
 3\mathbf{v}
-$$
+```
 
 The vector becomes three times longer.
 
@@ -3375,17 +3375,17 @@ Its direction stays the same.
 
 Suppose
 
-$$
+```math
 \lambda=\frac12
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{A}\mathbf{v}
 =
 \frac12\mathbf{v}
-$$
+```
 
 The vector shrinks to half its length.
 
@@ -3397,9 +3397,9 @@ its direction is unchanged.
 
 Suppose
 
-$$
+```math
 \lambda=-2
-$$
+```
 
 Now the vector becomes twice as long,
 
@@ -3411,9 +3411,9 @@ Negative eigenvalues flip vectors.
 
 Suppose
 
-$$
+```math
 \lambda=1
-$$
+```
 
 The vector remains exactly the same.
 
@@ -3423,9 +3423,9 @@ Neither its direction nor its length changes.
 
 Suppose
 
-$$
+```math
 \lambda=0
-$$
+```
 
 The transformation completely collapses that direction.
 
@@ -3437,29 +3437,29 @@ The vector disappears to the origin.
 
 Consider
 
-$$
+```math
 \mathbf{A}
 =
 \begin{bmatrix}
 2 & 0\\
 0 & 1
 \end{bmatrix}
-$$
+```
 
 Take the vector
 
-$$
+```math
 \mathbf{v}
 =
 \begin{bmatrix}
 1\\
 0
 \end{bmatrix}
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{A}\mathbf{v}
 =
 \begin{bmatrix}
@@ -3472,13 +3472,13 @@ $$
 1\\
 0
 \end{bmatrix}
-$$
+```
 
 So
 
-$$
+```math
 \lambda=2
-$$
+```
 
 The direction did not change.
 
@@ -3486,18 +3486,18 @@ Only the length doubled.
 
 Now try
 
-$$
+```math
 \mathbf{v}
 =
 \begin{bmatrix}
 0\\
 1
 \end{bmatrix}
-$$
+```
 
 Then
 
-$$
+```math
 \mathbf{A}\mathbf{v}
 =
 \begin{bmatrix}
@@ -3510,15 +3510,15 @@ $$
 0\\
 1
 \end{bmatrix}
-$$
+```
 
 So this is another eigenvector.
 
 Its eigenvalue is
 
-$$
+```math
 1
-$$
+```
 
 ---
 
@@ -3580,9 +3580,9 @@ That stable pattern is an eigenvector.
 
 The associated eigenvalue is
 
-$$
+```math
 1
-$$
+```
 
 Although modern search engines are much more sophisticated, the original PageRank algorithm introduced millions of engineers to eigenvectors.
 
@@ -3627,11 +3627,11 @@ Once you think this way,
 
 the equation
 
-$$
+```math
 \mathbf{A}\mathbf{v}
 =
 \lambda\mathbf{v}
-$$
+```
 
 becomes almost obvious.
 
@@ -3693,9 +3693,9 @@ A dataset with
 
 is represented by a
 
-$$
+```math
 10000\times200
-$$
+```
 
 matrix.
 
@@ -3711,13 +3711,13 @@ Every matrix, regardless of its shape, can be decomposed into three simpler matr
 
 Mathematically,
 
-$$
+```math
 \mathbf{A}
 =
 \mathbf{U}
 \mathbf{\Sigma}
 \mathbf{V}^T
-$$
+```
 
 This equation may look intimidating.
 
@@ -3741,13 +3741,13 @@ Complex transformations become combinations of simple ones.
 
 The decomposition
 
-$$
+```math
 \mathbf{A}
 =
 \mathbf{U}
 \mathbf{\Sigma}
 \mathbf{V}^T
-$$
+```
 
 contains three parts.
 
@@ -3771,9 +3771,9 @@ Only the perspective changes.
 
 The middle matrix
 
-$$
+```math
 \mathbf{\Sigma}
-$$
+```
 
 contains non-negative numbers called **singular values**.
 
@@ -3809,9 +3809,9 @@ A remarkably complicated matrix can therefore be understood using only rotations
 
 The diagonal entries of
 
-$$
+```math
 \mathbf{\Sigma}
-$$
+```
 
 are called **singular values**.
 
@@ -4130,11 +4130,11 @@ Think back to the models studied in Part I.
 
 Linear Regression computes
 
-$$
+```math
 \hat{y}
 =
 \mathbf{w}^T\mathbf{x}+b
-$$
+```
 
 Everything here is Linear Algebra.
 
@@ -4152,11 +4152,11 @@ Logistic Regression begins exactly the same way.
 
 It first computes
 
-$$
+```math
 z
 =
 \mathbf{w}^T\mathbf{x}+b
-$$
+```
 
 Only after that does it apply the sigmoid function.
 
@@ -4174,9 +4174,9 @@ To answer that question it computes distances between vectors.
 
 Distance is simply
 
-$$
+```math
 \|\mathbf{x}-\mathbf{y}\|
-$$
+```
 
 ---
 
@@ -4227,13 +4227,13 @@ The mathematics, however, remains surprisingly familiar.
 
 Each layer performs
 
-$$
+```math
 \mathbf{z}
 =
 \mathbf{W}\mathbf{x}
 +
 \mathbf{b}
-$$
+```
 
 followed by a nonlinear activation.
 
@@ -4273,9 +4273,9 @@ Even attention begins with a dot product.
 
 The famous attention equation
 
-$$
+```math
 QK^T
-$$
+```
 
 is simply a large collection of dot products.
 
@@ -4347,4 +4347,5 @@ Without Calculus, models cannot learn.
 Without Linear Algebra, they cannot represent what they have learned.
 
 Together, these two branches of mathematics form the backbone of modern Machine Learning.
+
 ---
