@@ -373,35 +373,35 @@ Two vectors are added by adding their corresponding components.
 
 For example,
 
-$begin:math:display$
-\\mathbf\{a\} \=
-\\begin\{bmatrix\}
-2\\\\
+$$
+\mathbf{a} =
+\begin{bmatrix}
+2\\
 3
-\\end\{bmatrix\}\,
-\\qquad
-\\mathbf\{b\} \=
-\\begin\{bmatrix\}
-4\\\\
+\end{bmatrix}\,
+\qquad
+\mathbf{b} =
+\begin{bmatrix}
+4\\
 1
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 Then,
 
-$begin:math:display$
-\\mathbf\{a\}\+\\mathbf\{b\}
-\=
-\\begin\{bmatrix\}
-2\+4\\\\
-3\+1
-\\end\{bmatrix\}
-\=
-\\begin\{bmatrix\}
-6\\\\
+$$
+\mathbf{a}+\mathbf{b}
+=
+\begin{bmatrix}
+2+4\\
+3+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+6\\
 4
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 Notice that addition happens element by element.
 
@@ -449,22 +449,22 @@ Subtraction measures the difference between two vectors.
 
 For example,
 
-$begin:math:display$
-\\begin\{bmatrix\}
-7\\\\
+$$
+\begin{bmatrix}
+7\\
 5
-\\end\{bmatrix\}
-\-
-\\begin\{bmatrix\}
-2\\\\
+\end{bmatrix}
+-
+\begin{bmatrix}
+2\\
 1
-\\end\{bmatrix\}
-\=
-\\begin\{bmatrix\}
-5\\\\
+\end{bmatrix}
+=
+\begin{bmatrix}
+5\\
 4
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 Instead of asking
 
@@ -494,25 +494,25 @@ A scalar can stretch or shrink a vector.
 
 Suppose
 
-$begin:math:display$
-\\mathbf\{x\}
-\=
-\\begin\{bmatrix\}
-2\\\\
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+2\\
 4
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 Multiplying by 3 gives
 
-$begin:math:display$
-3\\mathbf\{x\}
-\=
-\\begin\{bmatrix\}
-6\\\\
+$$
+3\mathbf{x}
+=
+\begin{bmatrix}
+6\\
 12
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 Every component is multiplied by the same scalar.
 
@@ -549,24 +549,24 @@ The length of a vector is called its **magnitude** or **norm**.
 
 For
 
-$begin:math:display$
-\\mathbf\{x\}
-\=
-\\begin\{bmatrix\}
-3\\\\
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+3\\
 4
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 its magnitude is
 
-$begin:math:display$
-\|\|\\mathbf\{x\}\|\|
-\=
-\\sqrt\{3\^2\+4\^2\}
-\=
+$$
+\|\|\mathbf{x}\|\|
+=
+\sqrt{3\^2+4\^2}
+=
 5
-$end:math:display$
+$$
 
 This is simply Pythagoras' theorem.
 
@@ -595,12 +595,12 @@ Instead of representing size, it represents only direction.
 
 For example,
 
-$begin:math:display$
-\\begin\{bmatrix\}
-0\\\\
+$$
+\begin{bmatrix}
+0\\
 1
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 points upward with unit length.
 
@@ -675,31 +675,31 @@ The dot product gives us a numerical measure of how much two vectors point in th
 
 For two vectors
 
-$begin:math:display$
-\\mathbf\{a\}\=
-\\begin\{bmatrix\}
-a\_1\\\\
-a\_2\\\\
-\\vdots\\\\
+$$
+\mathbf{a}=
+\begin{bmatrix}
+a\_1\\
+a\_2\\
+\vdots\\
 a\_n
-\\end\{bmatrix\}\,
-\\qquad
-\\mathbf\{b\}\=
-\\begin\{bmatrix\}
-b\_1\\\\
-b\_2\\\\
-\\vdots\\\\
+\end{bmatrix}\,
+\qquad
+\mathbf{b}=
+\begin{bmatrix}
+b\_1\\
+b\_2\\
+\vdots\\
 b\_n
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 their dot product is
 
-$begin:math:display$
-\\mathbf\{a\}\\cdot\\mathbf\{b\}
-\=
-a\_1b\_1\+a\_2b\_2\+\\cdots\+a\_nb\_n
-$end:math:display$
+$$
+\mathbf{a}\cdot\mathbf{b}
+=
+a\_1b\_1+a\_2b\_2+\cdots+a\_nb\_n
+$$
 
 The process is simple.
 
@@ -714,33 +714,33 @@ The answer is **a scalar**, not another vector.
 
 Suppose
 
-$begin:math:display$
-\\mathbf\{a\}\=
-\\begin\{bmatrix\}
-2\\\\
+$$
+\mathbf{a}=
+\begin{bmatrix}
+2\\
 3
-\\end\{bmatrix\}\,
-\\qquad
-\\mathbf\{b\}\=
-\\begin\{bmatrix\}
-4\\\\
+\end{bmatrix}\,
+\qquad
+\mathbf{b}=
+\begin{bmatrix}
+4\\
 5
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 Then
 
-$begin:math:display$
-\\mathbf\{a\}\\cdot\\mathbf\{b\}
-\=
-2\\times4
-\+
-3\\times5
-\=
-8\+15
-\=
+$$
+\mathbf{a}\cdot\mathbf{b}
+=
+2\times4
++
+3\times5
+=
+8+15
+=
 23
-$end:math:display$
+$$
 
 Notice that two vectors produced a single number.
 
@@ -776,20 +776,20 @@ It measures directional agreement.
 
 The dot product can also be written as
 
-$begin:math:display$
-\\mathbf\{a\}\\cdot\\mathbf\{b\}
-\=
-\|\|\\mathbf\{a\}\|\|
-\\\,
-\|\|\\mathbf\{b\}\|\|
-\\cos\\theta
-$end:math:display$
+$$
+\mathbf{a}\cdot\mathbf{b}
+=
+\|\|\mathbf{a}\|\|
+\\,
+\|\|\mathbf{b}\|\|
+\cos\theta
+$$
 
 where
 
-- $begin:math:text$\|\|\\mathbf\{a\}\|\|$end:math:text$ is the magnitude of vector **a**
-- $begin:math:text$\|\|\\mathbf\{b\}\|\|$end:math:text$ is the magnitude of vector **b**
-- $begin:math:text$\\theta$end:math:text$ is the angle between them
+- $begin:math:text$\|\|\mathbf{a}\|\|$end:math:text$ is the magnitude of vector **a**
+- $begin:math:text$\|\|\mathbf{b}\|\|$end:math:text$ is the magnitude of vector **b**
+- $begin:math:text$\theta$end:math:text$ is the angle between them
 
 This equation reveals something profound.
 
@@ -823,33 +823,33 @@ Orthogonality is one of the most important concepts in Linear Algebra.
 
 Suppose a model has learned weights
 
-$begin:math:display$
-\\mathbf\{w\}
-\=
-\\begin\{bmatrix\}
-0\.5\\\\
-1\.2\\\\
-\-0\.8
-\\end\{bmatrix\}
-$end:math:display$
+$$
+\mathbf{w}
+=
+\begin{bmatrix}
+0\.5\\
+1\.2\\
+-0\.8
+\end{bmatrix}
+$$
 
 A new observation arrives
 
-$begin:math:display$
-\\mathbf\{x\}
-\=
-\\begin\{bmatrix\}
-170\\\\
-68\\\\
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+170\\
+68\\
 25
-\\end\{bmatrix\}
-$end:math:display$
+\end{bmatrix}
+$$
 
 The model computes
 
-$begin:math:display$
-z\=\\mathbf\{w\}\^T\\mathbf\{x\}
-$end:math:display$
+$$
+z=\mathbf{w}\^T\mathbf{x}
+$$
 
 This is nothing more than a dot product.
 
@@ -930,7 +930,7 @@ Suppose we have the vector
 $$
 \mathbf{x}=
 \begin{bmatrix}
-2\\
+2\
 3
 \end{bmatrix}
 $$
@@ -940,7 +940,7 @@ and the matrix
 $$
 \mathbf{A}=
 \begin{bmatrix}
-1 & 0\\
+1 & 0\
 0 & 2
 \end{bmatrix}
 $$
@@ -951,16 +951,16 @@ $$
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
-1 & 0\\
+1 & 0\
 0 & 2
 \end{bmatrix}
 \begin{bmatrix}
-2\\
+2\
 3
 \end{bmatrix}
 =
 \begin{bmatrix}
-2\\
+2\
 6
 \end{bmatrix}
 $$
@@ -971,7 +971,7 @@ The original vector
 
 $$
 \begin{bmatrix}
-2\\
+2\
 3
 \end{bmatrix}
 $$
@@ -980,7 +980,7 @@ became
 
 $$
 \begin{bmatrix}
-2\\
+2\
 6
 \end{bmatrix}
 $$
@@ -1000,7 +1000,7 @@ Suppose
 $$
 \mathbf{A}=
 \begin{bmatrix}
-a & b\\
+a & b\
 c & d
 \end{bmatrix}
 $$
@@ -1010,7 +1010,7 @@ and
 $$
 \mathbf{x}=
 \begin{bmatrix}
-x_1\\
+x_1\
 x_2
 \end{bmatrix}
 $$
@@ -1021,7 +1021,7 @@ $$
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
-ax_1+bx_2\\
+ax_1+bx_2\
 cx_1+dx_2
 \end{bmatrix}
 $$
@@ -1052,7 +1052,7 @@ Let
 $$
 \mathbf{A}=
 \begin{bmatrix}
-2 & 1\\
+2 & 1\
 3 & 4
 \end{bmatrix}
 $$
@@ -1062,7 +1062,7 @@ and
 $$
 \mathbf{x}=
 \begin{bmatrix}
-5\\
+5\
 2
 \end{bmatrix}
 $$
@@ -1085,7 +1085,7 @@ $$
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
-12\\
+12\
 23
 \end{bmatrix}
 $$
@@ -1103,7 +1103,7 @@ Suppose
 $$
 \mathbf{A}=
 \begin{bmatrix}
-1 & 2\\
+1 & 2\
 3 & 4
 \end{bmatrix}
 $$
@@ -1113,7 +1113,7 @@ and
 $$
 \mathbf{B}=
 \begin{bmatrix}
-5 & 6\\
+5 & 6\
 7 & 8
 \end{bmatrix}
 $$
@@ -1124,12 +1124,12 @@ $$
 \mathbf{A}\mathbf{B}
 =
 \begin{bmatrix}
-1\times5+2\times7 & 1\times6+2\times8\\
+1\times5+2\times7 & 1\times6+2\times8\
 3\times5+4\times7 & 3\times6+4\times8
 \end{bmatrix}
 =
 \begin{bmatrix}
-19 & 22\\
+19 & 22\
 43 & 50
 \end{bmatrix}
 $$
