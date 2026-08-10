@@ -4024,7 +4024,7 @@ That connection is the perfect way to conclude this chapter.
 
 ---
 
-# Linear Algebra Through the Eyes of an ML Engineer
+# Linear Algebra from an ML Engineering perspective
 
 At the beginning of this chapter, we said:
 
