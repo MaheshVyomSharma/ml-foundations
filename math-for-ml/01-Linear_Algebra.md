@@ -567,9 +567,9 @@ $$
 its magnitude is
 
 $$
-\|\|\mathbf{x}\|\|
+\lVert\mathbf{x}\rVert
 =
-\sqrt{3\^2+4\^2}
+\sqrt{3^2+4^2}
 =
 5
 $$
@@ -684,18 +684,18 @@ For two vectors
 $$
 \mathbf{a}=
 \begin{bmatrix}
-a\_1\\
-a\_2\\
+a_1\\
+a_2\\
 \vdots\\
-a\_n
+a_n
 \end{bmatrix}\,
 \qquad
 \mathbf{b}=
 \begin{bmatrix}
-b\_1\\
-b\_2\\
+b_1\\
+b_2\\
 \vdots\\
-b\_n
+b_n
 \end{bmatrix}
 $$
 
@@ -704,7 +704,7 @@ their dot product is
 $$
 \mathbf{a}\cdot\mathbf{b}
 =
-a\_1b\_1+a\_2b\_2+\cdots+a\_nb\_n
+a_1b_1+a_2b_2+\cdots+a_nb_n
 $$
 
 The process is simple.
@@ -785,17 +785,17 @@ The dot product can also be written as
 $$
 \mathbf{a}\cdot\mathbf{b}
 =
-\|\|\mathbf{a}\|\|
+\lVert\mathbf{a}\rVert
 \\,
-\|\|\mathbf{b}\|\|
+\lVert\mathbf{b}\rVert
 \cos\theta
 $$
 
 where
 
-- $begin:math:text$\|\|\mathbf{a}\|\|$end:math:text$ is the magnitude of vector **a**
-- $begin:math:text$\|\|\mathbf{b}\|\|$end:math:text$ is the magnitude of vector **b**
-- $begin:math:text$\theta$end:math:text$ is the angle between them
+- $\lVert\mathbf{a}\rVert$ is the magnitude of vector **a**
+- $\lVert\mathbf{b}\rVert$ is the magnitude of vector **b**
+- $\theta$ is the angle between them
 
 This equation reveals something profound.
 
@@ -833,9 +833,9 @@ $$
 \mathbf{w}
 =
 \begin{bmatrix}
-0\.5\\
-1\.2\\
--0\.8
+0.5\\
+1.2\\
+-0.8
 \end{bmatrix}
 $$
 
@@ -854,7 +854,7 @@ $$
 The model computes
 
 $$
-z=\mathbf{w}\^T\mathbf{x}
+z=\mathbf{w}^T\mathbf{x}
 $$
 
 This is nothing more than a dot product.
@@ -938,7 +938,7 @@ Suppose we have the vector
 $$
 \mathbf{x}=
 \begin{bmatrix}
-2\
+2\\
 3
 \end{bmatrix}
 $$
@@ -948,7 +948,7 @@ and the matrix
 $$
 \mathbf{A}=
 \begin{bmatrix}
-1 & 0\
+1 & 0\\
 0 & 2
 \end{bmatrix}
 $$
@@ -959,16 +959,16 @@ $$
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
-1 & 0\
+1 & 0\\
 0 & 2
 \end{bmatrix}
 \begin{bmatrix}
-2\
+2\\
 3
 \end{bmatrix}
 =
 \begin{bmatrix}
-2\
+2\\
 6
 \end{bmatrix}
 $$
@@ -979,7 +979,7 @@ The original vector
 
 $$
 \begin{bmatrix}
-2\
+2\\
 3
 \end{bmatrix}
 $$
@@ -988,7 +988,7 @@ became
 
 $$
 \begin{bmatrix}
-2\
+2\\
 6
 \end{bmatrix}
 $$
@@ -1008,7 +1008,7 @@ Suppose
 $$
 \mathbf{A}=
 \begin{bmatrix}
-a & b\
+a & b\\
 c & d
 \end{bmatrix}
 $$
@@ -1018,7 +1018,7 @@ and
 $$
 \mathbf{x}=
 \begin{bmatrix}
-x_1\
+x_1\\
 x_2
 \end{bmatrix}
 $$
@@ -1029,7 +1029,7 @@ $$
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
-ax_1+bx_2\
+ax_1+bx_2\\
 cx_1+dx_2
 \end{bmatrix}
 $$
@@ -1060,7 +1060,7 @@ Let
 $$
 \mathbf{A}=
 \begin{bmatrix}
-2 & 1\
+2 & 1\\
 3 & 4
 \end{bmatrix}
 $$
@@ -1070,7 +1070,7 @@ and
 $$
 \mathbf{x}=
 \begin{bmatrix}
-5\
+5\\
 2
 \end{bmatrix}
 $$
@@ -1093,7 +1093,7 @@ $$
 \mathbf{A}\mathbf{x}
 =
 \begin{bmatrix}
-12\
+12\\
 23
 \end{bmatrix}
 $$
@@ -1111,7 +1111,7 @@ Suppose
 $$
 \mathbf{A}=
 \begin{bmatrix}
-1 & 2\
+1 & 2\\
 3 & 4
 \end{bmatrix}
 $$
@@ -1121,7 +1121,7 @@ and
 $$
 \mathbf{B}=
 \begin{bmatrix}
-5 & 6\
+5 & 6\\
 7 & 8
 \end{bmatrix}
 $$
@@ -1132,12 +1132,12 @@ $$
 \mathbf{A}\mathbf{B}
 =
 \begin{bmatrix}
-1\times5+2\times7 & 1\times6+2\times8\
+1\times5+2\times7 & 1\times6+2\times8\\
 3\times5+4\times7 & 3\times6+4\times8
 \end{bmatrix}
 =
 \begin{bmatrix}
-19 & 22\
+19 & 22\\
 43 & 50
 \end{bmatrix}
 $$
@@ -1373,9 +1373,9 @@ But it does so in a structured way.
 
 #### What Makes a Transformation Linear?
 
-A transformation $begin:math:text$T$end:math:text$ is linear if it satisfies two rules.
+A transformation $T$ is linear if it satisfies two rules.
 
-For vectors $begin:math:text$\\mathbf\{u\}$end:math:text$ and $begin:math:text$\\mathbf\{v\}$end:math:text$,
+For vectors $\mathbf{u}$ and $\mathbf{v}$,
 
 $$
 T(\mathbf{u}+\mathbf{v})
@@ -1385,7 +1385,7 @@ T(\mathbf{u})
 T(\mathbf{v})
 $$
 
-and for any scalar $begin:math:text$c$end:math:text$,
+and for any scalar $c$,
 
 $$
 T(c\mathbf{u})
@@ -1556,7 +1556,7 @@ The y-coordinate remains unchanged.
 
 A two-dimensional rotation can also be represented using a matrix.
 
-For an angle $begin:math:text$\\theta$end:math:text$,
+For an angle $\theta$,
 
 $$
 \mathbf{R}
@@ -1567,7 +1567,7 @@ $$
 \end{bmatrix}
 $$
 
-Multiplying a vector by this matrix rotates it by $begin:math:text$\\theta$end:math:text$.
+Multiplying a vector by this matrix rotates it by $\theta$.
 
 This is a beautiful example of how geometry becomes matrix multiplication.
 
@@ -1603,7 +1603,7 @@ y
 \end{bmatrix}
 $$
 
-The y-coordinate remains unchanged, while the x-coordinate shifts according to $begin:math:text$y$end:math:text$.
+The y-coordinate remains unchanged, while the x-coordinate shifts according to $y$.
 
 A square can become a slanted parallelogram.
 
@@ -1635,7 +1635,7 @@ $$
 \mathbf{b}
 $$
 
-contains a translation due to $begin:math:text$\\mathbf\{b\}$end:math:text$.
+contains a translation due to $\mathbf{b}$.
 
 Mathematically, this is called an **affine transformation**, not a purely linear transformation.
 
@@ -1699,7 +1699,7 @@ $$
 \mathbf{x}
 $$
 
-for some combined matrix $begin:math:text$\\mathbf\{W\}$end:math:text$.
+for some combined matrix $\mathbf{W}$.
 
 So stacking many purely linear transformations still produces only another linear transformation.
 
@@ -1793,7 +1793,7 @@ $$
 2x-y=1
 $$
 
-We are looking for values of $begin:math:text$x$end:math:text$ and $begin:math:text$y$end:math:text$ that satisfy both equations simultaneously.
+We are looking for values of $x$ and $y$ that satisfy both equations simultaneously.
 
 ---
 
@@ -1882,9 +1882,9 @@ $$
 
 where
 
-- $begin:math:text$\\mathbf\{A\}$end:math:text$ contains the coefficients
-- $begin:math:text$\\mathbf\{x\}$end:math:text$ contains the unknowns
-- $begin:math:text$\\mathbf\{b\}$end:math:text$ contains the results
+- $\mathbf{A}$ contains the coefficients
+- $\mathbf{x}$ contains the unknowns
+- $\mathbf{b}$ contains the results
 
 This compact equation is one of the most important forms in Linear Algebra.
 
@@ -2049,7 +2049,7 @@ $$
 \end{bmatrix}
 $$
 
-looks like a $begin:math:text$2\\times2$end:math:text$ matrix.
+looks like a $2\times2$ matrix.
 
 But the second row is simply twice the first.
 
@@ -2174,7 +2174,7 @@ $$
 a\mathbf{v}_1+b\mathbf{v}_2
 $$
 
-where $$a$$ and $$b$$ are scalars.
+where $a$ and $b$ are scalars.
 
 This is called a **linear combination**.
 
@@ -2201,7 +2201,7 @@ $$
 \end{bmatrix}
 $$
 
-By choosing different values of $begin:math:text$a$end:math:text$ and $begin:math:text$b$end:math:text$, we can generate every point in the two-dimensional plane.
+By choosing different values of $a$ and $b$, we can generate every point in the two-dimensional plane.
 
 Therefore these two vectors **span** the plane.
 
@@ -2608,7 +2608,7 @@ The matrix has rank 2.
 
 A matrix is called **full rank** when it contains the maximum possible number of independent rows or columns.
 
-For a square $begin:math:text$n\\times n$end:math:text$ matrix, full rank means
+For a square $n\times n$ matrix, full rank means
 
 $$
 \operatorname{rank}(\mathbf{A})=n
