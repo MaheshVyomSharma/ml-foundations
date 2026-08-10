@@ -2705,3 +2705,512 @@ These ideas will connect Linear Algebra directly to similarity measures, least s
 
 ---
 
+# Orthogonality
+
+One of the most useful geometric relationships between vectors is **orthogonality**.
+
+Two vectors are orthogonal if they meet at a right angle (90°).
+
+Mathematically,
+
+$$
+\mathbf{a}\cdot\mathbf{b}=0
+$$
+
+provided neither vector is the zero vector.
+
+This follows directly from the dot product equation.
+
+Since
+
+$$
+\mathbf{a}\cdot\mathbf{b}
+=
+\|\mathbf{a}\|
+\,
+\|\mathbf{b}\|
+\cos\theta
+$$
+
+when
+
+$$
+\theta=90^\circ
+$$
+
+we have
+
+$$
+\cos90^\circ=0
+$$
+
+Therefore,
+
+$$
+\mathbf{a}\cdot\mathbf{b}=0
+$$
+
+---
+
+# Why Orthogonality Matters
+
+Orthogonal vectors are completely independent directions.
+
+Imagine walking north.
+
+Now imagine walking east.
+
+Walking north contributes nothing to your eastward movement.
+
+Likewise, walking east contributes nothing to your northward movement.
+
+The two directions do not interfere with each other.
+
+Orthogonal vectors behave exactly this way.
+
+---
+
+# Example
+
+Consider
+
+$$
+\mathbf{a}
+=
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix}
+$$
+
+and
+
+$$
+\mathbf{b}
+=
+\begin{bmatrix}
+0\\
+5
+\end{bmatrix}
+$$
+
+Their dot product is
+
+$$
+1\times0+0\times5=0
+$$
+
+Therefore the vectors are orthogonal.
+
+Notice that their lengths are irrelevant.
+
+Only the angle matters.
+
+---
+
+# Orthonormal Vectors
+
+Sometimes vectors are not only perpendicular but also have unit length.
+
+Such vectors are called **orthonormal**.
+
+An orthonormal set satisfies two conditions.
+
+1. Every vector has length 1.
+2. Every pair of vectors is orthogonal.
+
+The standard basis vectors
+
+$$
+\mathbf{e}_1
+=
+\begin{bmatrix}
+1\\
+0
+\end{bmatrix},
+\qquad
+\mathbf{e}_2
+=
+\begin{bmatrix}
+0\\
+1
+\end{bmatrix}
+$$
+
+form an orthonormal basis.
+
+Orthonormal bases greatly simplify many calculations.
+
+---
+
+# Projection
+
+Suppose someone shines a flashlight onto the floor.
+
+The shadow represents only the part of an object lying in a particular direction.
+
+Projection works in much the same way.
+
+A **projection** measures how much of one vector lies along another.
+
+---
+
+# Intuition
+
+Suppose
+
+- one vector represents the direction you are walking
+- another represents the direction of a strong wind
+
+The wind only helps you if part of it blows in your direction.
+
+Projection measures exactly that useful component.
+
+---
+
+# Scalar Projection
+
+The scalar projection of
+
+$$
+\mathbf{a}
+$$
+
+onto
+
+$$
+\mathbf{b}
+$$
+
+is
+
+$$
+\frac{\mathbf{a}\cdot\mathbf{b}}
+{\|\mathbf{b}\|}
+$$
+
+It answers the question
+
+> **"How much of vector a lies along vector b?"**
+
+The result is a scalar.
+
+---
+
+# Vector Projection
+
+Sometimes we want the projected vector itself.
+
+The vector projection is
+
+$$
+\operatorname{proj}_{\mathbf{b}}(\mathbf{a})
+=
+\frac{\mathbf{a}\cdot\mathbf{b}}
+{\mathbf{b}\cdot\mathbf{b}}
+\mathbf{b}
+$$
+
+The result is another vector.
+
+It points in the direction of
+
+$$
+\mathbf{b}
+$$
+
+and has exactly the correct length.
+
+---
+
+# Why Projection Matters
+
+Projection appears everywhere.
+
+Examples include:
+
+- Least Squares
+- Linear Regression
+- PCA
+- Computer Graphics
+- Signal Processing
+
+Many optimization algorithms repeatedly project vectors into different subspaces.
+
+---
+
+# Vector Norms
+
+Earlier we introduced magnitude.
+
+In Linear Algebra, magnitude is usually called a **norm**.
+
+A norm measures the size of a vector.
+
+Different applications use different norms.
+
+---
+
+# L2 Norm (Euclidean Norm)
+
+The most familiar norm is the Euclidean norm.
+
+For
+
+$$
+\mathbf{x}
+=
+\begin{bmatrix}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{bmatrix}
+$$
+
+the L2 norm is
+
+$$
+\|\mathbf{x}\|_2
+=
+\sqrt{x_1^2+x_2^2+\cdots+x_n^2}
+$$
+
+This is simply the ordinary geometric length.
+
+---
+
+# L1 Norm
+
+Another important norm is the L1 norm.
+
+$$
+\|\mathbf{x}\|_1
+=
+|x_1|
++
+|x_2|
++
+\cdots
++
+|x_n|
+$$
+
+Instead of measuring straight-line distance, it sums the absolute values.
+
+It is often called the **Manhattan distance** because it resembles travelling through city streets arranged in a grid.
+
+---
+
+# L∞ Norm
+
+The infinity norm measures only the largest absolute component.
+
+$$
+\|\mathbf{x}\|_\infty
+=
+\max_i |x_i|
+$$
+
+It ignores every other coordinate.
+
+---
+
+# Why Different Norms Exist
+
+Different notions of "distance" make sense in different problems.
+
+Suppose two people live across a park.
+
+A bird flies directly.
+
+A pedestrian follows the roads.
+
+Both travel between the same locations.
+
+But they measure distance differently.
+
+Norms formalize these different notions of distance.
+
+---
+
+# Distance Between Vectors
+
+Distance is simply the norm of their difference.
+
+For vectors
+
+$$
+\mathbf{a}
+$$
+
+and
+
+$$
+\mathbf{b}
+$$
+
+the Euclidean distance is
+
+$$
+d(\mathbf{a},\mathbf{b})
+=
+\|\mathbf{a}-\mathbf{b}\|
+$$
+
+Notice how vector subtraction and norms combine naturally.
+
+---
+
+# Machine Learning Connection — K-Nearest Neighbours
+
+K-Nearest Neighbours (KNN) predicts by finding observations closest to a query point.
+
+But what does "closest" mean?
+
+Usually,
+
+it means the smallest distance according to a chosen norm.
+
+Most commonly,
+
+$$
+L_2
+$$
+
+distance is used.
+
+Sometimes
+
+$$
+L_1
+$$
+
+distance performs better.
+
+The choice of norm can therefore change the model's predictions.
+
+---
+
+# Machine Learning Connection — Regularization
+
+Norms also appear inside loss functions.
+
+For example,
+
+Lasso Regression minimizes an L1 penalty.
+
+Ridge Regression minimizes an L2 penalty.
+
+We already studied these algorithms in Part I.
+
+Now we can finally understand why those penalties are called
+
+> **L1 Regularization**
+
+and
+
+> **L2 Regularization**
+
+They literally penalize the corresponding vector norms of the parameter vector.
+
+---
+
+# Machine Learning Connection — Cosine Similarity
+
+Earlier we saw that the dot product measures alignment.
+
+Sometimes magnitude is not important.
+
+Suppose two documents use identical words, but one document is much longer.
+
+We want to compare their direction, not their length.
+
+Cosine similarity normalizes the dot product.
+
+$$
+\cos\theta
+=
+\frac{\mathbf{a}\cdot\mathbf{b}}
+{\|\mathbf{a}\|
+\,
+\|\mathbf{b}\|}
+$$
+
+Notice that this is simply the dot product divided by both magnitudes.
+
+Cosine similarity therefore measures orientation instead of size.
+
+This metric is heavily used in:
+
+- Information Retrieval
+- Search Engines
+- NLP
+- Embeddings
+- Large Language Models
+
+---
+
+# Bringing Everything Together
+
+Notice how several ideas now connect.
+
+```text
+Vector Subtraction
+        │
+        ▼
+Distance
+        │
+        ▼
+Nearest Neighbour Algorithms
+
+Dot Product
+        │
+        ▼
+Projection
+        │
+        ▼
+Cosine Similarity
+        │
+        ▼
+Embeddings
+
+Norms
+        │
+        ▼
+Regularization
+```
+
+What originally appeared to be separate topics are actually pieces of one larger picture.
+
+---
+
+# Summary
+
+Orthogonality describes perpendicular directions.
+
+Projection extracts the component of one vector along another.
+
+Norms measure vector size.
+
+Distance measures how far vectors are from each other.
+
+These ideas underpin similarity measures, optimization, dimensionality reduction and many Machine Learning algorithms.
+
+---
+
+# Looking Ahead
+
+There is one final question.
+
+Some directions inside a transformation are special.
+
+Instead of changing direction,
+
+they merely stretch or shrink.
+
+Those remarkable directions lead us to one of the most beautiful concepts in Linear Algebra:
+
+> **Eigenvalues and Eigenvectors**
+
+---
