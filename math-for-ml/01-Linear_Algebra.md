@@ -2611,7 +2611,7 @@ A matrix is called **full rank** when it contains the maximum possible number of
 For a square $n\times n$ matrix, full rank means
 
 ```math
-\operatorname{rank}(\mathbf{A})=n
+\mathrm{rank}(\mathbf{A})=n
 ```
 
 Full-rank matrices behave particularly well.
@@ -2918,7 +2918,7 @@ Sometimes we want the projected vector itself.
 The vector projection is
 
 ```math
-\operatorname{proj}_{\mathbf{b}}(\mathbf{a})
+\mathrm{proj}_{\mathbf{b}}(\mathbf{a})
 =
 \frac{\mathbf{a}\cdot\mathbf{b}}
 {\mathbf{b}\cdot\mathbf{b}}

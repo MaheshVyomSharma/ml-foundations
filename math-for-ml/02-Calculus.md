@@ -3047,7 +3047,7 @@ We now have the mathematical pieces needed to understand one of the most importa
 
 Suppose a model has parameters:
 
-```math 
+```math
 \boldsymbol{\theta}
 =
 (\theta_1,\theta_2,\ldots,\theta_n)
@@ -3055,13 +3055,13 @@ Suppose a model has parameters:
 
 and a loss function:
 
-```math 
+```math
 L(\boldsymbol{\theta})
 ```
 
 Training seeks parameter values that make the loss as small as possible:
 
-```math 
+```math
 \boldsymbol{\theta}^{*}
 =
 \arg\min_{\boldsymbol{\theta}}
@@ -3084,7 +3084,7 @@ Instead of trying every possible parameter combination, it repeatedly asks:
 
 From the previous section:
 
-```math 
+```math
 \nabla L
 ```
 
@@ -3130,13 +3130,13 @@ The gradient itself may contain:
 
 Consider a single parameter:
 
-```math 
+```math
 w
 ```
 
 with update:
 
-```math 
+```math
 w
 \leftarrow
 w
@@ -3157,7 +3157,7 @@ The loss increases as $w$ increases locally.
 
 Therefore the update subtracts a positive quantity:
 
-```math 
+```math
 w
 \leftarrow
 w-\text{positive amount}
@@ -3167,7 +3167,7 @@ so $w$ decreases.
 
 Now suppose:
 
-```math 
+```math
 \frac{dL}{dw}
 <
 0
@@ -3175,7 +3175,7 @@ Now suppose:
 
 Then:
 
-```math 
+```math
 w
 \leftarrow
 w-\text{negative amount}
@@ -3183,7 +3183,7 @@ w-\text{negative amount}
 
 which is equivalent to:
 
-```math 
+```math
 w
 \leftarrow
 w+\text{positive amount}
@@ -3245,7 +3245,7 @@ At the initial point:
 
 Apply the update:
 
-```math 
+```math
 w_1
 =
 4-(0.1)(8)
@@ -3253,7 +3253,7 @@ w_1
 
 Therefore:
 
-```math 
+```math
 w_1
 =
 3.2
@@ -3269,7 +3269,7 @@ L(4)
 
 to:
 
-```math 
+```math
 L(3.2)
 =
 10.24
@@ -3283,7 +3283,7 @@ The loss decreased.
 
 At:
 
-```math 
+```math
 w_1
 =
 3.2
@@ -3291,7 +3291,7 @@ w_1
 
 the gradient is:
 
-```math 
+```math
 \frac{dL}{dw}
 =
 6.4
@@ -3299,7 +3299,7 @@ the gradient is:
 
 Update again:
 
-```math 
+```math
 w_2
 =
 3.2-(0.1)(6.4)
@@ -3307,7 +3307,7 @@ w_2
 
 so:
 
-```math 
+```math
 w_2
 =
 2.56
@@ -3315,7 +3315,7 @@ w_2
 
 The loss becomes:
 
-```math 
+```math
 L(2.56)
 =
 6.5536
@@ -3334,7 +3334,7 @@ w = 1.638
 
 The parameter progressively approaches:
 
-```math 
+```math
 w
 =
 0
@@ -3405,7 +3405,7 @@ The learning rate scales the size of the update.
 
 A useful interpretation is:
 
-```math 
+```math
 \text{parameter update}
 =
 \text{direction and slope information}
@@ -3419,7 +3419,7 @@ A useful interpretation is:
 
 If $\eta$ is very small:
 
-```math id="l6mh71"
+```math
 \eta
 \ll
 1
@@ -3483,7 +3483,7 @@ The gradient must be recalculated after every update because it describes the sl
 
 Suppose:
 
-```math 
+```math
 \nabla L(\boldsymbol{\theta}_0)
 ```
 
@@ -3547,7 +3547,7 @@ so the parameter updates become small:
 
 and therefore:
 
-```math 
+```math
 \boldsymbol{\theta}_{t+1}
 \approx
 \boldsymbol{\theta}_t
@@ -3577,7 +3577,7 @@ The gradient can be calculated using different amounts of training data.
 
 Conceptually:
 
-```math 
+```math
 \text{all training examples}
 \rightarrow
 \nabla L
@@ -3589,7 +3589,7 @@ This produces a stable estimate of the gradient but can be computationally expen
 
 **Stochastic gradient descent (SGD)** performs an update using one training example at a time:
 
-```math 
+```math
 \text{one example}
 \rightarrow
 \nabla L
@@ -3601,7 +3601,7 @@ This produces frequent but noisy updates.
 
 **Mini-batch gradient descent** uses a small subset of training examples:
 
-```math 
+```math
 \text{mini-batch}
 \rightarrow
 \nabla L
@@ -3619,7 +3619,7 @@ Mini-batch training is widely used in modern deep learning.
 
 Suppose a dataset contains:
 
-```math 
+```math
 N
 ```
 
@@ -3641,7 +3641,7 @@ One complete pass through all training examples is called an **epoch**.
 
 Therefore:
 
-```math 
+```math
 1\text{ epoch}
 \approx
 \frac{N}{B}
@@ -3664,7 +3664,7 @@ Gradient descent itself is not a predictive model.
 
 It does not define:
 
-```math 
+```math
 \hat{y}
 ```
 
@@ -3698,7 +3698,7 @@ Gradient descent provides the mechanism through which many machine-learning mode
 
 The complete training loop can now be expressed as:
 
-```math 
+```math
 \mathbf{x}
 \rightarrow
 \hat{y}
@@ -3733,7 +3733,7 @@ These components perform different jobs:
 
 Gradient descent supplies the fundamental update idea:
 
-```math 
+```math
 \boldsymbol{\theta}
 \leftarrow
 \boldsymbol{\theta}
@@ -3745,7 +3745,7 @@ More advanced optimizers such as momentum-based methods, RMSProp, and Adam modif
 
 The conceptual chain is therefore:
 
-```math 
+```math
 \text{error}
 \rightarrow
 \text{calculus}

@@ -1744,11 +1744,11 @@ P(X=2)=\frac{1}{4}
 
 The complete probability distribution is therefore:
 
-| \(x\) | \(P(X=x)\) |
+| $x$ | $P(X=x)$ |
 |---:|---:|
-| 0 | \(0.25\) |
-| 1 | \(0.50\) |
-| 2 | \(0.25\) |
+| 0 | $0.25$ |
+| 1 | $0.50$ |
+| 2 | $0.25$ |
 
 A valid PMF must satisfy two conditions.
 
@@ -1898,11 +1898,11 @@ Return to the two-coin example.
 
 The PMF is:
 
-| \(x\) | \(P(X=x)\) |
+| $x$ | $P(X=x)$ |
 |---:|---:|
-| 0 | \(0.25\) |
-| 1 | \(0.50\) |
-| 2 | \(0.25\) |
+| 0 | $0.25$ |
+| 1 | $0.50$ |
+| 2 | $0.25$ |
 
 Then:
 
@@ -2303,7 +2303,7 @@ We therefore need another quantity.
 The **variance** measures the expected squared distance of a random variable from its mean.
 
 ```math
-\operatorname{Var}(X)
+\mathrm{Var}(X)
 =
 \mathbb{E}\left[(X-\mu)^2\right]
 ```
@@ -2318,7 +2318,7 @@ we can also write:
 
 ```math
 \boxed{
-\operatorname{Var}(X)
+\mathrm{Var}(X)
 =
 \mathbb{E}
 \left[
@@ -2338,7 +2338,7 @@ Therefore:
 ```math
 \sigma^2
 =
-\operatorname{Var}(X)
+\mathrm{Var}(X)
 ```
 
 ---
@@ -2383,7 +2383,7 @@ Expanding the variance expression gives a useful identity:
 
 ```math
 \boxed{
-\operatorname{Var}(X)
+\mathrm{Var}(X)
 =
 \mathbb{E}[X^2]
 -
@@ -2419,7 +2419,7 @@ The **standard deviation** is:
 \boxed{
 \sigma
 =
-\sqrt{\operatorname{Var}(X)}
+\sqrt{\mathrm{Var}(X)}
 }
 ```
 
@@ -2483,7 +2483,7 @@ The covariance between random variables \(X\) and \(Y\) is:
 
 ```math
 \boxed{
-\operatorname{Cov}(X,Y)
+\mathrm{Cov}(X,Y)
 =
 \mathbb{E}
 \left[
@@ -2515,7 +2515,7 @@ Covariance asks:
 If larger values of \(X\) tend to occur with larger values of \(Y\):
 
 ```math
-\operatorname{Cov}(X,Y)>0
+\mathrm{Cov}(X,Y)>0
 ```
 
 For example:
@@ -2537,7 +2537,7 @@ Both variables tend to move together.
 If larger values of \(X\) tend to occur with smaller values of \(Y\):
 
 ```math
-\operatorname{Cov}(X,Y)<0
+\mathrm{Cov}(X,Y)<0
 ```
 
 For example:
@@ -2559,7 +2559,7 @@ The variables tend to move in opposite directions.
 If:
 
 ```math
-\operatorname{Cov}(X,Y)=0
+\mathrm{Cov}(X,Y)=0
 ```
 
 there is no **linear covariance relationship** between the variables.
@@ -2583,7 +2583,7 @@ Clearly, \(Y\) depends completely on \(X\).
 Yet positive and negative values of \(X\) can cancel in the covariance calculation, potentially producing:
 
 ```math
-\operatorname{Cov}(X,Y)=0
+\mathrm{Cov}(X,Y)=0
 ```
 
 So:
@@ -2615,7 +2615,7 @@ This distinction becomes important when working with nonlinear relationships in 
 There is an elegant connection:
 
 ```math
-\operatorname{Cov}(X,X)
+\mathrm{Cov}(X,X)
 =
 \mathbb{E}
 \left[
@@ -2629,9 +2629,9 @@ Therefore:
 
 ```math
 \boxed{
-\operatorname{Cov}(X,X)
+\mathrm{Cov}(X,X)
 =
-\operatorname{Var}(X)
+\mathrm{Var}(X)
 }
 ```
 
@@ -2664,11 +2664,11 @@ These relationships can be arranged into a **covariance matrix**:
 ```math
 \Sigma=
 \begin{bmatrix}
-\operatorname{Var}(X_1) &
-\operatorname{Cov}(X_1,X_2) &
+\mathrm{Var}(X_1) &
+\mathrm{Cov}(X_1,X_2) &
 \cdots \\
-\operatorname{Cov}(X_2,X_1) &
-\operatorname{Var}(X_2) &
+\mathrm{Cov}(X_2,X_1) &
+\mathrm{Var}(X_2) &
 \cdots \\
 \vdots &
 \vdots &
@@ -2679,9 +2679,9 @@ These relationships can be arranged into a **covariance matrix**:
 Notice the diagonal:
 
 ```math
-\operatorname{Cov}(X_i,X_i)
+\mathrm{Cov}(X_i,X_i)
 =
-\operatorname{Var}(X_i)
+\mathrm{Var}(X_i)
 ```
 
 Therefore, the diagonal of a covariance matrix contains the **variances of the individual variables**.
@@ -2691,9 +2691,9 @@ The off-diagonal elements contain their pairwise covariances.
 Also:
 
 ```math
-\operatorname{Cov}(X,Y)
+\mathrm{Cov}(X,Y)
 =
-\operatorname{Cov}(Y,X)
+\mathrm{Cov}(Y,X)
 ```
 
 so the covariance matrix is symmetric:
@@ -2723,7 +2723,7 @@ The Pearson correlation coefficient is:
 \rho_{X,Y}
 =
 \frac{
-\operatorname{Cov}(X,Y)
+\mathrm{Cov}(X,Y)
 }{
 \sigma_X\sigma_Y
 }
@@ -2775,13 +2775,13 @@ These quantities appear everywhere in machine learning.
 **Variance** describes uncertainty or spread:
 
 ```math
-\operatorname{Var}(X)
+\mathrm{Var}(X)
 ```
 
 **Covariance** describes how two quantities vary together:
 
 ```math
-\operatorname{Cov}(X,Y)
+\mathrm{Cov}(X,Y)
 ```
 
 **Correlation** gives a scale-independent measure of their linear relationship:
@@ -2840,7 +2840,7 @@ Starting with a random variable \(X\):
 \rightarrow
 \begin{cases}
 \mathbb{E}[X] & \text{Where is it centered?}\\
-\operatorname{Var}(X) & \text{How widely does it spread?}
+\mathrm{Var}(X) & \text{How widely does it spread?}
 \end{cases}
 }
 ```
@@ -2851,7 +2851,7 @@ With two variables:
 \boxed{
 (X,Y)
 \rightarrow
-\operatorname{Cov}(X,Y)
+\mathrm{Cov}(X,Y)
 \rightarrow
 \text{How do they move together?}
 }
@@ -2997,7 +2997,7 @@ and:
 
 ```math
 \boxed{
-\operatorname{Var}(X)=p(1-p)
+\mathrm{Var}(X)=p(1-p)
 }
 ```
 
@@ -3038,7 +3038,7 @@ The target can therefore be modeled as a Bernoulli random variable conditioned o
 ```math
 Y\mid X
 \sim
-\operatorname{Bernoulli}(p)
+\mathrm{Bernoulli}(p)
 ```
 
 This is precisely the probabilistic structure underlying **logistic regression**.
@@ -3086,7 +3086,7 @@ Then:
 ```math
 X
 \sim
-\operatorname{Binomial}(n,p)
+\mathrm{Binomial}(n,p)
 ```
 
 The probability of obtaining exactly \(k\) successes is:
@@ -3168,7 +3168,7 @@ So there is about a 20.5% probability of obtaining exactly six heads in ten fair
 For:
 
 ```math
-X\sim\operatorname{Binomial}(n,p)
+X\sim\mathrm{Binomial}(n,p)
 ```
 
 the expected value is:
@@ -3183,7 +3183,7 @@ and the variance is:
 
 ```math
 \boxed{
-\operatorname{Var}(X)=np(1-p)
+\mathrm{Var}(X)=np(1-p)
 }
 ```
 
@@ -3652,7 +3652,7 @@ Let:
 ```math
 X
 \sim
-\operatorname{Poisson}(\lambda)
+\mathrm{Poisson}(\lambda)
 ```
 
 where:
@@ -3693,7 +3693,7 @@ and:
 
 ```math
 \boxed{
-\operatorname{Var}(X)=\lambda
+\mathrm{Var}(X)=\lambda
 }
 ```
 
@@ -3720,7 +3720,7 @@ A useful way to distinguish these distributions is to ask what kind of random qu
 | Question | Typical Distribution |
 |---|---|
 | Did one binary event happen? | Bernoulli |
-| How many successes occurred in \(n\) binary trials? | Binomial |
+| How many successes occurred in $n$ binary trials? | Binomial |
 | How is a continuous quantity distributed around a mean? | Gaussian |
 | How many events occurred within an interval? | Poisson |
 
@@ -3748,7 +3748,7 @@ Choosing a distribution imposes assumptions about how the data behaves.
 For example, saying:
 
 ```math
-Y\sim\operatorname{Bernoulli}(p)
+Y\sim\mathrm{Bernoulli}(p)
 ```
 
 means \(Y\) has two possible outcomes.
@@ -4485,7 +4485,7 @@ Expectation and variance summarized those distributions:
 \boxed{
 \begin{aligned}
 \mathbb{E}[X] &\rightarrow \text{centre}\\
-\operatorname{Var}(X) &\rightarrow \text{spread}
+\mathrm{Var}(X) &\rightarrow \text{spread}
 \end{aligned}
 }
 ```
@@ -4494,7 +4494,7 @@ Covariance described relationships between variables:
 
 ```math
 \boxed{
-\operatorname{Cov}(X,Y)
+\mathrm{Cov}(X,Y)
 \rightarrow
 \text{joint variation}
 }
@@ -4620,4 +4620,3 @@ Statistics, which comes next, tackles the complementary problem:
 > **Given the finite data we actually observed, what can we reliably infer about the larger process that generated it?**
 
 That is the bridge from **Probability** to **Statistics**.
-
