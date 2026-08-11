@@ -6630,3 +6630,722 @@ weight updates
 The single most important takeaway from this chapter is:
 
 > **Machine learning does not improve merely because it knows that it is wrong. It improves because calculus tells it how its parameters contributed to that wrongness and in which direction they should change.**
+
+---
+
+## 11. Integration and Its Role in Machine Learning
+
+Most of this chapter has focused on **differentiation** because derivatives and gradients directly drive the optimization of many machine-learning models.
+
+But calculus has another major branch: **integration**.
+
+If differentiation asks:
+
+> **How fast is something changing?**
+
+integration asks:
+
+> **How much has accumulated?**
+
+These two ideas are deeply connected.
+
+In machine learning, integration appears especially in **probability, statistics, continuous probability distributions, expected values, Bayesian methods, and probabilistic models**.
+
+---
+
+### Integration as Accumulation
+
+Suppose we have a function:
+
+```math
+y
+=
+f(x)
+```
+
+The definite integral:
+
+```math
+\int_a^b f(x)\,dx
+```
+
+represents the accumulated quantity described by $f(x)$ between $x=a$ and $x=b$.
+
+Geometrically, when $f(x)$ is non-negative, this can be interpreted as the **area under the curve** between those two points.
+
+Conceptually:
+
+```text
+f(x)
+ ^
+ |              /\
+ |            /    \
+ |          /        \
+ |________/____________\______> x
+          a            b
+
+       area under curve
+             ↓
+        definite integral
+```
+
+Instead of examining the function at one point, integration combines contributions across an entire interval.
+
+---
+
+### From Small Pieces to a Whole
+
+Imagine dividing the interval from $a$ to $b$ into many tiny pieces.
+
+Each piece has width:
+
+```math
+\Delta x
+```
+
+A small rectangle under the curve has approximately the area:
+
+```math
+f(x_i)\Delta x
+```
+
+Adding many such rectangles gives:
+
+```math
+\sum_i f(x_i)\Delta x
+```
+
+As the rectangles become arbitrarily narrow, the approximation approaches the exact integral:
+
+```math
+\int_a^b f(x)\,dx
+```
+
+So integration can be understood as:
+
+```text
+tiny contributions
+→ add them together
+→ make the pieces infinitesimally small
+→ total accumulation
+```
+
+This idea becomes particularly important when dealing with **continuous quantities**.
+
+---
+
+### Indefinite Integrals and Antiderivatives
+
+An **indefinite integral** asks for a function whose derivative produces the original function.
+
+Suppose:
+
+```math
+f(x)
+=
+2x
+```
+
+We know:
+
+```math
+\frac{d}{dx}x^2
+=
+2x
+```
+
+Therefore:
+
+```math
+\int 2x\,dx
+=
+x^2+C
+```
+
+where $C$ is the **constant of integration**.
+
+Why is $C$ necessary?
+
+Because:
+
+```math
+\frac{d}{dx}(x^2)
+=
+2x
+```
+
+but also:
+
+```math
+\frac{d}{dx}(x^2+5)
+=
+2x
+```
+
+and:
+
+```math
+\frac{d}{dx}(x^2-100)
+=
+2x
+```
+
+Differentiation removes constants.
+
+Integration therefore cannot determine which constant was originally present.
+
+So:
+
+```math
+\int f(x)\,dx
+=
+F(x)+C
+```
+
+where:
+
+```math
+F'(x)
+=
+f(x)
+```
+
+The function $F(x)$ is called an **antiderivative** of $f(x)$.
+
+---
+
+### Definite Integrals
+
+A definite integral has explicit boundaries:
+
+```math
+\int_a^b f(x)\,dx
+```
+
+If $F(x)$ is an antiderivative of $f(x)$, then:
+
+```math
+\int_a^b f(x)\,dx
+=
+F(b)-F(a)
+```
+
+For example:
+
+```math
+\int_0^2 2x\,dx
+```
+
+Since:
+
+```math
+\int 2x\,dx
+=
+x^2+C
+```
+
+we evaluate:
+
+```math
+\int_0^2 2x\,dx
+=
+\left[x^2\right]_0^2
+```
+
+Therefore:
+
+```math
+=
+2^2-0^2
+```
+
+so:
+
+```math
+\int_0^2 2x\,dx
+=
+4
+```
+
+Unlike an indefinite integral, a definite integral produces a specific accumulated quantity over an interval.
+
+---
+
+### The Fundamental Theorem of Calculus
+
+Differentiation and integration may initially appear to perform opposite kinds of tasks.
+
+Differentiation breaks behaviour down into local rates of change.
+
+Integration accumulates local contributions into a total.
+
+The **Fundamental Theorem of Calculus** connects them.
+
+If:
+
+```math
+F(x)
+=
+\int_a^x f(t)\,dt
+```
+
+then:
+
+```math
+F'(x)
+=
+f(x)
+```
+
+Conversely, if:
+
+```math
+F'(x)
+=
+f(x)
+```
+
+then:
+
+```math
+\int_a^b f(x)\,dx
+=
+F(b)-F(a)
+```
+
+So differentiation and integration are, in an important sense, inverse operations.
+
+A useful mental model is:
+
+```text
+differentiation
+whole behaviour → local rate of change
+
+integration
+local contributions → accumulated whole
+```
+
+---
+
+### Why Integration Appears in Probability
+
+Integration becomes especially important in machine learning because ML relies heavily on probability.
+
+For a **discrete** random variable, probabilities can be added.
+
+For example:
+
+```math
+P(X\in A)
+=
+\sum_{x\in A}P(X=x)
+```
+
+But a continuous random variable can take infinitely many possible values.
+
+Instead of summing individual probabilities, we integrate a **probability density function**.
+
+Suppose:
+
+```math
+p(x)
+```
+
+is the probability density of a continuous random variable $X$.
+
+Then the probability that $X$ lies between $a$ and $b$ is:
+
+```math
+P(a\le X\le b)
+=
+\int_a^b p(x)\,dx
+```
+
+This is one of the most important applications of integration in statistics and machine learning.
+
+The probability is literally represented by the **area under the probability-density curve** over the desired interval.
+
+---
+
+### Probability Density Is Not Probability
+
+This distinction is important.
+
+For a continuous random variable:
+
+```math
+p(x)
+```
+
+is a **density**, not the probability of observing exactly $x$.
+
+In fact, for a continuous variable:
+
+```math
+P(X=x)
+=
+0
+```
+
+for any exact individual value $x$.
+
+Probability arises from an interval:
+
+```math
+P(a\le X\le b)
+=
+\int_a^b p(x)\,dx
+```
+
+So:
+
+```text
+density at a point
+≠
+probability at that point
+```
+
+Instead:
+
+```text
+area under density over an interval
+=
+probability of that interval
+```
+
+---
+
+### Normalization of Probability Distributions
+
+A probability distribution must assign total probability equal to one.
+
+For a continuous probability density:
+
+```math
+\int_{-\infty}^{\infty}
+p(x)\,dx
+=
+1
+```
+
+This means the total area under the probability-density curve must equal one.
+
+Conceptually:
+
+```text
+entire probability density
+        ↓
+integrate over all possible values
+        ↓
+        1
+```
+
+This requirement is called **normalization**.
+
+Many probabilistic models involve constructing functions and ensuring that they integrate to one so they represent valid probability distributions.
+
+---
+
+### Cumulative Distribution Function
+
+Integration also connects a probability density function to its **cumulative distribution function**, or CDF.
+
+The CDF is:
+
+```math
+F(x)
+=
+P(X\le x)
+```
+
+For a continuous random variable:
+
+```math
+F(x)
+=
+\int_{-\infty}^{x}
+p(t)\,dt
+```
+
+The CDF therefore accumulates probability from the far left of the distribution up to $x$.
+
+And by the Fundamental Theorem of Calculus:
+
+```math
+\frac{dF(x)}{dx}
+=
+p(x)
+```
+
+This gives a beautiful connection:
+
+```text
+PDF
+↓ integrate
+CDF
+
+CDF
+↓ differentiate
+PDF
+```
+
+Probability therefore uses both major branches of calculus together.
+
+---
+
+### Expected Value
+
+Integration also allows us to calculate the expected value of a continuous random variable.
+
+For a discrete variable:
+
+```math
+\mathbb{E}[X]
+=
+\sum_x xP(X=x)
+```
+
+For a continuous variable, the sum becomes an integral:
+
+```math
+\mathbb{E}[X]
+=
+\int_{-\infty}^{\infty}
+x\,p(x)\,dx
+```
+
+More generally, for some function $g(X)$:
+
+```math
+\mathbb{E}[g(X)]
+=
+\int_{-\infty}^{\infty}
+g(x)p(x)\,dx
+```
+
+This idea appears throughout machine learning.
+
+Many objectives can be interpreted as minimizing or maximizing an **expected quantity** over some underlying data distribution.
+
+---
+
+### From Sums to Integrals
+
+There is a useful pattern connecting discrete and continuous mathematics.
+
+For discrete values:
+
+```math
+\sum_x
+```
+
+performs accumulation.
+
+For continuous values:
+
+```math
+\int
+```
+
+plays the analogous role.
+
+For example, discrete expectation is:
+
+```math
+\mathbb{E}[X]
+=
+\sum_x xP(X=x)
+```
+
+while continuous expectation is:
+
+```math
+\mathbb{E}[X]
+=
+\int x\,p(x)\,dx
+```
+
+This provides a useful mental shortcut:
+
+> **When a probability problem moves from discrete outcomes to a continuous range, sums often become integrals.**
+
+---
+
+### Integration and Area Under a Curve
+
+The phrase **area under the curve** appears frequently in machine learning.
+
+One familiar example is the ROC curve used to evaluate binary classifiers.
+
+The **Area Under the ROC Curve**, or ROC-AUC, summarizes the curve into a single value.
+
+Conceptually:
+
+```math
+\text{AUC}
+=
+\int
+\text{ROC curve}
+```
+
+In practice, an empirical ROC curve consists of discrete points rather than a perfectly smooth analytical function.
+
+Its area is therefore commonly estimated numerically, for example using the **trapezoidal rule**.
+
+The important connection here is conceptual:
+
+```text
+curve
++
+integration
+→
+accumulated area
+```
+
+So the word **area** in *Area Under the Curve* is not merely descriptive terminology.
+
+It comes directly from the integral interpretation of area.
+
+---
+
+### Numerical Integration
+
+Not every integral has a convenient analytical solution.
+
+Sometimes the function is too complicated.
+
+Sometimes we only know the function at sampled data points.
+
+In such situations, the integral can be approximated numerically.
+
+Common numerical methods include:
+
+- rectangle approximations,
+- the trapezoidal rule,
+- Simpson's rule,
+- Monte Carlo integration.
+
+For example, the trapezoidal rule approximates the area between neighbouring points using trapezoids rather than infinitesimally thin rectangles.
+
+This is particularly relevant in computing because real systems frequently work with finite samples rather than perfect symbolic functions.
+
+---
+
+### Integration in Probabilistic Machine Learning
+
+Integration appears whenever a probabilistic model needs to account for a continuous range of possible values.
+
+For example, suppose a model contains an unobserved continuous variable $z$.
+
+To obtain the probability of observed data $x$, we may need to account for every possible value of $z$:
+
+```math
+p(x)
+=
+\int
+p(x,z)\,dz
+```
+
+This operation is called **marginalization**.
+
+Conceptually:
+
+```text
+many possible hidden values of z
+             ↓
+account for all of them
+             ↓
+          integrate
+             ↓
+           p(x)
+```
+
+This idea becomes important in probabilistic graphical models, Bayesian machine learning, latent-variable models, and generative modelling.
+
+Some of these integrals become extremely difficult or impossible to calculate exactly, which leads to approximation techniques such as sampling and variational inference.
+
+Those topics belong to more advanced ML, but their mathematical foundation begins here.
+
+---
+
+## ML Association
+
+Differentiation and integration play different but complementary roles in machine learning.
+
+Differentiation is most visible during **optimization**:
+
+```math
+L
+\rightarrow
+\nabla L
+\rightarrow
+\text{parameter update}
+```
+
+Integration is especially visible in **probability**:
+
+```math
+\text{probability density}
+\rightarrow
+\text{integrate}
+\rightarrow
+\text{probability}
+```
+
+Integration gives us continuous probabilities:
+
+```math
+P(a\le X\le b)
+=
+\int_a^b p(x)\,dx
+```
+
+normalizes probability distributions:
+
+```math
+\int_{-\infty}^{\infty}
+p(x)\,dx
+=
+1
+```
+
+calculates expectations:
+
+```math
+\mathbb{E}[X]
+=
+\int_{-\infty}^{\infty}
+x\,p(x)\,dx
+```
+
+and marginalizes continuous variables:
+
+```math
+p(x)
+=
+\int p(x,z)\,dz
+```
+
+This creates a useful division of labour:
+
+```text
+Differentiation
+→ change
+→ slopes
+→ gradients
+→ optimization
+
+Integration
+→ accumulation
+→ areas
+→ probabilities
+→ expectations
+```
+
+The two eventually meet throughout probabilistic machine learning.
+
+A model may define a probability distribution using integrals and then learn its parameters using derivatives.
+
+So although gradient-based training makes differentiation the more visible half of calculus in everyday ML, integration is quietly doing essential work underneath probability and statistics.
+
+> **Differentiation tells a model how to change. Integration lets it reason over everything that could happen.**
