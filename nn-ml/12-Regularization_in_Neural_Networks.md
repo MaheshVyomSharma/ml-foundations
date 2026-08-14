@@ -683,14 +683,18 @@ Dropout can itself be viewed as a structured form of noise injection.
 
 For multiclass classification, the true one-hot target might normally be:
 
-```text
-[0, 0, 1, 0]
+```math
+\begin{bmatrix}
+0 & 0 & 1 & 0
+\end{bmatrix}
 ```
 
 With **label smoothing**, it may instead become approximately:
 
-```text
-[0.03, 0.03, 0.91, 0.03]
+```math
+\begin{bmatrix}
+0.03 & 0.03 & 0.91 & 0.03
+\end{bmatrix}
 ```
 
 The model is discouraged from becoming excessively confident.

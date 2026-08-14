@@ -188,7 +188,7 @@ we can write:
 ```math
 m_i
 \sim
-\operatorname{Bernoulli}(q)
+\mathrm{Bernoulli}(q)
 ```
 
 Thus:

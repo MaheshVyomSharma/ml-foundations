@@ -843,7 +843,7 @@ For example:
 ```math
 A
 =
-\operatorname{ReLU}(Z)
+\mathrm{ReLU}(Z)
 ```
 
 A typical block is therefore:

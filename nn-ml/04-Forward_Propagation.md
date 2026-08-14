@@ -304,7 +304,7 @@ z=0.2
 If the neuron uses ReLU:
 
 ```math
-a=\operatorname{ReLU}(0.2)
+a=\mathrm{ReLU}(0.2)
 ```
 
 so:
@@ -763,7 +763,7 @@ The first layer computes:
 ```math
 \mathbf{a}^{[1]}
 =
-\operatorname{ReLU}
+\mathrm{ReLU}
 \left(
 W^{[1]}\mathbf{x}
 +
@@ -776,7 +776,7 @@ The second:
 ```math
 \mathbf{a}^{[2]}
 =
-\operatorname{ReLU}
+\mathrm{ReLU}
 \left(
 W^{[2]}\mathbf{a}^{[1]}
 +
@@ -834,7 +834,7 @@ The prediction is usually:
 ```math
 \hat{y}
 =
-\operatorname*{arg\,max}_k p_k
+\mathrm{arg\,max}_k p_k
 ```
 
 meaning that the class with the largest predicted probability is selected.
@@ -1139,4 +1139,3 @@ Forward Only
 ```
 
 ---
-

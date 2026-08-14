@@ -892,7 +892,7 @@ The entire training problem is therefore:
 ```math
 \theta^*
 =
-\operatorname*{arg\,min}_{\theta}
+\mathrm{arg\,min}_{\theta}
 J(\theta)
 ```
 

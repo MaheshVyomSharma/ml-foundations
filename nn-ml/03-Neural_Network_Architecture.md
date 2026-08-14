@@ -873,7 +873,7 @@ The forward computation is:
 ```math
 \mathbf{a}^{[1]}
 =
-\operatorname{ReLU}
+\mathrm{ReLU}
 \left(
 W^{[1]}\mathbf{x}
 +
@@ -886,7 +886,7 @@ then:
 ```math
 \mathbf{a}^{[2]}
 =
-\operatorname{ReLU}
+\mathrm{ReLU}
 \left(
 W^{[2]}\mathbf{a}^{[1]}
 +
@@ -1005,4 +1005,3 @@ MLP
 + Hidden Layers
 ```
 ---
-

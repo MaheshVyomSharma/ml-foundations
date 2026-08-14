@@ -129,8 +129,8 @@ Everything in Linear Algebra begins with three simple objects.
 | Object | Intuition | Example |
 |----------|-----------|---------|
 | Scalar | One number | 5 |
-| Vector | One ordered list of numbers | [3, 8, 2] |
-| Matrix | A table of numbers | 3 × 3 matrix |
+| Vector | One ordered list of numbers | $\begin{bmatrix}3 & 8 & 2\end{bmatrix}$ |
+| Matrix | A table of numbers | $3 \times 3$ matrix |
 
 Nearly every concept in this chapter is built by combining these three objects in increasingly sophisticated ways.
 
@@ -151,13 +151,10 @@ Examples include:
 
 Mathematically,
 
-5
-
-−3
-
-2.718
-
-π
+- 5
+- −3
+- 2.718
+- π
 
 are all scalars.
 
@@ -175,19 +172,20 @@ Unlike a scalar, each position inside a vector has meaning.
 
 For example,
 
-x =
-
-[170
- 68
- 25]
+```math
+\mathbf{x} =
+\begin{bmatrix}
+170\\
+68\\
+25
+\end{bmatrix}
+```
 
 could represent
 
-Height = 170 cm
-
-Weight = 68 kg
-
-Age = 25 years
+- Height = 170 cm
+- Weight = 68 kg
+- Age = 25 years
 
 Notice something subtle.
 
@@ -209,13 +207,14 @@ One useful way to think about a matrix is:
 
 For example,
 
-X =
-
-170  68  25
-
-180  82  31
-
-165  60  22
+```math
+\mathbf{X} =
+\begin{bmatrix}
+170 & 68 & 25\\
+180 & 82 & 31\\
+165 & 60 & 22
+\end{bmatrix}
+```
 
 Each row represents one observation.
 
@@ -239,11 +238,7 @@ Humans see a table.
 
 Excel sees cells.
 
-A Machine Learning algorithm sees
-
-X
-
-= matrix
+A Machine Learning algorithm sees $\mathbf{X}$: a matrix.
 
 Nothing more.
 

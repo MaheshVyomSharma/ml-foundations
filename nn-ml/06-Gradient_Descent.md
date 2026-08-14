@@ -35,7 +35,7 @@ The goal of training is to find parameter values that minimize the loss:
 ```math
 \theta^*
 =
-\operatorname*{arg\,min}_{\theta} J(\theta)
+\mathrm{arg\,min}_{\theta} J(\theta)
 ```
 
 Gradient descent provides a practical way to search for these values.

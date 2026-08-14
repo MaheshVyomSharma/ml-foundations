@@ -608,7 +608,9 @@ Suppose one example produces:
 ```math
 \mathbf{x}
 =
-[x_1,x_2,\ldots,x_d]
+\begin{bmatrix}
+x_1 & x_2 & \cdots & x_d
+\end{bmatrix}
 ```
 
 LayerNorm computes:

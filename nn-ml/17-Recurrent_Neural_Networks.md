@@ -651,18 +651,22 @@ Instead of representing words as arbitrary integer IDs, an embedding maps each t
 
 For example:
 
-```text
-"cat"
- ↓
-[0.21, -0.47, 0.83, ...]
+```math
+\text{"cat"}
+\longrightarrow
+\begin{bmatrix}
+0.21 & -0.47 & 0.83 & \cdots
+\end{bmatrix}
 ```
 
 and:
 
-```text
-"dog"
- ↓
-[0.18, -0.42, 0.79, ...]
+```math
+\text{"dog"}
+\longrightarrow
+\begin{bmatrix}
+0.18 & -0.42 & 0.79 & \cdots
+\end{bmatrix}
 ```
 
 The vectors can be learned so that related words obtain useful numerical representations.

@@ -1266,7 +1266,7 @@ W^{[1]}x+b^{[1]}
 ```math
 a^{[1]}
 =
-\operatorname{ReLU}(z^{[1]})
+\mathrm{ReLU}(z^{[1]})
 ```
 
 ```math

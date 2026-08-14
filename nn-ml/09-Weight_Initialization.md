@@ -240,7 +240,7 @@ Modern initialization strategies scale their random weights according to these v
 A common variance target is approximately:
 
 ```math
-\operatorname{Var}(W)
+\mathrm{Var}(W)
 \approx
 \frac{2}
 {n_{\text{in}}+n_{\text{out}}}
@@ -533,7 +533,7 @@ z<0
 then:
 
 ```math
-\operatorname{ReLU}(z)=0
+\mathrm{ReLU}(z)=0
 ```
 
 and:
@@ -564,12 +564,12 @@ The next pre-activation is:
 z^{[l]}
 =
 W^{[l]}a^{[l-1]}
-\]
+```
 
 Good initialization attempts to keep:
 
 ```math
-\operatorname{Var}(z^{[l]})
+\mathrm{Var}(z^{[l]})
 ```
 
 from changing dramatically from layer to layer.

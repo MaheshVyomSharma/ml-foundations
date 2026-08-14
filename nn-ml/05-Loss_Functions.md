@@ -146,7 +146,7 @@ For regression, one of the most common loss functions is **Mean Squared Error (M
 For `m` examples:
 
 ```math
-\operatorname{MSE}
+\mathrm{MSE}
 =
 \frac{1}{m}
 \sum_{i=1}^{m}
@@ -258,7 +258,7 @@ This gradient becomes the starting point for backpropagation.
 Another regression loss is **Mean Absolute Error (MAE)**:
 
 ```math
-\operatorname{MAE}
+\mathrm{MAE}
 =
 \frac{1}{m}
 \sum_{i=1}^{m}
@@ -546,7 +546,9 @@ The true label is represented using one-hot encoding:
 ```math
 \mathbf{y}
 =
-[y_1,y_2,\ldots,y_K]
+\begin{bmatrix}
+y_1 & y_2 & \cdots & y_K
+\end{bmatrix}
 ```
 
 and the model produces probabilities:
@@ -554,7 +556,9 @@ and the model produces probabilities:
 ```math
 \hat{\mathbf{p}}
 =
-[\hat{p}_1,\hat{p}_2,\ldots,\hat{p}_K]
+\begin{bmatrix}
+\hat{p}_1 & \hat{p}_2 & \cdots & \hat{p}_K
+\end{bmatrix}
 ```
 
 Categorical cross-entropy is:
@@ -662,9 +666,12 @@ Categorical cross-entropy often assumes the true target is one-hot encoded.
 
 For example:
 
-```text
-Class 2
-→ [0, 1, 0, 0]
+```math
+\text{Class 2}
+\longrightarrow
+\begin{bmatrix}
+0 & 1 & 0 & 0
+\end{bmatrix}
 ```
 
 **Sparse categorical cross-entropy** allows the class to be represented directly as an integer:
@@ -741,7 +748,7 @@ such that:
 ```math
 \theta^*
 =
-\operatorname*{arg\,min}_{\theta}
+\mathrm{arg\,min}_{\theta}
 J(\theta)
 ```
 

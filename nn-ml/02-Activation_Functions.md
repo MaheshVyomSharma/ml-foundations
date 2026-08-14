@@ -346,7 +346,7 @@ The **Rectified Linear Unit**, or **ReLU**, is one of the most widely used activ
 It is defined as:
 
 ```math
-\operatorname{ReLU}(z)=\max(0,z)
+\mathrm{ReLU}(z)=\max(0,z)
 ```
 
 or equivalently:
