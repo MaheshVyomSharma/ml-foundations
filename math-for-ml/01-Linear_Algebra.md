@@ -1302,7 +1302,7 @@ Whether the network contains one hundred parameters or one hundred billion param
 
 #### A Better Mental Model
 
-Many students memorize:
+Many people learning the mathematics behind Machine Learning memorize:
 
 > "Multiply rows by columns."
 
