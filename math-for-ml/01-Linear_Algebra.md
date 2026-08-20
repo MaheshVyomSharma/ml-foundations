@@ -902,6 +902,137 @@ the dot product is one of its most frequently spoken words.
 
 ---
 
+### Cross Product
+
+The dot product answers the question:
+
+> **How strongly do two vectors point in the same direction?**
+
+The cross product answers a different question:
+
+> **What vector is perpendicular to both of them?**
+
+The cross product is defined for vectors in three-dimensional space.
+
+---
+
+#### Mathematical Definition
+
+For two three-dimensional vectors
+
+```math
+\mathbf{a}=\begin{bmatrix}a_1\\a_2\\a_3\end{bmatrix},
+\qquad
+\mathbf{b}=\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}
+```
+
+their cross product is
+
+```math
+\mathbf{a}\times\mathbf{b}
+=
+\begin{bmatrix}
+a_2b_3-a_3b_2\\
+a_3b_1-a_1b_3\\
+a_1b_2-a_2b_1
+\end{bmatrix}
+```
+
+The answer is **a vector**, not a scalar.
+
+This new vector is perpendicular to both $\mathbf{a}$ and $\mathbf{b}$.
+
+---
+
+#### Worked Example
+
+Suppose
+
+```math
+\mathbf{a}=\begin{bmatrix}1\\0\\0\end{bmatrix},
+\qquad
+\mathbf{b}=\begin{bmatrix}0\\1\\0\end{bmatrix}
+```
+
+Then
+
+```math
+\mathbf{a}\times\mathbf{b}
+=
+\begin{bmatrix}
+0\times0-0\times1\\
+0\times0-1\times0\\
+1\times1-0\times0
+\end{bmatrix}
+=
+\begin{bmatrix}0\\0\\1\end{bmatrix}
+```
+
+The result points in the positive $z$ direction.
+
+Notice that it is perpendicular to both the positive $x$ direction and the positive $y$ direction.
+
+---
+
+#### Geometric Interpretation
+
+The magnitude of the cross product is
+
+```math
+\lVert\mathbf{a}\times\mathbf{b}\rVert
+=
+\lVert\mathbf{a}\rVert
+\lVert\mathbf{b}\rVert
+\sin\theta
+```
+
+This magnitude equals the area of the parallelogram formed by the two vectors.
+
+If the vectors point in the same or opposite direction, the area is zero, so their cross product is the zero vector.
+
+If the vectors are perpendicular, the area is largest.
+
+The direction of the result follows the **right-hand rule**: curl the fingers of your right hand from $\mathbf{a}$ toward $\mathbf{b}$; your thumb points in the direction of $\mathbf{a}\times\mathbf{b}$.
+
+Reversing the order reverses the direction:
+
+```math
+\mathbf{b}\times\mathbf{a}=-(\mathbf{a}\times\mathbf{b})
+```
+
+---
+
+#### Difference from the Dot Product
+
+The two operations answer different geometric questions.
+
+| Operation | Result | Main meaning |
+|-----------|--------|--------------|
+| Dot product | Scalar | Measures alignment |
+| Cross product | Vector | Produces a perpendicular direction and measures area |
+
+The cross product is especially useful in three-dimensional geometry, physics, computer graphics, and robotics.
+
+Unlike the dot product, it does not generalize directly to vectors of arbitrary dimension.
+
+---
+
+#### Cross Product Summary
+
+The cross product:
+
+- is defined for three-dimensional vectors
+- produces a vector perpendicular to both input vectors
+- has a magnitude equal to the parallelogram area
+- becomes zero when the vectors are parallel
+- changes direction when the order of the vectors is reversed
+
+If the dot product measures directional agreement,
+
+the cross product creates a direction perpendicular to both vectors.
+
+---
+
 ## 4. Matrix Operations and Transformations
 
 ### Matrix Multiplication
