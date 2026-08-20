@@ -8,107 +8,19 @@ Each entry separates meanings that depend on the subject area.
 
 ---
 
-## Bias
+## Activation Function
 
 ### Neural Networks
 
-A trainable scalar or vector added to a weighted input before the activation function. For a single neuron,
+A function applied to a neuron’s pre-activation value to produce its output. Activation functions introduce nonlinearity, allowing stacked layers to represent nonlinear relationships.
 
-```math
-z = \mathbf{w}^{T}\mathbf{x} + b
-```
+Common examples include sigmoid, hyperbolic tangent, ReLU, leaky ReLU, and softmax.
 
-The bias lets the neuron shift its response or decision boundary away from the origin. Each output neuron generally has its own bias.
-
-**Project references:** [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md#2-1-the-artificial-neuron), [Linear Algebra](math-for-ml/01-Linear_Algebra.md#machine-learning-connection), [Calculus](math-for-ml/02-Calculus.md#step-6-differentiate-with-respect-to-the-bias)
-
-### Linear Algebra
-
-The additive vector in an affine transformation:
-
-```math
-f(\mathbf{x}) = W\mathbf{x} + \mathbf{b}
-```
-
-Unlike a purely linear transformation, an affine transformation with a nonzero bias need not map the origin to the origin.
-
-**Project reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md#machine-learning-connection)
-
-### Calculus and Optimization
-
-The parameter $b$ in a model such as:
-
-```math
-\hat{y} = wx + b
-```
-
-It is differentiated and updated like any other trainable parameter. For a single neuron, $\partial z / \partial b = 1$.
-
-**Project reference:** [Calculus](math-for-ml/02-Calculus.md#step-6-differentiate-with-respect-to-the-bias)
-
-### Classical Machine Learning
-
-In the project’s linear-model notation, the same role is usually named the **intercept** rather than the bias. It is the predicted value when all features are zero, subject to the model’s feature representation.
-
-**Project reference:** [Linear Regression](classical-ml/01-Linear_Regression.md#mathematical-foundation)
-
-### Statistics
-
-For an estimator $\hat{\theta}$ of a parameter $\theta$, statistical bias is the systematic difference between the estimator’s expected value and the true parameter:
-
-```math
-\mathrm{Bias}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta
-```
-
-An unbiased estimator has bias equal to zero.
-
-This is distinct from the trainable bias parameter in a neural network, although both ideas involve systematic displacement from a target.
-
-**Project reference:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md#bias)
-
-### Bias–Variance Trade-off
-
-In model evaluation, bias describes error caused by a model family being too restrictive to represent the underlying relationship adequately. High bias is commonly associated with underfitting.
-
-**Project reference:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md#bias-and-variance)
+**Reference:** [Activation Functions](neural-networks-and-deep-learning/02-Activation_Functions.md)
 
 ### Related Terms
 
-`affine transformation` · `intercept` · `parameter` · `underfitting` · `variance`
-
----
-
-## Intercept
-
-### Classical Machine Learning
-
-The constant term in a regression equation. In a one-feature model,
-
-```math
-\hat{y} = mx + c
-```
-
-the intercept $c$ is the predicted value when $x=0$. In a multi-feature model, it is the prediction when every represented feature is zero.
-
-**Project reference:** [Linear Regression](classical-ml/01-Linear_Regression.md#mathematical-foundation)
-
-### Neural Networks
-
-For a neuron, the intercept-like role is played by the **bias** $b$:
-
-```math
-z = \mathbf{w}^{T}\mathbf{x} + b
-```
-
-The terms are closely related, but “bias” is the standard neural-network name and “intercept” is the standard regression name.
-
-**Project reference:** [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md#2-3-what-does-the-bias-do)
-
-### Related Terms
-
-`bias` · `coefficient` · `feature` · `linear regression` · `parameter`
-
----
+`neuron` · `ReLU` · `sigmoid` · `softmax`
 
 ## Affine Transformation
 
@@ -122,25 +34,11 @@ f(\mathbf{x}) = A\mathbf{x} + \mathbf{b}
 
 It combines a linear transformation with a translation. A nonzero bias means the origin does not necessarily remain fixed.
 
-**Project reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md#machine-learning-connection)
+**Reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md#machine-learning-connection)
 
 ### Related Terms
 
 `bias` · `linear transformation` · `matrix multiplication`
-
-## Activation Function
-
-### Neural Networks
-
-A function applied to a neuron’s pre-activation value to produce its output. Activation functions introduce nonlinearity, allowing stacked layers to represent nonlinear relationships.
-
-Common examples include sigmoid, hyperbolic tangent, ReLU, leaky ReLU, and softmax.
-
-**Project reference:** [Activation Functions](neural-networks-and-deep-learning/02-Activation_Functions.md)
-
-### Related Terms
-
-`neuron` · `ReLU` · `sigmoid` · `softmax`
 
 ## Attention
 
@@ -150,7 +48,7 @@ A mechanism that assigns different weights to positions in an input sequence so 
 
 Self-attention compares queries, keys, and values from the same sequence. Multi-head attention performs several such comparisons in parallel.
 
-**Project reference:** [Attention Mechanism](neural-networks-and-deep-learning/20-Attention_Mechanism.md)
+**Reference:** [Attention Mechanism](neural-networks-and-deep-learning/20-Attention_Mechanism.md)
 
 ### Related Terms
 
@@ -164,7 +62,7 @@ An algorithm that applies the chain rule from the output layer back through earl
 
 Those gradients are then used by an optimization algorithm to update the parameters.
 
-**Project reference:** [Backpropagation](neural-networks-and-deep-learning/07-Backpropagation.md)
+**Reference:** [Backpropagation](neural-networks-and-deep-learning/07-Backpropagation.md)
 
 ### Related Terms
 
@@ -178,11 +76,81 @@ A subset of training examples processed together to compute a loss or gradient u
 
 Full-batch gradient descent uses the entire dataset, stochastic gradient descent uses one example, and mini-batch gradient descent uses a small subset.
 
-**Project references:** [Calculus](math-for-ml/02-Calculus.md#gradient-descent), [Training a Neural Network](neural-networks-and-deep-learning/08-Training_a_Neural_Network.md)
+**Reference:** [Calculus](math-for-ml/02-Calculus.md#gradient-descent), [Training a Neural Network](neural-networks-and-deep-learning/08-Training_a_Neural_Network.md)
 
 ### Related Terms
 
 `epoch` · `gradient descent` · `stochastic gradient descent`
+
+## Bias
+
+### Neural Networks
+
+A trainable scalar or vector added to a weighted input before the activation function. For a single neuron,
+
+```math
+z = \mathbf{w}^{T}\mathbf{x} + b
+```
+
+The bias lets the neuron shift its response or decision boundary away from the origin. Each output neuron generally has its own bias.
+
+**Reference:** [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md#2-1-the-artificial-neuron), [Linear Algebra](math-for-ml/01-Linear_Algebra.md#machine-learning-connection), [Calculus](math-for-ml/02-Calculus.md#step-6-differentiate-with-respect-to-the-bias)
+
+### Linear Algebra
+
+The additive vector in an affine transformation:
+
+```math
+f(\mathbf{x}) = W\mathbf{x} + \mathbf{b}
+```
+
+Unlike a purely linear transformation, an affine transformation with a nonzero bias need not map the origin to the origin.
+
+**Reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md#machine-learning-connection)
+
+### Calculus and Optimization
+
+The parameter $b$ in a model such as:
+
+```math
+\hat{y} = wx + b
+```
+
+It is differentiated and updated like any other trainable parameter. For a single neuron, $\partial z / \partial b = 1$.
+
+**Reference:** [Calculus](math-for-ml/02-Calculus.md#step-6-differentiate-with-respect-to-the-bias)
+
+### Classical Machine Learning
+
+In the project’s linear-model notation, the same role is usually named the **intercept** rather than the bias. It is the predicted value when all features are zero, subject to the model’s feature representation.
+
+**Reference:** [Linear Regression](classical-ml/01-Linear_Regression.md#mathematical-foundation)
+
+### Statistics
+
+For an estimator $\hat{\theta}$ of a parameter $\theta$, statistical bias is the systematic difference between the estimator’s expected value and the true parameter:
+
+```math
+\mathrm{Bias}(\hat{\theta}) = \mathbb{E}[\hat{\theta}] - \theta
+```
+
+An unbiased estimator has bias equal to zero.
+
+This is distinct from the trainable bias parameter in a neural network, although both ideas involve systematic displacement from a target.
+
+**Reference:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md#bias)
+
+### Bias–Variance Trade-off
+
+In model evaluation, bias describes error caused by a model family being too restrictive to represent the underlying relationship adequately. High bias is commonly associated with underfitting.
+
+**Reference:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md#bias-and-variance)
+
+### Related Terms
+
+`affine transformation` · `intercept` · `parameter` · `underfitting` · `variance`
+
+---
 
 ## Classification
 
@@ -192,7 +160,7 @@ A supervised-learning task in which the target is a category or class rather tha
 
 Binary classification has two classes; multiclass classification has more than two; multilabel classification allows multiple labels per example.
 
-**Project references:** [Logistic Regression](classical-ml/03-Logistic_Regression.md), [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md)
+**Reference:** [Logistic Regression](classical-ml/03-Logistic_Regression.md), [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md)
 
 ### Related Terms
 
@@ -206,7 +174,7 @@ A scalar measure of the total error made by a model over a dataset. Training att
 
 The cost is often an average or sum of per-example losses.
 
-**Project reference:** [Gradient Descent](classical-ml/02-Gradient_Descent.md)
+**Reference:** [Gradient Descent](classical-ml/02-Gradient_Descent.md)
 
 ### Related Terms
 
@@ -220,7 +188,7 @@ A square matrix whose diagonal contains variable variances and whose off-diagona
 
 It is symmetric and positive semidefinite.
 
-**Project reference:** [Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md#covariance-matrix)
+**Reference:** [Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md#covariance-matrix)
 
 ### Related Terms
 
@@ -238,7 +206,7 @@ The boundary in feature space that separates different predicted classes. For a 
 
 The bias shifts the boundary, while the weights determine its orientation.
 
-**Project references:** [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md#2-3-what-does-the-bias-do), [Logistic Regression](classical-ml/03-Logistic_Regression.md)
+**Reference:** [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md#2-3-what-does-the-bias-do), [Logistic Regression](classical-ml/03-Logistic_Regression.md)
 
 ### Related Terms
 
@@ -250,7 +218,7 @@ The bias shifts the boundary, while the weights determine its orientation.
 
 The instantaneous rate at which a function changes with respect to one of its variables. Geometrically, it is the slope of the tangent at a point.
 
-**Project reference:** [Calculus](math-for-ml/02-Calculus.md)
+**Reference:** [Calculus](math-for-ml/02-Calculus.md)
 
 ### Related Terms
 
@@ -264,7 +232,7 @@ A scalar associated with a square matrix. It indicates, among other things, the 
 
 A square matrix is singular when its determinant is zero and invertible when its determinant is nonzero.
 
-**Project reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
+**Reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
 
 ### Related Terms
 
@@ -282,7 +250,7 @@ For vectors of the same dimension, the sum of pairwise products:
 
 It measures alignment and is zero for perpendicular vectors.
 
-**Project reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
+**Reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
 
 ### Related Terms
 
@@ -300,7 +268,7 @@ A\mathbf{v} = \lambda\mathbf{v}
 
 The scalar $\lambda$ is its eigenvalue. The matrix changes the vector’s scale, but not its direction, apart from a possible sign reversal.
 
-**Project reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
+**Reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
 
 ### Related Terms
 
@@ -312,7 +280,7 @@ The scalar $\lambda$ is its eigenvalue. The matrix changes the vector’s scale,
 
 One complete pass through all training examples. If the dataset has $N$ examples and the batch size is $B$, one epoch usually contains approximately $N/B$ parameter updates.
 
-**Project reference:** [Training a Neural Network](neural-networks-and-deep-learning/08-Training_a_Neural_Network.md)
+**Reference:** [Training a Neural Network](neural-networks-and-deep-learning/08-Training_a_Neural_Network.md)
 
 ### Related Terms
 
@@ -324,7 +292,7 @@ One complete pass through all training examples. If the dataset has $N$ examples
 
 An input variable or measurable attribute supplied to a model. A dataset is commonly represented as rows of observations and columns of features.
 
-**Project references:** [Linear Regression](classical-ml/01-Linear_Regression.md), [Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md#design-matrix)
+**Reference:** [Linear Regression](classical-ml/01-Linear_Regression.md), [Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md#design-matrix)
 
 ### Related Terms
 
@@ -347,7 +315,7 @@ The vector of partial derivatives of a scalar-valued function with respect to it
 
 It points in the direction of steepest increase. Negative-gradient methods therefore move toward decreasing function values.
 
-**Project references:** [Calculus](math-for-ml/02-Calculus.md), [Gradient Descent](classical-ml/02-Gradient_Descent.md)
+**Reference:** [Calculus](math-for-ml/02-Calculus.md), [Gradient Descent](classical-ml/02-Gradient_Descent.md)
 
 ### Related Terms
 
@@ -365,7 +333,7 @@ An iterative optimization method that updates parameters in the direction opposi
 
 Here, $\eta$ is the learning rate and $J$ is the objective or cost function.
 
-**Project references:** [Gradient Descent](classical-ml/02-Gradient_Descent.md), [Calculus](math-for-ml/02-Calculus.md)
+**Reference:** [Gradient Descent](classical-ml/02-Gradient_Descent.md), [Calculus](math-for-ml/02-Calculus.md)
 
 ### Related Terms
 
@@ -377,7 +345,7 @@ Here, $\eta$ is the learning rate and $J$ is the objective or cost function.
 
 The matrix of second-order partial derivatives of a scalar-valued function. It describes local curvature and helps distinguish locally convex, concave, and saddle-shaped behavior.
 
-**Project reference:** [Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md#hessian-matrix)
+**Reference:** [Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md#hessian-matrix)
 
 ### Related Terms
 
@@ -391,11 +359,61 @@ A configuration value chosen before or outside parameter training. Examples incl
 
 Hyperparameters are not normally learned directly by gradient descent.
 
-**Project reference:** [Hyperparameters and Hyperparameter Tuning](neural-networks-and-deep-learning/15-Hyperparameters_and_Hyperparameter_Tuning.md)
+**Reference:** [Hyperparameters and Hyperparameter Tuning](neural-networks-and-deep-learning/15-Hyperparameters_and_Hyperparameter_Tuning.md)
 
 ### Related Terms
 
 `parameter` · `learning rate` · `model selection` · `regularization`
+
+## Intercept
+
+### Classical Machine Learning
+
+The constant term in a regression equation. In a one-feature model,
+
+```math
+\hat{y} = mx + c
+```
+
+the intercept $c$ is the predicted value when $x=0$. In a multi-feature model, it is the prediction when every represented feature is zero.
+
+**Reference:** [Linear Regression](classical-ml/01-Linear_Regression.md#mathematical-foundation)
+
+### Neural Networks
+
+For a neuron, the intercept-like role is played by the **bias** $b$:
+
+```math
+z = \mathbf{w}^{T}\mathbf{x} + b
+```
+
+The terms are closely related, but “bias” is the standard neural-network name and “intercept” is the standard regression name.
+
+**Reference:** [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md#2-3-what-does-the-bias-do)
+
+### Related Terms
+
+`bias` · `coefficient` · `feature` · `linear regression` · `parameter`
+
+## Learning Rate
+
+### Optimization
+
+A hyperparameter that controls the size of each parameter update during training. It is usually represented by $\eta$ and appears in the gradient-descent update rule:
+
+```math
+\theta \leftarrow \theta - \eta\nabla J(\theta)
+```
+
+A learning rate that is too small can make training unnecessarily slow, while one that is too large can cause the objective to overshoot or diverge.
+
+**Reference:** [Gradient Descent](neural-networks-and-deep-learning/06-Gradient_Descent.md#19-the-learning-rate)
+
+### Related Terms
+
+`gradient descent` · `hyperparameter` · `optimizer` · `parameter`
+
+---
 
 ## Loss Function
 
@@ -403,7 +421,7 @@ Hyperparameters are not normally learned directly by gradient descent.
 
 A function that measures the error for one training example or a small group of examples. A cost function commonly aggregates losses over a complete dataset.
 
-**Project reference:** [Loss Functions](neural-networks-and-deep-learning/05-Loss_Functions.md)
+**Reference:** [Loss Functions](neural-networks-and-deep-learning/05-Loss_Functions.md)
 
 ### Related Terms
 
@@ -417,7 +435,7 @@ A rectangular arrangement of numbers with a defined number of rows and columns. 
 
 Matrices represent datasets, linear transformations, parameter collections, and relationships between variables.
 
-**Project references:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md), [Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md)
+**Reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md), [Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md)
 
 ### Related Terms
 
@@ -431,7 +449,7 @@ A model behavior in which the model fits training data or its idiosyncrasies too
 
 Regularization, early stopping, dropout, and more representative data can reduce overfitting.
 
-**Project references:** [Regularization](classical-ml/04-Regularization.md), [Deep Learning Workflow](neural-networks-and-deep-learning/19-Deep_Learning_Workflow.md)
+**Reference:** [Regularization](classical-ml/04-Regularization.md), [Deep Learning Workflow](neural-networks-and-deep-learning/19-Deep_Learning_Workflow.md)
 
 ### Related Terms
 
@@ -443,23 +461,11 @@ Regularization, early stopping, dropout, and more representative data can reduce
 
 A value learned from data during model training. Weights and biases are parameters in neural networks; slopes and intercepts are parameters in linear regression.
 
-**Project references:** [Gradient Descent](classical-ml/02-Gradient_Descent.md), [Neural Network Architecture](neural-networks-and-deep-learning/03-Neural_Network_Architecture.md)
+**Reference:** [Gradient Descent](classical-ml/02-Gradient_Descent.md), [Neural Network Architecture](neural-networks-and-deep-learning/03-Neural_Network_Architecture.md)
 
 ### Related Terms
 
 `hyperparameter` · `weight` · `bias` · `optimization`
-
-## Regularization
-
-### Machine Learning
-
-A family of methods that discourages overly complex models to improve generalization. Common methods add a penalty to the objective, constrain parameters, or stop training before the model overfits.
-
-**Project references:** [Regularization](classical-ml/04-Regularization.md), [Regularization in Neural Networks](neural-networks-and-deep-learning/12-Regularization_in_Neural_Networks.md)
-
-### Related Terms
-
-`overfitting` · `underfitting` · `L1 regularization` · `L2 regularization` · `dropout`
 
 ## Regression
 
@@ -467,11 +473,35 @@ A family of methods that discourages overly complex models to improve generaliza
 
 A supervised-learning task in which the target is a continuous numerical value. Linear Regression models the target as a weighted combination of features plus an intercept.
 
-**Project reference:** [Linear Regression](classical-ml/01-Linear_Regression.md)
+**Reference:** [Linear Regression](classical-ml/01-Linear_Regression.md)
 
 ### Related Terms
 
 `classification` · `feature` · `intercept` · `residual`
+
+## Regularization
+
+### Machine Learning
+
+A family of methods that discourages overly complex models to improve generalization. Common methods add a penalty to the objective, constrain parameters, or stop training before the model overfits.
+
+**Reference:** [Regularization](classical-ml/04-Regularization.md), [Regularization in Neural Networks](neural-networks-and-deep-learning/12-Regularization_in_Neural_Networks.md)
+
+### Related Terms
+
+`overfitting` · `underfitting` · `L1 regularization` · `L2 regularization` · `dropout`
+
+## Saddle Point
+
+### Calculus and Optimization
+
+A point on a multivariable function where the gradient may be zero, but the point is neither a local minimum nor a local maximum. The function curves upward in at least one direction and downward in another. For example, $(0,0)$ is a saddle point of $f(x,y)=x^2-y^2$.
+
+**Reference:** [Calculus](math-for-ml/02-Calculus.md#saddle-points), [Gradient Descent](neural-networks-and-deep-learning/06-Gradient_Descent.md#125-saddle-points)
+
+### Related Terms
+
+`gradient` · `Hessian` · `local minimum` · `stationary point`
 
 ## Singular Value Decomposition
 
@@ -485,7 +515,7 @@ A = U\Sigma V^T
 
 where $U$ and $V$ are orthogonal and $\Sigma$ contains singular values. SVD supports dimensionality reduction, least-squares solutions, and numerical analysis.
 
-**Project reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
+**Reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
 
 ### Related Terms
 
@@ -497,7 +527,7 @@ where $U$ and $V$ are orthogonal and $\Sigma$ contains singular values. SVD supp
 
 The output value a supervised-learning model is trained to predict. It is also called the response, outcome, or label, depending on the task.
 
-**Project references:** [Linear Regression](classical-ml/01-Linear_Regression.md), [Logistic Regression](classical-ml/03-Logistic_Regression.md)
+**Reference:** [Linear Regression](classical-ml/01-Linear_Regression.md), [Logistic Regression](classical-ml/03-Logistic_Regression.md)
 
 ### Related Terms
 
@@ -509,7 +539,7 @@ The output value a supervised-learning model is trained to predict. It is also c
 
 A model behavior in which the model is too simple or too constrained to capture important structure in the data. It performs poorly even on the training data and usually has high bias.
 
-**Project references:** [Regularization](classical-ml/04-Regularization.md), [Deep Learning Workflow](neural-networks-and-deep-learning/19-Deep_Learning_Workflow.md)
+**Reference:** [Regularization](classical-ml/04-Regularization.md), [Deep Learning Workflow](neural-networks-and-deep-learning/19-Deep_Learning_Workflow.md)
 
 ### Related Terms
 
@@ -525,7 +555,7 @@ A measure of how far values or an estimator tend to vary around their mean or ex
 
 In the bias–variance trade-off, variance describes a model’s sensitivity to peculiarities of the training sample. High variance is commonly associated with overfitting.
 
-**Project references:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md#sample-variance), [Model Evaluation](classical-ml/12-Model_Evaluation_and_Model_Selection.md)
+**Reference:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md#sample-variance), [Model Evaluation](classical-ml/12-Model_Evaluation_and_Model_Selection.md)
 
 ### Related Terms
 
@@ -539,7 +569,7 @@ An ordered collection of numbers. A vector can represent a point, direction, fea
 
 It may be written as a row or column, but its orientation matters when performing matrix operations.
 
-**Project reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
+**Reference:** [Linear Algebra](math-for-ml/01-Linear_Algebra.md)
 
 ### Related Terms
 
@@ -551,7 +581,7 @@ It may be written as a row or column, but its orientation matters when performin
 
 A trainable parameter that controls the contribution of an input or previous-layer activation to a model’s output. In a neuron, weights are multiplied by inputs before the bias is added.
 
-**Project references:** [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md), [Neural Network Architecture](neural-networks-and-deep-learning/03-Neural_Network_Architecture.md)
+**Reference:** [Neural Networks](neural-networks-and-deep-learning/01-Neural_Networks.md), [Neural Network Architecture](neural-networks-and-deep-learning/03-Neural_Network_Architecture.md)
 
 ### Related Terms
 
