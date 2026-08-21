@@ -258,7 +258,7 @@ This distinction becomes extremely important when studying optimization and back
 
 ---
 
-## 2. ML Assocication
+### 1.6. ML Assocication
 
 Calculus appears throughout machine learning because model training repeatedly involves the same general structure:
 
@@ -288,7 +288,7 @@ It is the mathematics that answers the central question of learning:
 
 ---
 
-## 3. Functions, Slopes, and Rate of Change
+## 2. Functions, Slopes, and Rate of Change
 
 Before introducing derivatives formally, we need to understand the idea they measure: **how one quantity changes when another quantity changes**.
 
@@ -336,7 +336,7 @@ Calculus gives us a precise way of describing this changing rate of change.
 
 ---
 
-### 3.1. Slope as Rate of Change
+### 2.1. Slope as Rate of Change
 
 For a straight line:
 
@@ -424,7 +424,7 @@ More importantly, because this is a straight line, the slope is **2 everywhere**
 
 ---
 
-### 3.2. Curves Do Not Have One Constant Slope
+### 2.2. Curves Do Not Have One Constant Slope
 
 Now consider:
 
@@ -484,7 +484,7 @@ That distinction leads directly to derivatives.
 
 ---
 
-### 3.3. Secant Lines and Tangent Lines
+### 2.3. Secant Lines and Tangent Lines
 
 If we choose two points on a curve and draw a straight line through them, that line is called a **secant line**.
 
@@ -545,7 +545,7 @@ Its slope represents the **instantaneous rate of change** of the function at tha
 
 ---
 
-### 3.4. The Derivative Emerges
+### 2.4. The Derivative Emerges
 
 The previous idea can be expressed mathematically using a **limit**.
 
@@ -584,7 +584,7 @@ and that instantaneous rate of change is the **derivative**.
 
 ---
 
-### 3.5. Deriving the Derivative of $x^2$
+### 2.5. Deriving the Derivative of $x^2$
 
 Consider:
 
@@ -703,7 +703,7 @@ The curve becomes progressively steeper as $x$ increases.
 
 ---
 
-### 3.6. Derivative as a Function
+### 2.6. Derivative as a Function
 
 An important conceptual point is that a derivative is usually **another function**.
 
@@ -747,7 +747,7 @@ This distinction becomes extremely important in machine learning because we ofte
 
 ---
 
-## 4. ML Association
+### 2.7. ML Association
 
 Suppose a model has one parameter $w$ and its loss is:
 
@@ -847,7 +847,7 @@ This same idea scales from a single parameter $w$ to models containing millions 
 
 ---
 
-## 5. Differentiation Rules
+## 3. Differentiation Rules
 
 The formal definition of a derivative is:
 
@@ -869,7 +869,7 @@ These rules are especially important in machine learning, where loss functions m
 
 ---
 
-### 5.1. Constant Rule
+### 3.1. Constant Rule
 
 If a function is constant:
 
@@ -899,7 +899,7 @@ For example:
 
 ---
 
-### 5.2. Power Rule
+### 3.2. Power Rule
 
 For:
 
@@ -957,7 +957,7 @@ and:
 
 ---
 
-### 5.3. Constant Multiple Rule
+### 3.3. Constant Multiple Rule
 
 If a function is multiplied by a constant:
 
@@ -1006,7 +1006,7 @@ because:
 
 ---
 
-### 5.4. Sum and Difference Rules
+### 3.4. Sum and Difference Rules
 
 If:
 
@@ -1057,7 +1057,7 @@ The constant $7$ disappears because its derivative is zero.
 
 ---
 
-### 5.5. Product Rule
+### 3.5. Product Rule
 
 When two functions are multiplied:
 
@@ -1156,7 +1156,7 @@ f'(x)
 
 ---
 
-### 5.6. Quotient Rule
+### 3.6. Quotient Rule
 
 If one function is divided by another:
 
@@ -1267,7 +1267,7 @@ x^2+2x
 
 ---
 
-### 5.7. Exponential Functions
+### 3.7. Exponential Functions
 
 One of the most important functions in machine learning is:
 
@@ -1305,7 +1305,7 @@ Exponential functions appear in many ML contexts, including:
 
 ---
 
-### 5.8. Logarithmic Functions
+### 3.8. Logarithmic Functions
 
 For the natural logarithm:
 
@@ -1342,7 +1342,7 @@ Examples include:
 
 ---
 
-### 5.9. Why These Rules Matter
+### 3.9. Why These Rules Matter
 
 Consider a function such as:
 
@@ -1384,7 +1384,7 @@ while:
 
 ---
 
-## 6. ML Association
+### 3.10. ML Association
 
 Machine-learning loss functions are usually built from combinations of simpler mathematical functions.
 
@@ -1431,7 +1431,7 @@ The most important rule for doing this is the **chain rule**, which we will exam
 
 ---
 
-## 7. The Chain Rule
+## 4. The Chain Rule
 
 Many functions in machine learning are not simple standalone expressions. They are **functions built inside other functions**.
 
@@ -1465,7 +1465,7 @@ The **chain rule** tells us how to differentiate such nested functions.
 
 ---
 
-### 7.1. The Core Idea
+### 4.1. The Core Idea
 
 Suppose:
 
@@ -1518,7 +1518,7 @@ In words:
 
 ---
 
-### 7.2. A Simple Example
+### 4.2. A Simple Example
 
 Consider:
 
@@ -1597,7 +1597,7 @@ The derivative of the outer function alone would have produced only $2(3x+2)$. T
 
 ---
 
-### 7.3. Why Multiplication Appears
+### 4.3. Why Multiplication Appears
 
 The multiplication in the chain rule is not arbitrary.
 
@@ -1658,7 +1658,7 @@ The chain rule therefore tracks how a change propagates through a sequence of de
 
 ---
 
-### 7.4. Longer Chains
+### 4.4. Longer Chains
 
 The idea extends naturally to several nested functions.
 
@@ -1701,7 +1701,7 @@ That principle scales remarkably well.
 
 ---
 
-### 7.5. Chain Rule with Common Functions
+### 4.5. Chain Rule with Common Functions
 
 Consider an exponential of another function:
 
@@ -1763,7 +1763,7 @@ These patterns occur constantly in machine-learning loss functions and activatio
 
 ---
 
-### 7.6. A Loss-Function Example
+### 4.6. A Loss-Function Example
 
 Consider the squared loss for a simple model:
 
@@ -1848,7 +1848,7 @@ The chain rule has therefore converted a nested prediction-error calculation int
 
 ---
 
-### 7.7. Computational Graph View
+### 4.7. Computational Graph View
 
 Machine-learning systems often represent computations conceptually as a graph.
 
@@ -1888,7 +1888,7 @@ Here, *responsibility* is intuitive rather than a formal mathematical term: the 
 
 ---
 
-## 8. ML Association
+### 4.8. ML Association
 
 The chain rule is one of the mathematical foundations of **backpropagation**.
 
@@ -1941,7 +1941,7 @@ Once the chain rule is understood, backpropagation stops looking like a mysterio
 
 ---
 
-## 9. Partial Derivatives
+## 5. Partial Derivatives
 
 So far, we have mostly differentiated functions containing a single variable.
 
@@ -1985,7 +1985,7 @@ These are answered using **partial derivatives**.
 
 ---
 
-### 9.1. The Core Idea
+### 5.1. The Core Idea
 
 A partial derivative measures how a multivariable function changes with respect to **one variable while treating the others as constant**.
 
@@ -2051,7 +2051,7 @@ Therefore:
 
 ---
 
-### 9.2. Differentiating with Respect to Another Variable
+### 5.2. Differentiating with Respect to Another Variable
 
 Now differentiate the same function with respect to $y$:
 
@@ -2103,7 +2103,7 @@ So the same function has different rates of change depending on which direction 
 
 ---
 
-### 9.3. Geometric Interpretation
+### 5.3. Geometric Interpretation
 
 For a function of one variable:
 
@@ -2149,7 +2149,7 @@ This is why a single derivative is no longer enough.
 
 ---
 
-### 9.4. Why Holding Other Variables Constant Works
+### 5.4. Why Holding Other Variables Constant Works
 
 Suppose:
 
@@ -2195,7 +2195,7 @@ This idea becomes extremely important when model parameters interact with one an
 
 ---
 
-### 9.5. Partial Derivatives in a Linear Model
+### 5.5. Partial Derivatives in a Linear Model
 
 Consider a model with two inputs:
 
@@ -2261,7 +2261,7 @@ asks:
 
 ---
 
-### 9.6. Deriving One Weight Gradient
+### 5.6. Deriving One Weight Gradient
 
 Let:
 
@@ -2349,7 +2349,7 @@ The same loss function therefore produces a separate derivative for every traina
 
 ---
 
-### 9.7. One Loss, Many Directions
+### 5.7. One Loss, Many Directions
 
 This is an important shift in perspective.
 
@@ -2405,7 +2405,7 @@ That leads directly to the **gradient**.
 
 ---
 
-## 10. ML Association
+### 5.8. ML Association
 
 Machine-learning models typically contain multiple trainable parameters.
 
@@ -2456,7 +2456,7 @@ The gradient assembles them into a single object describing the local behaviour 
 
 ---
 
-## 11. Gradients and Directional Change
+## 6. Gradients and Directional Change
 
 Partial derivatives tell us how a multivariable function changes when we vary one input at a time.
 
@@ -2495,7 +2495,7 @@ The gradient therefore combines all first-order partial derivatives into a singl
 
 ---
 
-### 11.1. A Two-Variable Example
+### 6.1. A Two-Variable Example
 
 Consider:
 
@@ -2562,7 +2562,7 @@ It also has a geometric interpretation.
 
 ---
 
-### 11.2. The Gradient Points Uphill
+### 6.2. The Gradient Points Uphill
 
 For a multivariable function, the gradient points in the direction of **steepest local increase**.
 
@@ -2617,7 +2617,7 @@ This is precisely why gradient descent uses the **negative gradient**.
 
 ---
 
-### 11.3. Gradient Magnitude
+### 6.3. Gradient Magnitude
 
 Because the gradient is a vector, it has both direction and magnitude.
 
@@ -2676,7 +2676,7 @@ This becomes important during optimization because the gradient carries informat
 
 ---
 
-### 11.4. Directional Change
+### 6.4. Directional Change
 
 The gradient gives the direction of steepest increase, but we may want to know how the function changes in some other direction.
 
@@ -2753,7 +2753,7 @@ where $\theta$ is the angle between the gradient and the chosen direction.
 
 ---
 
-### 11.5. Why the Gradient Is the Steepest Direction
+### 6.5. Why the Gradient Is the Steepest Direction
 
 The directional derivative is largest when:
 
@@ -2811,7 +2811,7 @@ This gives the mathematical justification for moving along the negative gradient
 
 ---
 
-### 11.6. A Loss Surface Example
+### 6.6. A Loss Surface Example
 
 Suppose the loss depends on two model parameters:
 
@@ -2880,7 +2880,7 @@ moves the model parameters downhill on the loss surface.
 
 ---
 
-### 11.7. Gradient as Local Information
+### 6.7. Gradient as Local Information
 
 The gradient is fundamentally **local**.
 
@@ -2913,7 +2913,7 @@ To understand curvature, we need second derivatives, which we will examine later
 
 ---
 
-### 11.8. Gradient of a Model Loss
+### 6.8. Gradient of a Model Loss
 
 Suppose a model contains parameters:
 
@@ -2961,7 +2961,7 @@ This is the point where calculus and linear algebra meet directly:
 
 ---
 
-## 12. ML Association
+### 6.9. ML Association
 
 In machine learning, the gradient is one of the central objects used during training.
 
@@ -3041,7 +3041,7 @@ This sequence forms a large part of the mathematical machinery behind modern dee
 
 ---
 
-## 13. Gradient Descent and Optimization
+## 7. Gradient Descent and Optimization
 
 We now have the mathematical pieces needed to understand one of the most important algorithms in machine learning: **gradient descent**.
 
@@ -3080,7 +3080,7 @@ Instead of trying every possible parameter combination, it repeatedly asks:
 
 ---
 
-### 13.1. The Gradient Gives the Direction
+### 7.1. The Gradient Gives the Direction
 
 From the previous section:
 
@@ -3118,7 +3118,7 @@ This single equation captures the central mechanism of gradient descent.
 
 ---
 
-### 13.2. Why the Minus Sign Matters
+### 7.2. Why the Minus Sign Matters
 
 The minus sign does not appear because gradients are inherently negative.
 
@@ -3199,7 +3199,7 @@ Therefore:
 
 ---
 
-### 13.3. A Complete Numerical Example
+### 7.3. A Complete Numerical Example
 
 Consider:
 
@@ -3279,7 +3279,7 @@ The loss decreased.
 
 ---
 
-### 13.4. Another Iteration
+### 7.4. Another Iteration
 
 At:
 
@@ -3352,7 +3352,7 @@ Gradient descent therefore reaches the solution through a sequence of increasing
 
 ---
 
-### 13.5. Gradient Descent Is Iterative
+### 7.5. Gradient Descent Is Iterative
 
 Unlike solving an equation directly, gradient descent generally does not jump immediately to the optimum.
 
@@ -3387,7 +3387,7 @@ This loop is the heart of training for many machine-learning models.
 
 ---
 
-### 13.6. The Learning Rate
+### 7.6. The Learning Rate
 
 The learning rate $\eta$ controls how far the parameters move during each update.
 
@@ -3415,7 +3415,7 @@ A useful interpretation is:
 
 ---
 
-### 13.7. Learning Rate Too Small
+### 7.7. Learning Rate Too Small
 
 If $\eta$ is very small:
 
@@ -3447,7 +3447,7 @@ The optimizer eventually reaches the valley but requires many updates.
 
 ---
 
-### 13.8. Learning Rate Too Large
+### 7.8. Learning Rate Too Large
 
 If the learning rate is too large, an update may jump across the minimum.
 
@@ -3477,7 +3477,7 @@ Therefore the learning rate represents an important balance:
 
 ---
 
-### 13.9. Why the Gradient Changes During Training
+### 7.9. Why the Gradient Changes During Training
 
 The gradient must be recalculated after every update because it describes the slope only at the current point.
 
@@ -3525,7 +3525,7 @@ The process continues.
 
 ---
 
-### 13.10. Convergence
+### 7.10. Convergence
 
 Gradient descent is said to **converge** when successive updates approach a stable solution.
 
@@ -3569,7 +3569,7 @@ The loss surface may contain local minima, maxima, saddle points, and flat regio
 
 ---
 
-### 13.11. Batch, Stochastic, and Mini-Batch Gradient Descent
+### 7.11. Batch, Stochastic, and Mini-Batch Gradient Descent
 
 The gradient can be calculated using different amounts of training data.
 
@@ -3615,7 +3615,7 @@ Mini-batch training is widely used in modern deep learning.
 
 ---
 
-### 13.12. Gradient Descent and Epochs
+### 7.12. Gradient Descent and Epochs
 
 Suppose a dataset contains:
 
@@ -3658,7 +3658,7 @@ They are related, but they are not the same thing.
 
 ---
 
-### 13.13. Gradient Descent Is an Optimization Algorithm
+### 7.13. Gradient Descent Is an Optimization Algorithm
 
 Gradient descent itself is not a predictive model.
 
@@ -3692,7 +3692,7 @@ The same optimization principle can be applied to many different differentiable 
 
 ---
 
-## 14. ML Association
+### 7.14. ML Association
 
 Gradient descent provides the mechanism through which many machine-learning models **learn from error**.
 
@@ -3763,7 +3763,7 @@ That is the mathematical core of gradient-based learning.
 
 ---
 
-## 15. Second Derivatives and Curvature
+## 8. Second Derivatives and Curvature
 
 The first derivative tells us how a function changes.
 
@@ -3791,7 +3791,7 @@ For machine learning, curvature helps us understand the shape of loss functions 
 
 ---
 
-### 15.1. From Slope to Curvature
+### 8.1. From Slope to Curvature
 
 Consider:
 
@@ -3869,7 +3869,7 @@ This is a concave shape.
 
 ---
 
-### 15.2. Stationary Points
+### 8.2. Stationary Points
 
 A **stationary point** occurs where:
 
@@ -3951,7 +3951,7 @@ This gives the basic **second derivative test**.
 
 ---
 
-### 15.3. The Second Derivative Test
+### 8.3. The Second Derivative Test
 
 At a stationary point $x^{*}$ where:
 
@@ -4000,7 +4000,7 @@ second derivative → How is the surface curved?
 
 ---
 
-### 15.4. When the Second Derivative Is Zero
+### 8.4. When the Second Derivative Is Zero
 
 Consider:
 
@@ -4072,7 +4072,7 @@ and why second-order information can help us understand the local geometry.
 
 ---
 
-### 15.5. Convexity
+### 8.5. Convexity
 
 A differentiable function is convex over a region when it curves upward rather than downward.
 
@@ -4123,7 +4123,7 @@ There are no deceptive lower valleys elsewhere.
 
 ---
 
-### 15.6. Non-Convex Functions
+### 8.6. Non-Convex Functions
 
 A non-convex function may contain a much more complicated landscape:
 
@@ -4149,7 +4149,7 @@ This makes their optimization considerably more complicated than minimizing a si
 
 ---
 
-### 15.7. Local Minimum vs Global Minimum
+### 8.7. Local Minimum vs Global Minimum
 
 A **local minimum** is lower than nearby points.
 
@@ -4172,7 +4172,7 @@ Therefore, in a general non-convex landscape, finding a stationary point does no
 
 ---
 
-### 15.8. Saddle Points
+### 8.8. Saddle Points
 
 Multivariable functions introduce another important possibility: the **saddle point**.
 
@@ -4249,7 +4249,7 @@ This is why:
 
 ---
 
-### 15.9. From Second Derivatives to the Hessian
+### 8.9. From Second Derivatives to the Hessian
 
 For a function containing several variables, curvature can also vary in several directions.
 
@@ -4303,7 +4303,7 @@ For $n$ variables, the Hessian is an $n\times n$ matrix containing all second-or
 
 ---
 
-### 15.10. Gradient vs Hessian
+### 8.10. Gradient vs Hessian
 
 The gradient and Hessian describe different aspects of the local loss landscape.
 
@@ -4336,7 +4336,7 @@ Hessian  → how is the terrain bending?
 
 ---
 
-### 15.11. Why We Do Not Always Use the Hessian
+### 8.11. Why We Do Not Always Use the Hessian
 
 Second-order information can improve optimization because it reveals curvature.
 
@@ -4392,7 +4392,7 @@ while methods that explicitly exploit curvature belong broadly to:
 
 ---
 
-## 16. ML Association
+### 8.12. ML Association
 
 Curvature helps explain why optimization behaves differently across different loss landscapes.
 
@@ -4473,7 +4473,7 @@ But curvature explains much of the terrain they are forced to navigate.
 
 ---
 
-## 17. Calculus of Important ML Functions
+## 9. Calculus of Important ML Functions
 
 Machine-learning models repeatedly use a relatively small family of mathematical functions.
 
@@ -4488,7 +4488,7 @@ Understanding how these functions behave — and especially how their derivative
 
 ---
 
-### 17.1. Polynomial Functions
+### 9.1. Polynomial Functions
 
 Polynomial functions appear frequently in regression, loss functions, and regularization.
 
@@ -4553,7 +4553,7 @@ This means larger weights receive proportionally larger gradient contributions.
 
 ---
 
-### 17.2. Exponential Functions
+### 9.2. Exponential Functions
 
 The natural exponential function is:
 
@@ -4623,7 +4623,7 @@ Exponential functions appear in:
 
 ---
 
-### 17.3. Logarithmic Functions
+### 9.3. Logarithmic Functions
 
 The natural logarithm is:
 
@@ -4687,7 +4687,7 @@ Logarithms are extremely important in machine learning because they convert prod
 
 ---
 
-### 17.4. Why Logs Appear in Probability-Based Models
+### 9.4. Why Logs Appear in Probability-Based Models
 
 Suppose the likelihood of a dataset is expressed as a product:
 
@@ -4729,7 +4729,7 @@ This is why many statistical and machine-learning models work with **log-likelih
 
 ---
 
-### 17.5. The Sigmoid Function
+### 9.5. The Sigmoid Function
 
 The sigmoid function is central to logistic regression and appears historically in neural networks.
 
@@ -4804,7 +4804,7 @@ we obtain:
 
 ---
 
-### 17.6. Derivative of the Sigmoid
+### 9.6. Derivative of the Sigmoid
 
 Start with:
 
@@ -4860,7 +4860,7 @@ It means the derivative of the sigmoid can be computed directly from the sigmoid
 
 ---
 
-### 17.7. Interpreting the Sigmoid Derivative
+### 9.7. Interpreting the Sigmoid Derivative
 
 The derivative is largest near:
 
@@ -4922,7 +4922,7 @@ That observation later becomes important when studying the **vanishing gradient 
 
 ---
 
-### 17.8. Binary Cross-Entropy
+### 9.8. Binary Cross-Entropy
 
 For binary classification, a commonly used loss is binary cross-entropy:
 
@@ -4994,7 +4994,7 @@ So highly confident wrong predictions are penalized heavily.
 
 ---
 
-### 17.9. Why Logarithms Fit Classification Losses Well
+### 9.9. Why Logarithms Fit Classification Losses Well
 
 Suppose the correct class is:
 
@@ -5040,7 +5040,7 @@ Its shape creates a useful penalty structure for probabilistic predictions.
 
 ---
 
-### 17.10. Sigmoid and Cross-Entropy Together
+### 9.10. Sigmoid and Cross-Entropy Together
 
 In logistic regression:
 
@@ -5103,7 +5103,7 @@ This is one reason the pairing of sigmoid and binary cross-entropy is mathematic
 
 ---
 
-### 17.11. Softmax
+### 9.11. Softmax
 
 For multiclass classification, the sigmoid is often replaced by the **softmax** function.
 
@@ -5137,7 +5137,7 @@ The derivatives are more involved than for sigmoid, but the same mathematical in
 
 ---
 
-### 17.12. Regularization Functions
+### 9.12. Regularization Functions
 
 Calculus also explains how regularization modifies model training.
 
@@ -5217,7 +5217,7 @@ This sharp point helps explain why L1 regularization tends to drive some weights
 
 ---
 
-### 17.13. Differentiability Matters
+### 9.13. Differentiability Matters
 
 Gradient-based optimization requires useful derivative information.
 
@@ -5259,7 +5259,7 @@ Machine learning can still optimize functions with such points using related con
 
 ---
 
-## 18. ML Association
+### 9.14. ML Association
 
 Many apparently different machine-learning techniques repeatedly reuse the same calculus toolkit.
 
@@ -5320,7 +5320,7 @@ It is to recognize the small set of mathematical building blocks that repeatedly
 
 ---
 
-## 19. Putting It Together: Calculus Behind Model Training
+## 10. Putting It Together: Calculus Behind Model Training
 
 We have now encountered the major calculus ideas needed to understand gradient-based machine learning:
 
@@ -5352,7 +5352,7 @@ Our goal is to find values of $w$ and $b$ that make the prediction as close as p
 
 ---
 
-### 19.1. Step 1: Define the Model
+### 10.1. Step 1: Define the Model
 
 The prediction is:
 
@@ -5389,7 +5389,7 @@ b
 
 ---
 
-### 19.2. Step 2: Make a Prediction
+### 10.2. Step 2: Make a Prediction
 
 Suppose:
 
@@ -5439,7 +5439,7 @@ We now need a mathematical way to measure how wrong the prediction is.
 
 ---
 
-### 19.3. Step 3: Calculate the Loss
+### 10.3. Step 3: Calculate the Loss
 
 Use squared error:
 
@@ -5481,7 +5481,7 @@ That requires derivatives.
 
 ---
 
-### 19.4. Step 4: Express the Full Computation
+### 10.4. Step 4: Express the Full Computation
 
 Substitute the prediction into the loss:
 
@@ -5525,7 +5525,7 @@ This is exactly the kind of nested dependency for which the chain rule was devel
 
 ---
 
-### 19.5. Step 5: Differentiate with Respect to the Weight
+### 10.5. Step 5: Differentiate with Respect to the Weight
 
 We want:
 
@@ -5606,7 +5606,7 @@ It means that, at this particular point, increasing $w$ will locally reduce the 
 
 ---
 
-### 19.6. Step 6: Differentiate with Respect to the Bias
+### 10.6. Step 6: Differentiate with Respect to the Bias
 
 Now compute:
 
@@ -5661,7 +5661,7 @@ We now know how the loss responds to both trainable parameters.
 
 ---
 
-### 19.7. Step 7: Assemble the Gradient
+### 10.7. Step 7: Assemble the Gradient
 
 The individual partial derivatives can be collected into the gradient:
 
@@ -5694,7 +5694,7 @@ The optimizer therefore moves in the opposite direction.
 
 ---
 
-### 19.8. Step 8: Update the Parameters
+### 10.8. Step 8: Update the Parameters
 
 Suppose the learning rate is:
 
@@ -5774,7 +5774,7 @@ b
 
 ---
 
-### 19.9. Step 9: Make the Next Prediction
+### 10.9. Step 9: Make the Next Prediction
 
 Using the updated model:
 
@@ -5812,7 +5812,7 @@ But the underlying mechanism remains the same.
 
 ---
 
-### 19.10. From One Example to a Dataset
+### 10.10. From One Example to a Dataset
 
 Suppose we have $N$ training examples.
 
@@ -5882,7 +5882,7 @@ This process repeats until a stopping condition is reached.
 
 ---
 
-### 19.11. The Complete Training Loop
+### 10.11. The Complete Training Loop
 
 We can now describe gradient-based model training from beginning to end:
 
@@ -5930,7 +5930,7 @@ This repeating loop is what we call **training**.
 
 ---
 
-### 19.12. Where Each Calculus Concept Fits
+### 10.12. Where Each Calculus Concept Fits
 
 We can now place the concepts from this chapter into their roles.
 
@@ -5980,7 +5980,7 @@ They form one connected system.
 
 ---
 
-### 19.13. The Same Machinery in Logistic Regression
+### 10.13. The Same Machinery in Logistic Regression
 
 The model changes, but the learning principle does not.
 
@@ -6056,7 +6056,7 @@ predict
 
 ---
 
-### 19.14. The Same Machinery in Neural Networks
+### 10.14. The Same Machinery in Neural Networks
 
 A neural network introduces many more intermediate computations:
 
@@ -6098,7 +6098,7 @@ The same derivative that tells us how one weight affects a simple squared-error 
 
 ---
 
-## 20. ML Association
+### 10.15. ML Association
 
 The mathematical foundation of supervised gradient-based learning can now be compressed into one relationship:
 
@@ -6172,7 +6172,7 @@ It provides the mathematical bridge between **being wrong** and **knowing how to
 
 ---
 
-## 21. Chapter Summary
+## 11. Chapter Summary
 
 Calculus gives machine learning a way to reason about **change**.
 
@@ -6327,9 +6327,9 @@ It is that calculus provides the mechanism that converts **error into informatio
 
 ---
 
-## 22. Calculus for ML — Quick Recall
+## 12. Calculus for ML — Quick Recall
 
-### 22.1. Derivative
+### 12.1. Derivative
 
 Measures instantaneous rate of change.
 
@@ -6347,7 +6347,7 @@ How fast is the function changing here?
 
 ---
 
-### 22.2. Partial Derivative
+### 12.2. Partial Derivative
 
 Measures change with respect to one variable while the others are held constant.
 
@@ -6363,7 +6363,7 @@ What happens if I turn only this parameter?
 
 ---
 
-### 22.3. Chain Rule
+### 12.3. Chain Rule
 
 Differentiates nested functions.
 
@@ -6389,7 +6389,7 @@ chain rule
 
 ---
 
-### 22.4. Gradient
+### 12.4. Gradient
 
 Collects partial derivatives into a vector.
 
@@ -6412,7 +6412,7 @@ Which way is uphill?
 
 ---
 
-### 22.5. Negative Gradient
+### 12.5. Negative Gradient
 
 Points toward steepest local decrease.
 
@@ -6428,7 +6428,7 @@ Which way is downhill?
 
 ---
 
-### 22.6. Gradient Descent
+### 12.6. Gradient Descent
 
 Uses the negative gradient to update model parameters.
 
@@ -6449,7 +6449,7 @@ learning rate gives step size
 
 ---
 
-### 22.7. Learning Rate
+### 12.7. Learning Rate
 
 Controls the size of each optimization step.
 
@@ -6471,7 +6471,7 @@ overshooting or divergence
 
 ---
 
-### 22.8. Second Derivative
+### 12.8. Second Derivative
 
 Measures how the slope itself changes.
 
@@ -6501,7 +6501,7 @@ f''(x)<0
 
 ---
 
-### 22.9. Hessian
+### 12.9. Hessian
 
 Multivariable equivalent of second-order curvature information.
 
@@ -6522,7 +6522,7 @@ How is the loss surface bending in many directions?
 
 ---
 
-### 22.10. Important Derivatives
+### 12.10. Important Derivatives
 
 Power rule:
 
@@ -6567,7 +6567,7 @@ Sigmoid:
 
 ---
 
-### 22.11. The ML Training Mental Model
+### 12.11. The ML Training Mental Model
 
 ```text
 Forward:
@@ -6633,7 +6633,7 @@ The single most important takeaway from this chapter is:
 
 ---
 
-## 23. Integration and Its Role in Machine Learning
+## 13. Integration and Its Role in Machine Learning
 
 Most of this chapter has focused on **differentiation** because derivatives and gradients directly drive the optimization of many machine-learning models.
 
@@ -6653,7 +6653,7 @@ In machine learning, integration appears especially in **probability, statistics
 
 ---
 
-### 23.1. Integration as Accumulation
+### 13.1. Integration as Accumulation
 
 Suppose we have a function:
 
@@ -6693,7 +6693,7 @@ Instead of examining the function at one point, integration combines contributio
 
 ---
 
-### 23.2. From Small Pieces to a Whole
+### 13.2. From Small Pieces to a Whole
 
 Imagine dividing the interval from $a$ to $b$ into many tiny pieces.
 
@@ -6734,7 +6734,7 @@ This idea becomes particularly important when dealing with **continuous quantiti
 
 ---
 
-### 23.3. Indefinite Integrals and Antiderivatives
+### 13.3. Indefinite Integrals and Antiderivatives
 
 An **indefinite integral** asks for a function whose derivative produces the original function.
 
@@ -6814,7 +6814,7 @@ The function $F(x)$ is called an **antiderivative** of $f(x)$.
 
 ---
 
-### 23.4. Definite Integrals
+### 13.4. Definite Integrals
 
 A definite integral has explicit boundaries:
 
@@ -6871,7 +6871,7 @@ Unlike an indefinite integral, a definite integral produces a specific accumulat
 
 ---
 
-### 23.5. The Fundamental Theorem of Calculus
+### 13.5. The Fundamental Theorem of Calculus
 
 Differentiation and integration may initially appear to perform opposite kinds of tasks.
 
@@ -6927,7 +6927,7 @@ local contributions → accumulated whole
 
 ---
 
-### 23.6. Why Integration Appears in Probability
+### 13.6. Why Integration Appears in Probability
 
 Integration becomes especially important in machine learning because ML relies heavily on probability.
 
@@ -6967,7 +6967,7 @@ The probability is literally represented by the **area under the probability-den
 
 ---
 
-### 23.7. Probability Density Is Not Probability
+### 13.7. Probability Density Is Not Probability
 
 This distinction is important.
 
@@ -7015,7 +7015,7 @@ probability of that interval
 
 ---
 
-### 23.8. Normalization of Probability Distributions
+### 13.8. Normalization of Probability Distributions
 
 A probability distribution must assign total probability equal to one.
 
@@ -7046,7 +7046,7 @@ Many probabilistic models involve constructing functions and ensuring that they 
 
 ---
 
-### 23.9. Cumulative Distribution Function
+### 13.9. Cumulative Distribution Function
 
 Integration also connects a probability density function to its **cumulative distribution function**, or CDF.
 
@@ -7093,7 +7093,7 @@ Probability therefore uses both major branches of calculus together.
 
 ---
 
-### 23.10. Expected Value
+### 13.10. Expected Value
 
 Integration also allows us to calculate the expected value of a continuous random variable.
 
@@ -7129,7 +7129,7 @@ Many objectives can be interpreted as minimizing or maximizing an **expected qua
 
 ---
 
-### 23.11. From Sums to Integrals
+### 13.11. From Sums to Integrals
 
 There is a useful pattern connecting discrete and continuous mathematics.
 
@@ -7171,7 +7171,7 @@ This provides a useful mental shortcut:
 
 ---
 
-### 23.12. Integration and Area Under a Curve
+### 13.12. Integration and Area Under a Curve
 
 The phrase **area under the curve** appears frequently in machine learning.
 
@@ -7208,7 +7208,7 @@ It comes directly from the integral interpretation of area.
 
 ---
 
-### 23.13. Numerical Integration
+### 13.13. Numerical Integration
 
 Not every integral has a convenient analytical solution.
 
@@ -7231,7 +7231,7 @@ This is particularly relevant in computing because real systems frequently work 
 
 ---
 
-### 23.14. Integration in Probabilistic Machine Learning
+### 13.14. Integration in Probabilistic Machine Learning
 
 Integration appears whenever a probabilistic model needs to account for a continuous range of possible values.
 
@@ -7268,7 +7268,7 @@ Those topics belong to more advanced ML, but their mathematical foundation begin
 
 ---
 
-## 24. ML Association
+### 13.15. ML Association
 
 Differentiation and integration play different but complementary roles in machine learning.
 
