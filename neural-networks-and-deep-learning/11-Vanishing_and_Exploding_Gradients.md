@@ -1,6 +1,6 @@
 # 11. Vanishing and Exploding Gradients
 
-## 1.1 Why Gradient Stability Matters
+## 1. Why Gradient Stability Matters
 
 A neural network learns by propagating gradients backward through its layers.
 
@@ -35,7 +35,7 @@ They are especially important in deep neural networks and recurrent neural netwo
 
 ---
 
-## 1.2 Where the Problem Comes From
+## 2. Where the Problem Comes From
 
 Backpropagation repeatedly applies the chain rule.
 
@@ -64,7 +64,7 @@ Therefore, repeated multiplication can dramatically change gradient magnitude.
 
 ---
 
-## 1.3 Vanishing Gradients
+## 3. Vanishing Gradients
 
 A gradient **vanishes** when it becomes extremely small as it moves backward through the network.
 
@@ -110,7 +110,7 @@ Almost Zero
 
 ---
 
-## 1.4 Why Vanishing Gradients Are a Problem
+## 4. Why Vanishing Gradients Are a Problem
 
 Parameter updates depend on gradients:
 
@@ -156,7 +156,7 @@ This prevents the network from effectively learning useful representations in it
 
 ---
 
-## 1.5 Sigmoid and Vanishing Gradients
+## 5. Sigmoid and Vanishing Gradients
 
 The sigmoid function is:
 
@@ -200,7 +200,7 @@ This is one major reason early deep networks using sigmoid activations were diff
 
 ---
 
-## 1.6 Sigmoid Saturation Makes It Worse
+## 6. Sigmoid Saturation Makes It Worse
 
 For large positive or negative values of `z`:
 
@@ -246,7 +246,7 @@ Poor weight initialization can make this problem worse by producing large pre-ac
 
 ---
 
-## 1.7 Tanh and Vanishing Gradients
+## 7. Tanh and Vanishing Gradients
 
 The tanh function is:
 
@@ -280,7 +280,7 @@ Tanh networks can therefore also suffer from vanishing gradients.
 
 ---
 
-## 1.8 ReLU and Gradient Flow
+## 8. ReLU and Gradient Flow
 
 ReLU is:
 
@@ -314,7 +314,7 @@ This is one reason ReLU became important in deep feed-forward networks.
 
 ---
 
-## 1.9 ReLU Does Not Eliminate Every Problem
+## 9. ReLU Does Not Eliminate Every Problem
 
 For negative inputs:
 
@@ -341,7 +341,7 @@ Variants such as Leaky ReLU reduce this risk.
 
 ---
 
-## 1.10 Exploding Gradients
+## 10. Exploding Gradients
 
 An **exploding gradient** occurs when repeated multiplication causes gradient magnitude to grow excessively.
 
@@ -395,7 +395,7 @@ Very Large
 
 ---
 
-## 1.11 Why Exploding Gradients Are a Problem
+## 11. Why Exploding Gradients Are a Problem
 
 The parameter update is:
 
@@ -441,7 +441,7 @@ Loss Becomes Unstable
 
 ---
 
-## 1.12 Signs of Exploding Gradients
+## 12. Signs of Exploding Gradients
 
 Possible symptoms include:
 
@@ -461,7 +461,7 @@ These symptoms do not uniquely prove exploding gradients, but they are strong cl
 
 ---
 
-## 1.13 Deep Networks Amplify the Problem
+## 13. Deep Networks Amplify the Problem
 
 Suppose a network contains many layers:
 
@@ -511,7 +511,7 @@ This is a simplified intuition, but it captures the core mechanism.
 
 ---
 
-## 1.14 Weight Matrices Also Affect Gradient Magnitude
+## 14. Weight Matrices Also Affect Gradient Magnitude
 
 Backpropagation through a layer contains terms such as:
 
@@ -540,7 +540,7 @@ This is why weight initialization is closely connected to gradient stability.
 
 ---
 
-## 1.15 Weight Initialization as a Solution
+## 15. Weight Initialization as a Solution
 
 Good initialization attempts to keep signal variance reasonably stable.
 
@@ -574,7 +574,7 @@ Initialization does not eliminate every gradient problem, but it greatly improve
 
 ---
 
-## 1.16 Gradient Clipping
+## 16. Gradient Clipping
 
 Gradient clipping directly addresses exploding gradients.
 
@@ -623,7 +623,7 @@ Optimizer Update
 
 ---
 
-## 1.17 Clipping by Value
+## 17. Clipping by Value
 
 Another form clips each gradient component independently.
 
@@ -645,7 +645,7 @@ However, **gradient norm clipping** is often preferable because it preserves the
 
 ---
 
-## 1.18 Learning Rate and Gradient Instability
+## 18. Learning Rate and Gradient Instability
 
 Even a reasonable gradient can cause large parameter changes if the learning rate is too high.
 
@@ -672,7 +672,7 @@ However, if the underlying gradients are genuinely exploding, learning-rate redu
 
 ---
 
-## 1.19 Normalization Helps Training Stability
+## 19. Normalization Helps Training Stability
 
 Normalization techniques can help keep activation distributions under better control.
 
@@ -689,7 +689,7 @@ They do not directly replace gradient clipping or initialization, but they can r
 
 ---
 
-## 1.20 Residual Connections
+## 20. Residual Connections
 
 Very deep networks often use **residual connections**, also called skip connections.
 
@@ -727,7 +727,7 @@ Residual connections greatly improved the trainability of very deep neural netwo
 
 ---
 
-## 1.21 Why Skip Connections Help Gradient Flow
+## 21. Why Skip Connections Help Gradient Flow
 
 For:
 
@@ -759,7 +759,7 @@ This makes very deep networks easier to optimize.
 
 ---
 
-## 1.22 Vanishing Gradients in Recurrent Neural Networks
+## 22. Vanishing Gradients in Recurrent Neural Networks
 
 The problem becomes particularly severe in recurrent neural networks because the same transformation is repeatedly applied across time.
 
@@ -785,7 +785,7 @@ This makes learning long-term dependencies difficult.
 
 ---
 
-## 1.23 LSTM and GRU
+## 23. LSTM and GRU
 
 Architectures such as:
 
@@ -802,7 +802,7 @@ These architectures will be examined later when recurrent neural networks are co
 
 ---
 
-## 1.24 Gradient Norm
+## 24. Gradient Norm
 
 A useful diagnostic quantity is the **gradient norm**.
 
@@ -847,7 +847,7 @@ Very Large
 
 ---
 
-## 1.25 Vanishing Gradients vs Small Useful Gradients
+## 25. Vanishing Gradients vs Small Useful Gradients
 
 A small gradient is not automatically a problem.
 
@@ -875,7 +875,7 @@ The issue is therefore not merely the numerical size of a gradient, but whether 
 
 ---
 
-## 1.26 Exploding Gradients vs Large Useful Gradients
+## 26. Exploding Gradients vs Large Useful Gradients
 
 Similarly, a large gradient may sometimes be useful when the model is far from a good solution.
 
@@ -895,7 +895,7 @@ Context matters.
 
 ---
 
-## 1.27 Common Causes of Vanishing Gradients
+## 27. Common Causes of Vanishing Gradients
 
 Important causes include:
 
@@ -918,7 +918,7 @@ Early Layers Stop Learning
 
 ---
 
-## 1.28 Common Causes of Exploding Gradients
+## 28. Common Causes of Exploding Gradients
 
 Important causes include:
 
@@ -940,7 +940,7 @@ Huge Parameter Updates
 
 ---
 
-## 1.29 Common Solutions
+## 29. Common Solutions
 
 A useful summary is:
 
@@ -960,7 +960,7 @@ Modern deep networks often combine several of these techniques.
 
 ---
 
-## 1.30 Gradient Stability and Activation Choice
+## 30. Gradient Stability and Activation Choice
 
 Activation functions directly affect backpropagation through:
 
@@ -988,7 +988,7 @@ It also determines how easily a network can be trained.
 
 ---
 
-## 1.31 Gradient Stability and Initialization
+## 31. Gradient Stability and Initialization
 
 Initialization determines the scale of the initial weights.
 
@@ -1020,7 +1020,7 @@ These concepts should not be viewed independently.
 
 ---
 
-## 1.32 Gradient Stability in the Training Loop
+## 32. Gradient Stability in the Training Loop
 
 The complete relationship is:
 
@@ -1060,7 +1060,7 @@ Successful deep learning requires keeping gradients in a useful numerical range.
 
 ---
 
-## 1.33 Key Takeaways
+## 33. Key Takeaways
 
 - Neural networks rely on gradients flowing backward through many layers.
 - Backpropagation repeatedly multiplies derivatives through the chain rule.
@@ -1082,7 +1082,7 @@ Successful deep learning requires keeping gradients in a useful numerical range.
 - Gradient norms can be monitored to diagnose instability.
 - Small gradients are not automatically vanishing gradients, and large gradients are not automatically exploding gradients.
 
-### Memory Hook
+### 33.1. Memory Hook
 
 ```text
 Backpropagation

@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 A single Decision Tree is simple and easy to understand, but it has an important weakness.
 
@@ -16,7 +16,7 @@ Random Forest addresses this problem by combining the predictions of many Decisi
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Suppose you want to estimate the value of a house.
 
@@ -40,7 +40,7 @@ Instead of trusting one Decision Tree, it combines the predictions of many trees
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -52,7 +52,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is a Random Forest?
+## 4. What is a Random Forest?
 
 A **Random Forest** is a **supervised ensemble learning algorithm** that combines the predictions of many Decision Trees to produce a more accurate and stable result.
 
@@ -60,7 +60,7 @@ Instead of training a single tree, the algorithm trains many trees independently
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 Decision Trees are powerful but prone to overfitting.
 
@@ -72,7 +72,7 @@ This generally improves the model's ability to generalize to unseen data.
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -85,7 +85,7 @@ This generally improves the model's ability to generalize to unseen data.
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Imagine asking one doctor for a diagnosis.
 
@@ -101,7 +101,7 @@ The forest combines these predictions into one final answer.
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Imagine a committee sitting around a table.
 
@@ -115,7 +115,7 @@ A Random Forest is a committee of Decision Trees.
 
 ---
 
-# How a Random Forest Works
+## 9. How a Random Forest Works
 
 The training process follows these steps:
 
@@ -148,7 +148,7 @@ Final Prediction
 
 ---
 
-# Bagging
+## 10. Bagging
 
 **Bagging** stands for **Bootstrap Aggregating**.
 
@@ -162,7 +162,7 @@ Bagging reduces the variance of the model, making predictions more stable.
 
 ---
 
-# Why Random Features?
+## 11. Why Random Features?
 
 If every tree always considered all features, many trees would become very similar.
 
@@ -172,7 +172,7 @@ More diverse trees generally produce a stronger forest.
 
 ---
 
-# How Predictions Are Combined
+## 12. How Predictions Are Combined
 
 For **classification**, each tree votes for a class.
 
@@ -182,7 +182,7 @@ For **regression**, the predictions of all trees are averaged.
 
 ---
 
-# Common Hyperparameters
+## 13. Common Hyperparameters
 
 | Hyperparameter | Purpose |
 |---------------|---------|
@@ -194,7 +194,7 @@ For **regression**, the predictions of all trees are averaged.
 
 ---
 
-# Advantages
+## 14. Advantages
 
 - Reduces overfitting compared to a single Decision Tree.
 - Produces more stable predictions.
@@ -205,7 +205,7 @@ For **regression**, the predictions of all trees are averaged.
 
 ---
 
-# Limitations
+## 15. Limitations
 
 - Harder to interpret than a single Decision Tree.
 - Requires more memory.
@@ -214,7 +214,7 @@ For **regression**, the predictions of all trees are averaged.
 
 ---
 
-# Common Applications
+## 16. Common Applications
 
 Random Forest is widely used in:
 
@@ -227,7 +227,7 @@ Random Forest is widely used in:
 
 ---
 
-# Memory Hook
+## 17. Memory Hook
 
 > **One tree makes a decision.**
 >
@@ -237,7 +237,7 @@ Think of a Random Forest as a committee whose members vote before reaching a fin
 
 ---
 
-# Common Mistakes
+## 18. Common Mistakes
 
 - Assuming more trees always produce significantly better results.
 - Confusing bagging with boosting.
@@ -246,9 +246,9 @@ Think of a Random Forest as a committee whose members vote before reaching a fin
 
 ---
 
-# Frequently Asked Questions
+## 19. Frequently Asked Questions
 
-### Why is it called a Random Forest?
+### 19.1. Why is it called a Random Forest?
 
 Because randomness is introduced in two ways:
 
@@ -259,7 +259,7 @@ Together, these create a diverse collection of Decision Trees.
 
 ---
 
-### Can Random Forest perform regression?
+### 19.2. Can Random Forest perform regression?
 
 Yes.
 
@@ -267,13 +267,13 @@ It supports both classification and regression tasks.
 
 ---
 
-### Why is Random Forest usually more accurate than a single Decision Tree?
+### 19.3. Why is Random Forest usually more accurate than a single Decision Tree?
 
 Because combining many independent trees reduces variance and makes predictions more robust.
 
 ---
 
-# 30-Second Revision
+## 20. 30-Second Revision
 
 - Supervised ensemble learning algorithm.
 - Built from many Decision Trees.
@@ -285,7 +285,7 @@ Because combining many independent trees reduces variance and makes predictions 
 
 ---
 
-# Looking Ahead
+## 21. Looking Ahead
 
 Random Forest trains many trees **independently** and combines their predictions.
 

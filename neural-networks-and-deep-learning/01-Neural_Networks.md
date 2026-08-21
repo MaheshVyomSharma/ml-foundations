@@ -1,6 +1,6 @@
 # 01. Neural Networks — Big Picture & Biological Inspiration
 
-## 1.1 What Is a Neural Network?
+## 1. What Is a Neural Network?
 
 An **Artificial Neural Network (ANN)** is a machine learning model composed of interconnected computational units called **artificial neurons**.
 
@@ -37,7 +37,7 @@ This tiny operation is the fundamental building block of even very large neural 
 
 ---
 
-## 1.2 The Connection to Classical Machine Learning
+## 2. The Connection to Classical Machine Learning
 
 A neural network should not be viewed as something completely separate from classical machine learning.
 
@@ -77,7 +77,7 @@ The mathematical foundations from classical ML therefore carry directly into neu
 
 ---
 
-## 1.3 Why Do We Need Neural Networks?
+## 3. Why Do We Need Neural Networks?
 
 A linear model can only directly represent relationships of the form:
 
@@ -119,7 +119,7 @@ rather than being restricted to a single linear relationship.
 
 ---
 
-## 1.4 Why Multiple Linear Layers Alone Are Not Enough
+## 4. Why Multiple Linear Layers Alone Are Not Enough
 
 Suppose one neural-network layer performs:
 
@@ -177,7 +177,7 @@ This allows the network to represent complex non-linear relationships.
 
 ---
 
-## 1.5 Biological Inspiration
+## 5. Biological Inspiration
 
 Artificial neural networks were loosely inspired by biological neurons.
 
@@ -234,7 +234,7 @@ Modern neural-network design is driven primarily by mathematics, optimization, c
 
 ---
 
-## 1.6 From One Neuron to a Network
+## 6. From One Neuron to a Network
 
 A single neuron receives several inputs:
 
@@ -285,7 +285,7 @@ This is the origin of the term **deep learning**: the model learns through multi
 
 ---
 
-## 1.7 What Does a Neural Network Actually Learn?
+## 7. What Does a Neural Network Actually Learn?
 
 A neural network primarily learns its **weights and biases**.
 
@@ -339,11 +339,11 @@ The mechanisms responsible for these steps are **forward propagation, loss funct
 
 ---
 
-## 1.8 Parameters vs Hyperparameters
+## 8. Parameters vs Hyperparameters
 
 An important distinction in neural networks is between **parameters** and **hyperparameters**.
 
-### Parameters
+### 8.1. Parameters
 
 Parameters are values learned automatically from training data.
 
@@ -366,7 +366,7 @@ w_1,\;w_2,\;b
 
 are trainable parameters.
 
-### Hyperparameters
+### 8.2. Hyperparameters
 
 Hyperparameters are choices that control the model or training process.
 
@@ -390,7 +390,7 @@ Hyperparameters → chosen/configured for the model
 
 ---
 
-## 1.9 What Makes Deep Learning Different?
+## 9. What Makes Deep Learning Different?
 
 Traditional machine-learning workflows often depend heavily on **feature engineering**.
 
@@ -427,7 +427,7 @@ This ability to perform **representation learning** is one of the major strength
 
 ---
 
-## 1.10 Neural Networks Are Still Machine Learning
+## 10. Neural Networks Are Still Machine Learning
 
 Despite their complexity, neural networks follow the same fundamental supervised-learning framework encountered in classical ML:
 
@@ -461,11 +461,11 @@ Deep learning extends these ideas rather than replacing them.
 
 ---
 
-## 1.11 Core Mathematical View
+## 11. Core Mathematical View
 
 At the heart of a neural network are concepts already encountered in the mathematical foundations of ML.
 
-### Linear Algebra
+### 11.1. Linear Algebra
 
 Inputs and weights are represented using vectors and matrices:
 
@@ -473,7 +473,7 @@ Inputs and weights are represented using vectors and matrices:
 \mathbf{z} = W\mathbf{x}+\mathbf{b}
 ```
 
-### Functions
+### 11.2. Functions
 
 Activation functions transform the weighted result:
 
@@ -481,7 +481,7 @@ Activation functions transform the weighted result:
 \mathbf{a}=f(\mathbf{z})
 ```
 
-### Calculus
+### 11.3. Calculus
 
 Derivatives tell us how changing a parameter affects the loss:
 
@@ -489,7 +489,7 @@ Derivatives tell us how changing a parameter affects the loss:
 \frac{\partial L}{\partial w}
 ```
 
-### Probability and Statistics
+### 11.4. Probability and Statistics
 
 Classification outputs are frequently interpreted probabilistically:
 
@@ -497,7 +497,7 @@ Classification outputs are frequently interpreted probabilistically:
 P(y=k\mid\mathbf{x})
 ```
 
-### Optimization
+### 11.5. Optimization
 
 Parameters are updated to reduce the loss:
 
@@ -527,7 +527,7 @@ Neural Networks
 
 ---
 
-## 1.12 The Complete Picture
+## 12. The Complete Picture
 
 The fundamental neural-network pipeline can be summarized as:
 
@@ -557,7 +557,7 @@ Training repeats this process many times until the network learns parameters tha
 
 ---
 
-## 1.13 Key Takeaways
+## 13. Key Takeaways
 
 - An artificial neuron computes a weighted sum of its inputs plus a bias.
 - The basic computation strongly resembles linear and logistic regression.
@@ -572,7 +572,7 @@ Training repeats this process many times until the network learns parameters tha
 - Deep learning builds directly upon linear algebra, calculus, probability, statistics, and optimization.
 - Classical ML concepts such as overfitting, regularization, evaluation, and generalization remain fully relevant.
 
-### Memory Hook
+### 13.1. Memory Hook
 
 ```text
 Neuron
@@ -595,9 +595,9 @@ Deep Learning
 ```
 ---
 
-# 02. Perceptron and Artificial Neuron
+## 14. Perceptron and Artificial Neuron
 
-## 2.1 The Artificial Neuron
+## 15. The Artificial Neuron
 
 The **artificial neuron** is the fundamental computational unit of a neural network.
 
@@ -655,7 +655,7 @@ Output
 
 ---
 
-## 2.2 What Do the Weights Represent?
+## 16. What Do the Weights Represent?
 
 A **weight** determines how strongly an input influences the neuron's output.
 
@@ -687,7 +687,7 @@ Weights are not normally assigned manually. They are **learned during training**
 
 ---
 
-## 2.3 What Does the Bias Do?
+## 17. What Does the Bias Do?
 
 The **bias** is an additional trainable parameter that allows the neuron to shift its response independently of the input values.
 
@@ -727,7 +727,7 @@ y = mx + c
 
 where `c` allows the line to move vertically rather than forcing it through `(0,0)`.
 
-### Memory Hook
+### 17.1. Memory Hook
 
 ```text
 Weights → control orientation and influence
@@ -736,7 +736,7 @@ Bias    → allows shifting
 
 ---
 
-## 2.4 Vector Representation
+## 18. Vector Representation
 
 Instead of writing:
 
@@ -788,7 +788,7 @@ This vector representation becomes extremely important because neural networks p
 
 ---
 
-## 2.5 The Perceptron
+## 19. The Perceptron
 
 The **perceptron** is one of the earliest artificial-neuron models.
 
@@ -828,7 +828,7 @@ The perceptron therefore acts as a binary classifier.
 
 ---
 
-## 2.6 Perceptron as a Decision Boundary
+## 20. Perceptron as a Decision Boundary
 
 The perceptron switches between its two output classes when:
 
@@ -874,7 +874,7 @@ In higher-dimensional spaces, this boundary becomes a **hyperplane**.
 
 ---
 
-## 2.7 Linear Separability
+## 21. Linear Separability
 
 A dataset is **linearly separable** if a single straight line, plane, or hyperplane can completely separate its classes.
 
@@ -910,7 +910,7 @@ This limitation became historically important because it demonstrated that **sin
 
 ---
 
-## 2.8 Why Multiple Neurons Matter
+## 22. Why Multiple Neurons Matter
 
 A single perceptron gives us one linear boundary:
 
@@ -940,7 +940,7 @@ This is one of the central ideas behind neural networks:
 
 ---
 
-## 2.9 Perceptron vs Logistic Regression
+## 23. Perceptron vs Logistic Regression
 
 The perceptron and logistic regression have very similar internal linear computations.
 
@@ -952,7 +952,7 @@ z = \mathbf{w}^T\mathbf{x}+b
 
 The difference is what happens afterward.
 
-### Perceptron
+### 23.1. Perceptron
 
 Uses a hard step function:
 
@@ -967,7 +967,7 @@ Uses a hard step function:
 
 Its output directly represents a class.
 
-### Logistic Regression
+### 23.2. Logistic Regression
 
 Uses the sigmoid function:
 
@@ -999,7 +999,7 @@ This connection is important because a sigmoid neuron is mathematically very clo
 
 ---
 
-## 2.10 Perceptron Learning
+## 24. Perceptron Learning
 
 The perceptron learns by modifying its weights when it makes classification mistakes.
 
@@ -1058,7 +1058,7 @@ Modern neural networks use considerably more sophisticated learning mechanisms, 
 
 ---
 
-## 2.11 Artificial Neuron vs Classical Perceptron
+## 25. Artificial Neuron vs Classical Perceptron
 
 The terms **artificial neuron** and **perceptron** are sometimes used loosely as though they mean exactly the same thing.
 
@@ -1096,7 +1096,7 @@ of modern neural networks
 
 ---
 
-## 2.12 One Neuron vs an Entire Layer
+## 26. One Neuron vs an Entire Layer
 
 For one neuron:
 
@@ -1142,7 +1142,7 @@ Modern deep-learning frameworks perform these matrix operations efficiently on C
 
 ---
 
-## 2.13 Key Takeaways
+## 27. Key Takeaways
 
 - An artificial neuron receives inputs, multiplies them by weights, adds a bias, and applies an activation function.
 - **Weights** determine the strength and direction of input influence.
@@ -1157,7 +1157,7 @@ Modern deep-learning frameworks perform these matrix operations efficiently on C
 - Modern artificial neurons generalize the original perceptron idea.
 - Multiple neurons can be calculated simultaneously using matrix operations.
 
-### Memory Hook
+### 27.1. Memory Hook
 
 ```text
 Artificial Neuron
@@ -1184,4 +1184,3 @@ One Layer:
 z = Wx + b
 ```
 ---
-

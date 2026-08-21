@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 Several Machine Learning algorithms depend on comparing data points.
 
@@ -24,7 +24,7 @@ Choosing an appropriate measure can significantly affect the quality of a Machin
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Suppose you want to choose a roommate.
 
@@ -44,7 +44,7 @@ Likewise, Machine Learning must decide what "similar" means before it can group 
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -56,7 +56,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What are Similarity Measures?
+## 4. What are Similarity Measures?
 
 **Similarity measures** are mathematical methods used to quantify how alike or different two samples are.
 
@@ -66,7 +66,7 @@ Others produce a **similarity score**, where larger values indicate greater simi
 
 ---
 
-# Problem They Solve
+## 5. Problem They Solve
 
 Many Machine Learning algorithms make decisions based on how close two samples are.
 
@@ -76,7 +76,7 @@ Similarity measures provide a consistent way to compare samples.
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -88,7 +88,7 @@ Similarity measures provide a consistent way to compare samples.
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Imagine two cities connected by roads.
 
@@ -104,7 +104,7 @@ Similarly, Machine Learning offers different ways to compare data depending on t
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Imagine plotting every sample as a point on a map.
 
@@ -114,54 +114,54 @@ Different similarity measures simply define different ways of measuring the dist
 
 ---
 
-# Euclidean Distance
+## 9. Euclidean Distance
 
 Euclidean Distance measures the straight-line distance between two points.
 
 It is the most commonly used distance metric.
 
-### Best suited for
+### 9.1. Best suited for
 
 - Continuous numerical features
 - KNN
 - K-Means
 - Low- to moderate-dimensional datasets
 
-### Advantages
+### 9.2. Advantages
 
 - Simple
 - Intuitive
 - Widely used
 
-### Limitations
+### 9.3. Limitations
 
 - Sensitive to feature scaling.
 - Less effective in very high-dimensional spaces.
 
 ---
 
-# Manhattan Distance
+## 10. Manhattan Distance
 
 Manhattan Distance measures the distance travelled along horizontal and vertical paths, similar to navigating city streets laid out in a grid.
 
-### Best suited for
+### 10.1. Best suited for
 
 - Grid-like movement
 - High-dimensional numerical data
 - Data containing outliers
 
-### Advantages
+### 10.2. Advantages
 
 - Less affected by outliers than Euclidean Distance.
 - Easy to compute.
 
-### Limitations
+### 10.3. Limitations
 
 - May not represent true straight-line distance.
 
 ---
 
-# Minkowski Distance
+## 11. Minkowski Distance
 
 Minkowski Distance is a generalized distance measure.
 
@@ -176,31 +176,31 @@ By adjusting a parameter, different distance behaviours can be obtained.
 
 ---
 
-# Cosine Similarity
+## 12. Cosine Similarity
 
 Cosine Similarity measures the angle between two vectors rather than the distance between them.
 
 Two vectors pointing in the same direction have a similarity close to **1**, even if their magnitudes differ.
 
-### Best suited for
+### 12.1. Best suited for
 
 - Text analysis
 - Document similarity
 - Natural Language Processing
 - High-dimensional sparse data
 
-### Advantages
+### 12.2. Advantages
 
 - Ignores vector magnitude.
 - Excellent for comparing text documents.
 
-### Limitations
+### 12.3. Limitations
 
 - Does not consider absolute distance.
 
 ---
 
-# Jaccard Similarity
+## 13. Jaccard Similarity
 
 Jaccard Similarity compares two sets by measuring how many elements they share.
 
@@ -208,26 +208,26 @@ It is defined as:
 
 > **Intersection ÷ Union**
 
-### Best suited for
+### 13.1. Best suited for
 
 - Binary features
 - Set comparisons
 - Recommendation systems
 - Market basket analysis
 
-### Advantages
+### 13.2. Advantages
 
 - Simple interpretation.
 - Ideal for presence-or-absence data.
 
-### Limitations
+### 13.3. Limitations
 
 - Ignores feature frequency.
 - Not suitable for continuous numerical data.
 
 ---
 
-# Choosing the Right Measure
+## 14. Choosing the Right Measure
 
 | Data Type | Recommended Measure |
 |-----------|---------------------|
@@ -239,7 +239,7 @@ It is defined as:
 
 ---
 
-# Feature Scaling
+## 15. Feature Scaling
 
 Distance-based measures such as Euclidean and Manhattan Distance are sensitive to differences in feature scale.
 
@@ -249,7 +249,7 @@ Cosine Similarity is generally less affected because it depends on vector direct
 
 ---
 
-# Advantages
+## 16. Advantages
 
 - Provides a consistent way to compare samples.
 - Supports many Machine Learning algorithms.
@@ -258,7 +258,7 @@ Cosine Similarity is generally less affected because it depends on vector direct
 
 ---
 
-# Limitations
+## 17. Limitations
 
 - No single measure is best for every problem.
 - Poor feature scaling can distort distance calculations.
@@ -266,7 +266,7 @@ Cosine Similarity is generally less affected because it depends on vector direct
 
 ---
 
-# Common Applications
+## 18. Common Applications
 
 Similarity measures are widely used in:
 
@@ -281,7 +281,7 @@ Similarity measures are widely used in:
 
 ---
 
-# Memory Hook
+## 19. Memory Hook
 
 > **Distance tells you how far apart two samples are.**
 >
@@ -296,7 +296,7 @@ Remember:
 
 ---
 
-# Common Mistakes
+## 20. Common Mistakes
 
 - Forgetting feature scaling for distance-based algorithms.
 - Using Euclidean Distance for text documents.
@@ -305,9 +305,9 @@ Remember:
 
 ---
 
-# Frequently Asked Questions
+## 21. Frequently Asked Questions
 
-### Why are there so many similarity measures?
+### 21.1. Why are there so many similarity measures?
 
 Different datasets have different characteristics.
 
@@ -315,19 +315,19 @@ A measure that works well for numerical data may perform poorly on text or binar
 
 ---
 
-### Which similarity measure is used in KNN?
+### 21.2. Which similarity measure is used in KNN?
 
 Most implementations use Euclidean Distance by default, although other distance metrics can also be used.
 
 ---
 
-### Why is Cosine Similarity popular in NLP?
+### 21.3. Why is Cosine Similarity popular in NLP?
 
 Because documents with similar topics often have similar **directions** in vector space, even if their lengths differ.
 
 ---
 
-# 30-Second Revision
+## 22. 30-Second Revision
 
 - Similarity measures compare samples.
 - Distance and similarity are related but not identical.
@@ -340,7 +340,7 @@ Because documents with similar topics often have similar **directions** in vecto
 
 ---
 
-# Looking Ahead
+## 23. Looking Ahead
 
 The next chapter shifts focus from **building models** to **evaluating them**.
 

@@ -1,6 +1,6 @@
 # 04. Forward Propagation
 
-## 1.1 What Is Forward Propagation?
+## 1. What Is Forward Propagation?
 
 **Forward propagation** is the process of passing input data through a neural network, layer by layer, until the final prediction is produced.
 
@@ -51,7 +51,7 @@ Output Prediction
 
 ---
 
-## 1.2 Input as the First Activation
+## 2. Input as the First Activation
 
 For convenience, the input itself is often treated as the activation of layer zero:
 
@@ -103,11 +103,11 @@ This notation becomes useful when describing deep networks compactly.
 
 ---
 
-## 1.3 The Two Computations Inside Each Layer
+## 3. The Two Computations Inside Each Layer
 
 Every standard dense layer performs two conceptual stages.
 
-### Linear Step
+### 3.1. Linear Step
 
 ```math
 \mathbf{z}^{[l]}
@@ -119,7 +119,7 @@ W^{[l]}\mathbf{a}^{[l-1]}
 
 This calculates a weighted combination of the previous layer's outputs.
 
-### Activation Step
+### 3.2. Activation Step
 
 ```math
 \mathbf{a}^{[l]}
@@ -155,7 +155,7 @@ a = value after activation
 
 ---
 
-## 1.4 Example: One Hidden Layer
+## 4. Example: One Hidden Layer
 
 Consider a neural network with:
 
@@ -253,7 +253,7 @@ Output Activation
 
 ---
 
-## 1.5 Numerical Example
+## 5. Numerical Example
 
 Suppose the input is:
 
@@ -319,7 +319,7 @@ Every neuron in the network performs essentially this same operation.
 
 ---
 
-## 1.6 Forward Propagation Through Multiple Layers
+## 6. Forward Propagation Through Multiple Layers
 
 For a deeper network:
 
@@ -391,7 +391,7 @@ Each layer transforms one representation into another.
 
 ---
 
-## 1.7 Function Composition View
+## 7. Function Composition View
 
 A neural network can also be viewed as a composition of functions.
 
@@ -423,7 +423,7 @@ This perspective becomes extremely important during backpropagation because deri
 
 ---
 
-## 1.8 Why Forward Propagation Is Called "Forward"
+## 8. Why Forward Propagation Is Called "Forward"
 
 The term refers to the direction in which information flows.
 
@@ -450,7 +450,7 @@ Learning happens only after the prediction is compared with the true target and 
 
 ---
 
-## 1.9 Forward Propagation During Training
+## 9. Forward Propagation During Training
 
 During training, the network follows this sequence:
 
@@ -494,7 +494,7 @@ That loss tells the network how wrong the prediction is.
 
 ---
 
-## 1.10 Forward Propagation During Inference
+## 10. Forward Propagation During Inference
 
 Forward propagation is also used after training.
 
@@ -531,7 +531,7 @@ Inference
 
 ---
 
-## 1.11 Batch Forward Propagation
+## 11. Batch Forward Propagation
 
 Neural networks rarely process only one sample at a time.
 
@@ -584,7 +584,7 @@ This allows many training examples to be processed using efficient matrix operat
 
 ---
 
-## 1.12 Why Vectorization Matters
+## 12. Why Vectorization Matters
 
 Consider processing 1,000 training samples.
 
@@ -612,7 +612,7 @@ Therefore, neural-network computation relies heavily on **vectorization**.
 
 ---
 
-## 1.13 Matrix Shapes During a Batch Forward Pass
+## 13. Matrix Shapes During a Batch Forward Pass
 
 Suppose:
 
@@ -674,7 +674,7 @@ Each row represents one neuron.
 
 ---
 
-## 1.14 Broadcasting the Bias
+## 14. Broadcasting the Bias
 
 The bias vector has shape:
 
@@ -708,7 +708,7 @@ Numerical libraries and deep-learning frameworks usually perform this automatica
 
 ---
 
-## 1.15 Hidden Activations as Learned Features
+## 15. Hidden Activations as Learned Features
 
 The hidden activations:
 
@@ -744,7 +744,7 @@ It is progressively transforming the representation of the data.
 
 ---
 
-## 1.16 Forward Propagation in Binary Classification
+## 16. Forward Propagation in Binary Classification
 
 Consider the architecture:
 
@@ -807,7 +807,7 @@ can be interpreted as the model's estimated probability of the positive class.
 
 ---
 
-## 1.17 Forward Propagation in Multiclass Classification
+## 17. Forward Propagation in Multiclass Classification
 
 Suppose the network predicts one of four classes.
 
@@ -841,7 +841,7 @@ meaning that the class with the largest predicted probability is selected.
 
 ---
 
-## 1.18 Forward Propagation in Regression
+## 18. Forward Propagation in Regression
 
 For regression, the final layer often uses a linear activation.
 
@@ -871,7 +871,7 @@ No sigmoid or softmax is required because the output may need to take unrestrict
 
 ---
 
-## 1.19 Parameters Are Fixed During the Forward Pass
+## 19. Parameters Are Fixed During the Forward Pass
 
 During a particular forward pass, the values of:
 
@@ -922,7 +922,7 @@ Optimization
 
 ---
 
-## 1.20 Computational Graph Intuition
+## 20. Computational Graph Intuition
 
 A forward pass can also be represented as a **computational graph**.
 
@@ -972,11 +972,11 @@ This computational-graph view underlies automatic differentiation systems used i
 
 ---
 
-## 1.21 Forward Pass vs Backward Pass
+## 21. Forward Pass vs Backward Pass
 
 These two ideas should be kept clearly separate.
 
-### Forward Pass
+### 21.1. Forward Pass
 
 Computes values:
 
@@ -990,7 +990,7 @@ Prediction
 Loss
 ```
 
-### Backward Pass
+### 21.2. Backward Pass
 
 Computes gradients:
 
@@ -1017,7 +1017,7 @@ Backward
 
 ---
 
-## 1.22 Forward Propagation and the Entire Neural Network
+## 22. Forward Propagation and the Entire Neural Network
 
 A neural network can be viewed as one large function:
 
@@ -1063,7 +1063,7 @@ produce predictions close to the true targets.
 
 ---
 
-## 1.23 Key Takeaways
+## 23. Key Takeaways
 
 - **Forward propagation** passes data from the input layer toward the output layer.
 - Each dense layer performs a linear transformation followed by an activation function.
@@ -1108,7 +1108,7 @@ f^{[l]}
 \hat{y}=F(\mathbf{x};\theta)
 ```
 
-### Memory Hook
+### 23.1. Memory Hook
 
 ```text
 Forward Propagation

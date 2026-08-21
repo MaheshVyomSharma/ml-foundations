@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 A Machine Learning model can perform extremely well on training data and still fail badly on new data.
 
@@ -16,7 +16,7 @@ Regularization helps control overfitting by discouraging the model from becoming
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Imagine preparing for an exam using ten solved question papers.
 
@@ -38,7 +38,7 @@ Regularization encourages the model to learn the broader pattern instead.
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -50,7 +50,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is Regularization?
+## 4. What is Regularization?
 
 **Regularization** is a technique used to reduce overfitting by adding a penalty for model complexity during training.
 
@@ -60,7 +60,7 @@ This encourages the model to avoid unnecessarily large parameter values.
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 A complex model may fit the training data extremely closely.
 
@@ -77,7 +77,7 @@ Regularization reduces this tendency by discouraging excessive model complexity.
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -89,7 +89,7 @@ Regularization reduces this tendency by discouraging excessive model complexity.
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Suppose a model is allowed to assign extremely large weights to individual features.
 
@@ -106,7 +106,7 @@ The model must therefore balance two goals:
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Imagine fitting a flexible wire through a set of points.
 
@@ -120,7 +120,7 @@ It still bends enough to follow the overall trend, but resists extreme twists ca
 
 ---
 
-# How Regularization Works
+## 9. How Regularization Works
 
 Without regularization, training focuses mainly on minimizing prediction error.
 
@@ -136,7 +136,7 @@ The model must now find parameters that provide good predictions without becomin
 
 ---
 
-# Regularization Strength
+## 10. Regularization Strength
 
 The amount of regularization is controlled by a parameter.
 
@@ -158,7 +158,7 @@ This leads to **underfitting**.
 
 ---
 
-# L1 Regularization
+## 11. L1 Regularization
 
 L1 Regularization penalizes the **absolute values** of model coefficients.
 
@@ -170,7 +170,7 @@ This means L1 can effectively remove less useful features from the model.
 
 ---
 
-# L2 Regularization
+## 12. L2 Regularization
 
 L2 Regularization penalizes the **squared values** of model coefficients.
 
@@ -182,7 +182,7 @@ As a result, most or all features remain in the model, but their influence is re
 
 ---
 
-# L1 vs L2
+## 13. L1 vs L2
 
 | Property | L1 | L2 |
 |----------|----|----|
@@ -194,7 +194,7 @@ As a result, most or all features remain in the model, but their influence is re
 
 ---
 
-# Elastic Net
+## 14. Elastic Net
 
 **Elastic Net** combines both L1 and L2 regularization.
 
@@ -204,7 +204,7 @@ This makes it useful when both regularization effects are desirable.
 
 ---
 
-# Advantages
+## 15. Advantages
 
 - Reduces overfitting.
 - Improves generalization.
@@ -214,7 +214,7 @@ This makes it useful when both regularization effects are desirable.
 
 ---
 
-# Limitations
+## 16. Limitations
 
 - Too much regularization can cause underfitting.
 - Regularization strength must be chosen carefully.
@@ -223,7 +223,7 @@ This makes it useful when both regularization effects are desirable.
 
 ---
 
-# Common Applications
+## 17. Common Applications
 
 Regularization is commonly used with:
 
@@ -235,7 +235,7 @@ Regularization is commonly used with:
 
 ---
 
-# Memory Hook
+## 18. Memory Hook
 
 > **Regularization adds a price for complexity.**
 
@@ -247,7 +247,7 @@ And:
 
 ---
 
-# Common Mistakes
+## 19. Common Mistakes
 
 - Assuming stronger regularization is always better.
 - Confusing regularization with feature scaling.
@@ -257,9 +257,9 @@ And:
 
 ---
 
-# Frequently Asked Questions
+## 20. Frequently Asked Questions
 
-### Is regularization a Machine Learning algorithm?
+### 20.1. Is regularization a Machine Learning algorithm?
 
 No.
 
@@ -267,7 +267,7 @@ Regularization is a technique used while training certain Machine Learning model
 
 ---
 
-### What is the difference between Ridge and Lasso Regression?
+### 20.2. What is the difference between Ridge and Lasso Regression?
 
 Ridge uses L2 regularization and usually shrinks coefficients.
 
@@ -275,7 +275,7 @@ Lasso uses L1 regularization and can shrink some coefficients exactly to zero.
 
 ---
 
-### Why can L1 perform feature selection?
+### 20.3. Why can L1 perform feature selection?
 
 Because its penalty can force some feature coefficients to become exactly zero.
 
@@ -283,7 +283,7 @@ A feature with a zero coefficient no longer contributes to the model's predictio
 
 ---
 
-### Can Logistic Regression use regularization?
+### 20.4. Can Logistic Regression use regularization?
 
 Yes.
 
@@ -291,7 +291,7 @@ Regularization is commonly applied to Logistic Regression to reduce overfitting 
 
 ---
 
-# 30-Second Revision
+## 21. 30-Second Revision
 
 - Regularization helps reduce overfitting.
 - Adds a complexity penalty during training.
@@ -305,7 +305,7 @@ Regularization is commonly applied to Logistic Regression to reduce overfitting 
 
 ---
 
-# Looking Ahead
+## 22. Looking Ahead
 
 Regularization helps linear models control complexity.
 

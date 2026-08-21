@@ -1,6 +1,6 @@
 # 08. Training a Neural Network
 
-## 1.1 What Does Training Mean?
+## 1. What Does Training Mean?
 
 Training a neural network means finding values for its trainable parameters that make its predictions increasingly accurate.
 
@@ -40,11 +40,11 @@ Each repetition should, in general, move the model toward parameters that produc
 
 ---
 
-## 1.2 Before Training Begins
+## 2. Before Training Begins
 
 Before the first training step, several things must already be defined.
 
-### Data
+### 2.1. Data
 
 The model needs input features and corresponding targets:
 
@@ -52,7 +52,7 @@ The model needs input features and corresponding targets:
 (\mathbf{x},y)
 ```
 
-### Architecture
+### 2.2. Architecture
 
 For example:
 
@@ -66,7 +66,7 @@ Dense(32, ReLU)
 Dense(1, Sigmoid)
 ```
 
-### Loss Function
+### 2.3. Loss Function
 
 For binary classification:
 
@@ -74,7 +74,7 @@ For binary classification:
 Binary Cross-Entropy
 ```
 
-### Optimizer
+### 2.4. Optimizer
 
 For example:
 
@@ -83,7 +83,7 @@ SGD
 Adam
 ```
 
-### Hyperparameters
+### 2.5. Hyperparameters
 
 Such as:
 
@@ -95,7 +95,7 @@ Only then can training begin.
 
 ---
 
-## 1.3 Weight Initialization
+## 3. Weight Initialization
 
 The network needs initial values for its weights before it can make its first prediction.
 
@@ -125,7 +125,7 @@ Specialized initialization methods such as Xavier/Glorot and He initialization w
 
 ---
 
-## 1.4 The Training Dataset
+## 4. The Training Dataset
 
 Suppose the training dataset contains:
 
@@ -143,7 +143,7 @@ One complete pass through all `N` training examples is called an **epoch**.
 
 ---
 
-## 1.5 Epoch
+## 5. Epoch
 
 An **epoch** is one complete pass through the training dataset.
 
@@ -174,7 +174,7 @@ Too many can contribute to overfitting.
 
 ---
 
-## 1.6 Batch
+## 6. Batch
 
 A **batch** is a subset of the training dataset processed together.
 
@@ -202,7 +202,7 @@ Each batch produces a forward pass, loss calculation, backward pass, and paramet
 
 ---
 
-## 1.7 Iteration
+## 7. Iteration
 
 An **iteration** is one parameter-update step.
 
@@ -250,7 +250,7 @@ parameter updates occur.
 
 ---
 
-## 1.8 Epoch, Batch and Iteration
+## 8. Epoch, Batch and Iteration
 
 These three terms are easy to confuse.
 
@@ -291,7 +291,7 @@ The ceiling accounts for a final batch that may contain fewer than `B` examples.
 
 ---
 
-## 1.9 One Training Iteration
+## 9. One Training Iteration
 
 For a mini-batch:
 
@@ -301,7 +301,7 @@ For a mini-batch:
 
 the network performs four fundamental steps.
 
-### Step 1 — Forward Propagation
+### 9.1. Step 1 — Forward Propagation
 
 ```math
 \hat{Y}
@@ -309,7 +309,7 @@ the network performs four fundamental steps.
 F(X_{\text{batch}};\theta)
 ```
 
-### Step 2 — Calculate Loss
+### 9.2. Step 2 — Calculate Loss
 
 ```math
 J
@@ -317,7 +317,7 @@ J
 L(Y_{\text{batch}},\hat{Y})
 ```
 
-### Step 3 — Backpropagation
+### 9.3. Step 3 — Backpropagation
 
 ```math
 \nabla_\theta J
@@ -325,7 +325,7 @@ L(Y_{\text{batch}},\hat{Y})
 
 is calculated.
 
-### Step 4 — Parameter Update
+### 9.4. Step 4 — Parameter Update
 
 For basic gradient descent:
 
@@ -341,7 +341,7 @@ That completes one iteration.
 
 ---
 
-## 1.10 One Epoch
+## 10. One Epoch
 
 An epoch repeatedly performs the training iteration for every batch:
 
@@ -381,7 +381,7 @@ Then another epoch begins using the newly learned parameter values.
 
 ---
 
-## 1.11 Why Shuffle the Training Data?
+## 11. Why Shuffle the Training Data?
 
 Before each epoch, training examples are commonly **shuffled**.
 
@@ -419,7 +419,7 @@ The data is typically shuffled between epochs.
 
 ---
 
-## 1.12 Training, Validation and Test Sets
+## 12. Training, Validation and Test Sets
 
 Neural-network data is commonly separated into:
 
@@ -431,11 +431,11 @@ Test Set
 
 Each has a different role.
 
-### Training Set
+### 12.1. Training Set
 
 Used to calculate gradients and update parameters.
 
-### Validation Set
+### 12.2. Validation Set
 
 Used during model development to evaluate generalization and guide choices such as:
 
@@ -444,7 +444,7 @@ Used during model development to evaluate generalization and guide choices such 
 - number of epochs
 - regularization
 
-### Test Set
+### 12.3. Test Set
 
 Used for final evaluation after model development is complete.
 
@@ -452,7 +452,7 @@ The test set should not repeatedly influence model-design decisions.
 
 ---
 
-## 1.13 Training Loss
+## 13. Training Loss
 
 The **training loss** measures performance on data being used to optimize the network.
 
@@ -475,7 +475,7 @@ It does **not**, by itself, prove that the network generalizes well.
 
 ---
 
-## 1.14 Validation Loss
+## 14. Validation Loss
 
 After or during an epoch, the network can be evaluated on validation data.
 
@@ -495,7 +495,7 @@ Validation performance estimates how well the current model behaves on unseen ex
 
 ---
 
-## 1.15 Detecting Underfitting
+## 15. Detecting Underfitting
 
 A model may be **underfitting** if both training and validation performance remain poor.
 
@@ -518,7 +518,7 @@ The model has not adequately learned the underlying pattern.
 
 ---
 
-## 1.16 Detecting Overfitting
+## 16. Detecting Overfitting
 
 During overfitting, training performance continues improving while validation performance begins worsening.
 
@@ -549,7 +549,7 @@ Validation Loss → begins increasing
 
 ---
 
-## 1.17 Generalization
+## 17. Generalization
 
 The real objective of training is not merely:
 
@@ -571,7 +571,7 @@ A model that memorizes its training set but performs poorly elsewhere is not a s
 
 ---
 
-## 1.18 Early Stopping
+## 18. Early Stopping
 
 **Early stopping** stops training when validation performance stops improving.
 
@@ -593,7 +593,7 @@ Instead of automatically using the final epoch, we can retain the model from the
 
 ---
 
-## 1.19 Patience
+## 19. Patience
 
 Validation loss naturally fluctuates.
 
@@ -615,7 +615,7 @@ This prevents training from stopping because of a single noisy measurement.
 
 ---
 
-## 1.20 Checkpoints
+## 20. Checkpoints
 
 A **checkpoint** stores the model's state during training.
 
@@ -641,7 +641,7 @@ Checkpoints allow training to be resumed or the best-performing model to be rest
 
 ---
 
-## 1.21 Training Mode vs Inference Mode
+## 21. Training Mode vs Inference Mode
 
 Some neural-network components behave differently during training and inference.
 
@@ -666,7 +666,7 @@ Therefore, modern deep-learning frameworks explicitly distinguish between traini
 
 ---
 
-## 1.22 Hyperparameters
+## 22. Hyperparameters
 
 Unlike weights and biases, **hyperparameters** are not normally learned directly through backpropagation.
 
@@ -686,7 +686,7 @@ These choices strongly affect training behaviour.
 
 ---
 
-## 1.23 Parameters vs Hyperparameters
+## 23. Parameters vs Hyperparameters
 
 The distinction is:
 
@@ -718,7 +718,7 @@ is usually selected as a training hyperparameter.
 
 ---
 
-## 1.24 Monitoring Training
+## 24. Monitoring Training
 
 Useful quantities to monitor include:
 
@@ -747,7 +747,7 @@ The loss drives optimization, while metrics help interpret practical model perfo
 
 ---
 
-## 1.25 A Healthy Training Pattern
+## 25. A Healthy Training Pattern
 
 A desirable pattern is:
 
@@ -771,25 +771,25 @@ A rapidly growing gap may indicate overfitting.
 
 ---
 
-## 1.26 Learning Curves
+## 26. Learning Curves
 
 Plots of training and validation performance over epochs are called **learning curves**.
 
 They help diagnose training behaviour.
 
-### Both Losses High
+### 26.1. Both Losses High
 
 ```text
 Possible underfitting
 ```
 
-### Training Low, Validation High
+### 26.2. Training Low, Validation High
 
 ```text
 Possible overfitting
 ```
 
-### Both Low and Similar
+### 26.3. Both Low and Similar
 
 ```text
 Good fit / generalization
@@ -799,7 +799,7 @@ Learning curves are therefore one of the most useful diagnostic tools during neu
 
 ---
 
-## 1.27 Data Leakage
+## 27. Data Leakage
 
 A serious training mistake is **data leakage**.
 
@@ -827,7 +827,7 @@ The same principle encountered in classical machine learning applies to neural n
 
 ---
 
-## 1.28 Training Pipeline
+## 28. Training Pipeline
 
 A practical neural-network workflow is:
 
@@ -859,7 +859,7 @@ Final Test Evaluation
 
 ---
 
-## 1.29 Training Is an Optimization Process
+## 29. Training Is an Optimization Process
 
 It is useful to strip away the terminology and see what is actually happening.
 
@@ -900,7 +900,7 @@ Everything else helps this optimization happen efficiently and generalize well.
 
 ---
 
-## 1.30 The Complete Picture So Far
+## 30. The Complete Picture So Far
 
 The concepts covered so far now connect into one system:
 
@@ -936,7 +936,7 @@ This is the fundamental mechanism underlying neural-network learning.
 
 ---
 
-## 1.31 Key Takeaways
+## 31. Key Takeaways
 
 - Training means learning useful values for the network's weights and biases.
 - Weights require suitable initialization before training begins.
@@ -959,7 +959,7 @@ This is the fundamental mechanism underlying neural-network learning.
 - Data leakage must be avoided just as in classical machine learning.
 - The ultimate objective is not merely low training loss, but good generalization to unseen data.
 
-### Memory Hook
+### 31.1. Memory Hook
 
 ```text
 One Batch

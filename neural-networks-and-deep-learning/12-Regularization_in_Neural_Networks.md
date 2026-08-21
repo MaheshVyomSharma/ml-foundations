@@ -1,6 +1,6 @@
 # 12. Regularization in Neural Networks
 
-## 1.1 Why Regularization Is Needed
+## 1. Why Regularization Is Needed
 
 Neural networks can contain very large numbers of trainable parameters.
 
@@ -29,7 +29,7 @@ The network has learned the training set better than it has learned the underlyi
 
 ---
 
-## 1.2 The Goal of Regularization
+## 2. The Goal of Regularization
 
 Without regularization, training primarily minimizes prediction loss:
 
@@ -69,7 +69,7 @@ Control Complexity
 
 ---
 
-## 1.3 Connection to Classical Machine Learning
+## 3. Connection to Classical Machine Learning
 
 The same idea appeared in classical machine learning.
 
@@ -99,7 +99,7 @@ Potentially Better Generalization
 
 ---
 
-## 1.4 L2 Regularization
+## 4. L2 Regularization
 
 **L2 regularization** penalizes large weight values.
 
@@ -129,7 +129,7 @@ The model is therefore encouraged to learn smaller weights unless large weights 
 
 ---
 
-## 1.5 Why Penalize Large Weights?
+## 5. Why Penalize Large Weights?
 
 Large weights can make a model highly sensitive to small changes in its inputs.
 
@@ -171,7 +171,7 @@ Moderate Weights
 
 ---
 
-## 1.6 Effect of L2 on the Gradient
+## 6. Effect of L2 on the Gradient
 
 Suppose:
 
@@ -225,7 +225,7 @@ This explains the connection between L2 regularization and **weight decay**.
 
 ---
 
-## 1.7 Weight Decay
+## 7. Weight Decay
 
 Weight decay gradually reduces parameter magnitude during optimization.
 
@@ -258,7 +258,7 @@ This is why optimizers such as **AdamW** explicitly decouple weight decay from t
 
 ---
 
-## 1.8 L1 Regularization
+## 8. L1 Regularization
 
 **L1 regularization** penalizes the absolute magnitude of weights.
 
@@ -287,7 +287,7 @@ L2
 
 ---
 
-## 1.9 L1 vs L2
+## 9. L1 vs L2
 
 A useful comparison is:
 
@@ -303,7 +303,7 @@ L2-style regularization is generally more common in deep neural networks.
 
 ---
 
-## 1.10 Regularization Strength
+## 10. Regularization Strength
 
 The hyperparameter:
 
@@ -339,7 +339,7 @@ The correct value must balance model fit and generalization.
 
 ---
 
-## 1.11 Too Little Regularization
+## 11. Too Little Regularization
 
 If regularization is too weak:
 
@@ -367,7 +367,7 @@ Increasing regularization may improve validation performance.
 
 ---
 
-## 1.12 Too Much Regularization
+## 12. Too Much Regularization
 
 Regularization can also be excessive.
 
@@ -403,7 +403,7 @@ Regularization therefore introduces a balance.
 
 ---
 
-## 1.13 Bias-Variance Connection
+## 13. Bias-Variance Connection
 
 Regularization can be understood using the **bias-variance trade-off**.
 
@@ -436,7 +436,7 @@ Moderate Regularization
 
 ---
 
-## 1.14 Early Stopping as Regularization
+## 14. Early Stopping as Regularization
 
 Early stopping can also act as a form of regularization.
 
@@ -468,7 +468,7 @@ Although no explicit penalty is added to the loss, the effect is regularizing.
 
 ---
 
-## 1.15 Data Augmentation
+## 15. Data Augmentation
 
 Another regularization strategy is **data augmentation**.
 
@@ -492,7 +492,7 @@ This makes memorization more difficult and encourages more general features.
 
 ---
 
-## 1.16 Why Data Augmentation Helps
+## 16. Why Data Augmentation Helps
 
 Suppose a model only sees one exact image of an object.
 
@@ -523,7 +523,7 @@ The valid transformations depend on the problem domain.
 
 ---
 
-## 1.17 Adding More Training Data
+## 17. Adding More Training Data
 
 One of the strongest defenses against overfitting is simply obtaining more representative training data.
 
@@ -543,7 +543,7 @@ Regularization techniques are particularly important when model capacity is larg
 
 ---
 
-## 1.18 Model Capacity as a Form of Regularization
+## 18. Model Capacity as a Form of Regularization
 
 Architecture itself affects overfitting.
 
@@ -576,7 +576,7 @@ Choosing an appropriately sized network is itself an important form of regulariz
 
 ---
 
-## 1.19 Dropout
+## 19. Dropout
 
 **Dropout** is one of the most important neural-network-specific regularization techniques.
 
@@ -602,7 +602,7 @@ Dropout deserves its own chapter because its training and inference behaviour re
 
 ---
 
-## 1.20 Why Dropout Regularizes
+## 20. Why Dropout Regularizes
 
 Without dropout, neurons may become strongly dependent on particular other neurons.
 
@@ -633,7 +633,7 @@ Better Generalization
 
 ---
 
-## 1.21 Batch Normalization and Regularization
+## 21. Batch Normalization and Regularization
 
 Batch normalization is primarily a training-stability and normalization technique.
 
@@ -652,7 +652,7 @@ It serves broader optimization and activation-stability roles.
 
 ---
 
-## 1.22 Noise as Regularization
+## 22. Noise as Regularization
 
 Adding small amounts of noise during training can sometimes improve generalization.
 
@@ -679,7 +679,7 @@ Dropout can itself be viewed as a structured form of noise injection.
 
 ---
 
-## 1.23 Label Smoothing
+## 23. Label Smoothing
 
 For multiclass classification, the true one-hot target might normally be:
 
@@ -714,7 +714,7 @@ This can improve generalization in some classification tasks.
 
 ---
 
-## 1.24 Regularization and Training Loss
+## 24. Regularization and Training Loss
 
 A regularized model may have slightly worse training loss than an unregularized model.
 
@@ -746,7 +746,7 @@ Generalization matters.
 
 ---
 
-## 1.25 Validation Data Guides Regularization
+## 25. Validation Data Guides Regularization
 
 Regularization strength should be selected using validation performance.
 
@@ -769,7 +769,7 @@ The test set should remain untouched during this selection process.
 
 ---
 
-## 1.26 Regularization Does Not Fix Everything
+## 26. Regularization Does Not Fix Everything
 
 Poor validation performance is not always caused by overfitting.
 
@@ -795,7 +795,7 @@ Overfitting
 
 ---
 
-## 1.27 Diagnosing the Situation
+## 27. Diagnosing the Situation
 
 A useful simplified diagnostic is:
 
@@ -809,7 +809,7 @@ Regularization primarily targets the second case.
 
 ---
 
-## 1.28 Common Regularization Techniques
+## 28. Common Regularization Techniques
 
 Important techniques include:
 
@@ -837,7 +837,7 @@ The best choice depends on:
 
 ---
 
-## 1.29 Combining Regularization Techniques
+## 29. Combining Regularization Techniques
 
 Regularization techniques are often combined.
 
@@ -875,7 +875,7 @@ to Learn the True Pattern
 
 ---
 
-## 1.30 Regularization in the Training Objective
+## 30. Regularization in the Training Objective
 
 The conceptual training objective becomes:
 
@@ -919,7 +919,7 @@ Regularization changes what the optimizer is encouraged to consider a good solut
 
 ---
 
-## 1.31 Key Takeaways
+## 31. Key Takeaways
 
 - Regularization reduces overfitting and improves generalization.
 - Neural networks are particularly prone to overfitting because they can contain very large numbers of parameters.
@@ -951,7 +951,7 @@ L_{\text{data}}
 - Validation data should guide regularization choices.
 - Regularization should target overfitting, not be applied blindly to every poorly performing model.
 
-### Memory Hook
+### 31.1. Memory Hook
 
 ```text
 Regularization

@@ -1,6 +1,6 @@
 # 06. Gradient Descent
 
-## 1.1 What Is Gradient Descent?
+## 1. What Is Gradient Descent?
 
 **Gradient descent** is an optimization algorithm used to reduce a model's loss by adjusting its trainable parameters.
 
@@ -42,7 +42,7 @@ Gradient descent provides a practical way to search for these values.
 
 ---
 
-## 1.2 The Core Idea
+## 2. The Core Idea
 
 Suppose the loss depends on one weight:
 
@@ -101,7 +101,7 @@ is the **learning rate**.
 
 ---
 
-## 1.3 Why the Negative Gradient?
+## 3. Why the Negative Gradient?
 
 The gradient points in the direction of **steepest increase** of the loss.
 
@@ -141,7 +141,7 @@ This distinction is fundamental.
 
 ---
 
-## 1.4 Gradient vs Derivative
+## 4. Gradient vs Derivative
 
 For a function of one variable:
 
@@ -195,7 +195,7 @@ Gradient
 
 ---
 
-## 1.5 Geometric Intuition
+## 5. Geometric Intuition
 
 Imagine the loss as a landscape.
 
@@ -230,7 +230,7 @@ The process repeats until the model reaches a region of relatively low loss.
 
 ---
 
-## 1.6 One-Dimensional Example
+## 6. One-Dimensional Example
 
 Suppose:
 
@@ -288,7 +288,7 @@ where the loss is minimized.
 
 ---
 
-## 1.7 What If the Gradient Is Negative?
+## 7. What If the Gradient Is Negative?
 
 Suppose:
 
@@ -332,7 +332,7 @@ The update formula automatically moves in the correct direction.
 
 ---
 
-## 1.8 Gradient Descent in Neural Networks
+## 8. Gradient Descent in Neural Networks
 
 A neural network may contain thousands, millions, or billions of parameters.
 
@@ -380,7 +380,7 @@ This happens across all trainable layers.
 
 ---
 
-## 1.9 The Learning Rate
+## 9. The Learning Rate
 
 The **learning rate** controls the size of each parameter update.
 
@@ -404,7 +404,7 @@ The learning rate determines how far the optimizer moves in each step.
 
 ---
 
-## 1.10 Learning Rate Too Small
+## 10. Learning Rate Too Small
 
 If the learning rate is too small:
 
@@ -425,7 +425,7 @@ Consequences can include:
 
 ---
 
-## 1.11 Learning Rate Too Large
+## 11. Learning Rate Too Large
 
 If the learning rate is too large:
 
@@ -460,7 +460,7 @@ Learning rate too large
 
 ---
 
-## 1.12 Choosing the Learning Rate
+## 12. Choosing the Learning Rate
 
 The learning rate is one of the most important hyperparameters in neural-network training.
 
@@ -485,7 +485,7 @@ Modern optimizers can also adapt learning rates during training.
 
 ---
 
-## 1.13 Batch Gradient Descent
+## 13. Batch Gradient Descent
 
 In **batch gradient descent**, the gradient is computed using the entire training dataset before one parameter update.
 
@@ -521,7 +521,7 @@ This produces a stable gradient but may be computationally expensive for large d
 
 ---
 
-## 1.14 Stochastic Gradient Descent
+## 14. Stochastic Gradient Descent
 
 In **Stochastic Gradient Descent (SGD)**, one training example is used for each parameter update.
 
@@ -547,7 +547,7 @@ The loss may therefore fluctuate considerably during training.
 
 ---
 
-## 1.15 Mini-Batch Gradient Descent
+## 15. Mini-Batch Gradient Descent
 
 **Mini-batch gradient descent** lies between batch gradient descent and pure SGD.
 
@@ -585,7 +585,7 @@ This is the standard approach used in most modern deep-learning systems.
 
 ---
 
-## 1.16 Comparing the Three Forms
+## 16. Comparing the Three Forms
 
 | Method | Data Per Update | Main Advantage | Main Limitation |
 |---|---:|---|---|
@@ -597,7 +597,7 @@ In modern deep learning, when people casually say **SGD**, they may sometimes re
 
 ---
 
-## 1.17 Why Mini-Batches Work Well
+## 17. Why Mini-Batches Work Well
 
 Mini-batches provide a useful compromise.
 
@@ -613,7 +613,7 @@ The slight randomness in mini-batch gradients can sometimes help optimization av
 
 ---
 
-## 1.18 Batch Size
+## 18. Batch Size
 
 The **batch size** is the number of examples processed before one parameter update.
 
@@ -643,7 +643,7 @@ Large Batch
 
 ---
 
-## 1.19 Epoch
+## 19. Epoch
 
 An **epoch** means one complete pass through the entire training dataset.
 
@@ -679,19 +679,19 @@ assuming each batch produces one update.
 
 ---
 
-## 1.20 Epoch vs Batch vs Iteration
+## 20. Epoch vs Batch vs Iteration
 
 These terms are closely related.
 
-### Epoch
+### 20.1. Epoch
 
 One complete pass through the training dataset.
 
-### Batch
+### 20.2. Batch
 
 A subset of training examples processed together.
 
-### Iteration
+### 20.3. Iteration
 
 One parameter-update step.
 
@@ -737,7 +737,7 @@ iterations per epoch.
 
 ---
 
-## 1.21 Why Multiple Epochs?
+## 21. Why Multiple Epochs?
 
 A single pass through the training data is usually not enough.
 
@@ -765,7 +765,7 @@ Training therefore continues until the model has learned sufficiently useful par
 
 ---
 
-## 1.22 Gradient Descent Is Iterative
+## 22. Gradient Descent Is Iterative
 
 Gradient descent does not normally jump directly to the optimum.
 
@@ -805,7 +805,7 @@ represents the optimization step.
 
 ---
 
-## 1.23 Convex vs Non-Convex Optimization
+## 23. Convex vs Non-Convex Optimization
 
 For some classical models, the loss function may be **convex**.
 
@@ -842,7 +842,7 @@ Training neural networks is therefore a more complicated optimization problem th
 
 ---
 
-## 1.24 Local Minimum and Global Minimum
+## 24. Local Minimum and Global Minimum
 
 A **global minimum** is the lowest possible value of the loss.
 
@@ -866,7 +866,7 @@ Modern optimization often focuses less on finding the exact mathematical global 
 
 ---
 
-## 1.25 Saddle Points
+## 25. Saddle Points
 
 A **saddle point** is a point where the gradient may be zero even though the point is not a minimum.
 
@@ -890,7 +890,7 @@ This is one reason a zero or tiny gradient does not always mean that the best so
 
 ---
 
-## 1.26 Plateaus
+## 26. Plateaus
 
 A **plateau** is a relatively flat region of the loss surface.
 
@@ -914,7 +914,7 @@ Optimization techniques such as momentum and adaptive learning rates can help na
 
 ---
 
-## 1.27 Gradient Descent and Backpropagation Are Not the Same Thing
+## 27. Gradient Descent and Backpropagation Are Not the Same Thing
 
 These concepts are related but distinct.
 
@@ -951,7 +951,7 @@ This distinction is extremely important.
 
 ---
 
-## 1.28 Gradient Descent and the Optimizer
+## 28. Gradient Descent and the Optimizer
 
 Gradient descent is the basic optimization idea.
 
@@ -988,7 +988,7 @@ Optimizer
 
 ---
 
-## 1.29 Gradient Descent and Feature Scaling
+## 29. Gradient Descent and Feature Scaling
 
 Input scaling can strongly affect optimization.
 
@@ -1014,7 +1014,7 @@ This is one reason preprocessing remains important in neural networks.
 
 ---
 
-## 1.30 Parameter Update for a Whole Layer
+## 30. Parameter Update for a Whole Layer
 
 For one layer:
 
@@ -1056,7 +1056,7 @@ Every individual weight and bias therefore receives its own gradient-based adjus
 
 ---
 
-## 1.31 Gradient Descent Across the Network
+## 31. Gradient Descent Across the Network
 
 Consider:
 
@@ -1100,7 +1100,7 @@ Updated Network
 
 ---
 
-## 1.32 Training Loss Curve
+## 32. Training Loss Curve
 
 During successful training, the loss often decreases over time.
 
@@ -1138,7 +1138,7 @@ The overall trend matters more than every individual fluctuation.
 
 ---
 
-## 1.33 When Gradient Descent Has Converged
+## 33. When Gradient Descent Has Converged
 
 Training may be considered to have converged when improvements become very small.
 
@@ -1165,7 +1165,7 @@ Convergence does not necessarily mean the mathematically perfect optimum has bee
 
 ---
 
-## 1.34 The Complete Optimization Loop
+## 34. The Complete Optimization Loop
 
 The complete neural-network training loop can now be written as:
 
@@ -1207,7 +1207,7 @@ This is the central training loop of a neural network.
 
 ---
 
-## 1.35 Key Takeaways
+## 35. Key Takeaways
 
 - Gradient descent is an optimization method used to reduce the loss.
 - The gradient points in the direction of steepest increase in loss.
@@ -1238,7 +1238,7 @@ This is the central training loop of a neural network.
 - Feature scaling can make gradient-based optimization more effective.
 - Neural-network training repeatedly performs forward propagation, loss calculation, backpropagation, and parameter updates.
 
-### Memory Hook
+### 35.1. Memory Hook
 
 ```text
 Gradient

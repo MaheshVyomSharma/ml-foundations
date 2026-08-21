@@ -5,7 +5,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 Many real-world problems involve predicting a **continuous numerical value**.
 
@@ -20,7 +20,7 @@ Linear Regression is one of the simplest and most widely used algorithms for sol
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 A real estate company has records of thousands of houses.
 
@@ -43,7 +43,7 @@ This is exactly the type of problem that **Linear Regression** is designed to so
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -55,7 +55,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is Linear Regression?
+## 4. What is Linear Regression?
 
 **Linear Regression** is a **supervised learning algorithm** used to model the relationship between one or more **features** and a **continuous target variable** by fitting the best possible linear relationship between them.
 
@@ -65,7 +65,7 @@ In simple terms,
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 Linear Regression is used when:
 
@@ -73,7 +73,7 @@ Linear Regression is used when:
 - Historical labelled data is available.
 - The relationship between features and the target is approximately linear.
 
-### Suitable Problems
+### 5.1. Suitable Problems
 
 - House price prediction
 - Stock demand forecasting
@@ -81,7 +81,7 @@ Linear Regression is used when:
 - Electricity consumption estimation
 - Insurance premium estimation
 
-### Not Suitable For
+### 5.2. Not Suitable For
 
 - Spam detection
 - Image classification
@@ -92,7 +92,7 @@ These require different types of Machine Learning models.
 
 ---
 
-# Intuition
+## 6. Intuition
 
 Imagine plotting house prices against their floor areas.
 
@@ -108,7 +108,7 @@ The goal is **not** to pass through every point, but to find the line that repre
 
 ---
 
-# Mental Picture
+## 7. Mental Picture
 
 Imagine placing a transparent ruler over a scatter plot.
 
@@ -118,7 +118,7 @@ That ruler represents the regression line.
 
 ---
 
-# Mathematical Foundation
+## 8. Mathematical Foundation
 
 For a single feature, Linear Regression models the relationship as:
 
@@ -135,7 +135,7 @@ For multiple features, the same idea extends by adding the contribution of each 
 
 ---
 
-# How the Model Learns
+## 9. How the Model Learns
 
 During training, the algorithm:
 
@@ -149,7 +149,7 @@ This process is called **training** or **model fitting**.
 
 ---
 
-# Workflow
+## 10. Workflow
 
 ```text
 Training Data
@@ -166,7 +166,7 @@ Predict New Values
 
 ---
 
-# Advantages
+## 11. Advantages
 
 - Simple to understand and interpret.
 - Fast to train.
@@ -176,7 +176,7 @@ Predict New Values
 
 ---
 
-# Limitations
+## 12. Limitations
 
 - Assumes an approximately linear relationship.
 - Sensitive to outliers.
@@ -185,7 +185,7 @@ Predict New Values
 
 ---
 
-# Common Evaluation Metrics
+## 13. Common Evaluation Metrics
 
 Regression models are commonly evaluated using:
 
@@ -200,7 +200,7 @@ These metrics are discussed in detail in the **Model Evaluation** chapter.
 
 ---
 
-# Common Applications
+## 14. Common Applications
 
 Linear Regression is widely used in:
 
@@ -213,7 +213,7 @@ Linear Regression is widely used in:
 
 ---
 
-# Memory Hook
+## 15. Memory Hook
 
 > **Regression predicts numbers.**
 >
@@ -221,7 +221,7 @@ Linear Regression is widely used in:
 
 ---
 
-# Common Mistakes
+## 16. Common Mistakes
 
 - Using Linear Regression for classification problems.
 - Assuming a perfect fit is always desirable.
@@ -231,15 +231,15 @@ Linear Regression is widely used in:
 
 ---
 
-# Frequently Asked Questions
+## 17. Frequently Asked Questions
 
-### Is Linear Regression supervised or unsupervised?
+### 17.1. Is Linear Regression supervised or unsupervised?
 
 Supervised, because the correct target values are known during training.
 
 ---
 
-### Can Linear Regression handle multiple input features?
+### 17.2. Can Linear Regression handle multiple input features?
 
 Yes.
 
@@ -249,7 +249,7 @@ Using two or more features is called **Multiple Linear Regression**.
 
 ---
 
-### Does Linear Regression always produce a straight line?
+### 17.3. Does Linear Regression always produce a straight line?
 
 For one feature, yes.
 
@@ -257,7 +257,7 @@ For multiple features, the model learns a higher-dimensional linear relationship
 
 ---
 
-# 30-Second Revision
+## 18. 30-Second Revision
 
 - Supervised learning algorithm.
 - Predicts continuous numerical values.
@@ -269,7 +269,7 @@ For multiple features, the model learns a higher-dimensional linear relationship
 
 ---
 
-# Looking Ahead
+## 19. Looking Ahead
 
 Linear Regression predicts **numbers**.
 

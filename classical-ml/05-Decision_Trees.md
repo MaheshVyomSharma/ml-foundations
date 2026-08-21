@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 Many real-world problems cannot be solved using a single straight line or linear decision boundary.
 
@@ -22,7 +22,7 @@ Instead of fitting equations, they learn a series of decision rules that gradual
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Imagine visiting a doctor.
 
@@ -55,7 +55,7 @@ Instead of medical questions, it learns the questions automatically from the tra
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -67,7 +67,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is a Decision Tree?
+## 4. What is a Decision Tree?
 
 A **Decision Tree** is a **supervised learning algorithm** that predicts an outcome by repeatedly splitting the data into smaller groups using a sequence of decision rules.
 
@@ -82,7 +82,7 @@ In this chapter, we focus primarily on **classification**.
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 Linear models assume that the relationship between features and the target is approximately linear.
 
@@ -92,7 +92,7 @@ Decision Trees overcome this limitation by learning **non-linear decision bounda
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -105,7 +105,7 @@ Decision Trees overcome this limitation by learning **non-linear decision bounda
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Imagine playing the game **Twenty Questions**.
 
@@ -123,7 +123,7 @@ Decision Trees learn these questions automatically from data.
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Visualize a flowchart.
 
@@ -137,7 +137,7 @@ That flowchart is a Decision Tree.
 
 ---
 
-# How a Decision Tree Works
+## 9. How a Decision Tree Works
 
 The training process follows these steps:
 
@@ -163,7 +163,7 @@ Repeat
 
 ---
 
-# Choosing the Best Split
+## 10. Choosing the Best Split
 
 At every decision node, the algorithm evaluates many possible questions.
 
@@ -180,7 +180,7 @@ Both aim to produce child nodes that are more homogeneous than the parent node.
 
 ---
 
-# Stopping the Tree
+## 11. Stopping the Tree
 
 A Decision Tree does not grow forever.
 
@@ -195,7 +195,7 @@ These conditions help prevent excessive growth.
 
 ---
 
-# Overfitting
+## 12. Overfitting
 
 A very deep tree may memorize the training data instead of learning general patterns.
 
@@ -211,7 +211,7 @@ Common ways to reduce overfitting include:
 
 ---
 
-# Common Hyperparameters
+## 13. Common Hyperparameters
 
 | Hyperparameter | Purpose |
 |---------------|---------|
@@ -222,7 +222,7 @@ Common ways to reduce overfitting include:
 
 ---
 
-# Advantages
+## 14. Advantages
 
 - Easy to understand and interpret.
 - Handles non-linear relationships.
@@ -232,7 +232,7 @@ Common ways to reduce overfitting include:
 
 ---
 
-# Limitations
+## 15. Limitations
 
 - Can overfit easily.
 - Small changes in data may produce different trees.
@@ -241,7 +241,7 @@ Common ways to reduce overfitting include:
 
 ---
 
-# Common Applications
+## 16. Common Applications
 
 Decision Trees are widely used in:
 
@@ -254,7 +254,7 @@ Decision Trees are widely used in:
 
 ---
 
-# Memory Hook
+## 17. Memory Hook
 
 > **Decision Trees learn by asking questions.**
 
@@ -262,7 +262,7 @@ Think of them as an intelligent game of **Twenty Questions**, where every answer
 
 ---
 
-# Common Mistakes
+## 18. Common Mistakes
 
 - Allowing the tree to grow without limits.
 - Assuming deeper trees are always better.
@@ -271,9 +271,9 @@ Think of them as an intelligent game of **Twenty Questions**, where every answer
 
 ---
 
-# Frequently Asked Questions
+## 19. Frequently Asked Questions
 
-### Can Decision Trees perform regression?
+### 19.1. Can Decision Trees perform regression?
 
 Yes.
 
@@ -281,19 +281,19 @@ Decision Trees can predict both numerical values (regression) and categories (cl
 
 ---
 
-### Why don't Decision Trees require feature scaling?
+### 19.2. Why don't Decision Trees require feature scaling?
 
 Because they compare feature values using thresholds rather than distances or gradients.
 
 ---
 
-### What is pruning?
+### 19.3. What is pruning?
 
 Pruning is the process of removing unnecessary branches from a Decision Tree to improve its ability to generalize to unseen data.
 
 ---
 
-# 30-Second Revision
+## 20. 30-Second Revision
 
 - Supervised learning algorithm.
 - Learns by repeatedly asking questions.
@@ -305,7 +305,7 @@ Pruning is the process of removing unnecessary branches from a Decision Tree to 
 
 ---
 
-# Looking Ahead
+## 21. Looking Ahead
 
 A single Decision Tree is easy to understand, but it has one major weakness—it can be unstable and prone to overfitting.
 

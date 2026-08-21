@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 So far, every algorithm in this handbook has learned from **labelled data**.
 
@@ -26,7 +26,7 @@ K-Means is one of the simplest and most widely used clustering algorithms.
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Imagine entering a party where nobody is wearing name tags.
 
@@ -50,7 +50,7 @@ It discovers natural groups within data without being told what those groups are
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -62,7 +62,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is K-Means Clustering?
+## 4. What is K-Means Clustering?
 
 **K-Means** is an **unsupervised learning algorithm** that partitions a dataset into **K clusters** based on similarity.
 
@@ -72,7 +72,7 @@ Unlike supervised learning, K-Means does not require labelled data.
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 Suppose a company has thousands of customer records but knows nothing about customer types.
 
@@ -82,7 +82,7 @@ These groups can then be analysed for business insights.
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -94,7 +94,7 @@ These groups can then be analysed for business insights.
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Imagine placing **K magnets** on a table covered with iron filings.
 
@@ -110,7 +110,7 @@ K-Means follows the same principle.
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Imagine several circles drawn on a map.
 
@@ -122,7 +122,7 @@ The process repeats until the circles stabilize.
 
 ---
 
-# How K-Means Works
+## 9. How K-Means Works
 
 The algorithm follows these steps:
 
@@ -156,7 +156,7 @@ Converged?
 
 ---
 
-# Why Are Centroids Updated?
+## 10. Why Are Centroids Updated?
 
 After the first assignment, the initial centroids are rarely in the best locations.
 
@@ -166,7 +166,7 @@ Repeated updates gradually produce better cluster centres.
 
 ---
 
-# Choosing the Value of K
+## 11. Choosing the Value of K
 
 One of the biggest challenges in K-Means is deciding how many clusters should be created.
 
@@ -181,7 +181,7 @@ These techniques help balance simplicity and clustering quality.
 
 ---
 
-# Feature Scaling
+## 12. Feature Scaling
 
 Like KNN, K-Means depends heavily on distance calculations.
 
@@ -191,7 +191,7 @@ Feature scaling is therefore usually recommended before applying K-Means.
 
 ---
 
-# Common Hyperparameters
+## 13. Common Hyperparameters
 
 | Hyperparameter | Purpose |
 |---------------|---------|
@@ -202,7 +202,7 @@ Feature scaling is therefore usually recommended before applying K-Means.
 
 ---
 
-# Advantages
+## 14. Advantages
 
 - Simple to understand.
 - Fast on large datasets.
@@ -212,7 +212,7 @@ Feature scaling is therefore usually recommended before applying K-Means.
 
 ---
 
-# Limitations
+## 15. Limitations
 
 - Number of clusters must be chosen beforehand.
 - Sensitive to initialization.
@@ -222,7 +222,7 @@ Feature scaling is therefore usually recommended before applying K-Means.
 
 ---
 
-# Common Applications
+## 16. Common Applications
 
 K-Means is widely used in:
 
@@ -235,7 +235,7 @@ K-Means is widely used in:
 
 ---
 
-# Memory Hook
+## 17. Memory Hook
 
 > **K-Means groups similar data by repeatedly finding the centre of each group.**
 
@@ -243,7 +243,7 @@ Think of people naturally forming circles at a social gathering.
 
 ---
 
-# Common Mistakes
+## 18. Common Mistakes
 
 - Choosing K arbitrarily.
 - Forgetting feature scaling.
@@ -253,9 +253,9 @@ Think of people naturally forming circles at a social gathering.
 
 ---
 
-# Frequently Asked Questions
+## 19. Frequently Asked Questions
 
-### Is K-Means supervised or unsupervised?
+### 19.1. Is K-Means supervised or unsupervised?
 
 Unsupervised.
 
@@ -263,7 +263,7 @@ The algorithm receives no labels and discovers groups automatically.
 
 ---
 
-### Why is it called K-Means?
+### 19.2. Why is it called K-Means?
 
 "K" represents the number of clusters.
 
@@ -271,7 +271,7 @@ The algorithm receives no labels and discovers groups automatically.
 
 ---
 
-### Does K-Means always produce the same clusters?
+### 19.3. Does K-Means always produce the same clusters?
 
 Not necessarily.
 
@@ -281,7 +281,7 @@ Using an appropriate initialization method and random seed improves consistency.
 
 ---
 
-# 30-Second Revision
+## 20. 30-Second Revision
 
 - Unsupervised learning algorithm.
 - Groups similar samples into K clusters.
@@ -293,7 +293,7 @@ Using an appropriate initialization method and random seed improves consistency.
 
 ---
 
-# Looking Ahead
+## 21. Looking Ahead
 
 K-Means assigns every sample to exactly one cluster.
 

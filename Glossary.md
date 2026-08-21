@@ -467,6 +467,18 @@ A value learned from data during model training. Weights and biases are paramete
 
 `hyperparameter` · `weight` · `bias` · `optimization`
 
+## Penalty
+
+### Machine Learning
+
+An additional cost included in a model’s objective function to discourage undesirable behavior, such as excessive complexity or large parameter values. Regularization penalties such as L1 and L2 help reduce overfitting by making complex models more costly during training.
+
+**Reference:** [Regularization](classical-ml/04-Regularization.md)
+
+### Related Terms
+
+`regularization` · `loss function` · `objective function` · `overfitting`
+
 ## Regression
 
 ### Classical Machine Learning

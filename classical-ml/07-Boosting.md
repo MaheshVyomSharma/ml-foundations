@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 Random Forest improves performance by training many Decision Trees **independently**.
 
@@ -18,7 +18,7 @@ Boosting often produces some of the most accurate Machine Learning models used i
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Imagine a mathematics teacher correcting an exam.
 
@@ -40,7 +40,7 @@ Each new model focuses on correcting the mistakes made by the previous models.
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -52,7 +52,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is Boosting?
+## 4. What is Boosting?
 
 **Boosting** is a **supervised ensemble learning technique** in which multiple weak learners are trained **sequentially**, with each learner attempting to correct the errors made by the previous learners.
 
@@ -60,7 +60,7 @@ The predictions from all learners are then combined to produce a strong final mo
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 Random Forest reduces overfitting by averaging many independent trees.
 
@@ -70,7 +70,7 @@ Boosting improves performance by allowing each new tree to pay more attention to
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -82,7 +82,7 @@ Boosting improves performance by allowing each new tree to pay more attention to
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Suppose ten students are solving the same puzzle.
 
@@ -100,7 +100,7 @@ The final solution is usually much better than the first attempt.
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Imagine painting a wall.
 
@@ -116,7 +116,7 @@ Boosting behaves similarly.
 
 ---
 
-# How Boosting Works
+## 9. How Boosting Works
 
 The training process follows these steps:
 
@@ -149,7 +149,7 @@ Combined Prediction
 
 ---
 
-# Boosting vs Bagging
+## 10. Boosting vs Bagging
 
 | Bagging | Boosting |
 |---------|----------|
@@ -160,21 +160,21 @@ Combined Prediction
 
 ---
 
-# Popular Boosting Algorithms
+## 11. Popular Boosting Algorithms
 
-## AdaBoost
+## 12. AdaBoost
 
 AdaBoost increases the importance of incorrectly classified samples so that later learners pay more attention to them.
 
 ---
 
-## Gradient Boosting
+## 13. Gradient Boosting
 
 Gradient Boosting trains each new tree to predict the **remaining errors (residuals)** of the previous trees.
 
 ---
 
-## XGBoost
+## 14. XGBoost
 
 XGBoost (Extreme Gradient Boosting) is an optimized implementation of Gradient Boosting.
 
@@ -189,13 +189,13 @@ It is widely used in Machine Learning competitions and many real-world applicati
 
 ---
 
-## LightGBM
+## 15. LightGBM
 
 LightGBM is another optimized Gradient Boosting implementation designed for speed and efficiency on large datasets.
 
 ---
 
-# Common Hyperparameters
+## 16. Common Hyperparameters
 
 | Hyperparameter | Purpose |
 |---------------|---------|
@@ -206,7 +206,7 @@ LightGBM is another optimized Gradient Boosting implementation designed for spee
 
 ---
 
-# Advantages
+## 17. Advantages
 
 - Often achieves very high predictive accuracy.
 - Learns complex relationships.
@@ -215,7 +215,7 @@ LightGBM is another optimized Gradient Boosting implementation designed for spee
 
 ---
 
-# Limitations
+## 18. Limitations
 
 - Training is slower than Bagging because trees are built sequentially.
 - More sensitive to noisy data and outliers.
@@ -224,7 +224,7 @@ LightGBM is another optimized Gradient Boosting implementation designed for spee
 
 ---
 
-# Common Applications
+## 19. Common Applications
 
 Boosting is commonly used in:
 
@@ -237,7 +237,7 @@ Boosting is commonly used in:
 
 ---
 
-# Memory Hook
+## 20. Memory Hook
 
 > **Random Forest asks many experts for independent opinions.**
 >
@@ -245,7 +245,7 @@ Boosting is commonly used in:
 
 ---
 
-# Common Mistakes
+## 21. Common Mistakes
 
 - Confusing Boosting with Bagging.
 - Assuming all ensemble methods work the same way.
@@ -254,9 +254,9 @@ Boosting is commonly used in:
 
 ---
 
-# Frequently Asked Questions
+## 22. Frequently Asked Questions
 
-### Is Boosting a single algorithm?
+### 22.1. Is Boosting a single algorithm?
 
 No.
 
@@ -264,19 +264,19 @@ Boosting is a family of ensemble techniques that includes AdaBoost, Gradient Boo
 
 ---
 
-### Why is Boosting often more accurate than Random Forest?
+### 22.2. Why is Boosting often more accurate than Random Forest?
 
 Because each new learner focuses on correcting the errors that remain after previous learners have been trained.
 
 ---
 
-### Why is Boosting slower?
+### 22.3. Why is Boosting slower?
 
 Because every tree depends on the trees trained before it, preventing fully independent training.
 
 ---
 
-# 30-Second Revision
+## 23. 30-Second Revision
 
 - Supervised ensemble learning technique.
 - Trains models sequentially.
@@ -287,7 +287,7 @@ Because every tree depends on the trees trained before it, preventing fully inde
 
 ---
 
-# Looking Ahead
+## 24. Looking Ahead
 
 So far, every supervised algorithm has learned from **labelled data**.
 

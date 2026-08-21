@@ -41,7 +41,7 @@ because 3 is in the second row and first column.
 
 ## 2. Matrices Classified by Shape
 
-### Row Matrix
+### 2.1. Row Matrix
 
 A **row matrix**, also called a **row vector**, has exactly one row.
 
@@ -56,7 +56,7 @@ A =
 
 This is a $1 \times 3$ row matrix.
 
-### Column Matrix
+### 2.2. Column Matrix
 
 A **column matrix**, also called a **column vector**, has exactly one column.
 
@@ -73,7 +73,7 @@ B =
 
 This is a $3 \times 1$ column matrix.
 
-### Rectangular Matrix
+### 2.3. Rectangular Matrix
 
 A **rectangular matrix** has a different number of rows and columns, so $m \ne n$.
 
@@ -100,7 +100,7 @@ D =
 
 Rectangular matrices frequently represent datasets. Rows may represent observations, while columns represent features.
 
-### Tall Matrix
+### 2.4. Tall Matrix
 
 A **tall matrix** has more rows than columns, so $m > n$.
 
@@ -115,7 +115,7 @@ A =
 
 This $3 \times 2$ matrix is tall. In Machine Learning, a design matrix is tall when there are more observations than features.
 
-### Wide Matrix
+### 2.5. Wide Matrix
 
 A **wide matrix** has more columns than rows, so $m < n$.
 
@@ -129,7 +129,7 @@ A =
 
 This $2 \times 3$ matrix is wide. This shape can occur when a dataset has more features than observations.
 
-### Square Matrix
+### 2.6. Square Matrix
 
 A **square matrix** has the same number of rows and columns, so $m = n$.
 
@@ -160,7 +160,7 @@ Concepts such as determinants, eigenvalues, and matrix inverses are defined for 
 
 ## 3. Matrices Classified by Their Entries
 
-### Zero Matrix
+### 3.1. Zero Matrix
 
 A **zero matrix**, also called a **null matrix**, contains only zeros.
 
@@ -178,7 +178,7 @@ The zero matrix is the additive identity:
 A + O = A
 ```
 
-### Constant Matrix
+### 3.2. Constant Matrix
 
 A **constant matrix** has the same value in every position.
 
@@ -192,7 +192,7 @@ A =
 
 The zero matrix and the all-ones matrix are special constant matrices.
 
-### All-Ones Matrix
+### 3.3. All-Ones Matrix
 
 An **all-ones matrix** contains 1 in every position and is often denoted by $J$ or $\mathbf{1}$.
 
@@ -204,7 +204,7 @@ J_{2 \times 3} =
 \end{bmatrix}
 ```
 
-### Binary Matrix
+### 3.4. Binary Matrix
 
 A **binary matrix** contains only 0 and 1.
 
@@ -219,7 +219,7 @@ A =
 
 Binary matrices can represent masks, graph connections, or encoded categorical information.
 
-### Sparse Matrix
+### 3.5. Sparse Matrix
 
 A **sparse matrix** contains mostly zeros.
 
@@ -234,7 +234,7 @@ A =
 
 Sparse storage formats record only the nonzero entries and their positions. This can reduce memory usage and computation when large matrices contain relatively few nonzero values.
 
-### Dense Matrix
+### 3.6. Dense Matrix
 
 A **dense matrix** contains relatively few zero entries.
 
@@ -253,7 +253,7 @@ The distinction between sparse and dense depends on how many entries are zero re
 
 ## 4. Diagonal and Triangular Matrices
 
-### Diagonal Matrix
+### 4.1. Diagonal Matrix
 
 A **diagonal matrix** is a square matrix whose entries outside the main diagonal are all zero.
 
@@ -270,7 +270,7 @@ The diagonal entries may be zero or nonzero.
 
 Multiplication by a diagonal matrix can scale different coordinates independently.
 
-### Scalar Matrix
+### 4.2. Scalar Matrix
 
 A **scalar matrix** is a diagonal matrix whose diagonal entries are all equal.
 
@@ -286,7 +286,7 @@ A =
 
 Every scalar matrix is diagonal, but not every diagonal matrix is scalar.
 
-### Identity Matrix
+### 4.3. Identity Matrix
 
 An **identity matrix** is a diagonal matrix with 1 on the main diagonal.
 
@@ -307,7 +307,7 @@ AI = IA = A
 
 Its size must be compatible with the matrix being multiplied.
 
-### Upper Triangular Matrix
+### 4.4. Upper Triangular Matrix
 
 An **upper triangular matrix** is a square matrix whose entries below the main diagonal are zero.
 
@@ -320,7 +320,7 @@ U =
 \end{bmatrix}
 ```
 
-### Lower Triangular Matrix
+### 4.5. Lower Triangular Matrix
 
 A **lower triangular matrix** is a square matrix whose entries above the main diagonal are zero.
 
@@ -358,7 +358,7 @@ A^T =
 \end{bmatrix}
 ```
 
-### Symmetric Matrix
+### 5.1. Symmetric Matrix
 
 A **symmetric matrix** is a square matrix that equals its transpose:
 
@@ -379,7 +379,7 @@ A =
 
 The entries mirror each other across the main diagonal. Covariance matrices are symmetric.
 
-### Skew-Symmetric Matrix
+### 5.2. Skew-Symmetric Matrix
 
 A **skew-symmetric matrix** is a square matrix satisfying:
 
@@ -404,7 +404,7 @@ Every diagonal entry of a real skew-symmetric matrix must be zero.
 
 ## 6. Matrices Defined by Determinants and Inverses
 
-### Singular Matrix
+### 6.1. Singular Matrix
 
 A **singular matrix** is a square matrix that has no inverse.
 
@@ -426,7 +426,7 @@ A =
 
 The second row is twice the first, so the rows are linearly dependent and the matrix is singular.
 
-### Nonsingular Matrix
+### 6.2. Nonsingular Matrix
 
 A **nonsingular matrix**, also called an **invertible matrix**, has an inverse.
 
@@ -448,7 +448,7 @@ A =
 
 Its determinant is $-2$, so its inverse exists.
 
-### Orthogonal Matrix
+### 6.3. Orthogonal Matrix
 
 A real square matrix $Q$ is **orthogonal** if its columns and rows are orthonormal.
 
@@ -480,7 +480,7 @@ This matrix represents a $90^\circ$ rotation. Orthogonal transformations preserv
 
 ## 7. Matrices Defined by Repeated Multiplication
 
-### Idempotent Matrix
+### 7.1. Idempotent Matrix
 
 An **idempotent matrix** is a square matrix satisfying:
 
@@ -500,7 +500,7 @@ A =
 
 Projection matrices are idempotent because applying the same projection twice has the same effect as applying it once.
 
-### Involutory Matrix
+### 7.2. Involutory Matrix
 
 An **involutory matrix** is a square matrix satisfying:
 
@@ -520,7 +520,7 @@ A =
 
 This matrix swaps two coordinates. Applying it twice returns the original vector.
 
-### Nilpotent Matrix
+### 7.3. Nilpotent Matrix
 
 A **nilpotent matrix** is a square matrix for which some positive integer $k$ satisfies:
 
@@ -546,7 +546,7 @@ For this matrix, $A^2 = O$.
 
 These definitions apply to real symmetric matrices.
 
-### Positive Definite Matrix
+### 8.1. Positive Definite Matrix
 
 A symmetric matrix $A$ is **positive definite** if:
 
@@ -568,7 +568,7 @@ A =
 
 All eigenvalues of a real symmetric positive definite matrix are positive. Such matrices appear in optimization, covariance modeling, and second-order methods.
 
-### Positive Semidefinite Matrix
+### 8.2. Positive Semidefinite Matrix
 
 A symmetric matrix $A$ is **positive semidefinite** if:
 
@@ -590,7 +590,7 @@ A =
 
 Its eigenvalues are 2 and 0, so it is positive semidefinite but not positive definite.
 
-### Negative Definite and Negative Semidefinite Matrices
+### 8.3. Negative Definite and Negative Semidefinite Matrices
 
 A symmetric matrix is:
 
@@ -609,7 +609,7 @@ A =
 
 is negative definite.
 
-### Indefinite Matrix
+### 8.4. Indefinite Matrix
 
 A symmetric matrix is **indefinite** if $\mathbf{x}^T A \mathbf{x}$ can be positive for some vectors and negative for others.
 
@@ -627,7 +627,7 @@ This behavior is associated with saddle-shaped curvature in optimization.
 
 ## 9. Special Structural Matrices
 
-### Permutation Matrix
+### 9.1. Permutation Matrix
 
 A **permutation matrix** is obtained by rearranging the rows of an identity matrix. It has exactly one 1 in each row and each column, with all other entries equal to zero.
 
@@ -642,7 +642,7 @@ P =
 
 Left multiplication by $P$ rearranges the rows of another matrix. Right multiplication rearranges its columns.
 
-### Block Matrix
+### 9.2. Block Matrix
 
 A **block matrix** is partitioned into smaller matrices called blocks.
 
@@ -670,7 +670,7 @@ A =
 
 Block matrices make large systems easier to describe and manipulate.
 
-### Toeplitz Matrix
+### 9.3. Toeplitz Matrix
 
 A **Toeplitz matrix** has constant values along every diagonal from upper left to lower right.
 
@@ -685,7 +685,7 @@ e & d & a
 
 Toeplitz structure appears in signal processing and convolution-related computations.
 
-### Stochastic Matrix
+### 9.4. Stochastic Matrix
 
 A **stochastic matrix** is a nonnegative square matrix whose rows or columns sum to 1.
 
@@ -701,7 +701,7 @@ P =
 
 Each row sums to 1. Stochastic matrices are used to represent transition probabilities in Markov chains.
 
-### Adjacency Matrix
+### 9.5. Adjacency Matrix
 
 An **adjacency matrix** represents connections in a graph. For an unweighted graph, $a_{ij}=1$ indicates a connection from node $i$ to node $j$, while $a_{ij}=0$ indicates no connection.
 
@@ -720,7 +720,7 @@ The adjacency matrix of an undirected graph is symmetric.
 
 ## 10. Matrices Commonly Seen in Machine Learning
 
-### Design Matrix
+### 10.1. Design Matrix
 
 A **design matrix**, often written as $X$, stores the input data used by a model.
 
@@ -735,7 +735,7 @@ X =
 
 This $3 \times 2$ example contains three observations and two features. Depending on the convention being used, a column of ones may be added to represent an intercept term.
 
-### Weight Matrix
+### 10.2. Weight Matrix
 
 A **weight matrix** stores trainable parameters that connect inputs to outputs or one neural-network layer to another.
 
@@ -749,7 +749,7 @@ W =
 
 This $2 \times 3$ matrix can map a three-dimensional input to a two-dimensional output when used in $W\mathbf{x}$.
 
-### Covariance Matrix
+### 10.3. Covariance Matrix
 
 A **covariance matrix** records the variance of each variable on its diagonal and pairwise covariances outside the diagonal.
 
@@ -763,7 +763,7 @@ A **covariance matrix** records the variance of each variable on its diagonal an
 
 A covariance matrix is symmetric and positive semidefinite.
 
-### Correlation Matrix
+### 10.4. Correlation Matrix
 
 A **correlation matrix** records pairwise correlations between variables.
 
@@ -778,7 +778,7 @@ R =
 
 It is symmetric, its diagonal entries are 1, and every entry lies between $-1$ and $1$.
 
-### Gram Matrix
+### 10.5. Gram Matrix
 
 Given a matrix $X$, a **Gram matrix** contains inner products between vectors.
 
@@ -796,7 +796,7 @@ G = XX^T
 
 A Gram matrix is symmetric and positive semidefinite. Gram matrices appear in kernel methods, similarity calculations, and geometric analysis.
 
-### Hessian Matrix
+### 10.6. Hessian Matrix
 
 The **Hessian matrix** contains the second-order partial derivatives of a scalar-valued function.
 
@@ -812,7 +812,7 @@ H =
 
 When the mixed partial derivatives are continuous, the Hessian is symmetric. It describes local curvature and is used in optimization.
 
-### Confusion Matrix
+### 10.7. Confusion Matrix
 
 A **confusion matrix** summarizes the predictions of a classification model by comparing predicted classes with actual classes.
 

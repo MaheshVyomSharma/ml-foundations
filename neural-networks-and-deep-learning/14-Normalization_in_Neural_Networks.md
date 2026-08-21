@@ -1,6 +1,6 @@
 # 14. Normalization in Neural Networks
 
-## 1.1 Why Normalization Matters
+## 1. Why Normalization Matters
 
 During training, values flowing through a neural network can have very different scales.
 
@@ -44,7 +44,7 @@ Easier Optimization
 
 ---
 
-## 1.2 Normalization Before Neural Networks
+## 2. Normalization Before Neural Networks
 
 Normalization is not unique to neural networks.
 
@@ -88,11 +88,11 @@ Neural-network normalization techniques extend a similar principle to values **i
 
 ---
 
-## 1.3 Input Normalization vs Internal Normalization
+## 3. Input Normalization vs Internal Normalization
 
 These should not be confused.
 
-### Input Normalization
+### 3.1. Input Normalization
 
 Applied before data enters the network:
 
@@ -104,7 +104,7 @@ Standardization / Scaling
 Neural Network
 ```
 
-### Internal Normalization
+### 3.2. Internal Normalization
 
 Applied to intermediate values:
 
@@ -120,7 +120,7 @@ Both can be useful simultaneously.
 
 ---
 
-## 1.4 Why Scale Affects Optimization
+## 4. Why Scale Affects Optimization
 
 Suppose one parameter operates on values around:
 
@@ -154,7 +154,7 @@ Controlled Scales
 
 ---
 
-## 1.5 Batch Normalization
+## 5. Batch Normalization
 
 **Batch Normalization**, commonly called **BatchNorm**, normalizes activations using statistics calculated from a mini-batch.
 
@@ -185,7 +185,7 @@ and batch variance:
 
 ---
 
-## 1.6 Normalizing the Batch
+## 6. Normalizing the Batch
 
 Each value is then normalized:
 
@@ -220,7 +220,7 @@ within the mini-batch.
 
 ---
 
-## 1.7 Why Not Stop at Mean Zero and Variance One?
+## 7. Why Not Stop at Mean Zero and Variance One?
 
 Forcing every layer permanently to mean zero and variance one could unnecessarily restrict what the network can represent.
 
@@ -262,7 +262,7 @@ These parameters are learned through backpropagation.
 
 ---
 
-## 1.8 Scale and Shift
+## 8. Scale and Shift
 
 BatchNorm therefore performs:
 
@@ -296,17 +296,17 @@ The network receives the benefits of normalization without losing the ability to
 
 ---
 
-## 1.9 Trainable vs Non-Trainable Quantities
+## 9. Trainable vs Non-Trainable Quantities
 
 BatchNorm contains different kinds of quantities.
 
-### Learned Through Backpropagation
+### 9.1. Learned Through Backpropagation
 
 ```math
 \gamma,\beta
 ```
 
-### Calculated from Data
+### 9.2. Calculated from Data
 
 During training:
 
@@ -322,7 +322,7 @@ This distinction becomes important when switching between training and evaluatio
 
 ---
 
-## 1.10 BatchNorm During Training
+## 10. BatchNorm During Training
 
 During training, BatchNorm uses statistics from the current mini-batch.
 
@@ -342,7 +342,7 @@ Therefore, the output for one example can depend slightly on the other examples 
 
 ---
 
-## 1.11 BatchNorm During Inference
+## 11. BatchNorm During Inference
 
 During inference, we may predict only one example:
 
@@ -368,7 +368,7 @@ This is why training mode and evaluation mode matter when using BatchNorm.
 
 ---
 
-## 1.12 Running Mean and Variance
+## 12. Running Mean and Variance
 
 During training, frameworks maintain estimates such as:
 
@@ -400,7 +400,7 @@ These stored statistics approximate the broader training distribution.
 
 ---
 
-## 1.13 Why BatchNorm Helps Training
+## 13. Why BatchNorm Helps Training
 
 BatchNorm can make training easier by keeping intermediate activation scales more controlled.
 
@@ -416,7 +416,7 @@ It does not eliminate the need for good initialization or sensible optimization,
 
 ---
 
-## 1.14 BatchNorm and Gradient Flow
+## 14. BatchNorm and Gradient Flow
 
 Backpropagation depends on derivatives passing through many layers.
 
@@ -440,7 +440,7 @@ This connects normalization to the vanishing and exploding gradient problems.
 
 ---
 
-## 1.15 BatchNorm and Activation Functions
+## 15. BatchNorm and Activation Functions
 
 A common arrangement is:
 
@@ -470,7 +470,7 @@ The important point is that normalization becomes part of the computational grap
 
 ---
 
-## 1.16 BatchNorm Has Trainable Parameters
+## 16. BatchNorm Has Trainable Parameters
 
 BatchNorm is not merely a fixed mathematical transformation.
 
@@ -514,7 +514,7 @@ along with gradients for the surrounding network parameters.
 
 ---
 
-## 1.17 BatchNorm and Mini-Batch Size
+## 17. BatchNorm and Mini-Batch Size
 
 BatchNorm relies on mini-batch statistics.
 
@@ -548,7 +548,7 @@ Other normalization techniques can work better when batch sizes are very small.
 
 ---
 
-## 1.18 BatchNorm Has a Mild Regularizing Effect
+## 18. BatchNorm Has a Mild Regularizing Effect
 
 Different mini-batches produce slightly different:
 
@@ -581,7 +581,7 @@ Its central role is improving optimization and training behaviour.
 
 ---
 
-## 1.19 BatchNorm vs Dropout
+## 19. BatchNorm vs Dropout
 
 Both can influence generalization, but their primary purposes differ.
 
@@ -597,7 +597,7 @@ They can be used together, although not every architecture requires both.
 
 ---
 
-## 1.20 Layer Normalization
+## 20. Layer Normalization
 
 **Layer Normalization**, or **LayerNorm**, uses a different normalization strategy.
 
@@ -634,7 +634,7 @@ and:
 
 ---
 
-## 1.21 LayerNorm Transformation
+## 21. LayerNorm Transformation
 
 Each feature is normalized:
 
@@ -671,7 +671,7 @@ The major difference is **where the mean and variance are calculated**.
 
 ---
 
-## 1.22 BatchNorm vs LayerNorm
+## 22. BatchNorm vs LayerNorm
 
 The conceptual difference is:
 
@@ -699,7 +699,7 @@ LayerNorm typically normalizes across the features within each row.
 
 ---
 
-## 1.23 Why LayerNorm Does Not Depend on Batch Size
+## 23. Why LayerNorm Does Not Depend on Batch Size
 
 LayerNorm calculates statistics independently for each example.
 
@@ -722,7 +722,7 @@ This makes LayerNorm useful in architectures where:
 
 ---
 
-## 1.24 LayerNorm in Modern Deep Learning
+## 24. LayerNorm in Modern Deep Learning
 
 LayerNorm is especially important in sequence models.
 
@@ -740,7 +740,7 @@ Therefore, although BatchNorm became famous through convolutional and feed-forwa
 
 ---
 
-## 1.25 BatchNorm and CNNs
+## 25. BatchNorm and CNNs
 
 BatchNorm has historically been widely used in convolutional neural networks.
 
@@ -762,7 +762,7 @@ The exact dimensions over which statistics are calculated depend on the architec
 
 ---
 
-## 1.26 Other Normalization Methods
+## 26. Other Normalization Methods
 
 Several additional normalization techniques exist.
 
@@ -774,17 +774,17 @@ Group Normalization
 RMS Normalization
 ```
 
-### Instance Normalization
+### 26.1. Instance Normalization
 
 Normalizes each example more independently and is commonly associated with some image-generation and style-transfer applications.
 
-### Group Normalization
+### 26.2. Group Normalization
 
 Divides channels into groups and normalizes within each group.
 
 It can work well when batch sizes are too small for reliable BatchNorm statistics.
 
-### RMSNorm
+### 26.3. RMSNorm
 
 Normalizes based primarily on root-mean-square magnitude rather than subtracting the mean.
 
@@ -792,17 +792,17 @@ It is used in several modern transformer architectures.
 
 ---
 
-## 1.27 Normalization Is Not the Same as Regularization
+## 27. Normalization Is Not the Same as Regularization
 
 The terms sound similar but refer to different ideas.
 
-### Normalization
+### 27.1. Normalization
 
 ```text
 Control the Scale / Distribution of Values
 ```
 
-### Regularization
+### 27.2. Regularization
 
 ```text
 Control Model Complexity / Overfitting
@@ -822,7 +822,7 @@ This distinction is worth remembering.
 
 ---
 
-## 1.28 Normalization Is Not the Same as Weight Initialization
+## 28. Normalization Is Not the Same as Weight Initialization
 
 Initialization determines parameter values **before training starts**.
 
@@ -840,7 +840,7 @@ They address related training-stability problems but at different stages.
 
 ---
 
-## 1.29 Normalization Does Not Replace Input Preprocessing
+## 29. Normalization Does Not Replace Input Preprocessing
 
 Using BatchNorm or LayerNorm does not automatically mean raw input features should never be scaled.
 
@@ -862,7 +862,7 @@ These operations solve different parts of the problem.
 
 ---
 
-## 1.30 Training Mode vs Evaluation Mode
+## 30. Training Mode vs Evaluation Mode
 
 BatchNorm makes the distinction between training and evaluation mode especially important.
 
@@ -905,7 +905,7 @@ They can actually change how the network computes its output.
 
 ---
 
-## 1.31 What Happens If Evaluation Mode Is Forgotten?
+## 31. What Happens If Evaluation Mode Is Forgotten?
 
 Suppose a trained network containing BatchNorm and Dropout is left in training mode during prediction.
 
@@ -925,7 +925,7 @@ This is why frameworks provide explicit mechanisms for switching a model between
 
 ---
 
-## 1.32 Normalization and the Training Loop
+## 32. Normalization and the Training Loop
 
 With normalization, a typical network might perform:
 
@@ -953,7 +953,7 @@ Normalization participates directly in the forward and backward computational gr
 
 ---
 
-## 1.33 Choosing Between BatchNorm and LayerNorm
+## 33. Choosing Between BatchNorm and LayerNorm
 
 A simplified practical guide is:
 
@@ -974,7 +974,7 @@ Architecture design determines the appropriate choice.
 
 ---
 
-## 1.34 Key Takeaways
+## 34. Key Takeaways
 
 - Normalization helps control numerical scales inside neural networks.
 - Input normalization and internal normalization are different operations.
@@ -1011,7 +1011,7 @@ y
 - Internal normalization does not automatically replace input preprocessing.
 - Training and evaluation modes matter because layers such as BatchNorm and Dropout behave differently between them.
 
-### Memory Hook
+### 34.1. Memory Hook
 
 ```text
 Normalization

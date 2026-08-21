@@ -52,7 +52,7 @@ Statistics therefore provides much of the mathematical reasoning behind **learni
 
 ---
 
-## 1.1 Descriptive and Inferential Statistics
+## 1. Descriptive and Inferential Statistics
 
 Statistics can broadly be divided into two branches:
 
@@ -61,7 +61,7 @@ Statistics can broadly be divided into two branches:
 
 The distinction is fundamental.
 
-### Descriptive Statistics
+### 1.1. Descriptive Statistics
 
 **Descriptive statistics** summarize and describe the data that has actually been observed.
 
@@ -100,7 +100,7 @@ This is a major part of **Exploratory Data Analysis (EDA)**.
 
 ---
 
-### Inferential Statistics
+### 1.2. Inferential Statistics
 
 **Inferential statistics** goes further.
 
@@ -134,7 +134,7 @@ This question lies very close to the fundamental goal of machine learning.
 
 ---
 
-### Descriptive vs Inferential Statistics
+### 1.3. Descriptive vs Inferential Statistics
 
 The distinction can be remembered as:
 
@@ -175,11 +175,11 @@ The claim being made is fundamentally different.
 
 ---
 
-## 1.2 Population and Sample
+## 2. Population and Sample
 
 Statistical inference depends on distinguishing between a **population** and a **sample**.
 
-### Population
+### 2.1. Population
 
 A **population** is the complete collection of observations or entities we ultimately care about.
 
@@ -209,7 +209,7 @@ including houses that are not present in our dataset.
 
 ---
 
-### Sample
+### 2.2. Sample
 
 A **sample** is a subset of the population that we actually observe.
 
@@ -263,7 +263,7 @@ Instead, we observe a sample and attempt to learn something about the population
 
 ---
 
-### Why Sampling Is Necessary
+### 2.3. Why Sampling Is Necessary
 
 In many real-world problems, observing the entire population is:
 
@@ -287,7 +287,7 @@ This introduces one of the central problems of statistics and ML:
 
 ---
 
-## 1.3 Parameters and Statistics
+## 3. Parameters and Statistics
 
 Population quantities and sample quantities are given different names.
 
@@ -347,7 +347,7 @@ This creates the basic structure of statistical estimation:
 
 ---
 
-### A Concrete Example
+### 3.1. A Concrete Example
 
 Suppose we want to know the average amount spent by customers of an online store.
 
@@ -394,7 +394,7 @@ And understanding that variation will become one of the central themes of infere
 
 ---
 
-## 1.4 Describing the Centre of Data
+## 4. Describing the Centre of Data
 
 Before making inferences from a sample, we need ways to summarize its structure.
 
@@ -410,7 +410,7 @@ The three common measures of central tendency are:
 
 ---
 
-### Mean
+### 4.1. Mean
 
 For observations:
 
@@ -461,7 +461,7 @@ has pulled the mean strongly upward.
 
 ---
 
-### Median
+### 4.2. Median
 
 The **median** is the middle observation after the data is sorted.
 
@@ -503,7 +503,7 @@ may describe a typical observation better than:
 
 ---
 
-### Mode
+### 4.3. Mode
 
 The **mode** is the most frequently occurring value.
 
@@ -539,7 +539,7 @@ even though calculating a numerical mean would make no sense.
 
 ---
 
-### Mean, Median, and Skewness
+### 4.4. Mean, Median, and Skewness
 
 For a roughly symmetric distribution:
 
@@ -581,7 +581,7 @@ The important principle is:
 
 ---
 
-### ML Connection
+### 4.5. ML Connection
 
 Measures of centre are among the first things examined during EDA.
 
@@ -613,7 +613,7 @@ Thus even elementary descriptive statistics can influence preprocessing decision
 
 ---
 
-### Mental Model
+### 4.6. Mental Model
 
 The distinction developed so far can be compressed into:
 
@@ -647,7 +647,7 @@ To understand that difference, we next need to measure **spread, position, and s
 
 ---
 
-## 1.5 Measuring Spread
+## 5. Measuring Spread
 
 Measures of central tendency tell us where data is centered.
 
@@ -679,7 +679,7 @@ Measures of spread quantify this difference.
 
 ---
 
-### Range
+### 5.1. Range
 
 The **range** is the simplest measure of spread:
 
@@ -711,7 +711,7 @@ This makes it very sensitive to outliers.
 
 ---
 
-### Sample Variance
+### 5.2. Sample Variance
 
 For a sample containing:
 
@@ -780,7 +780,7 @@ is called **Bessel's correction**.
 
 ---
 
-### Why Divide by \(n-1\)?
+### 5.3. Why Divide by \(n-1\)?
 
 When calculating sample variance, the population mean:
 
@@ -848,7 +848,7 @@ For now, the practical distinction is:
 
 ---
 
-## 1.6 Standard Deviation
+## 6. Standard Deviation
 
 The sample standard deviation is:
 
@@ -892,7 +892,7 @@ A smaller standard deviation means they tend to cluster more closely around it.
 
 ---
 
-### Spread and Model Behaviour
+### 6.1. Spread and Model Behaviour
 
 Variation in data matters directly in ML.
 
@@ -926,7 +926,7 @@ which rescales observations according to how many standard deviations they lie f
 
 ---
 
-## 1.7 Percentiles
+## 7. Percentiles
 
 A **percentile** describes the relative position of an observation within a dataset.
 
@@ -954,7 +954,7 @@ Percentiles describe **rank position**, not absolute magnitude.
 
 ---
 
-## 1.8 Quartiles
+## 8. Quartiles
 
 Quartiles divide ordered data into four approximately equal parts.
 
@@ -996,7 +996,7 @@ Quartiles provide a robust summary of the central portion of a distribution.
 
 ---
 
-## 1.9 Interquartile Range
+## 9. Interquartile Range
 
 The **Interquartile Range (IQR)** measures the spread of the middle 50% of observations.
 
@@ -1036,7 +1036,7 @@ while:
 
 ---
 
-## 1.10 Detecting Outliers with the IQR Rule
+## 10. Detecting Outliers with the IQR Rule
 
 A commonly used rule identifies potential outliers using:
 
@@ -1082,7 +1082,7 @@ This is the rule used by the conventional box plot.
 
 ---
 
-### Example
+### 10.1. Example
 
 Suppose:
 
@@ -1134,7 +1134,7 @@ would be flagged as potential outliers.
 
 ---
 
-### An Outlier Is Not Automatically an Error
+### 10.2. An Outlier Is Not Automatically an Error
 
 This distinction is important.
 
@@ -1157,7 +1157,7 @@ Removing extreme values blindly can destroy real information.
 
 ---
 
-## 1.11 Box Plots
+## 11. Box Plots
 
 A **box plot** summarizes a distribution using quartiles and the IQR.
 
@@ -1200,7 +1200,7 @@ It is particularly useful for comparing distributions across multiple groups.
 
 ---
 
-## 1.12 Shape of a Distribution
+## 12. Shape of a Distribution
 
 Centre and spread still do not completely describe a dataset.
 
@@ -1213,7 +1213,7 @@ Two important shape characteristics are:
 
 ---
 
-### Skewness
+### 12.1. Skewness
 
 **Skewness** describes asymmetry in a distribution.
 
@@ -1260,7 +1260,7 @@ These often contain many moderate observations and a smaller number of very larg
 
 ---
 
-### Why Skewness Matters in ML
+### 12.2. Why Skewness Matters in ML
 
 Strongly skewed features can:
 
@@ -1292,7 +1292,7 @@ often appear in regression problems with highly skewed target variables.
 
 ---
 
-## 1.13 Kurtosis
+## 13. Kurtosis
 
 **Kurtosis** describes characteristics of a distribution's tails and the tendency to produce extreme observations.
 
@@ -1324,7 +1324,7 @@ The exact numerical definitions are less important here than recognizing what th
 
 ---
 
-## 1.14 Robust vs Non-Robust Statistics
+## 14. Robust vs Non-Robust Statistics
 
 Some statistics are strongly influenced by extreme observations.
 
@@ -1370,7 +1370,7 @@ For strongly skewed or contaminated data, median and IQR may provide a more repr
 
 ---
 
-### ML Connection
+### 14.1. ML Connection
 
 Descriptive statistics provide a first diagnostic layer before any model is trained.
 
@@ -1388,7 +1388,7 @@ This makes descriptive statistics part of the reasoning behind **EDA and feature
 
 ---
 
-### Mental Model
+### 14.2. Mental Model
 
 A dataset can now be summarized from several complementary directions:
 
@@ -1413,7 +1413,7 @@ To answer that, we need the concept of **sampling distributions**.
 
 ---
 
-## 1.15 Sampling Distributions
+## 15. Sampling Distributions
 
 A **sampling distribution** is the probability distribution of a statistic calculated from many possible samples drawn from the same population.
 
@@ -1465,7 +1465,7 @@ This explains why two researchers drawing different samples from the same popula
 
 ---
 
-### Sampling Variability
+### 15.1. Sampling Variability
 
 The variation among statistics calculated from different samples is called **sampling variability**.
 
@@ -1499,7 +1499,7 @@ Inferential statistics attempts to quantify this uncertainty.
 
 ---
 
-## 1.16 Standard Error
+## 16. Standard Error
 
 The **standard error** measures how much a sample statistic is expected to vary across repeated samples.
 
@@ -1539,7 +1539,7 @@ SE(\bar{X})
 
 ---
 
-### Standard Deviation vs Standard Error
+### 16.1. Standard Deviation vs Standard Error
 
 These two quantities are related but describe different forms of variation.
 
@@ -1576,7 +1576,7 @@ A useful distinction is:
 
 ---
 
-### Why Larger Samples Produce Smaller Standard Error
+### 16.2. Why Larger Samples Produce Smaller Standard Error
 
 From:
 
@@ -1654,7 +1654,7 @@ To halve the standard error, we need approximately four times as many observatio
 
 ---
 
-## 1.17 Law of Large Numbers
+## 17. Law of Large Numbers
 
 The **Law of Large Numbers (LLN)** explains why sample averages become more reliable as the number of observations increases.
 
@@ -1697,7 +1697,7 @@ The central intuition is:
 
 ---
 
-### Coin Toss Intuition
+### 17.1. Coin Toss Intuition
 
 Suppose a fair coin has:
 
@@ -1749,7 +1749,7 @@ It says that the estimate becomes increasingly concentrated around the true popu
 
 ---
 
-### LLN and Machine Learning
+### 17.2. LLN and Machine Learning
 
 Machine learning depends heavily on the idea that empirical quantities calculated from finite training data can approximate underlying population quantities.
 
@@ -1793,7 +1793,7 @@ The Law of Large Numbers provides part of the mathematical intuition behind why 
 
 ---
 
-## 1.18 Central Limit Theorem
+## 18. Central Limit Theorem
 
 The **Central Limit Theorem (CLT)** is one of the most important results in statistics.
 
@@ -1841,7 +1841,7 @@ Under broad conditions, the distribution of sample means tends toward a Gaussian
 
 ---
 
-### Population Distribution vs Sampling Distribution
+### 18.1. Population Distribution vs Sampling Distribution
 
 This distinction is essential.
 
@@ -1871,7 +1871,7 @@ These are two different distributions.
 
 ---
 
-### Why Averaging Produces Greater Stability
+### 18.2. Why Averaging Produces Greater Stability
 
 The variance of the sample mean is:
 
@@ -1899,7 +1899,7 @@ This explains why averages calculated from large samples are generally much more
 
 ---
 
-### Standardizing the Sample Mean
+### 18.3. Standardizing the Sample Mean
 
 The CLT can also be expressed using a standardized variable:
 
@@ -1923,7 +1923,7 @@ It also forms the foundation for many confidence intervals and hypothesis tests.
 
 ---
 
-## 1.19 Law of Large Numbers vs Central Limit Theorem
+## 19. Law of Large Numbers vs Central Limit Theorem
 
 The LLN and CLT are related but answer different questions.
 
@@ -1976,7 +1976,7 @@ The CLT gives us the **shape and uncertainty of that average**.
 
 ---
 
-### Why the CLT Is So Important for Statistics
+### 19.1. Why the CLT Is So Important for Statistics
 
 The CLT allows us to reason probabilistically about sample estimates.
 
@@ -2007,7 +2007,7 @@ Thus the chain becomes:
 
 ---
 
-### ML Connection
+### 19.2. ML Connection
 
 The same statistical logic helps explain several machine learning ideas.
 
@@ -2049,7 +2049,7 @@ Therefore model evaluation also contains sampling uncertainty.
 
 ---
 
-### Mental Model
+### 19.3. Mental Model
 
 The core of sampling theory can be summarized as:
 
@@ -2109,7 +2109,7 @@ That leads to **point estimation and confidence intervals**.
 
 ---
 
-## 1.20 Point Estimation
+## 20. Point Estimation
 
 A **point estimate** is a single numerical value used to estimate an unknown population parameter.
 
@@ -2165,7 +2165,7 @@ Therefore a point estimate should be accompanied, whenever possible, by some ind
 
 ---
 
-### Estimator vs Estimate
+### 20.1. Estimator vs Estimate
 
 These two terms are related but distinct.
 
@@ -2210,13 +2210,13 @@ So:
 
 ---
 
-## 1.21 Properties of a Good Estimator
+## 21. Properties of a Good Estimator
 
 Not every estimator is equally useful.
 
 Several properties help describe the quality of an estimator.
 
-### Unbiasedness
+### 21.1. Unbiasedness
 
 An estimator is **unbiased** if its expected value equals the true population parameter.
 
@@ -2260,7 +2260,7 @@ It means the estimator is correct **on average across repeated samples**.
 
 ---
 
-### Bias
+### 21.2. Bias
 
 The bias of an estimator is:
 
@@ -2288,7 +2288,7 @@ An unbiased estimator has:
 
 ---
 
-### Consistency
+### 21.3. Consistency
 
 An estimator is **consistent** if it approaches the true parameter as sample size increases.
 
@@ -2314,7 +2314,7 @@ Consistency answers:
 
 ---
 
-### Efficiency
+### 21.4. Efficiency
 
 Suppose two estimators are both unbiased.
 
@@ -2342,7 +2342,7 @@ These properties connect directly to the larger ML problem of learning stable, g
 
 ---
 
-## 1.22 Interval Estimation
+## 22. Interval Estimation
 
 A point estimate gives one value.
 
@@ -2366,7 +2366,7 @@ The most common form of interval estimate is a **confidence interval**.
 
 ---
 
-## 1.23 Confidence Intervals
+## 23. Confidence Intervals
 
 A **confidence interval** provides a range of plausible values for an unknown population parameter, based on the sample data and the sampling distribution of the estimator.
 
@@ -2408,7 +2408,7 @@ SE
 
 ---
 
-### Confidence Interval for a Mean
+### 23.1. Confidence Interval for a Mean
 
 If the population standard deviation is known and the sampling distribution of the mean is approximately normal, a confidence interval for the population mean is:
 
@@ -2467,7 +2467,7 @@ As sample size increases, the t-distribution approaches the standard normal dist
 
 ---
 
-### Example
+### 23.2. Example
 
 Suppose a sample has:
 
@@ -2513,7 +2513,7 @@ The interval is centered at the point estimate, with its width determined by the
 
 ---
 
-## 1.24 What Does 95% Confidence Mean?
+## 24. What Does 95% Confidence Mean?
 
 This is one of the most commonly misunderstood ideas in statistics.
 
@@ -2547,7 +2547,7 @@ The 95% refers to the **long-run success rate of the procedure**.
 
 ---
 
-### Confidence Level and Interval Width
+### 24.1. Confidence Level and Interval Width
 
 A higher confidence level requires a wider interval.
 
@@ -2579,7 +2579,7 @@ To be more confident that the interval captures the true value, we must accept l
 
 ---
 
-### Sample Size and Interval Width
+### 24.2. Sample Size and Interval Width
 
 Recall:
 
@@ -2632,7 +2632,7 @@ and one major way it can become narrower:
 
 ---
 
-## 1.25 Confidence Intervals in Machine Learning
+## 25. Confidence Intervals in Machine Learning
 
 The same idea of interval estimation applies to ML evaluation.
 
@@ -2681,7 +2681,7 @@ The same applies to metrics such as:
 
 ---
 
-### Confidence Intervals and Model Comparison
+### 25.1. Confidence Intervals and Model Comparison
 
 Suppose model A achieves:
 
@@ -2715,7 +2715,7 @@ That question is answered using **hypothesis testing**.
 
 ---
 
-### Mental Model
+### 25.2. Mental Model
 
 Point estimation asks:
 
@@ -2765,7 +2765,7 @@ Hypothesis testing, which comes next, asks whether the observed data provides en
 
 ---
 
-## 1.26 Hypothesis Testing
+## 26. Hypothesis Testing
 
 **Hypothesis testing** is a formal framework for deciding whether observed sample evidence is strong enough to challenge a claim about a population.
 
@@ -2775,7 +2775,7 @@ The central question is:
 
 A hypothesis test begins with two competing statements.
 
-### Null Hypothesis
+### 26.1. Null Hypothesis
 
 The **null hypothesis**, written as:
 
@@ -2800,7 +2800,7 @@ The null hypothesis might be:
 H_0:\mu=1000
 ```
 
-### Alternative Hypothesis
+### 26.2. Alternative Hypothesis
 
 The **alternative hypothesis**, written as:
 
@@ -2839,7 +2839,7 @@ Instead, it asks whether the observed data provides enough evidence to **reject 
 
 ---
 
-## 1.27 Test Statistics
+## 27. Test Statistics
 
 A **test statistic** measures how far the observed sample result lies from what would be expected if the null hypothesis were true.
 
@@ -2889,7 +2889,7 @@ A large absolute test statistic indicates that the observed result is difficult 
 
 ---
 
-## 1.28 The p-Value
+## 28. The p-Value
 
 The **p-value** measures how surprising the observed result would be if the null hypothesis were true.
 
@@ -2929,7 +2929,7 @@ But this distinction requires careful interpretation.
 
 ---
 
-### What a p-Value Does Not Mean
+### 28.1. What a p-Value Does Not Mean
 
 A p-value is **not**:
 
@@ -2957,7 +2957,7 @@ It measures compatibility between the observed data and the null hypothesis unde
 
 ---
 
-## 1.29 Significance Level
+## 29. Significance Level
 
 Before conducting a hypothesis test, we choose a **significance level**:
 
@@ -3008,7 +3008,7 @@ and the result is called **statistically significant** at the 5% level.
 
 ---
 
-### Reject vs Fail to Reject
+### 29.1. Reject vs Fail to Reject
 
 The wording matters.
 
@@ -3036,7 +3036,7 @@ This distinction is fundamental to statistical reasoning.
 
 ---
 
-## 1.30 One-Tailed and Two-Tailed Tests
+## 30. One-Tailed and Two-Tailed Tests
 
 The alternative hypothesis determines the direction of the test.
 
@@ -3078,13 +3078,13 @@ The direction should be determined by the research question **before examining t
 
 ---
 
-## 1.31 Type I and Type II Errors
+## 31. Type I and Type II Errors
 
 Hypothesis testing makes decisions under uncertainty.
 
 Therefore two kinds of errors are possible.
 
-### Type I Error
+### 31.1. Type I Error
 
 A **Type I error** occurs when we reject the null hypothesis even though it is actually true.
 
@@ -3118,7 +3118,7 @@ we are accepting a 5% long-run false-positive rate at the rejection boundary def
 
 ---
 
-### Type II Error
+### 31.2. Type II Error
 
 A **Type II error** occurs when we fail to reject the null hypothesis even though the alternative is actually true.
 
@@ -3168,7 +3168,7 @@ The analogy is not merely cosmetic: both frameworks involve making decisions und
 
 ---
 
-## 1.32 Statistical Power
+## 32. Statistical Power
 
 The **power** of a statistical test is the probability that it correctly rejects the null hypothesis when a real effect exists.
 
@@ -3213,7 +3213,7 @@ A test with very little data may fail to detect an important effect simply becau
 
 ---
 
-## 1.33 Statistical Significance vs Practical Significance
+## 33. Statistical Significance vs Practical Significance
 
 A statistically significant result is not automatically important in practice.
 
@@ -3263,7 +3263,7 @@ p<0.05
 
 ---
 
-## 1.34 Hypothesis Testing and Confidence Intervals
+## 34. Hypothesis Testing and Confidence Intervals
 
 Confidence intervals and hypothesis tests are closely connected.
 
@@ -3314,13 +3314,13 @@ The confidence interval is often more informative because it shows both:
 
 ---
 
-## 1.35 Common Statistical Tests
+## 35. Common Statistical Tests
 
 Different questions require different statistical tests.
 
 For ML foundations, it is more important to understand what the major tests are designed to answer than to memorize every formula.
 
-### z-Test
+### 35.1. z-Test
 
 A **z-test** can be used for inference about means when the relevant sampling distribution can be treated as normal and the population variance is known or suitable large-sample conditions apply.
 
@@ -3336,7 +3336,7 @@ SE
 }
 ```
 
-### t-Test
+### 35.2. t-Test
 
 A **t-test** is commonly used for inference about means when the population standard deviation is unknown.
 
@@ -3360,7 +3360,7 @@ Common forms include:
 - independent two-sample t-test
 - paired t-test
 
-### Chi-Square Test
+### 35.3. Chi-Square Test
 
 A **chi-square test** is commonly used with categorical data.
 
@@ -3372,7 +3372,7 @@ For example:
 
 The chi-square statistic compares observed frequencies with frequencies expected under independence.
 
-### ANOVA
+### 35.4. ANOVA
 
 **Analysis of Variance (ANOVA)** is used to test whether the means of multiple groups differ.
 
@@ -3411,7 +3411,7 @@ These tests become easier to remember when viewed as different applications of t
 
 ---
 
-## 1.36 Statistics and Machine Learning
+## 36. Statistics and Machine Learning
 
 Statistics and machine learning overlap heavily, but their traditional emphasis differs.
 
@@ -3435,7 +3435,7 @@ But both depend on the same fundamental structure:
 
 Several ideas developed in this chapter map directly into ML.
 
-### Sampling and Train/Test Data
+### 36.1. Sampling and Train/Test Data
 
 A training dataset is a sample from a larger data-generating process.
 
@@ -3451,7 +3451,7 @@ Therefore:
 }
 ```
 
-### Bias and Variance
+### 36.2. Bias and Variance
 
 Statistical estimators can have bias and variance.
 
@@ -3471,7 +3471,7 @@ A model that reacts excessively to the particular training sample may change sub
 
 This becomes the **bias-variance trade-off**, which we will encounter directly in model learning and regularization.
 
-### Uncertainty in Model Evaluation
+### 36.3. Uncertainty in Model Evaluation
 
 Accuracy, RMSE, MAE, precision, recall, F1 score, and other evaluation metrics are calculated from finite samples.
 
@@ -3491,7 +3491,7 @@ Conceptually:
 
 This is a conceptual decomposition rather than an exact universal equation, but it captures the important idea: the score we observe depends partly on which finite test sample we happened to evaluate.
 
-### Statistical Testing in ML
+### 36.4. Statistical Testing in ML
 
 Statistical reasoning can help answer questions such as:
 
@@ -3507,7 +3507,7 @@ A model can be statistically distinguishable from another model while providing 
 
 ---
 
-## 1.37 Final Mental Model
+## 37. Final Mental Model
 
 The entire statistics chapter can be compressed into one chain.
 
@@ -3595,7 +3595,7 @@ That is the statistical foundation of **generalization** in machine learning.
 
 ---
 
-## 1.38 Quick Reference
+## 38. Quick Reference
 
 | Concept | Core Idea | ML Connection |
 |---|---|---|

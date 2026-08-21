@@ -1,6 +1,6 @@
 # 20. Attention Mechanism
 
-## 1.1 Why Attention Was Needed
+## 1. Why Attention Was Needed
 
 RNNs, LSTMs, and GRUs process sequential information by carrying state through time.
 
@@ -41,7 +41,7 @@ when it needs it.
 
 ---
 
-## 1.2 The Central Idea of Attention
+## 2. The Central Idea of Attention
 
 Suppose the model is processing:
 
@@ -81,7 +81,7 @@ This is the basic idea of **attention**.
 
 ---
 
-## 1.3 Attention as Selective Focus
+## 3. Attention as Selective Focus
 
 Human intuition provides a useful analogy.
 
@@ -116,7 +116,7 @@ Attention gives a neural network a learned mechanism for making similar relevanc
 
 ---
 
-## 1.4 Attention Does Not Mean Hard Selection
+## 4. Attention Does Not Mean Hard Selection
 
 Attention usually does not choose exactly one item and discard everything else.
 
@@ -149,7 +149,7 @@ This makes the operation differentiable and trainable using gradient-based learn
 
 ---
 
-## 1.5 The Three Core Components
+## 5. The Three Core Components
 
 Modern attention is commonly expressed using three concepts:
 
@@ -171,7 +171,7 @@ These are the three most important terms to understand before studying transform
 
 ---
 
-## 1.6 Query
+## 6. Query
 
 The **query** represents:
 
@@ -192,7 +192,7 @@ Query
 
 ---
 
-## 1.7 Key
+## 7. Key
 
 A **key** represents:
 
@@ -217,7 +217,7 @@ Which Items Match What I Need?
 
 ---
 
-## 1.8 Value
+## 8. Value
 
 The **value** represents the actual information that will be retrieved if an item receives attention.
 
@@ -238,7 +238,7 @@ This distinction is fundamental.
 
 ---
 
-## 1.9 A Database Analogy
+## 9. A Database Analogy
 
 A useful intuition is to imagine a lookup system.
 
@@ -278,7 +278,7 @@ Attention performs a learned numerical version of this process.
 
 ---
 
-## 1.10 Query-Key Similarity
+## 10. Query-Key Similarity
 
 The first mathematical step is determining how strongly a query matches each key.
 
@@ -318,7 +318,7 @@ Attention Score
 
 ---
 
-## 1.11 Multiple Keys
+## 11. Multiple Keys
 
 Suppose a query is compared with three keys:
 
@@ -346,7 +346,7 @@ These scores tell the model how relevant each corresponding item appears to be.
 
 ---
 
-## 1.12 Raw Scores Are Not Yet Attention Weights
+## 12. Raw Scores Are Not Yet Attention Weights
 
 Dot-product scores may contain arbitrary values such as:
 
@@ -390,7 +390,7 @@ and:
 
 ---
 
-## 1.13 Attention Weights
+## 13. Attention Weights
 
 After softmax, the scores might become:
 
@@ -415,7 +415,7 @@ The third token receives the greatest influence.
 
 ---
 
-## 1.14 Weighted Sum of Values
+## 14. Weighted Sum of Values
 
 The attention weights are then applied to the values.
 
@@ -448,7 +448,7 @@ The weighted values are summed to produce the final contextual representation.
 
 ---
 
-## 1.15 The Complete Basic Attention Process
+## 15. The Complete Basic Attention Process
 
 The entire process can be summarized as:
 
@@ -484,7 +484,7 @@ This is the central mechanism.
 
 ---
 
-## 1.16 Matrix Form
+## 16. Matrix Form
 
 When multiple queries, keys, and values are processed together, they can be represented as matrices:
 
@@ -529,7 +529,7 @@ Multiply by V
 
 ---
 
-## 1.17 Scaled Dot-Product Attention
+## 17. Scaled Dot-Product Attention
 
 Transformers commonly use **scaled dot-product attention**.
 
@@ -557,7 +557,7 @@ This equation is one of the central equations behind transformer architectures.
 
 ---
 
-## 1.18 Why Divide by the Square Root of the Key Dimension?
+## 18. Why Divide by the Square Root of the Key Dimension?
 
 As vector dimensionality increases, dot products can become large in magnitude.
 
@@ -594,7 +594,7 @@ Scaling
 
 ---
 
-## 1.19 Where Do Q, K, and V Come From?
+## 19. Where Do Q, K, and V Come From?
 
 The query, key, and value vectors are not normally the raw input vectors themselves.
 
@@ -636,7 +636,7 @@ These matrices are trainable parameters.
 
 ---
 
-## 1.20 Why Separate Q, K, and V Projections?
+## 20. Why Separate Q, K, and V Projections?
 
 The same input item may need to play different roles.
 
@@ -657,7 +657,7 @@ Separate learned projections allow these roles to develop independently.
 
 ---
 
-## 1.21 Attention Is Learned
+## 21. Attention Is Learned
 
 The model is not manually told:
 
@@ -687,7 +687,7 @@ Attention is therefore a learned mechanism.
 
 ---
 
-## 1.22 Attention in Sequence-to-Sequence Models
+## 22. Attention in Sequence-to-Sequence Models
 
 Attention originally became especially important in encoder-decoder sequence models.
 
@@ -722,7 +722,7 @@ The decoder can directly consult relevant encoder states while generating each o
 
 ---
 
-## 1.23 Attention Removes the Single-Vector Bottleneck
+## 23. Attention Removes the Single-Vector Bottleneck
 
 Consider machine translation.
 
@@ -755,7 +755,7 @@ The decoder no longer needs every detail to survive inside one fixed vector.
 
 ---
 
-## 1.24 Different Outputs Can Attend to Different Inputs
+## 24. Different Outputs Can Attend to Different Inputs
 
 Suppose the input is:
 
@@ -792,7 +792,7 @@ Attention is dynamically recomputed according to the current query.
 
 ---
 
-## 1.25 Attention and Alignment
+## 25. Attention and Alignment
 
 In sequence-to-sequence models, attention weights can represent a form of alignment.
 
@@ -810,7 +810,7 @@ This is one reason attention became so powerful for translation tasks.
 
 ---
 
-## 1.26 Self-Attention
+## 26. Self-Attention
 
 The next major step is **self-attention**.
 
@@ -842,7 +842,7 @@ This mechanism forms the foundation of transformers.
 
 ---
 
-## 1.27 Why Is It Called Self-Attention?
+## 27. Why Is It Called Self-Attention?
 
 Suppose the sequence is:
 
@@ -873,7 +873,7 @@ Self-Attention
 
 ---
 
-## 1.28 Self-Attention Creates Contextual Representations
+## 28. Self-Attention Creates Contextual Representations
 
 Consider the word:
 
@@ -917,7 +917,7 @@ This is enormously important in modern language modelling.
 
 ---
 
-## 1.29 Self-Attention Step by Step
+## 29. Self-Attention Step by Step
 
 Suppose the sequence contains:
 
@@ -957,7 +957,7 @@ The same process occurs for `B` and `C`.
 
 ---
 
-## 1.30 A Token Can Attend to Itself
+## 30. A Token Can Attend to Itself
 
 Self-attention does not necessarily mean:
 
@@ -981,7 +981,7 @@ The learned weights determine how much influence each position receives.
 
 ---
 
-## 1.31 Attention Matrix
+## 31. Attention Matrix
 
 For a sequence of four tokens, self-attention produces relationships such as:
 
@@ -1017,7 +1017,7 @@ After softmax, each row forms a distribution of attention weights.
 
 ---
 
-## 1.32 Long-Range Relationships
+## 32. Long-Range Relationships
 
 A major advantage of self-attention is that distant positions can interact directly.
 
@@ -1044,11 +1044,11 @@ the relationship can be represented directly in one attention operation.
 
 ---
 
-## 1.33 Path Length Comparison
+## 33. Path Length Comparison
 
 Suppose two relevant tokens are far apart.
 
-### RNN
+### 33.1. RNN
 
 ```text
 A → h₂ → h₃ → h₄ → ... → B
@@ -1056,7 +1056,7 @@ A → h₂ → h₃ → h₄ → ... → B
 
 The path grows with sequence distance.
 
-### Self-Attention
+### 33.2. Self-Attention
 
 ```text
 A ───────────────→ B
@@ -1068,7 +1068,7 @@ This shorter information path helps models learn long-range dependencies.
 
 ---
 
-## 1.34 Attention and Parallelism
+## 34. Attention and Parallelism
 
 RNNs have an inherent sequential dependency:
 
@@ -1111,7 +1111,7 @@ This became a major advantage for training large models.
 
 ---
 
-## 1.35 Attention Has a Cost
+## 35. Attention Has a Cost
 
 Self-attention compares sequence positions with one another.
 
@@ -1141,7 +1141,7 @@ Attention solves some problems while introducing new engineering challenges.
 
 ---
 
-## 1.36 Attention Does Not Naturally Know Order
+## 36. Attention Does Not Naturally Know Order
 
 An RNN processes:
 
@@ -1169,7 +1169,7 @@ This will become important in the next chapter.
 
 ---
 
-## 1.37 Masked Attention
+## 37. Masked Attention
 
 Sometimes a model must not see certain positions.
 
@@ -1213,7 +1213,7 @@ Future information is blocked.
 
 ---
 
-## 1.38 Causal Attention Matrix
+## 38. Causal Attention Matrix
 
 A causal mask conceptually looks like:
 
@@ -1240,7 +1240,7 @@ Causal attention is fundamental to autoregressive language models.
 
 ---
 
-## 1.39 Padding Masks
+## 39. Padding Masks
 
 Sequences within a batch may have different lengths.
 
@@ -1274,7 +1274,7 @@ Padding Mask
 
 ---
 
-## 1.40 Cross-Attention
+## 40. Cross-Attention
 
 Another important form is **cross-attention**.
 
@@ -1312,9 +1312,9 @@ Encoder-decoder transformers use this mechanism.
 
 ---
 
-## 1.41 Self-Attention vs Cross-Attention
+## 41. Self-Attention vs Cross-Attention
 
-### Self-Attention
+### 41.1. Self-Attention
 
 ```text
 Q
@@ -1329,7 +1329,7 @@ Sequence
 → Looks at Itself
 ```
 
-### Cross-Attention
+### 41.2. Cross-Attention
 
 ```text
 Q
@@ -1352,7 +1352,7 @@ This distinction becomes important in transformer architectures.
 
 ---
 
-## 1.42 Multi-Head Attention
+## 42. Multi-Head Attention
 
 So far, we have described one attention operation.
 
@@ -1378,7 +1378,7 @@ Each head has its own learned projections.
 
 ---
 
-## 1.43 Why Multiple Attention Heads?
+## 43. Why Multiple Attention Heads?
 
 Different relationships may matter simultaneously.
 
@@ -1417,7 +1417,7 @@ Multiple Heads
 
 ---
 
-## 1.44 Multi-Head Attention Process
+## 44. Multi-Head Attention Process
 
 Each head computes its own:
 
@@ -1449,7 +1449,7 @@ The heads are combined to form a richer representation.
 
 ---
 
-## 1.45 Multi-Head Attention Mathematically
+## 45. Multi-Head Attention Mathematically
 
 Each head can be written as:
 
@@ -1496,7 +1496,7 @@ are learned projection matrices.
 
 ---
 
-## 1.46 Attention Is Not Memory in the RNN Sense
+## 46. Attention Is Not Memory in the RNN Sense
 
 An RNN carries information through:
 
@@ -1522,7 +1522,7 @@ This is an important conceptual distinction.
 
 ---
 
-## 1.47 RNN vs Attention
+## 47. RNN vs Attention
 
 | RNN | Attention |
 |---|---|
@@ -1537,7 +1537,7 @@ Attention changes the fundamental way sequence relationships are represented.
 
 ---
 
-## 1.48 LSTM vs Attention
+## 48. LSTM vs Attention
 
 LSTM improves recurrent memory using:
 
@@ -1570,7 +1570,7 @@ This is one of the most important conceptual transitions in modern deep learning
 
 ---
 
-## 1.49 Attention Scores Are Context Dependent
+## 49. Attention Scores Are Context Dependent
 
 The same word can receive different attention depending on the query.
 
@@ -1603,7 +1603,7 @@ This is essential.
 
 ---
 
-## 1.50 Attention Is Not an Explanation Guarantee
+## 50. Attention Is Not an Explanation Guarantee
 
 Attention weights can sometimes provide useful clues about model behaviour.
 
@@ -1626,7 +1626,7 @@ Attention weights show information-routing patterns, but they are not guaranteed
 
 ---
 
-## 1.51 From Attention to Transformers
+## 51. From Attention to Transformers
 
 Attention was initially used alongside recurrent architectures.
 
@@ -1663,7 +1663,7 @@ This leads to the **Transformer** architecture.
 
 ---
 
-## 1.52 Why Attention Changed Deep Learning
+## 52. Why Attention Changed Deep Learning
 
 Attention addressed several important limitations of recurrent sequence modelling.
 
@@ -1685,7 +1685,7 @@ These properties made attention particularly suitable for large-scale sequence m
 
 ---
 
-## 1.53 The Attention Equation to Remember
+## 53. The Attention Equation to Remember
 
 The central equation is:
 
@@ -1721,7 +1721,7 @@ The equation is simply the mathematical expression of the attention idea.
 
 ---
 
-## 1.54 The Q-K-V Mental Model
+## 54. The Q-K-V Mental Model
 
 The most useful interpretation is:
 
@@ -1749,7 +1749,7 @@ If this mental model is clear, the mathematics becomes much easier to remember.
 
 ---
 
-## 1.55 Key Takeaways
+## 55. Key Takeaways
 
 - Attention allows a model to dynamically focus on information relevant to the current computation.
 - Attention usually performs soft weighting rather than hard selection.
@@ -1791,7 +1791,7 @@ If this mental model is clear, the mathematics becomes much easier to remember.
 - Attention weights should not automatically be treated as complete explanations of model behaviour.
 - Self-attention became the central mechanism underlying transformers.
 
-### Memory Hook
+### 55.1. Memory Hook
 
 ```text
 ATTENTION:

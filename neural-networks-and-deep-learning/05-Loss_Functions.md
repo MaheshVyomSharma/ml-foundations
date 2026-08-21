@@ -1,6 +1,6 @@
 # 05. Loss Functions
 
-## 1.1 What Is a Loss Function?
+## 1. What Is a Loss Function?
 
 A **loss function** measures how far a model's prediction is from the true target.
 
@@ -40,7 +40,7 @@ A smaller loss generally indicates a better prediction.
 
 ---
 
-## 1.2 Why Loss Is Necessary
+## 2. Why Loss Is Necessary
 
 A neural network cannot improve merely by knowing that a prediction is "wrong."
 
@@ -68,7 +68,7 @@ The loss function provides the objective that training attempts to minimize.
 
 ---
 
-## 1.3 Loss Function vs Evaluation Metric
+## 3. Loss Function vs Evaluation Metric
 
 A **loss function** is used directly during training.
 
@@ -103,7 +103,7 @@ Sometimes the same quantity can serve both purposes, but the roles are conceptua
 
 ---
 
-## 1.4 Loss for One Example vs Cost Over a Dataset
+## 4. Loss for One Example vs Cost Over a Dataset
 
 For one training example:
 
@@ -139,7 +139,7 @@ In practice, the terms are often used somewhat interchangeably.
 
 ---
 
-## 1.5 Mean Squared Error
+## 5. Mean Squared Error
 
 For regression, one of the most common loss functions is **Mean Squared Error (MSE)**.
 
@@ -169,7 +169,7 @@ Large errors receive disproportionately larger penalties.
 
 ---
 
-## 1.6 Why Square the Error?
+## 6. Why Square the Error?
 
 Suppose the prediction errors are:
 
@@ -215,7 +215,7 @@ Therefore, MSE strongly penalizes large errors.
 
 ---
 
-## 1.7 Derivative of Squared Error
+## 7. Derivative of Squared Error
 
 Consider:
 
@@ -253,7 +253,7 @@ This gradient becomes the starting point for backpropagation.
 
 ---
 
-## 1.8 Mean Absolute Error
+## 8. Mean Absolute Error
 
 Another regression loss is **Mean Absolute Error (MAE)**:
 
@@ -285,7 +285,7 @@ MAE is generally more robust to outliers than MSE.
 
 ---
 
-## 1.9 MSE vs MAE
+## 9. MSE vs MAE
 
 Consider an error of `10`.
 
@@ -314,7 +314,7 @@ A useful comparison is:
 
 ---
 
-## 1.10 Classification Requires a Different Loss
+## 10. Classification Requires a Different Loss
 
 For classification, using ordinary squared error is often not ideal.
 
@@ -346,7 +346,7 @@ This leads to **cross-entropy loss**.
 
 ---
 
-## 1.11 Binary Cross-Entropy
+## 11. Binary Cross-Entropy
 
 For binary classification:
 
@@ -379,7 +379,7 @@ The formula contains two cases within one expression.
 
 ---
 
-## 1.12 Binary Cross-Entropy When the True Class Is 1
+## 12. Binary Cross-Entropy When the True Class Is 1
 
 If:
 
@@ -433,7 +433,7 @@ Low predicted probability
 
 ---
 
-## 1.13 Binary Cross-Entropy When the True Class Is 0
+## 13. Binary Cross-Entropy When the True Class Is 0
 
 If:
 
@@ -467,7 +467,7 @@ Thus, BCE strongly penalizes confident incorrect predictions.
 
 ---
 
-## 1.14 Why the Logarithm Is Useful
+## 14. Why the Logarithm Is Useful
 
 The logarithm creates a useful penalty shape.
 
@@ -493,7 +493,7 @@ The model is therefore encouraged not only to predict the correct class, but als
 
 ---
 
-## 1.15 Sigmoid and Binary Cross-Entropy
+## 15. Sigmoid and Binary Cross-Entropy
 
 Binary classification commonly pairs:
 
@@ -537,7 +537,7 @@ Loss
 
 ---
 
-## 1.16 Categorical Cross-Entropy
+## 16. Categorical Cross-Entropy
 
 For multiclass classification, suppose there are `K` classes.
 
@@ -583,7 +583,7 @@ The model is therefore penalized according to the probability assigned to the co
 
 ---
 
-## 1.17 Example of Categorical Cross-Entropy
+## 17. Example of Categorical Cross-Entropy
 
 Suppose the true class is `Dog`.
 
@@ -629,7 +629,7 @@ The confident incorrect prediction therefore receives a strong penalty.
 
 ---
 
-## 1.18 Softmax and Categorical Cross-Entropy
+## 18. Softmax and Categorical Cross-Entropy
 
 Multiclass classification commonly pairs:
 
@@ -660,7 +660,7 @@ Cross-entropy then compares these probabilities with the true class.
 
 ---
 
-## 1.19 Sparse Categorical Cross-Entropy
+## 19. Sparse Categorical Cross-Entropy
 
 Categorical cross-entropy often assumes the true target is one-hot encoded.
 
@@ -687,7 +687,7 @@ The difference is mainly how target labels are represented.
 
 ---
 
-## 1.20 Loss for Multi-Label Classification
+## 20. Loss for Multi-Label Classification
 
 In multi-label classification, several labels may be true simultaneously.
 
@@ -715,7 +715,7 @@ with binary cross-entropy applied independently across labels.
 
 ---
 
-## 1.21 Loss Defines the Training Objective
+## 21. Loss Defines the Training Objective
 
 The neural network contains parameters:
 
@@ -760,7 +760,7 @@ This is the optimization problem underlying neural-network training.
 
 ---
 
-## 1.22 The Loss Landscape
+## 22. The Loss Landscape
 
 Because the loss depends on many weights and biases, it can be imagined as a surface over parameter space.
 
@@ -787,7 +787,7 @@ Gradient-based optimization attempts to move through this space toward regions o
 
 ---
 
-## 1.23 Loss and Gradient
+## 23. Loss and Gradient
 
 The central training question is:
 
@@ -812,7 +812,7 @@ This connects loss functions directly to gradient descent.
 
 ---
 
-## 1.24 From Loss to Parameter Update
+## 24. From Loss to Parameter Update
 
 Suppose:
 
@@ -857,7 +857,7 @@ Parameter Update
 
 ---
 
-## 1.25 Loss Over a Mini-Batch
+## 25. Loss Over a Mini-Batch
 
 Neural networks commonly train using mini-batches.
 
@@ -881,7 +881,7 @@ This is the basis of mini-batch gradient descent.
 
 ---
 
-## 1.26 Regularization and the Objective Function
+## 26. Regularization and the Objective Function
 
 The training objective may include more than prediction loss.
 
@@ -907,7 +907,7 @@ For example, L2 regularization adds a penalty related to squared weight magnitud
 
 ---
 
-## 1.27 Common Output-Loss Pairings
+## 27. Common Output-Loss Pairings
 
 A practical summary is:
 
@@ -922,7 +922,7 @@ These pairings are common because the output representation and loss function co
 
 ---
 
-## 1.28 Why Not Use Accuracy as the Loss?
+## 28. Why Not Use Accuracy as the Loss?
 
 Accuracy is useful for evaluating classification performance, but it is not suitable as a training loss.
 
@@ -957,7 +957,7 @@ Cross-entropy provides that training signal.
 
 ---
 
-## 1.29 Loss Functions and Maximum Likelihood
+## 29. Loss Functions and Maximum Likelihood
 
 Cross-entropy is not an arbitrary formula chosen merely because it works.
 
@@ -983,7 +983,7 @@ This connects neural-network classification directly to probability and statisti
 
 ---
 
-## 1.30 The Complete Training Connection
+## 30. The Complete Training Connection
 
 Forward propagation gives:
 
@@ -1039,7 +1039,7 @@ Updated Parameters
 
 ---
 
-## 1.31 Key Takeaways
+## 31. Key Takeaways
 
 - A loss function measures the error between prediction and ground truth.
 - Training attempts to minimize the loss.
@@ -1058,7 +1058,7 @@ Updated Parameters
 - Gradient-based optimization updates parameters to reduce the loss.
 - Cross-entropy has a probabilistic interpretation through maximum likelihood.
 
-### Memory Hook
+### 31.1. Memory Hook
 
 ```text
 Prediction

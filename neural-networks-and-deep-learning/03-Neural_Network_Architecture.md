@@ -1,6 +1,6 @@
 # 03. Neural Network Architecture
 
-## 1.1 From Neurons to Layers
+## 1. From Neurons to Layers
 
 A neural network is built by organizing many artificial neurons into **layers**.
 
@@ -52,7 +52,7 @@ where:
 
 ---
 
-## 1.2 The Input Layer
+## 2. The Input Layer
 
 The **input layer** represents the features supplied to the network.
 
@@ -98,7 +98,7 @@ the input dimension would be 784.
 
 ---
 
-## 1.3 Hidden Layers
+## 3. Hidden Layers
 
 A **hidden layer** is a layer between the input and output layers.
 
@@ -142,13 +142,13 @@ Hidden layers allow the network to learn intermediate representations of the dat
 
 ---
 
-## 1.4 The Output Layer
+## 4. The Output Layer
 
 The **output layer** produces the network's final prediction.
 
 Its structure depends on the task.
 
-### Regression
+### 4.1. Regression
 
 For a single continuous target:
 
@@ -163,7 +163,7 @@ Example:
 \hat{y}\in\mathbb{R}
 ```
 
-### Binary Classification
+### 4.2. Binary Classification
 
 For two classes:
 
@@ -178,7 +178,7 @@ giving:
 0 < \hat{p} < 1
 ```
 
-### Multiclass Classification
+### 4.3. Multiclass Classification
 
 For `K` mutually exclusive classes:
 
@@ -199,7 +199,7 @@ with:
 \sum_{k=1}^{K}P(y=k)=1
 ```
 
-### Multi-label Classification
+### 4.4. Multi-label Classification
 
 For `K` independent labels:
 
@@ -210,7 +210,7 @@ Activation      = Sigmoid on each output
 
 ---
 
-## 1.5 Fully Connected Layers
+## 5. Fully Connected Layers
 
 A **fully connected layer**, also called a **dense layer**, connects every neuron in one layer to every neuron in the next layer.
 
@@ -241,7 +241,7 @@ Instead of storing individual weights separately, we represent the connections u
 
 ---
 
-## 1.6 Weight Matrix Dimensions
+## 6. Weight Matrix Dimensions
 
 Suppose a layer receives:
 
@@ -301,7 +301,7 @@ has one value for every neuron in the layer.
 
 ---
 
-## 1.7 Example of Layer Dimensions
+## 7. Example of Layer Dimensions
 
 Suppose the input contains 5 features and the first hidden layer contains 3 neurons.
 
@@ -377,7 +377,7 @@ This gives the dimensional flow:
 
 ---
 
-## 1.8 Parameters in a Dense Layer
+## 8. Parameters in a Dense Layer
 
 For a fully connected layer with:
 
@@ -439,7 +439,7 @@ trainable parameters.
 
 ---
 
-## 1.9 Depth
+## 9. Depth
 
 The **depth** of a neural network refers broadly to the number of successive computational layers.
 
@@ -487,7 +487,7 @@ The term **deep learning** largely refers to learning with networks containing m
 
 ---
 
-## 1.10 Width
+## 10. Width
 
 The **width** of a neural network refers to the number of neurons in a layer.
 
@@ -519,15 +519,15 @@ Width is therefore a hyperparameter rather than something that should simply be 
 
 ---
 
-## 1.11 Depth vs Width
+## 11. Depth vs Width
 
 Both depth and width increase model capacity, but they do so differently.
 
-### Width
+### 11.1. Width
 
 A wider layer can learn many patterns at the same level of representation.
 
-### Depth
+### 11.2. Depth
 
 A deeper network can compose simpler representations into progressively more complex ones.
 
@@ -555,7 +555,7 @@ Modern neural-network architectures often use both.
 
 ---
 
-## 1.12 Representation Learning
+## 12. Representation Learning
 
 One of the most important ideas in deep learning is **representation learning**.
 
@@ -587,7 +587,7 @@ Each layer transforms the input representation into another representation that 
 
 ---
 
-## 1.13 Feed-Forward Neural Networks
+## 13. Feed-Forward Neural Networks
 
 A **feed-forward neural network** is one in which information flows from input toward output without forming cycles.
 
@@ -609,7 +609,7 @@ Despite the name, modern MLP neurons generally use differentiable activation fun
 
 ---
 
-## 1.14 Multilayer Perceptron
+## 14. Multilayer Perceptron
 
 A **Multilayer Perceptron (MLP)** typically consists of:
 
@@ -674,7 +674,7 @@ This nested sequence of transformations is the essence of a feed-forward neural 
 
 ---
 
-## 1.15 Why Layers Need Different Weights
+## 15. Why Layers Need Different Weights
 
 Every layer has its own weight matrix and bias vector.
 
@@ -700,7 +700,7 @@ During training, all trainable weights and biases across the network are adjuste
 
 ---
 
-## 1.16 Network Architecture as a Hyperparameter
+## 16. Network Architecture as a Hyperparameter
 
 The structure of the network is not normally learned automatically in a basic neural-network training process.
 
@@ -755,7 +755,7 @@ Generalization
 
 ---
 
-## 1.17 Underfitting and Overfitting
+## 17. Underfitting and Overfitting
 
 A network that is too small may lack sufficient capacity to model the data.
 
@@ -795,7 +795,7 @@ Architecture must match the complexity of the problem and available data.
 
 ---
 
-## 1.18 Universal Approximation Intuition
+## 18. Universal Approximation Intuition
 
 A neural network with sufficient capacity and suitable non-linear activation functions can approximate a very broad class of functions.
 
@@ -821,7 +821,7 @@ Representational capability and practical trainability are different issues.
 
 ---
 
-## 1.19 Network Architecture Example
+## 19. Network Architecture Example
 
 Consider a binary-classification problem with 8 input features.
 
@@ -911,7 +911,7 @@ The network has converted 8 raw input features into several successive learned r
 
 ---
 
-## 1.20 Architecture Notation
+## 20. Architecture Notation
 
 A convenient shorthand for the previous network is:
 
@@ -947,7 +947,7 @@ This notation is commonly useful when describing architectures compactly.
 
 ---
 
-## 1.21 Key Takeaways
+## 21. Key Takeaways
 
 - Neural networks organize artificial neurons into layers.
 - The three main layer types are input, hidden, and output layers.
@@ -971,7 +971,7 @@ n_{\text{out}}(n_{\text{in}}+1)
 - Deep networks learn hierarchical or progressively transformed representations of their inputs.
 - A larger neural network is not automatically a better neural network.
 
-### Memory Hook
+### 21.1. Memory Hook
 
 ```text
 Neuron

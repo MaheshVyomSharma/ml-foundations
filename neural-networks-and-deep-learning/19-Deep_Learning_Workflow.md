@@ -1,6 +1,6 @@
 # 19. Deep Learning Workflow and Model Development
 
-## 1.1 From Concepts to a Complete Deep Learning System
+## 1. From Concepts to a Complete Deep Learning System
 
 So far, the individual pieces of deep learning have been studied separately:
 
@@ -58,7 +58,7 @@ The purpose of this chapter is to connect everything into that complete process.
 
 ---
 
-## 1.2 Step 1 — Define the Problem
+## 2. Step 1 — Define the Problem
 
 Before selecting an architecture, determine exactly what the model must predict.
 
@@ -93,7 +93,7 @@ Architecture should follow the problem, not the other way around.
 
 ---
 
-## 1.3 Step 2 — Understand the Data Structure
+## 3. Step 2 — Understand the Data Structure
 
 Different neural architectures exploit different forms of structure.
 
@@ -134,7 +134,7 @@ Choosing architecture is therefore partly about matching the model's inductive s
 
 ---
 
-## 1.4 Neural Networks Are Not Automatically the Best Model
+## 4. Neural Networks Are Not Automatically the Best Model
 
 Deep learning is powerful, but it is not automatically the correct solution.
 
@@ -170,7 +170,7 @@ Deep learning is a tool, not a default answer.
 
 ---
 
-## 1.5 Step 3 — Split the Data
+## 5. Step 3 — Split the Data
 
 A typical workflow separates data into:
 
@@ -182,7 +182,7 @@ Test Set
 
 Their roles are different.
 
-### Training Set
+### 5.1. Training Set
 
 Used to learn:
 
@@ -192,7 +192,7 @@ Biases
 Other Trainable Parameters
 ```
 
-### Validation Set
+### 5.2. Validation Set
 
 Used to choose:
 
@@ -203,7 +203,7 @@ Regularization
 Training Duration
 ```
 
-### Test Set
+### 5.3. Test Set
 
 Used for final evaluation after development decisions have been made.
 
@@ -222,7 +222,7 @@ Test
 
 ---
 
-## 1.6 Prevent Data Leakage
+## 6. Prevent Data Leakage
 
 **Data leakage** occurs when information unavailable during real prediction influences training.
 
@@ -252,7 +252,7 @@ During Real Inference
 
 ---
 
-## 1.7 Preprocessing Must Respect the Split
+## 7. Preprocessing Must Respect the Split
 
 Suppose input standardization uses:
 
@@ -294,11 +294,11 @@ We do not independently fit preprocessing using the test set.
 
 ---
 
-## 1.8 Step 4 — Prepare the Inputs
+## 8. Step 4 — Prepare the Inputs
 
 Input preparation depends on the data type.
 
-### Numerical Data
+### 8.1. Numerical Data
 
 Possible operations:
 
@@ -308,7 +308,7 @@ Missing-Value Handling
 Feature Transformation
 ```
 
-### Images
+### 8.2. Images
 
 Possible operations:
 
@@ -318,7 +318,7 @@ Normalize Pixel Values
 Augmentation
 ```
 
-### Text
+### 8.3. Text
 
 Possible operations:
 
@@ -330,7 +330,7 @@ Padding
 Masking
 ```
 
-### Time Series
+### 8.4. Time Series
 
 Possible operations:
 
@@ -345,7 +345,7 @@ The model can only learn from the representation it receives.
 
 ---
 
-## 1.9 Step 5 — Establish a Baseline
+## 9. Step 5 — Establish a Baseline
 
 Before building an elaborate architecture, establish a simple baseline.
 
@@ -373,7 +373,7 @@ Without a baseline, complexity has no meaningful reference point.
 
 ---
 
-## 1.10 Baselines Need Not Be Neural Networks
+## 10. Baselines Need Not Be Neural Networks
 
 For an image problem, a baseline might be a small CNN.
 
@@ -397,7 +397,7 @@ It provides a minimum performance reference.
 
 ---
 
-## 1.11 Step 6 — Choose the Architecture
+## 11. Step 6 — Choose the Architecture
 
 The architecture should reflect the problem.
 
@@ -432,11 +432,11 @@ These are architectural hyperparameters.
 
 ---
 
-## 1.12 Step 7 — Choose the Output Layer
+## 12. Step 7 — Choose the Output Layer
 
 The output layer must match the prediction task.
 
-### Regression
+### 12.1. Regression
 
 Often:
 
@@ -452,7 +452,7 @@ For a single target:
 z
 ```
 
-### Binary Classification
+### 12.2. Binary Classification
 
 Typically:
 
@@ -462,7 +462,7 @@ One Output Neuron
 Sigmoid
 ```
 
-### Multiclass Classification
+### 12.3. Multiclass Classification
 
 Typically:
 
@@ -476,7 +476,7 @@ The output representation and loss function must agree.
 
 ---
 
-## 1.13 Output Layer and Loss Pairing
+## 13. Output Layer and Loss Pairing
 
 Common combinations are:
 
@@ -493,7 +493,7 @@ The output activation represents the form of prediction, while the loss measures
 
 ---
 
-## 1.14 Step 8 — Initialize the Parameters
+## 14. Step 8 — Initialize the Parameters
 
 Training begins from initialized parameters.
 
@@ -523,7 +523,7 @@ Initialization creates the starting conditions for optimization.
 
 ---
 
-## 1.15 Step 9 — Choose an Optimizer
+## 15. Step 9 — Choose an Optimizer
 
 Common choices include:
 
@@ -553,7 +553,7 @@ SGD with momentum can also perform extremely well when appropriately tuned.
 
 ---
 
-## 1.16 Step 10 — Choose the Learning Rate
+## 16. Step 10 — Choose the Learning Rate
 
 The learning rate controls update magnitude.
 
@@ -590,7 +590,7 @@ When training behaves badly, learning rate should be among the first things insp
 
 ---
 
-## 1.17 Step 11 — Choose Batch Size
+## 17. Step 11 — Choose Batch Size
 
 Batch size controls how many examples contribute to each gradient estimate.
 
@@ -617,7 +617,7 @@ It should therefore be treated as part of the overall training configuration.
 
 ---
 
-## 1.18 Step 12 — Forward Propagation
+## 18. Step 12 — Forward Propagation
 
 For every mini-batch:
 
@@ -663,7 +663,7 @@ CNNs and recurrent networks alter the structure of these transformations, but th
 
 ---
 
-## 1.19 Step 13 — Calculate the Loss
+## 19. Step 13 — Calculate the Loss
 
 The model's prediction is compared with ground truth.
 
@@ -693,7 +693,7 @@ The loss provides the objective that training attempts to minimize.
 
 ---
 
-## 1.20 Step 14 — Backpropagation
+## 20. Step 14 — Backpropagation
 
 Backpropagation computes how the loss changes with respect to trainable parameters.
 
@@ -725,7 +725,7 @@ It does not itself update the parameters.
 
 ---
 
-## 1.21 Step 15 — Optimizer Update
+## 21. Step 15 — Optimizer Update
 
 The optimizer uses the gradients to modify parameters.
 
@@ -765,7 +765,7 @@ Optimizer
 
 ---
 
-## 1.22 One Training Step
+## 22. One Training Step
 
 A single training step is:
 
@@ -791,7 +791,7 @@ This is repeated across mini-batches.
 
 ---
 
-## 1.23 One Epoch
+## 23. One Epoch
 
 If the training set contains:
 
@@ -830,7 +830,7 @@ Epoch 3
 
 ---
 
-## 1.24 Monitor Training and Validation Loss
+## 24. Monitor Training and Validation Loss
 
 Two of the most informative quantities are:
 
@@ -841,11 +841,11 @@ Validation Loss
 
 They reveal different aspects of model behaviour.
 
-### Training Loss
+### 24.1. Training Loss
 
 Measures how well the model fits data used for learning.
 
-### Validation Loss
+### 24.2. Validation Loss
 
 Measures how well the current model generalizes to unseen development data.
 
@@ -853,7 +853,7 @@ Their relationship is diagnostically useful.
 
 ---
 
-## 1.25 Healthy Learning Pattern
+## 25. Healthy Learning Pattern
 
 A healthy early training pattern often looks like:
 
@@ -879,7 +879,7 @@ Training can continue while validation performance continues improving.
 
 ---
 
-## 1.26 Underfitting
+## 26. Underfitting
 
 Suppose:
 
@@ -912,7 +912,7 @@ Underfitting
 
 ---
 
-## 1.27 Responding to Underfitting
+## 27. Responding to Underfitting
 
 Possible actions include:
 
@@ -938,7 +938,7 @@ Blindly making the network larger is not always the answer.
 
 ---
 
-## 1.28 Overfitting
+## 28. Overfitting
 
 Suppose:
 
@@ -968,7 +968,7 @@ The model has learned patterns that do not generalize sufficiently.
 
 ---
 
-## 1.29 Responding to Overfitting
+## 29. Responding to Overfitting
 
 Possible actions include:
 
@@ -994,7 +994,7 @@ The goal is to maximize useful performance on unseen data.
 
 ---
 
-## 1.30 Bias and Variance Perspective
+## 30. Bias and Variance Perspective
 
 Underfitting and overfitting connect to the bias-variance trade-off.
 
@@ -1022,7 +1022,7 @@ Enough Constraint to Generalize
 
 ---
 
-## 1.31 Early Stopping
+## 31. Early Stopping
 
 Early stopping monitors validation performance.
 
@@ -1052,7 +1052,7 @@ Reduce Overfitting
 
 ---
 
-## 1.32 Model Checkpointing
+## 32. Model Checkpointing
 
 During training, model parameters can be saved periodically.
 
@@ -1074,7 +1074,7 @@ This avoids assuming that the final epoch is necessarily the best model.
 
 ---
 
-## 1.33 Learning Curves
+## 33. Learning Curves
 
 Plots of metrics across epochs are called **learning curves**.
 
@@ -1099,7 +1099,7 @@ Learning curves are among the most useful diagnostic tools in deep learning.
 
 ---
 
-## 1.34 Signs of a Learning Rate That Is Too Large
+## 34. Signs of a Learning Rate That Is Too Large
 
 Possible symptoms include:
 
@@ -1125,7 +1125,7 @@ but numerical instability or bad preprocessing should also be investigated.
 
 ---
 
-## 1.35 Signs of a Learning Rate That Is Too Small
+## 35. Signs of a Learning Rate That Is Too Small
 
 Possible symptoms include:
 
@@ -1141,7 +1141,7 @@ If gradients exist but parameter updates are minuscule, the learning rate may si
 
 ---
 
-## 1.36 Vanishing Gradient Diagnosis
+## 36. Vanishing Gradient Diagnosis
 
 Possible signs include:
 
@@ -1171,7 +1171,7 @@ The appropriate solution depends on the architecture.
 
 ---
 
-## 1.37 Exploding Gradient Diagnosis
+## 37. Exploding Gradient Diagnosis
 
 Possible signs include:
 
@@ -1203,7 +1203,7 @@ Exploding gradients are especially familiar in recurrent networks but can occur 
 
 ---
 
-## 1.38 Gradient Clipping
+## 38. Gradient Clipping
 
 Gradient clipping limits excessively large updates.
 
@@ -1241,7 +1241,7 @@ without changing ordinary gradients that already lie below the threshold.
 
 ---
 
-## 1.39 Regularization as Part of the Workflow
+## 39. Regularization as Part of the Workflow
 
 Regularization should respond to evidence of overfitting rather than being added blindly.
 
@@ -1260,7 +1260,7 @@ Regularization introduces constraints or noise that discourage the model from fi
 
 ---
 
-## 1.40 Normalization as Part of the Workflow
+## 40. Normalization as Part of the Workflow
 
 Normalization can improve optimization.
 
@@ -1288,11 +1288,11 @@ Normalization and regularization should not be confused.
 
 ---
 
-## 1.41 Training Mode and Evaluation Mode
+## 41. Training Mode and Evaluation Mode
 
 Some layers behave differently during training and inference.
 
-### Dropout
+### 41.1. Dropout
 
 ```text
 Training
@@ -1302,7 +1302,7 @@ Inference
 → All Units Used
 ```
 
-### Batch Normalization
+### 41.2. Batch Normalization
 
 ```text
 Training
@@ -1316,7 +1316,7 @@ Therefore, the model must be placed into the correct mode when evaluating or pre
 
 ---
 
-## 1.42 Hyperparameter Tuning
+## 42. Hyperparameter Tuning
 
 After establishing a working baseline, important hyperparameters can be tuned.
 
@@ -1349,7 +1349,7 @@ The validation set guides these choices.
 
 ---
 
-## 1.43 Tune the Important Things First
+## 43. Tune the Important Things First
 
 Not every hyperparameter deserves equal effort.
 
@@ -1371,11 +1371,11 @@ There is little value in carefully tuning a minor parameter while the learning r
 
 ---
 
-## 1.44 Evaluation Metrics Must Match the Goal
+## 44. Evaluation Metrics Must Match the Goal
 
 Loss is used for optimization, but the most meaningful evaluation metric depends on the application.
 
-### Regression
+### 44.1. Regression
 
 Examples:
 
@@ -1386,7 +1386,7 @@ RMSE
 R²
 ```
 
-### Classification
+### 44.2. Classification
 
 Examples:
 
@@ -1403,7 +1403,7 @@ The best metric depends on the real-world cost of different errors.
 
 ---
 
-## 1.45 Loss and Evaluation Metric Are Not Necessarily the Same
+## 45. Loss and Evaluation Metric Are Not Necessarily the Same
 
 A model may train using:
 
@@ -1435,7 +1435,7 @@ Metric
 
 ---
 
-## 1.46 Classification Thresholds
+## 46. Classification Thresholds
 
 A binary classifier may output:
 
@@ -1477,7 +1477,7 @@ The model learns probabilities or scores; the decision threshold is a separate d
 
 ---
 
-## 1.47 Error Analysis
+## 47. Error Analysis
 
 A single metric does not explain *why* a model fails.
 
@@ -1513,7 +1513,7 @@ Error analysis converts model failures into engineering information.
 
 ---
 
-## 1.48 Data Problems vs Model Problems
+## 48. Data Problems vs Model Problems
 
 Not every failure requires a more sophisticated architecture.
 
@@ -1541,7 +1541,7 @@ This is one of the most important practical lessons in machine learning.
 
 ---
 
-## 1.49 Class Imbalance
+## 49. Class Imbalance
 
 Suppose:
 
@@ -1589,7 +1589,7 @@ The correct approach depends on the application.
 
 ---
 
-## 1.50 Distribution Shift
+## 50. Distribution Shift
 
 The data encountered after deployment may differ from training data.
 
@@ -1611,7 +1611,7 @@ Real-world ML engineering therefore extends beyond training accuracy.
 
 ---
 
-## 1.51 Inference
+## 51. Inference
 
 After training, the model enters inference mode.
 
@@ -1639,7 +1639,7 @@ Inference is primarily a forward computation.
 
 ---
 
-## 1.52 Training vs Inference
+## 52. Training vs Inference
 
 | Training | Inference |
 |---|---|
@@ -1655,7 +1655,7 @@ The model learned during training is used, not relearned, during ordinary infere
 
 ---
 
-## 1.53 Save More Than the Weights
+## 53. Save More Than the Weights
 
 A deployable ML system may require:
 
@@ -1676,7 +1676,7 @@ The preprocessing pipeline is part of the model system.
 
 ---
 
-## 1.54 Reproducibility
+## 54. Reproducibility
 
 Useful experiment records include:
 
@@ -1698,7 +1698,7 @@ Without this information, reproducing a successful experiment can become surpris
 
 ---
 
-## 1.55 Hardware Matters
+## 55. Hardware Matters
 
 Deep learning is computationally intensive because it performs large numbers of matrix and tensor operations.
 
@@ -1726,7 +1726,7 @@ Engineering constraints therefore affect model design.
 
 ---
 
-## 1.56 Debugging a Neural Network
+## 56. Debugging a Neural Network
 
 When a network fails to train, debugging should be systematic.
 
@@ -1756,7 +1756,7 @@ Randomly changing hyperparameters is usually a poor debugging strategy.
 
 ---
 
-## 1.57 The Tiny-Dataset Overfit Test
+## 57. The Tiny-Dataset Overfit Test
 
 One particularly useful debugging technique is to take a very small number of training examples.
 
@@ -1784,7 +1784,7 @@ A model should usually be able to memorize a sufficiently small training subset 
 
 ---
 
-## 1.58 Change One Thing at a Time
+## 58. Change One Thing at a Time
 
 Suppose a model performs poorly and we simultaneously change:
 
@@ -1817,7 +1817,7 @@ Controlled experiments make debugging and tuning much more informative.
 
 ---
 
-## 1.59 Deep Learning Is Iterative
+## 59. Deep Learning Is Iterative
 
 A realistic workflow is cyclical:
 
@@ -1853,7 +1853,7 @@ For example:
 
 ---
 
-## 1.60 Architecture Summary
+## 60. Architecture Summary
 
 The architectures studied in this handbook can now be placed side by side.
 
@@ -1869,7 +1869,7 @@ They all remain neural networks trained using the same underlying gradient-based
 
 ---
 
-## 1.61 What Changes Across Architectures?
+## 61. What Changes Across Architectures?
 
 The fundamental training system stays remarkably similar.
 
@@ -1891,25 +1891,25 @@ Updated Parameters
 
 What changes is the **structure of the parameterized computation**.
 
-### Dense Network
+### 61.1. Dense Network
 
 ```text
 Weighted Connections
 ```
 
-### CNN
+### 61.2. CNN
 
 ```text
 Shared Spatial Filters
 ```
 
-### RNN
+### 61.3. RNN
 
 ```text
 Shared Recurrent State
 ```
 
-### LSTM / GRU
+### 61.4. LSTM / GRU
 
 ```text
 Gated Recurrent State
@@ -1919,7 +1919,7 @@ This is the unifying view of the architectures.
 
 ---
 
-## 1.62 The Complete Deep Learning Training Loop
+## 62. The Complete Deep Learning Training Loop
 
 Everything studied so far can be assembled into one process:
 
@@ -1971,17 +1971,17 @@ That is the complete conceptual journey from raw data to a trained neural-networ
 
 ---
 
-## 1.63 The Deep Learning Engineer's Mental Model
+## 63. The Deep Learning Engineer's Mental Model
 
 When looking at any neural network, ask five questions.
 
-### 1. What goes in?
+### 63.1. What goes in?
 
 ```text
 Input Representation
 ```
 
-### 2. What transformations happen?
+### 63.2. What transformations happen?
 
 ```text
 Architecture
@@ -1989,19 +1989,19 @@ Layers
 Activations
 ```
 
-### 3. What comes out?
+### 63.3. What comes out?
 
 ```text
 Output Representation
 ```
 
-### 4. How is wrongness measured?
+### 63.4. How is wrongness measured?
 
 ```text
 Loss Function
 ```
 
-### 5. How does the network improve?
+### 63.5. How does the network improve?
 
 ```text
 Backpropagation
@@ -2013,7 +2013,7 @@ Everything else improves, stabilizes, regularizes, or specializes this core syst
 
 ---
 
-## 1.64 Key Takeaways
+## 64. Key Takeaways
 
 - Deep-learning development is an iterative engineering workflow rather than a single training operation.
 - The problem and data structure should determine architecture choice.
@@ -2045,7 +2045,7 @@ Everything else improves, stabilizes, regularizes, or specializes this core syst
 - Controlled experiments are more informative than changing many variables simultaneously.
 - Feed-forward networks, CNNs, RNNs, LSTMs, and GRUs use different architectures but share the same fundamental learning mechanism.
 
-### Memory Hook
+### 64.1. Memory Hook
 
 ```text
 Deep Learning Workflow:

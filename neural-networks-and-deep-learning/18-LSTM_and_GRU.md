@@ -1,6 +1,6 @@
 # 18. LSTM and GRU
 
-## 1.1 Why Basic RNNs Need Improvement
+## 1. Why Basic RNNs Need Improvement
 
 A basic RNN updates its hidden state using:
 
@@ -47,7 +47,7 @@ Basic RNNs therefore struggle with **long-term dependencies**.
 
 ---
 
-## 1.2 The Core Idea Behind LSTM and GRU
+## 2. The Core Idea Behind LSTM and GRU
 
 LSTM and GRU improve recurrent networks by controlling the flow of information.
 
@@ -78,7 +78,7 @@ These gates are themselves learned neural-network components.
 
 ---
 
-## 1.3 What Is a Gate?
+## 3. What Is a Gate?
 
 A gate is usually based on the sigmoid function:
 
@@ -119,7 +119,7 @@ The gate is differentiable, so its behaviour can be learned through backpropagat
 
 ---
 
-## 1.4 Long Short-Term Memory
+## 4. Long Short-Term Memory
 
 **LSTM** stands for:
 
@@ -157,7 +157,7 @@ The cell state is the central feature that distinguishes LSTM from a simple RNN.
 
 ---
 
-## 1.5 The LSTM Cell
+## 5. The LSTM Cell
 
 A standard LSTM contains three major gates:
 
@@ -193,7 +193,7 @@ Each gate controls a different aspect of memory.
 
 ---
 
-## 1.6 Inputs to an LSTM Cell
+## 6. Inputs to an LSTM Cell
 
 At time step:
 
@@ -231,7 +231,7 @@ before deciding what information should flow through the cell.
 
 ---
 
-## 1.7 Forget Gate
+## 7. Forget Gate
 
 The **forget gate** decides how much of the previous cell state should be retained.
 
@@ -280,7 +280,7 @@ Retained Old Memory
 
 ---
 
-## 1.8 Forget Gate Interpretation
+## 8. Forget Gate Interpretation
 
 Suppose one component of the forget gate produces:
 
@@ -312,7 +312,7 @@ The network learns these decisions from data.
 
 ---
 
-## 1.9 Input Gate
+## 9. Input Gate
 
 The **input gate** decides how much new information should be written into the cell state.
 
@@ -343,7 +343,7 @@ How Much Should Be Stored?
 
 ---
 
-## 1.10 Candidate Cell State
+## 10. Candidate Cell State
 
 The LSTM also generates candidate memory:
 
@@ -378,7 +378,7 @@ denotes element-wise multiplication.
 
 ---
 
-## 1.11 Updating the Cell State
+## 11. Updating the Cell State
 
 The new cell state combines:
 
@@ -418,7 +418,7 @@ What New Information Should I Add?
 
 ---
 
-## 1.12 Why the Cell-State Update Helps
+## 12. Why the Cell-State Update Helps
 
 Notice that the previous cell state enters through an additive pathway:
 
@@ -448,7 +448,7 @@ This helps information and gradients survive across longer sequences.
 
 ---
 
-## 1.13 Output Gate
+## 13. Output Gate
 
 The **output gate** determines how much of the current cell state should be exposed as the hidden state.
 
@@ -491,11 +491,11 @@ The internal memory and exposed output are therefore related but distinct.
 
 ---
 
-## 1.14 Cell State vs Hidden State
+## 14. Cell State vs Hidden State
 
 This distinction is central.
 
-### Cell State
+### 14.1. Cell State
 
 ```math
 C_t
@@ -503,7 +503,7 @@ C_t
 
 acts as long-term internal memory.
 
-### Hidden State
+### 14.2. Hidden State
 
 ```math
 h_t
@@ -527,11 +527,11 @@ Hidden State
 
 ---
 
-## 1.15 The Complete LSTM Equations
+## 15. The Complete LSTM Equations
 
 A standard LSTM can be summarized as:
 
-### Forget Gate
+### 15.1. Forget Gate
 
 ```math
 f_t
@@ -544,7 +544,7 @@ b_f
 \right)
 ```
 
-### Input Gate
+### 15.2. Input Gate
 
 ```math
 i_t
@@ -557,7 +557,7 @@ b_i
 \right)
 ```
 
-### Candidate Memory
+### 15.3. Candidate Memory
 
 ```math
 \tilde{C}_t
@@ -570,7 +570,7 @@ b_C
 \right)
 ```
 
-### Cell-State Update
+### 15.4. Cell-State Update
 
 ```math
 C_t
@@ -584,7 +584,7 @@ i_t
 \tilde{C}_t
 ```
 
-### Output Gate
+### 15.5. Output Gate
 
 ```math
 o_t
@@ -597,7 +597,7 @@ b_o
 \right)
 ```
 
-### Hidden State
+### 15.6. Hidden State
 
 ```math
 h_t
@@ -611,7 +611,7 @@ These equations describe the standard LSTM memory mechanism.
 
 ---
 
-## 1.16 LSTM Memory Intuition
+## 16. LSTM Memory Intuition
 
 Consider the sentence:
 
@@ -647,7 +647,7 @@ The forget and input gates determine whether this information remains relevant a
 
 ---
 
-## 1.17 Forgetting Is Useful
+## 17. Forgetting Is Useful
 
 A good memory system must not remember everything forever.
 
@@ -669,7 +669,7 @@ This prevents the cell state from becoming an uncontrolled accumulation of all p
 
 ---
 
-## 1.18 LSTM and Gradient Flow
+## 18. LSTM and Gradient Flow
 
 The important cell-state pathway:
 
@@ -703,7 +703,7 @@ Thus the network can learn to preserve gradient flow when long-term memory is us
 
 ---
 
-## 1.19 Does LSTM Eliminate Vanishing Gradients?
+## 19. Does LSTM Eliminate Vanishing Gradients?
 
 No.
 
@@ -733,7 +733,7 @@ LSTM
 
 ---
 
-## 1.20 LSTM Parameter Cost
+## 20. LSTM Parameter Cost
 
 A basic RNN computes roughly one main recurrent transformation.
 
@@ -765,7 +765,7 @@ This is the price of its improved memory mechanism.
 
 ---
 
-## 1.21 Gated Recurrent Unit
+## 21. Gated Recurrent Unit
 
 The **Gated Recurrent Unit**, or **GRU**, is another gated recurrent architecture.
 
@@ -784,7 +784,7 @@ It generally combines some of the roles handled separately in LSTM.
 
 ---
 
-## 1.22 Main Difference Between LSTM and GRU
+## 22. Main Difference Between LSTM and GRU
 
 LSTM maintains:
 
@@ -823,7 +823,7 @@ GRU
 
 ---
 
-## 1.23 Update Gate
+## 23. Update Gate
 
 The **update gate** determines how much of the previous hidden state should be retained.
 
@@ -854,7 +854,7 @@ into one mechanism.
 
 ---
 
-## 1.24 Update Gate Intuition
+## 24. Update Gate Intuition
 
 If:
 
@@ -888,7 +888,7 @@ Exact conventions may differ slightly across formulations, but the conceptual ro
 
 ---
 
-## 1.25 Reset Gate
+## 25. Reset Gate
 
 The **reset gate** determines how much previous information should influence the candidate new state.
 
@@ -917,7 +917,7 @@ contributes when generating new candidate information.
 
 ---
 
-## 1.26 Reset Gate Intuition
+## 26. Reset Gate Intuition
 
 Suppose the sequence moves into a context where earlier information is no longer useful.
 
@@ -946,7 +946,7 @@ Reset Weakly
 
 ---
 
-## 1.27 Candidate Hidden State
+## 27. Candidate Hidden State
 
 The GRU computes a candidate hidden state:
 
@@ -972,7 +972,7 @@ The candidate represents possible new information for the current state.
 
 ---
 
-## 1.28 Updating the GRU Hidden State
+## 28. Updating the GRU Hidden State
 
 The final hidden state combines:
 
@@ -1010,11 +1010,11 @@ which helps preserve information across time.
 
 ---
 
-## 1.29 The Complete GRU Equations
+## 29. The Complete GRU Equations
 
 A common GRU formulation is:
 
-### Update Gate
+### 29.1. Update Gate
 
 ```math
 z_t
@@ -1029,7 +1029,7 @@ b_z
 \right)
 ```
 
-### Reset Gate
+### 29.2. Reset Gate
 
 ```math
 r_t
@@ -1044,7 +1044,7 @@ b_r
 \right)
 ```
 
-### Candidate State
+### 29.3. Candidate State
 
 ```math
 \tilde{h}_t
@@ -1062,7 +1062,7 @@ b_h
 \right)
 ```
 
-### Hidden-State Update
+### 29.4. Hidden-State Update
 
 ```math
 h_t
@@ -1076,7 +1076,7 @@ Different libraries may use slightly different notation or gate conventions, but
 
 ---
 
-## 1.30 GRU Memory Intuition
+## 30. GRU Memory Intuition
 
 The update mechanism can be viewed as:
 
@@ -1096,7 +1096,7 @@ Instead of keeping a separate long-term cell state, GRU integrates memory direct
 
 ---
 
-## 1.31 LSTM vs GRU Structure
+## 31. LSTM vs GRU Structure
 
 A simplified comparison:
 
@@ -1113,7 +1113,7 @@ Both are gated recurrent networks.
 
 ---
 
-## 1.32 LSTM vs GRU Performance
+## 32. LSTM vs GRU Performance
 
 There is no universal winner.
 
@@ -1157,7 +1157,7 @@ The choice should be validated experimentally.
 
 ---
 
-## 1.33 Why GRU Can Train Faster
+## 33. Why GRU Can Train Faster
 
 GRU has fewer gates and usually fewer parameters than an equivalent LSTM.
 
@@ -1179,7 +1179,7 @@ GRU can therefore be attractive when:
 
 ---
 
-## 1.34 Why LSTM Can Be More Flexible
+## 34. Why LSTM Can Be More Flexible
 
 LSTM separately controls:
 
@@ -1199,7 +1199,7 @@ However, greater architectural complexity does not automatically guarantee bette
 
 ---
 
-## 1.35 Basic RNN vs LSTM vs GRU
+## 35. Basic RNN vs LSTM vs GRU
 
 | Feature | Basic RNN | LSTM | GRU |
 |---|---|---|---|
@@ -1215,7 +1215,7 @@ This is the central comparison to remember.
 
 ---
 
-## 1.36 Why Gates Improve Long-Term Memory
+## 36. Why Gates Improve Long-Term Memory
 
 A basic RNN repeatedly performs something like:
 
@@ -1250,7 +1250,7 @@ That direct retention mechanism is the major conceptual breakthrough.
 
 ---
 
-## 1.37 Gates Are Learned, Not Manually Programmed
+## 37. Gates Are Learned, Not Manually Programmed
 
 The network is not told rules such as:
 
@@ -1276,7 +1276,7 @@ The model learns what information is useful for minimizing its loss.
 
 ---
 
-## 1.38 Gates Are Vectors
+## 38. Gates Are Vectors
 
 A gate is not usually one single scalar value.
 
@@ -1313,7 +1313,7 @@ The network therefore performs fine-grained memory management.
 
 ---
 
-## 1.39 Element-Wise Multiplication
+## 39. Element-Wise Multiplication
 
 Gate application uses element-wise multiplication:
 
@@ -1349,7 +1349,7 @@ Thus each memory dimension can be retained or suppressed separately.
 
 ---
 
-## 1.40 Why Sigmoid Is Used for Gates
+## 40. Why Sigmoid Is Used for Gates
 
 Sigmoid produces:
 
@@ -1381,7 +1381,7 @@ Sigmoid provides a smooth, differentiable gate.
 
 ---
 
-## 1.41 Why Tanh Is Used for Candidate Values
+## 41. Why Tanh Is Used for Candidate Values
 
 Candidate memory values often use:
 
@@ -1417,7 +1417,7 @@ Tanh
 
 ---
 
-## 1.42 LSTM Through Time
+## 42. LSTM Through Time
 
 Across multiple time steps:
 
@@ -1449,7 +1449,7 @@ The same LSTM parameters are reused at every time step.
 
 ---
 
-## 1.43 GRU Through Time
+## 43. GRU Through Time
 
 GRU has a simpler state flow:
 
@@ -1467,7 +1467,7 @@ The hidden state itself carries the recurrent memory.
 
 ---
 
-## 1.44 Bidirectional LSTM
+## 44. Bidirectional LSTM
 
 LSTMs can also be bidirectional.
 
@@ -1499,7 +1499,7 @@ This is useful when the entire sequence is available.
 
 ---
 
-## 1.45 Bidirectional GRU
+## 45. Bidirectional GRU
 
 GRUs can similarly be bidirectional.
 
@@ -1513,7 +1513,7 @@ Therefore, bidirectional recurrent models are useful for offline sequence proces
 
 ---
 
-## 1.46 Stacked LSTM and GRU Networks
+## 46. Stacked LSTM and GRU Networks
 
 LSTM and GRU layers can be stacked:
 
@@ -1547,7 +1547,7 @@ Higher layers can learn more abstract sequential representations.
 
 ---
 
-## 1.47 Sequence Output Choices
+## 47. Sequence Output Choices
 
 An LSTM or GRU may return:
 
@@ -1563,7 +1563,7 @@ Hidden State at Every Time Step
 
 The correct choice depends on the task.
 
-### Sequence-to-One
+### 47.1. Sequence-to-One
 
 ```text
 Whole Sequence
@@ -1571,7 +1571,7 @@ Whole Sequence
 → Classification
 ```
 
-### Many-to-Many
+### 47.2. Many-to-Many
 
 ```text
 Every Time Step
@@ -1583,7 +1583,7 @@ This mirrors the architecture patterns already seen with basic RNNs.
 
 ---
 
-## 1.48 LSTM for Sequence Classification
+## 48. LSTM for Sequence Classification
 
 Suppose the task is sentiment classification:
 
@@ -1611,7 +1611,7 @@ The LSTM attempts to compress useful sequence context into the final representat
 
 ---
 
-## 1.49 LSTM for Time-Series Data
+## 49. LSTM for Time-Series Data
 
 For a sensor sequence:
 
@@ -1635,7 +1635,7 @@ LSTM and GRU are general sequence models.
 
 ---
 
-## 1.50 Backpropagation Through Time Still Applies
+## 50. Backpropagation Through Time Still Applies
 
 LSTM and GRU are still recurrent neural networks.
 
@@ -1661,7 +1661,7 @@ The gating mechanism improves information flow, but the fundamental learning alg
 
 ---
 
-## 1.51 Gradient Clipping Can Still Be Useful
+## 51. Gradient Clipping Can Still Be Useful
 
 Even gated recurrent networks can experience large gradients.
 
@@ -1681,7 +1681,7 @@ Gradient clipping directly limits exploding gradients.
 
 ---
 
-## 1.52 Dropout With LSTM and GRU
+## 52. Dropout With LSTM and GRU
 
 Dropout can regularize LSTM and GRU networks.
 
@@ -1697,7 +1697,7 @@ Frameworks often provide recurrent dropout options specifically designed for rec
 
 ---
 
-## 1.53 LSTM and GRU Hyperparameters
+## 53. LSTM and GRU Hyperparameters
 
 Important hyperparameters include:
 
@@ -1724,7 +1724,7 @@ is itself an architectural hyperparameter.
 
 ---
 
-## 1.54 Computational Trade-Off
+## 54. Computational Trade-Off
 
 The architecture choice can be summarized as:
 
@@ -1746,7 +1746,7 @@ This is a useful intuition rather than a strict ranking of prediction quality.
 
 ---
 
-## 1.55 LSTM and GRU vs Transformers
+## 55. LSTM and GRU vs Transformers
 
 LSTM and GRU process sequence elements recurrently:
 
@@ -1772,7 +1772,7 @@ This difference has major computational consequences.
 
 ---
 
-## 1.56 Sequential Computation Limitation
+## 56. Sequential Computation Limitation
 
 Because:
 
@@ -1810,7 +1810,7 @@ Transformers avoid much of this recurrent dependency and can process sequence po
 
 ---
 
-## 1.57 Why LSTM and GRU Still Matter
+## 57. Why LSTM and GRU Still Matter
 
 Despite transformers dominating many modern language tasks, LSTM and GRU remain valuable.
 
@@ -1833,7 +1833,7 @@ They can also remain practical for:
 
 ---
 
-## 1.58 The Evolution of Sequence Models
+## 58. The Evolution of Sequence Models
 
 A useful historical and conceptual progression is:
 
@@ -1861,7 +1861,7 @@ Each step attempts to improve how models represent dependencies across sequences
 
 ---
 
-## 1.59 The Most Important LSTM Intuition
+## 59. The Most Important LSTM Intuition
 
 Do not reduce LSTM to memorizing six equations.
 
@@ -1883,7 +1883,7 @@ That is the conceptual model from which the equations follow.
 
 ---
 
-## 1.60 The Most Important GRU Intuition
+## 60. The Most Important GRU Intuition
 
 GRU asks essentially:
 
@@ -1909,7 +1909,7 @@ GRU
 
 ---
 
-## 1.61 Key Takeaways
+## 61. Key Takeaways
 
 - Basic RNNs struggle with long-term dependencies because information and gradients must pass through many repeated transformations.
 - LSTM and GRU are gated recurrent architectures designed to improve long-term information flow.
@@ -1946,7 +1946,7 @@ i_t\odot\tilde{C}_t
 - Transformers replaced recurrent architectures in many large-scale sequence applications but do not make the recurrent concepts obsolete.
 - The central purpose of gated recurrence is to learn what information should be remembered, forgotten, and updated.
 
-### Memory Hook
+### 61.1. Memory Hook
 
 ```text
 Basic RNN:

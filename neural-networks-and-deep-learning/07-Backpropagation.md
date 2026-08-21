@@ -1,6 +1,6 @@
 # 07. Backpropagation
 
-## 1.1 What Is Backpropagation?
+## 1. What Is Backpropagation?
 
 **Backpropagation** is the algorithm used to compute how much each trainable parameter in a neural network contributed to the final loss.
 
@@ -32,7 +32,7 @@ Backpropagation computes derivatives.
 
 ---
 
-## 1.2 Why Backpropagation Is Needed
+## 2. Why Backpropagation Is Needed
 
 A neural network may contain many weights and biases.
 
@@ -62,7 +62,7 @@ Backpropagation calculates these derivatives efficiently.
 
 ---
 
-## 1.3 Backpropagation vs Gradient Descent
+## 3. Backpropagation vs Gradient Descent
 
 These two concepts are closely related but are not the same.
 
@@ -107,7 +107,7 @@ How should we change each parameter?
 
 ---
 
-## 1.4 The Chain Rule Is the Core Idea
+## 4. The Chain Rule Is the Core Idea
 
 Suppose:
 
@@ -144,7 +144,7 @@ Neural networks contain many nested functions, so the chain rule is exactly what
 
 ---
 
-## 1.5 A Single Neuron Example
+## 5. A Single Neuron Example
 
 Consider one neuron:
 
@@ -196,7 +196,7 @@ This is the essence of backpropagation.
 
 ---
 
-## 1.6 Breaking Down the Chain
+## 6. Breaking Down the Chain
 
 For:
 
@@ -242,7 +242,7 @@ Every factor represents one part of the dependency chain.
 
 ---
 
-## 1.7 Backpropagation Through the Bias
+## 7. Backpropagation Through the Bias
 
 For:
 
@@ -278,7 +278,7 @@ The bias is updated using its own gradient just like a weight.
 
 ---
 
-## 1.8 Why We Move Backward
+## 8. Why We Move Backward
 
 During forward propagation:
 
@@ -310,7 +310,7 @@ This backward traversal gives the algorithm its name.
 
 ---
 
-## 1.9 Two-Layer Network
+## 9. Two-Layer Network
 
 Consider a simple network:
 
@@ -362,7 +362,7 @@ we must trace through every intermediate variable.
 
 ---
 
-## 1.10 Chain Rule Through Multiple Layers
+## 10. Chain Rule Through Multiple Layers
 
 The derivative becomes:
 
@@ -394,7 +394,7 @@ The effects multiply along the computational path.
 
 ---
 
-## 1.11 Local Gradients
+## 11. Local Gradients
 
 A useful way to understand backpropagation is through **local gradients**.
 
@@ -444,7 +444,7 @@ Global Gradient
 
 ---
 
-## 1.12 Computational Graph View
+## 12. Computational Graph View
 
 Consider:
 
@@ -494,7 +494,7 @@ gradients flow ←
 
 ---
 
-## 1.13 Backpropagation at the Output Layer
+## 13. Backpropagation at the Output Layer
 
 The process starts at the loss.
 
@@ -516,7 +516,7 @@ The derivative is then propagated into the output layer.
 
 ---
 
-## 1.14 Example with Mean Squared Error
+## 14. Example with Mean Squared Error
 
 Suppose:
 
@@ -552,7 +552,7 @@ This becomes the starting error signal for backpropagation.
 
 ---
 
-## 1.15 Backpropagation Through an Activation Function
+## 15. Backpropagation Through an Activation Function
 
 Suppose:
 
@@ -596,7 +596,7 @@ This is why activation-function derivatives matter during training.
 
 ---
 
-## 1.16 ReLU During Backpropagation
+## 16. ReLU During Backpropagation
 
 For ReLU:
 
@@ -647,7 +647,7 @@ This explains both:
 
 ---
 
-## 1.17 Sigmoid During Backpropagation
+## 17. Sigmoid During Backpropagation
 
 For sigmoid:
 
@@ -692,7 +692,7 @@ This causes the gradient to shrink as it moves backward through many layers.
 
 ---
 
-## 1.18 The Error Signal
+## 18. The Error Signal
 
 A commonly used intermediate quantity is:
 
@@ -718,7 +718,7 @@ This quantity is extremely useful because gradients for both weights and biases 
 
 ---
 
-## 1.19 Weight Gradient from the Error Signal
+## 19. Weight Gradient from the Error Signal
 
 For a neuron:
 
@@ -755,7 +755,7 @@ This gives the gradient for every weight connecting the previous layer to the cu
 
 ---
 
-## 1.20 Bias Gradient from the Error Signal
+## 20. Bias Gradient from the Error Signal
 
 Because:
 
@@ -787,7 +787,7 @@ For a batch, the gradients are aggregated across examples.
 
 ---
 
-## 1.21 Propagating Error to the Previous Layer
+## 21. Propagating Error to the Previous Layer
 
 Once we have:
 
@@ -839,7 +839,7 @@ denotes element-wise multiplication.
 
 ---
 
-## 1.22 Why the Weight Matrix Is Transposed
+## 22. Why the Weight Matrix Is Transposed
 
 During the forward pass:
 
@@ -877,7 +877,7 @@ Previous Layer
 
 ---
 
-## 1.23 Backpropagation Through a Whole Network
+## 23. Backpropagation Through a Whole Network
 
 Consider:
 
@@ -918,7 +918,7 @@ At each layer:
 
 ---
 
-## 1.24 Forward Values Must Be Remembered
+## 24. Forward Values Must Be Remembered
 
 Backpropagation often needs values calculated during forward propagation.
 
@@ -952,7 +952,7 @@ This is one reason training requires more memory than inference.
 
 ---
 
-## 1.25 Automatic Differentiation
+## 25. Automatic Differentiation
 
 Modern frameworks such as PyTorch and TensorFlow generally calculate gradients automatically.
 
@@ -979,7 +979,7 @@ This process is often referred to as **autograd** or **automatic differentiation
 
 ---
 
-## 1.26 Backpropagation Is Not Numerical Guessing
+## 26. Backpropagation Is Not Numerical Guessing
 
 Backpropagation does not estimate gradients by repeatedly changing weights and observing what happens.
 
@@ -1003,7 +1003,7 @@ Backpropagation uses the chain rule and is vastly more efficient for large neura
 
 ---
 
-## 1.27 Numerical Gradient Checking
+## 27. Numerical Gradient Checking
 
 Although numerical differentiation is too slow for normal training, it can be useful for checking whether backpropagation has been implemented correctly.
 
@@ -1031,7 +1031,7 @@ This technique is called **gradient checking**.
 
 ---
 
-## 1.28 Why Backpropagation Is Efficient
+## 28. Why Backpropagation Is Efficient
 
 A naive method could separately calculate each parameter's effect on the loss.
 
@@ -1045,7 +1045,7 @@ This reuse makes backpropagation computationally efficient.
 
 ---
 
-## 1.29 Shared Dependency
+## 29. Shared Dependency
 
 Suppose many weights contribute to the same intermediate neuron.
 
@@ -1070,7 +1070,7 @@ The expensive upstream derivative is therefore reused.
 
 ---
 
-## 1.30 Backpropagation and Batches
+## 30. Backpropagation and Batches
 
 With a mini-batch, the loss is usually averaged across several examples:
 
@@ -1096,7 +1096,7 @@ The optimizer performs one parameter update using these gradients.
 
 ---
 
-## 1.31 Backpropagation Does Not Update Parameters
+## 31. Backpropagation Does Not Update Parameters
 
 A subtle but important point:
 
@@ -1137,7 +1137,7 @@ Optimizer
 
 ---
 
-## 1.32 Vanishing Gradients
+## 32. Vanishing Gradients
 
 During backpropagation, derivatives from many layers are multiplied together.
 
@@ -1161,7 +1161,7 @@ Sigmoid and tanh activations can contribute strongly to this problem.
 
 ---
 
-## 1.33 Exploding Gradients
+## 33. Exploding Gradients
 
 The opposite can also occur.
 
@@ -1188,7 +1188,7 @@ Vanishing and exploding gradients become especially important in deep and recurr
 
 ---
 
-## 1.34 Why ReLU Helped Deep Learning
+## 34. Why ReLU Helped Deep Learning
 
 For positive inputs, ReLU has derivative:
 
@@ -1204,7 +1204,7 @@ ReLU does not eliminate every gradient problem, but it substantially improves gr
 
 ---
 
-## 1.35 Backpropagation and the Learning Rate
+## 35. Backpropagation and the Learning Rate
 
 Backpropagation determines the gradient:
 
@@ -1235,7 +1235,7 @@ If gradients are correct but the learning rate is badly chosen, training can sti
 
 ---
 
-## 1.36 Full Training Example
+## 36. Full Training Example
 
 Consider:
 
@@ -1255,7 +1255,7 @@ Prediction
 
 Training proceeds as follows.
 
-### Forward Pass
+### 36.1. Forward Pass
 
 ```math
 z^{[1]}
@@ -1281,13 +1281,13 @@ W^{[2]}a^{[1]}+b^{[2]}
 \sigma(z^{[2]})
 ```
 
-### Loss
+### 36.2. Loss
 
 ```math
 J=L(y,\hat{y})
 ```
 
-### Backward Pass
+### 36.3. Backward Pass
 
 Compute:
 
@@ -1309,7 +1309,7 @@ then propagate backward and compute:
 \frac{\partial J}{\partial b^{[1]}}
 ```
 
-### Update
+### 36.4. Update
 
 ```math
 W^{[l]}
@@ -1335,7 +1335,7 @@ Then the next forward pass begins.
 
 ---
 
-## 1.37 The Complete Learning Loop
+## 37. The Complete Learning Loop
 
 The whole process is:
 
@@ -1365,7 +1365,7 @@ This loop is repeated across batches and epochs.
 
 ---
 
-## 1.38 Forward Propagation vs Backpropagation
+## 38. Forward Propagation vs Backpropagation
 
 | Forward Propagation | Backpropagation |
 |---|---|
@@ -1387,7 +1387,7 @@ Why did it produce that error?
 
 ---
 
-## 1.39 Backpropagation vs Optimizer
+## 39. Backpropagation vs Optimizer
 
 | Backpropagation | Optimizer |
 |---|---|
@@ -1410,7 +1410,7 @@ New Parameters
 
 ---
 
-## 1.40 Key Takeaways
+## 40. Key Takeaways
 
 - Backpropagation computes gradients of the loss with respect to trainable parameters.
 - It propagates error information backward through the network.
@@ -1438,7 +1438,7 @@ New Parameters
 - Repeated multiplication of derivatives can cause vanishing or exploding gradients.
 - ReLU helps gradient flow for positive activations.
 
-### Memory Hook
+### 40.1. Memory Hook
 
 ```text
 Forward

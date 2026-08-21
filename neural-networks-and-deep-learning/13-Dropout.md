@@ -1,6 +1,6 @@
 # 13. Dropout
 
-## 1.1 What Is Dropout?
+## 1. What Is Dropout?
 
 **Dropout** is a regularization technique in which a random subset of neuron outputs is temporarily set to zero during training.
 
@@ -30,7 +30,7 @@ This randomness prevents the network from becoming overly dependent on particula
 
 ---
 
-## 1.2 Why Dropout Is Needed
+## 2. Why Dropout Is Needed
 
 A large neural network may contain enough capacity to memorize training-specific patterns.
 
@@ -72,7 +72,7 @@ Better Generalization
 
 ---
 
-## 1.3 Dropout Probability
+## 3. Dropout Probability
 
 Dropout is controlled by a probability.
 
@@ -110,7 +110,7 @@ which is sometimes called the **keep probability**.
 
 ---
 
-## 1.4 Dropout Mask
+## 4. Dropout Mask
 
 Suppose a hidden-layer activation vector is:
 
@@ -173,7 +173,7 @@ The dropped neurons contribute nothing to the next layer during that training st
 
 ---
 
-## 1.5 Random Mask Generation
+## 5. Random Mask Generation
 
 Each mask value can be viewed as a Bernoulli random variable.
 
@@ -208,7 +208,7 @@ Therefore, the effective network changes continually during training.
 
 ---
 
-## 1.6 Dropout Creates Many Effective Networks
+## 6. Dropout Creates Many Effective Networks
 
 Consider a network containing many neurons.
 
@@ -236,7 +236,7 @@ This gives dropout an interpretation similar to training many related models and
 
 ---
 
-## 1.7 Ensemble Intuition
+## 7. Ensemble Intuition
 
 An **ensemble** combines predictions from multiple models to obtain more robust predictions.
 
@@ -261,7 +261,7 @@ This is one reason dropout can improve generalization.
 
 ---
 
-## 1.8 Co-Adaptation
+## 8. Co-Adaptation
 
 Without dropout, neurons may become highly specialized around the presence of specific other neurons.
 
@@ -283,7 +283,7 @@ Because any neighbouring neuron may disappear temporarily, each neuron is encour
 
 ---
 
-## 1.9 Training-Time Behaviour
+## 9. Training-Time Behaviour
 
 Dropout is active during training.
 
@@ -322,7 +322,7 @@ The exact set of active neurons changes repeatedly.
 
 ---
 
-## 1.10 Inference-Time Behaviour
+## 10. Inference-Time Behaviour
 
 During inference, dropout is normally disabled.
 
@@ -344,7 +344,7 @@ If neurons continued to be randomly removed during ordinary inference, predictio
 
 ---
 
-## 1.11 Why Scaling Is Necessary
+## 11. Why Scaling Is Necessary
 
 Suppose a neuron normally outputs:
 
@@ -378,7 +378,7 @@ This must be corrected.
 
 ---
 
-## 1.12 Inverted Dropout
+## 12. Inverted Dropout
 
 Modern frameworks usually use **inverted dropout**.
 
@@ -422,7 +422,7 @@ This preserves the expected activation magnitude.
 
 ---
 
-## 1.13 Why Inverted Dropout Works
+## 13. Why Inverted Dropout Works
 
 Suppose:
 
@@ -463,7 +463,7 @@ This means inference can simply disable dropout without requiring additional sca
 
 ---
 
-## 1.14 Dropout During Backpropagation
+## 14. Dropout During Backpropagation
 
 If a neuron is dropped during the forward pass:
 
@@ -489,7 +489,7 @@ On another training step, the same neuron may remain active and participate norm
 
 ---
 
-## 1.15 Dropout Rate
+## 15. Dropout Rate
 
 The **dropout rate** is the probability:
 
@@ -521,7 +521,7 @@ Large p
 
 ---
 
-## 1.16 Too Little Dropout
+## 16. Too Little Dropout
 
 If:
 
@@ -544,7 +544,7 @@ Validation performance should determine whether stronger regularization is usefu
 
 ---
 
-## 1.17 Too Much Dropout
+## 17. Too Much Dropout
 
 If dropout is too strong:
 
@@ -569,7 +569,7 @@ More Dropout
 
 ---
 
-## 1.18 Dropout and Model Capacity
+## 18. Dropout and Model Capacity
 
 Dropout temporarily reduces the effective capacity of the network during each training step.
 
@@ -593,7 +593,7 @@ The full architecture remains available across training.
 
 ---
 
-## 1.19 Dropout Is a Hyperparameter
+## 19. Dropout Is a Hyperparameter
 
 The dropout rate is not learned through backpropagation in the standard approach.
 
@@ -631,7 +631,7 @@ are chosen during model design and tuning.
 
 ---
 
-## 1.20 Where Is Dropout Applied?
+## 20. Where Is Dropout Applied?
 
 Dropout is commonly applied after a hidden-layer activation.
 
@@ -665,7 +665,7 @@ It simply modifies activations during training.
 
 ---
 
-## 1.21 Dropout on the Output Layer
+## 21. Dropout on the Output Layer
 
 Dropout is generally **not applied to the final output layer**.
 
@@ -695,7 +695,7 @@ Dropout primarily regularizes intermediate representations.
 
 ---
 
-## 1.22 Dropout on Input Features
+## 22. Dropout on Input Features
 
 Dropout can also be applied to inputs.
 
@@ -717,7 +717,7 @@ Whether it is useful depends strongly on the data and architecture.
 
 ---
 
-## 1.23 Example Architecture
+## 23. Example Architecture
 
 Consider:
 
@@ -759,7 +759,7 @@ All neurons contribute to the final prediction.
 
 ---
 
-## 1.24 Dropout and Training Loss
+## 24. Dropout and Training Loss
 
 Dropout makes the training problem harder.
 
@@ -791,7 +791,7 @@ Better Validation Performance
 
 ---
 
-## 1.25 Dropout and Validation Loss
+## 25. Dropout and Validation Loss
 
 During validation, dropout is disabled.
 
@@ -805,11 +805,11 @@ This difference should be remembered when interpreting learning curves.
 
 ---
 
-## 1.26 Dropout vs L2 Regularization
+## 26. Dropout vs L2 Regularization
 
 Both techniques reduce overfitting, but they work differently.
 
-### L2 Regularization
+### 26.1. L2 Regularization
 
 Penalizes large weights:
 
@@ -821,7 +821,7 @@ L_{\text{data}}
 \lambda\|W\|^2
 ```
 
-### Dropout
+### 26.2. Dropout
 
 Randomly removes activations during training.
 
@@ -839,7 +839,7 @@ They can be used independently or together.
 
 ---
 
-## 1.27 Dropout vs Early Stopping
+## 27. Dropout vs Early Stopping
 
 Early stopping limits how long training continues.
 
@@ -859,7 +859,7 @@ Both can act as regularization but through different mechanisms.
 
 ---
 
-## 1.28 Dropout vs Data Augmentation
+## 28. Dropout vs Data Augmentation
 
 Data augmentation introduces variation in the **input data**.
 
@@ -877,7 +877,7 @@ Both make memorization more difficult.
 
 ---
 
-## 1.29 Dropout and Batch Normalization
+## 29. Dropout and Batch Normalization
 
 Dropout and batch normalization can both appear in the same network, but they serve different primary purposes.
 
@@ -897,7 +897,7 @@ The optimal combination remains architecture-dependent.
 
 ---
 
-## 1.30 Dropout in Convolutional Networks
+## 30. Dropout in Convolutional Networks
 
 Dropout can be used in CNNs, especially in fully connected portions of a network.
 
@@ -920,7 +920,7 @@ Remove Information During Training
 
 ---
 
-## 1.31 Dropout in Recurrent Networks
+## 31. Dropout in Recurrent Networks
 
 Dropout can also be used with recurrent neural networks.
 
@@ -932,7 +932,7 @@ The central regularization principle remains the same, but implementation detail
 
 ---
 
-## 1.32 Monte Carlo Dropout
+## 32. Monte Carlo Dropout
 
 Normally:
 
@@ -970,7 +970,7 @@ This is an advanced use of dropout rather than its standard inference behaviour.
 
 ---
 
-## 1.33 Dropout Does Not Reduce Stored Model Size
+## 33. Dropout Does Not Reduce Stored Model Size
 
 A common misunderstanding is:
 
@@ -998,7 +998,7 @@ Dropout is temporary stochastic regularization.
 
 ---
 
-## 1.34 Dropout Does Not Remove Parameters Permanently
+## 34. Dropout Does Not Remove Parameters Permanently
 
 Suppose a neuron is dropped during one mini-batch.
 
@@ -1022,7 +1022,7 @@ This distinction is important.
 
 ---
 
-## 1.35 Dropout and Randomness
+## 35. Dropout and Randomness
 
 Because dropout uses random masks, training becomes stochastic.
 
@@ -1041,7 +1041,7 @@ Randomness
 
 ---
 
-## 1.36 When Should Dropout Be Considered?
+## 36. When Should Dropout Be Considered?
 
 Dropout is most useful when there is evidence of overfitting.
 
@@ -1061,7 +1061,7 @@ If both training and validation performance are poor, stronger dropout may make 
 
 ---
 
-## 1.37 Practical Decision Rule
+## 37. Practical Decision Rule
 
 A useful workflow is:
 
@@ -1088,7 +1088,7 @@ Dropout should solve an observed generalization problem rather than be inserted 
 
 ---
 
-## 1.38 Dropout in the Training Loop
+## 38. Dropout in the Training Loop
 
 With dropout, the training process becomes:
 
@@ -1128,7 +1128,7 @@ No ordinary dropout mask is applied.
 
 ---
 
-## 1.39 Key Takeaways
+## 39. Key Takeaways
 
 - Dropout is a neural-network regularization technique.
 - During training, a random subset of activations is set to zero.
@@ -1161,7 +1161,7 @@ No ordinary dropout mask is applied.
 - Monte Carlo dropout is an advanced technique that intentionally keeps dropout active during inference to estimate uncertainty.
 - Dropout is most useful when a model is overfitting rather than underfitting.
 
-### Memory Hook
+### 39.1. Memory Hook
 
 ```text
 Dropout

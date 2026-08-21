@@ -1,6 +1,6 @@
 # 17. Recurrent Neural Networks
 
-## 1.1 Why Recurrent Neural Networks?
+## 1. Why Recurrent Neural Networks?
 
 Standard feed-forward neural networks assume that inputs can be processed independently.
 
@@ -46,7 +46,7 @@ This is the motivation for **Recurrent Neural Networks (RNNs)**.
 
 ---
 
-## 1.2 What Is an RNN?
+## 2. What Is an RNN?
 
 A **Recurrent Neural Network** is a neural-network architecture designed to process sequential data by maintaining information from previous time steps.
 
@@ -68,7 +68,7 @@ Information can therefore persist as the sequence is processed.
 
 ---
 
-## 1.3 The Central Idea: Memory
+## 3. The Central Idea: Memory
 
 Suppose a sequence is:
 
@@ -110,7 +110,7 @@ The hidden state therefore acts as the network's memory.
 
 ---
 
-## 1.4 Hidden State
+## 4. Hidden State
 
 At time step:
 
@@ -165,7 +165,7 @@ because it carries information from the previous step.
 
 ---
 
-## 1.5 RNN Output
+## 5. RNN Output
 
 The output at time:
 
@@ -202,7 +202,7 @@ Current Input → Hidden State → Output
 
 ---
 
-## 1.6 The Recurrent Loop
+## 6. The Recurrent Loop
 
 An RNN is often drawn compactly as:
 
@@ -223,7 +223,7 @@ To understand RNNs properly, we usually **unroll** the network.
 
 ---
 
-## 1.7 Unrolling an RNN
+## 7. Unrolling an RNN
 
 The recurrent network:
 
@@ -254,7 +254,7 @@ This is called an **unrolled RNN**.
 
 ---
 
-## 1.8 One Network, Not Many Networks
+## 8. One Network, Not Many Networks
 
 The unrolled diagram may look like four different neural networks.
 
@@ -299,7 +299,7 @@ This is analogous to weight sharing in CNNs.
 
 ---
 
-## 1.9 Parameter Sharing Across Time
+## 9. Parameter Sharing Across Time
 
 Suppose a sentence contains:
 
@@ -336,7 +336,7 @@ This allows the network to process sequences of varying lengths while keeping pa
 
 ---
 
-## 1.10 Initial Hidden State
+## 10. Initial Hidden State
 
 At the first time step, there is no previous hidden state.
 
@@ -381,7 +381,7 @@ In some architectures, the initial state may instead be learned or supplied from
 
 ---
 
-## 1.11 Hidden State Accumulates Context
+## 11. Hidden State Accumulates Context
 
 Consider:
 
@@ -439,7 +439,7 @@ Later Predictions Use Earlier Information
 
 ---
 
-## 1.12 Sequence Order Matters
+## 12. Sequence Order Matters
 
 Because the hidden state evolves sequentially:
 
@@ -467,7 +467,7 @@ This makes RNNs naturally sensitive to sequence order.
 
 ---
 
-## 1.13 RNNs and Time Steps
+## 13. RNNs and Time Steps
 
 The index:
 
@@ -506,7 +506,7 @@ in the general RNN sense.
 
 ---
 
-## 1.14 Sequence-to-One Architecture
+## 14. Sequence-to-One Architecture
 
 Some tasks consume a sequence and produce one output.
 
@@ -540,7 +540,7 @@ Applications include:
 
 ---
 
-## 1.15 One-to-Many Architecture
+## 15. One-to-Many Architecture
 
 A single input can also generate a sequence.
 
@@ -567,7 +567,7 @@ One Input
 
 ---
 
-## 1.16 Many-to-Many Architecture
+## 16. Many-to-Many Architecture
 
 Both input and output may be sequences.
 
@@ -591,7 +591,7 @@ The output at each position can depend on accumulated context.
 
 ---
 
-## 1.17 Sequence-to-Sequence
+## 17. Sequence-to-Sequence
 
 Another many-to-many arrangement may have different input and output lengths.
 
@@ -617,7 +617,7 @@ Later architectures such as transformers dramatically changed how these tasks ar
 
 ---
 
-## 1.18 Input Representation
+## 18. Input Representation
 
 An RNN requires numerical inputs.
 
@@ -645,7 +645,7 @@ A common representation is a **word embedding**.
 
 ---
 
-## 1.19 Embeddings
+## 19. Embeddings
 
 Instead of representing words as arbitrary integer IDs, an embedding maps each token to a dense vector.
 
@@ -683,7 +683,7 @@ RNN
 
 ---
 
-## 1.20 Hidden State Dimension
+## 20. Hidden State Dimension
 
 The hidden state is a vector:
 
@@ -715,7 +715,7 @@ Larger hidden states provide greater representational capacity but increase para
 
 ---
 
-## 1.21 RNN Parameter Dimensions
+## 21. RNN Parameter Dimensions
 
 Suppose:
 
@@ -767,7 +767,7 @@ The same matrices are reused at every time step.
 
 ---
 
-## 1.22 A Simple RNN Cell
+## 22. A Simple RNN Cell
 
 A common simple RNN uses:
 
@@ -810,7 +810,7 @@ However, tanh also contributes to the vanishing-gradient problem in long sequenc
 
 ---
 
-## 1.23 Forward Propagation Through Time
+## 23. Forward Propagation Through Time
 
 For a sequence:
 
@@ -867,7 +867,7 @@ Thus every state depends recursively on the previous state.
 
 ---
 
-## 1.24 Long-Term Dependencies
+## 24. Long-Term Dependencies
 
 Suppose the sequence is:
 
@@ -896,7 +896,7 @@ Basic RNNs often struggle with such dependencies.
 
 ---
 
-## 1.25 Why Long-Term Dependencies Are Difficult
+## 25. Why Long-Term Dependencies Are Difficult
 
 Information must repeatedly pass through:
 
@@ -924,7 +924,7 @@ This creates a serious optimization problem.
 
 ---
 
-## 1.26 Backpropagation Through Time
+## 26. Backpropagation Through Time
 
 RNNs are trained using a version of backpropagation called **Backpropagation Through Time (BPTT)**.
 
@@ -956,7 +956,7 @@ Time
 
 ---
 
-## 1.27 Loss Across Time
+## 27. Loss Across Time
 
 For many-to-many tasks, a loss may be calculated at every time step.
 
@@ -989,7 +989,7 @@ BPTT calculates how the shared parameters contributed to losses across the seque
 
 ---
 
-## 1.28 Shared Parameters Receive Gradients From Many Steps
+## 28. Shared Parameters Receive Gradients From Many Steps
 
 Because the same recurrent weights are reused:
 
@@ -1022,7 +1022,7 @@ The optimizer then updates the shared parameter once using the accumulated gradi
 
 ---
 
-## 1.29 RNNs Become Deep Across Time
+## 29. RNNs Become Deep Across Time
 
 An RNN may contain only one recurrent layer structurally.
 
@@ -1039,7 +1039,7 @@ This explains why gradient problems become particularly severe in recurrent netw
 
 ---
 
-## 1.30 Vanishing Gradients in RNNs
+## 30. Vanishing Gradients in RNNs
 
 During BPTT, gradients repeatedly pass through recurrent transformations.
 
@@ -1070,7 +1070,7 @@ If these factors repeatedly have magnitudes below `1`, the gradient can shrink d
 
 ---
 
-## 1.31 Consequence of Vanishing Gradients
+## 31. Consequence of Vanishing Gradients
 
 Suppose an important word occurred 50 steps earlier.
 
@@ -1098,7 +1098,7 @@ This is one of the fundamental weaknesses of basic RNNs.
 
 ---
 
-## 1.32 Exploding Gradients in RNNs
+## 32. Exploding Gradients in RNNs
 
 The opposite can also happen.
 
@@ -1127,7 +1127,7 @@ Gradient clipping is particularly useful in recurrent networks.
 
 ---
 
-## 1.33 Gradient Clipping in RNNs
+## 33. Gradient Clipping in RNNs
 
 Suppose the gradient is:
 
@@ -1166,7 +1166,7 @@ Gradient clipping addresses exploding gradients but does not solve the long-term
 
 ---
 
-## 1.34 Truncated Backpropagation Through Time
+## 34. Truncated Backpropagation Through Time
 
 For very long sequences, propagating gradients through every previous time step can be computationally expensive.
 
@@ -1191,7 +1191,7 @@ This reduces memory and computational cost.
 
 ---
 
-## 1.35 Limitation of Truncated BPTT
+## 35. Limitation of Truncated BPTT
 
 Truncation improves practicality but introduces a trade-off.
 
@@ -1209,7 +1209,7 @@ It solves a computational problem, not the fundamental memory limitation of a si
 
 ---
 
-## 1.36 Bidirectional RNNs
+## 36. Bidirectional RNNs
 
 Sometimes the entire sequence is available before prediction.
 
@@ -1229,7 +1229,7 @@ The two representations are then combined.
 
 ---
 
-## 1.37 Why Bidirectional Processing Helps
+## 37. Why Bidirectional Processing Helps
 
 Consider:
 
@@ -1265,7 +1265,7 @@ when producing its representation.
 
 ---
 
-## 1.38 When Bidirectional RNNs Cannot Be Used
+## 38. When Bidirectional RNNs Cannot Be Used
 
 Bidirectional processing requires future sequence elements to be available.
 
@@ -1291,7 +1291,7 @@ Strict Real-Time Prediction
 
 ---
 
-## 1.39 Stacked RNNs
+## 39. Stacked RNNs
 
 RNNs can also be stacked vertically.
 
@@ -1315,7 +1315,7 @@ However, deeper recurrent architectures can be more difficult to train.
 
 ---
 
-## 1.40 Dropout in RNNs
+## 40. Dropout in RNNs
 
 Dropout can regularize recurrent networks.
 
@@ -1334,7 +1334,7 @@ but recurrent structure makes its implementation more delicate than in a simple 
 
 ---
 
-## 1.41 Variable-Length Sequences
+## 41. Variable-Length Sequences
 
 Real sequences often have different lengths.
 
@@ -1365,7 +1365,7 @@ The model must know which positions are real and which are padding.
 
 ---
 
-## 1.42 Masking
+## 42. Masking
 
 A **mask** identifies valid sequence positions.
 
@@ -1385,7 +1385,7 @@ This allows variable-length sequences to coexist within a batch.
 
 ---
 
-## 1.43 RNNs for Time-Series Data
+## 43. RNNs for Time-Series Data
 
 RNNs are not limited to language.
 
@@ -1414,7 +1414,7 @@ Applications can include:
 
 ---
 
-## 1.44 RNNs vs Ordinary Dense Networks
+## 44. RNNs vs Ordinary Dense Networks
 
 | Dense Network | RNN |
 |---|---|
@@ -1428,7 +1428,7 @@ The RNN adds explicit sequential state to the neural-network framework.
 
 ---
 
-## 1.45 RNNs vs CNNs
+## 45. RNNs vs CNNs
 
 CNNs and RNNs exploit different structures.
 
@@ -1468,7 +1468,7 @@ This is a useful connection between the two architectures.
 
 ---
 
-## 1.46 The Fundamental Weakness of Basic RNNs
+## 46. The Fundamental Weakness of Basic RNNs
 
 The simple RNN theoretically has access to all previous hidden states through recurrence.
 
@@ -1492,7 +1492,7 @@ This is the key problem that motivates **LSTM** and **GRU** architectures.
 
 ---
 
-## 1.47 Why Not Simply Make the Hidden State Larger?
+## 47. Why Not Simply Make the Hidden State Larger?
 
 Increasing:
 
@@ -1516,7 +1516,7 @@ The solution requires changing how information flows through the recurrent cell 
 
 ---
 
-## 1.48 From RNN to LSTM
+## 48. From RNN to LSTM
 
 The basic RNN repeatedly transforms:
 
@@ -1554,7 +1554,7 @@ This gives the network better control over long-term information.
 
 ---
 
-## 1.49 From RNN to GRU
+## 49. From RNN to GRU
 
 GRU follows a similar motivation but uses a somewhat simpler architecture.
 
@@ -1571,7 +1571,7 @@ They deserve separate treatment because their internal mechanics are central to 
 
 ---
 
-## 1.50 RNNs and Modern Sequence Models
+## 50. RNNs and Modern Sequence Models
 
 RNNs, LSTMs, and GRUs were dominant sequence architectures for many years.
 
@@ -1592,7 +1592,7 @@ RNN-family models also remain useful for some sequence and time-series applicati
 
 ---
 
-## 1.51 RNN Training Loop
+## 51. RNN Training Loop
 
 The overall training process remains familiar:
 
@@ -1622,7 +1622,7 @@ The computational graph has simply acquired a sequential dimension.
 
 ---
 
-## 1.52 The Big Picture
+## 52. The Big Picture
 
 The simplest RNN can be summarized as:
 
@@ -1671,7 +1671,7 @@ in the calculation of the current state.
 
 ---
 
-## 1.53 Key Takeaways
+## 53. Key Takeaways
 
 - RNNs are neural networks designed for sequential data.
 - Sequence order matters in RNNs.
@@ -1720,7 +1720,7 @@ b_h
 - LSTM and GRU modify the recurrent cell to preserve information more effectively.
 - Transformers now dominate many large-scale sequence tasks, but RNNs remain foundational for understanding sequence modelling.
 
-### Memory Hook
+### 53.1. Memory Hook
 
 ```text
 RNN

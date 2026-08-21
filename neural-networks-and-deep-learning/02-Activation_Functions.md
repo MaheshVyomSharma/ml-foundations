@@ -1,6 +1,6 @@
 # 02. Activation Functions
 
-## 1.1 Why Activation Functions Are Necessary
+## 1. Why Activation Functions Are Necessary
 
 An artificial neuron first computes a weighted linear combination:
 
@@ -66,7 +66,7 @@ This allows neural networks to model complex decision boundaries and non-linear 
 
 ---
 
-## 1.2 What Does an Activation Function Do?
+## 2. What Does an Activation Function Do?
 
 An activation function transforms the neuron's weighted input:
 
@@ -101,7 +101,7 @@ The activation function influences:
 
 ---
 
-## 1.3 Step Function
+## 3. Step Function
 
 The classical perceptron uses a **step function**.
 
@@ -135,7 +135,7 @@ Therefore, it does not provide useful gradient information for backpropagation.
 
 ---
 
-## 1.4 Sigmoid Function
+## 4. Sigmoid Function
 
 The **sigmoid function**, also called the **logistic function**, is:
 
@@ -177,7 +177,7 @@ This is exactly the same basic mechanism used in logistic regression.
 
 ---
 
-## 1.5 Derivative of Sigmoid
+## 5. Derivative of Sigmoid
 
 The sigmoid function has a convenient derivative:
 
@@ -217,7 +217,7 @@ This phenomenon contributes to the **vanishing gradient problem**.
 
 ---
 
-## 1.6 Sigmoid Saturation
+## 6. Sigmoid Saturation
 
 When:
 
@@ -269,7 +269,7 @@ As a result, earlier layers may learn very slowly.
 
 ---
 
-## 1.7 Tanh Function
+## 7. Tanh Function
 
 The **hyperbolic tangent**, or `tanh`, activation function is:
 
@@ -308,7 +308,7 @@ However, it still suffers from saturation and vanishing gradients for large posi
 
 ---
 
-## 1.8 Sigmoid vs Tanh
+## 8. Sigmoid vs Tanh
 
 Both functions are smooth, non-linear, and S-shaped.
 
@@ -339,7 +339,7 @@ In modern feed-forward hidden layers, both have largely been replaced by ReLU-fa
 
 ---
 
-## 1.9 ReLU
+## 9. ReLU
 
 The **Rectified Linear Unit**, or **ReLU**, is one of the most widely used activation functions in deep neural networks.
 
@@ -381,7 +381,7 @@ Despite its simplicity, ReLU works extremely well in practice.
 
 ---
 
-## 1.10 Derivative of ReLU
+## 10. Derivative of ReLU
 
 The derivative of ReLU is:
 
@@ -416,11 +416,11 @@ This is one reason ReLU enabled much deeper networks to train effectively.
 
 ---
 
-## 1.11 Why ReLU Became Popular
+## 11. Why ReLU Became Popular
 
 ReLU has several advantages.
 
-### Computational Simplicity
+### 11.1. Computational Simplicity
 
 It requires essentially:
 
@@ -430,7 +430,7 @@ It requires essentially:
 
 rather than exponentials such as those used by sigmoid and tanh.
 
-### Reduced Vanishing Gradient Problem
+### 11.2. Reduced Vanishing Gradient Problem
 
 For positive inputs:
 
@@ -440,7 +440,7 @@ f'(z)=1
 
 so the gradient is not compressed toward zero.
 
-### Sparse Activations
+### 11.3. Sparse Activations
 
 Any negative input produces exactly zero.
 
@@ -452,7 +452,7 @@ Because of these properties, ReLU became the standard default activation for man
 
 ---
 
-## 1.12 The Dying ReLU Problem
+## 12. The Dying ReLU Problem
 
 ReLU also has a weakness.
 
@@ -496,7 +496,7 @@ Poor initialization or excessively large learning rates can increase the likelih
 
 ---
 
-## 1.13 Leaky ReLU
+## 13. Leaky ReLU
 
 **Leaky ReLU** modifies ReLU by allowing a small negative slope.
 
@@ -544,7 +544,7 @@ This reduces the risk of neurons becoming permanently inactive.
 
 ---
 
-## 1.14 Softmax
+## 14. Softmax
 
 **Softmax** is primarily used in the output layer of a **multiclass classification** network.
 
@@ -597,11 +597,11 @@ The network can then choose the class with the highest probability.
 
 ---
 
-## 1.15 Sigmoid vs Softmax for Classification
+## 15. Sigmoid vs Softmax for Classification
 
 This distinction is extremely important.
 
-### Binary Classification
+### 15.1. Binary Classification
 
 For two mutually exclusive classes, a single output neuron commonly uses sigmoid:
 
@@ -617,7 +617,7 @@ The other class probability is:
 1-\hat{p}
 ```
 
-### Multiclass Classification
+### 15.2. Multiclass Classification
 
 For several mutually exclusive classes, the output layer commonly uses softmax:
 
@@ -630,7 +630,7 @@ P(y=k)
 
 The outputs collectively sum to `1`.
 
-### Multi-label Classification
+### 15.3. Multi-label Classification
 
 If several labels can independently be true at the same time, separate sigmoid outputs are commonly used.
 
@@ -655,11 +655,11 @@ Multi-label classification → Multiple Sigmoids
 
 ---
 
-## 1.16 Activation Functions in Hidden and Output Layers
+## 16. Activation Functions in Hidden and Output Layers
 
 The activation function used in hidden layers and output layers serves different purposes.
 
-### Hidden Layers
+### 16.1. Hidden Layers
 
 The main requirement is introducing useful non-linearity while allowing gradients to propagate effectively.
 
@@ -670,7 +670,7 @@ ReLU
 Leaky ReLU
 ```
 
-### Output Layer
+### 16.2. Output Layer
 
 The choice depends strongly on the problem.
 
@@ -691,7 +691,7 @@ is often appropriate because the output may need to take unrestricted real value
 
 ---
 
-## 1.17 Linear Activation
+## 17. Linear Activation
 
 A **linear activation function** is simply:
 
@@ -721,7 +721,7 @@ The final layer can therefore output its raw linear value.
 
 ---
 
-## 1.18 Choosing an Activation Function
+## 18. Choosing an Activation Function
 
 A useful practical rule is:
 
@@ -755,7 +755,7 @@ This is not an absolute law, but it is a strong starting point for standard neur
 
 ---
 
-## 1.19 Activation Functions and Gradient Flow
+## 19. Activation Functions and Gradient Flow
 
 Activation functions are not merely output-shaping mechanisms.
 
@@ -806,7 +806,7 @@ This is why the choice of activation function affects not only what the network 
 
 ---
 
-## 1.20 Activation Function Comparison
+## 20. Activation Function Comparison
 
 | Activation | Output Range | Major Strength | Major Weakness | Common Use |
 |---|---|---|---|---|
@@ -820,7 +820,7 @@ This is why the choice of activation function affects not only what the network 
 
 ---
 
-## 1.21 Key Takeaways
+## 21. Key Takeaways
 
 - Activation functions introduce **non-linearity** into neural networks.
 - Without non-linear activations, multiple neural-network layers collapse into a single linear transformation.
@@ -836,7 +836,7 @@ This is why the choice of activation function affects not only what the network 
 - Regression outputs commonly use no activation, equivalent to a linear activation.
 - Activation functions affect both the network's expressive power and how gradients propagate during training.
 
-### Memory Hook
+### 21.1. Memory Hook
 
 ```text
 Need non-linearity?

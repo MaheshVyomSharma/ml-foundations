@@ -1,6 +1,6 @@
 # 16. Convolutional Neural Networks
 
-## 1.1 Why Convolutional Neural Networks?
+## 1. Why Convolutional Neural Networks?
 
 A standard fully connected neural network treats its input as a collection of numerical values.
 
@@ -27,7 +27,7 @@ A **Convolutional Neural Network (CNN)** is designed to exploit this spatial str
 
 ---
 
-## 1.2 What Is a CNN?
+## 2. What Is a CNN?
 
 A **Convolutional Neural Network** is a neural-network architecture that uses convolution operations to detect local patterns in structured grid-like data.
 
@@ -46,7 +46,7 @@ CNNs can also be applied to other structured data such as one-dimensional signal
 
 ---
 
-## 1.3 Why Dense Networks Are Inefficient for Images
+## 3. Why Dense Networks Are Inefficient for Images
 
 Suppose an RGB image has dimensions:
 
@@ -81,7 +81,7 @@ These two ideas are fundamental.
 
 ---
 
-## 1.4 Local Connectivity
+## 4. Local Connectivity
 
 In a dense layer, every neuron receives every input.
 
@@ -113,7 +113,7 @@ This reflects the intuition that local visual patterns can often be detected fro
 
 ---
 
-## 1.5 What Is a Convolution?
+## 5. What Is a Convolution?
 
 A convolution applies a small matrix called a **kernel** or **filter** across an input.
 
@@ -142,7 +142,7 @@ The resulting collection of outputs is called a **feature map**.
 
 ---
 
-## 1.6 Kernel or Filter
+## 6. Kernel or Filter
 
 A **kernel** is a small matrix of trainable weights.
 
@@ -170,7 +170,7 @@ Unlike manually designed image-processing filters, CNN kernels are normally **le
 
 ---
 
-## 1.7 A Simple Convolution Calculation
+## 7. A Simple Convolution Calculation
 
 Suppose a local image patch is:
 
@@ -228,7 +228,7 @@ The same kernel is then moved to another location and the process is repeated.
 
 ---
 
-## 1.8 Sliding the Kernel
+## 8. Sliding the Kernel
 
 Conceptually:
 
@@ -260,7 +260,7 @@ This is called **weight sharing**.
 
 ---
 
-## 1.9 Weight Sharing
+## 9. Weight Sharing
 
 Suppose a kernel contains:
 
@@ -290,7 +290,7 @@ It also gives the CNN an important property:
 
 ---
 
-## 1.10 Translation Awareness
+## 10. Translation Awareness
 
 Suppose a filter learns to detect a vertical edge.
 
@@ -310,7 +310,7 @@ This makes CNNs naturally suited to visual data where objects can appear at diff
 
 ---
 
-## 1.11 Feature Map
+## 11. Feature Map
 
 The output produced by applying one filter across the input is called a **feature map** or **activation map**.
 
@@ -348,7 +348,7 @@ The exact features are learned from data.
 
 ---
 
-## 1.12 Multiple Filters
+## 12. Multiple Filters
 
 A convolutional layer normally contains many filters.
 
@@ -384,7 +384,7 @@ Each filter can learn to detect a different pattern.
 
 ---
 
-## 1.13 Channels
+## 13. Channels
 
 A grayscale image contains one channel:
 
@@ -416,7 +416,7 @@ For an RGB image, a `3 × 3` filter actually has dimensions:
 
 ---
 
-## 1.14 Kernel Depth
+## 14. Kernel Depth
 
 Suppose the input has:
 
@@ -462,7 +462,7 @@ weights, plus usually one bias.
 
 ---
 
-## 1.15 Output Channels
+## 15. Output Channels
 
 The number of filters determines the number of output channels.
 
@@ -498,7 +498,7 @@ This distinction is important.
 
 ---
 
-## 1.16 Stride
+## 16. Stride
 
 **Stride** determines how far the filter moves between positions.
 
@@ -528,11 +528,11 @@ Larger strides reduce the spatial dimensions of the output.
 
 ---
 
-## 1.17 Effect of Stride
+## 17. Effect of Stride
 
 Suppose a filter moves across an image.
 
-### Stride 1
+### 17.1. Stride 1
 
 ```text
 □ → □ → □ → □ → □
@@ -540,7 +540,7 @@ Suppose a filter moves across an image.
 
 Many positions are evaluated.
 
-### Stride 2
+### 17.2. Stride 2
 
 ```text
 □   →   □   →   □
@@ -559,7 +559,7 @@ Larger Stride
 
 ---
 
-## 1.18 Padding
+## 18. Padding
 
 A filter cannot naturally be centred on pixels at the very edge of an image without extending outside the image.
 
@@ -589,7 +589,7 @@ Padding allows filters to process edge regions more fully.
 
 ---
 
-## 1.19 Valid Padding
+## 19. Valid Padding
 
 With **valid padding**, no padding is added.
 
@@ -623,7 +623,7 @@ kernel using stride 1, the output is:
 
 ---
 
-## 1.20 Same Padding
+## 20. Same Padding
 
 With **same padding**, enough padding is added so that, for stride 1, the output retains approximately the same spatial dimensions as the input.
 
@@ -644,7 +644,7 @@ Same padding is widely used in deep CNNs because it allows many convolutional la
 
 ---
 
-## 1.21 Output Size Formula
+## 21. Output Size Formula
 
 For one spatial dimension, the output size of a convolution is:
 
@@ -670,7 +670,7 @@ This formula applies separately to height and width.
 
 ---
 
-## 1.22 Output Size Example
+## 22. Output Size Example
 
 Suppose:
 
@@ -708,7 +708,7 @@ Thus a `3 × 3` convolution with padding `1` and stride `1` preserves the spatia
 
 ---
 
-## 1.23 Another Output Size Example
+## 23. Another Output Size Example
 
 Suppose:
 
@@ -752,7 +752,7 @@ approximately halving the spatial dimension.
 
 ---
 
-## 1.24 Convolutional Layer Parameters
+## 24. Convolutional Layer Parameters
 
 Suppose a convolutional layer has:
 
@@ -795,7 +795,7 @@ Importantly, parameter count does **not** depend directly on image width or heig
 
 ---
 
-## 1.25 Parameter Count Example
+## 25. Parameter Count Example
 
 Suppose:
 
@@ -834,7 +834,7 @@ This is dramatically smaller than connecting every image pixel to every output n
 
 ---
 
-## 1.26 Activation Functions in CNNs
+## 26. Activation Functions in CNNs
 
 After convolution, an activation function is usually applied.
 
@@ -864,7 +864,7 @@ The same activation-function principles from ordinary neural networks therefore 
 
 ---
 
-## 1.27 Pooling
+## 27. Pooling
 
 **Pooling** reduces the spatial dimensions of feature maps.
 
@@ -889,7 +889,7 @@ because it selects the maximum value.
 
 ---
 
-## 1.28 Max Pooling
+## 28. Max Pooling
 
 A `2 × 2` max-pooling operation examines small regions:
 
@@ -912,7 +912,7 @@ The spatial dimensions are reduced.
 
 ---
 
-## 1.29 Why Pooling?
+## 29. Why Pooling?
 
 Pooling can provide several benefits:
 
@@ -936,7 +936,7 @@ Retain Strong Features
 
 ---
 
-## 1.30 Pooling Has No Trainable Weights
+## 30. Pooling Has No Trainable Weights
 
 Unlike convolution:
 
@@ -959,7 +959,7 @@ Thus pooling is a fixed operation rather than a learned transformation.
 
 ---
 
-## 1.31 Average Pooling
+## 31. Average Pooling
 
 **Average pooling** replaces a local region with its average.
 
@@ -988,7 +988,7 @@ Both have applications.
 
 ---
 
-## 1.32 Global Average Pooling
+## 32. Global Average Pooling
 
 **Global Average Pooling (GAP)** reduces each complete feature map to a single value.
 
@@ -1016,7 +1016,7 @@ This can replace large fully connected layers and substantially reduce parameter
 
 ---
 
-## 1.33 Convolution vs Pooling
+## 33. Convolution vs Pooling
 
 The distinction is:
 
@@ -1036,7 +1036,7 @@ A CNN commonly alternates these operations.
 
 ---
 
-## 1.34 Hierarchical Feature Learning
+## 34. Hierarchical Feature Learning
 
 CNN layers often learn increasingly abstract features.
 
@@ -1064,7 +1064,7 @@ This is an example of **hierarchical representation learning**.
 
 ---
 
-## 1.35 First Layers
+## 35. First Layers
 
 Early layers operate directly on pixels.
 
@@ -1092,7 +1092,7 @@ The early network does not need to know which one yet.
 
 ---
 
-## 1.36 Deeper Layers
+## 36. Deeper Layers
 
 Later layers receive combinations of earlier feature maps.
 
@@ -1118,7 +1118,7 @@ This hierarchical learning is one of the major strengths of CNNs.
 
 ---
 
-## 1.37 Receptive Field
+## 37. Receptive Field
 
 The **receptive field** of a neuron is the region of the original input that can influence it.
 
@@ -1136,7 +1136,7 @@ Therefore, its effective receptive field becomes larger.
 
 ---
 
-## 1.38 Receptive Field Growth
+## 38. Receptive Field Growth
 
 Consider repeated `3 × 3` convolutions.
 
@@ -1157,7 +1157,7 @@ This allows the network to progress from local edges toward entire objects.
 
 ---
 
-## 1.39 Why Use Small Kernels?
+## 39. Why Use Small Kernels?
 
 Modern CNNs often use kernels such as:
 
@@ -1177,7 +1177,7 @@ For example, two successive `3 × 3` convolutions can achieve a receptive-field 
 
 ---
 
-## 1.40 Basic CNN Architecture
+## 40. Basic CNN Architecture
 
 A simple image classifier might look like:
 
@@ -1215,7 +1215,7 @@ The final layer performs the classification.
 
 ---
 
-## 1.41 Flattening
+## 41. Flattening
 
 Traditional CNN architectures often convert the final feature maps into a vector using **flattening**.
 
@@ -1244,7 +1244,7 @@ The resulting vector can be passed into an ordinary dense neural-network layer.
 
 ---
 
-## 1.42 Why Flattening Can Create Many Parameters
+## 42. Why Flattening Can Create Many Parameters
 
 Suppose:
 
@@ -1278,11 +1278,11 @@ This is why modern architectures often prefer global average pooling over very l
 
 ---
 
-## 1.43 CNN Classification Output
+## 43. CNN Classification Output
 
 After feature extraction, the output layer follows the same rules already learned.
 
-### Binary Classification
+### 43.1. Binary Classification
 
 ```text
 1 Output Neuron
@@ -1290,7 +1290,7 @@ After feature extraction, the output layer follows the same rules already learne
 Sigmoid
 ```
 
-### Multiclass Classification
+### 43.2. Multiclass Classification
 
 ```text
 K Output Neurons
@@ -1302,7 +1302,7 @@ Therefore, CNNs change the **feature extraction architecture**, not the fundamen
 
 ---
 
-## 1.44 CNN Loss Functions
+## 44. CNN Loss Functions
 
 The same loss functions remain applicable.
 
@@ -1338,7 +1338,7 @@ CNN filters are trained using the same gradient-based learning principles as ord
 
 ---
 
-## 1.45 How Filters Learn
+## 45. How Filters Learn
 
 CNN kernels do not begin as useful edge or texture detectors.
 
@@ -1370,7 +1370,7 @@ There is no separate algorithm manually teaching the network what an edge is.
 
 ---
 
-## 1.46 Parameter Sharing Is the Key Efficiency
+## 46. Parameter Sharing Is the Key Efficiency
 
 A filter might contain only:
 
@@ -1401,7 +1401,7 @@ is the fundamental reason CNNs are so parameter-efficient for images.
 
 ---
 
-## 1.47 Translation Equivariance
+## 47. Translation Equivariance
 
 Convolution has an important property known as **translation equivariance**.
 
@@ -1425,18 +1425,18 @@ Pooling and later aggregation can introduce some tolerance to exact position.
 
 ---
 
-## 1.48 Translation Equivariance vs Invariance
+## 48. Translation Equivariance vs Invariance
 
 These terms should not be confused.
 
-### Equivariance
+### 48.1. Equivariance
 
 ```text
 Input Moves
 → Output Feature Moves Correspondingly
 ```
 
-### Invariance
+### 48.2. Invariance
 
 ```text
 Input Moves
@@ -1449,7 +1449,7 @@ Classification architectures aim to develop increasing tolerance or invariance t
 
 ---
 
-## 1.49 CNNs vs Dense Neural Networks
+## 49. CNNs vs Dense Neural Networks
 
 | Dense Network | CNN |
 |---|---|
@@ -1465,7 +1465,7 @@ It simply uses a more appropriate connectivity pattern for spatial data.
 
 ---
 
-## 1.50 CNN Hyperparameters
+## 50. CNN Hyperparameters
 
 Important CNN hyperparameters include:
 
@@ -1499,7 +1499,7 @@ The kernel **values**, however, are learned parameters.
 
 ---
 
-## 1.51 Filters vs Hyperparameters
+## 51. Filters vs Hyperparameters
 
 This distinction is important.
 
@@ -1530,7 +1530,7 @@ are trainable parameters learned through backpropagation.
 
 ---
 
-## 1.52 Data Augmentation and CNNs
+## 52. Data Augmentation and CNNs
 
 CNN image models commonly use data augmentation.
 
@@ -1563,7 +1563,7 @@ The chosen transformation must preserve the target meaning.
 
 ---
 
-## 1.53 When Augmentation Can Be Wrong
+## 53. When Augmentation Can Be Wrong
 
 Not every transformation is valid.
 
@@ -1591,7 +1591,7 @@ Augmentation should reflect realistic variation in the application domain.
 
 ---
 
-## 1.54 Transfer Learning
+## 54. Transfer Learning
 
 CNNs are often used through **transfer learning**.
 
@@ -1615,7 +1615,7 @@ The early layers may already detect useful general patterns such as edges and te
 
 ---
 
-## 1.55 Feature Extraction
+## 55. Feature Extraction
 
 One transfer-learning strategy is to freeze the pretrained convolutional layers.
 
@@ -1637,7 +1637,7 @@ This is useful when the new dataset is relatively small.
 
 ---
 
-## 1.56 Fine-Tuning
+## 56. Fine-Tuning
 
 Another strategy is **fine-tuning**.
 
@@ -1657,7 +1657,7 @@ Fine-tuning modifies existing learned representations for the new problem.
 
 ---
 
-## 1.57 Feature Extraction vs Fine-Tuning
+## 57. Feature Extraction vs Fine-Tuning
 
 ```text
 Feature Extraction
@@ -1679,7 +1679,7 @@ Both are forms of transfer learning.
 
 ---
 
-## 1.58 Modern CNN Architecture Ideas
+## 58. Modern CNN Architecture Ideas
 
 Several influential CNN architectures introduced important ideas.
 
@@ -1717,7 +1717,7 @@ The architecture names matter less than understanding the ideas behind them.
 
 ---
 
-## 1.59 ResNet Connection
+## 59. ResNet Connection
 
 We already encountered residual connections:
 
@@ -1743,7 +1743,7 @@ Residual paths help gradients flow through very deep convolutional networks.
 
 ---
 
-## 1.60 CNN Training Is Still Ordinary Neural-Network Training
+## 60. CNN Training Is Still Ordinary Neural-Network Training
 
 Despite the new architecture, the training loop is unchanged:
 
@@ -1782,11 +1782,11 @@ All previously learned concepts remain relevant:
 
 ---
 
-## 1.61 The Big Picture
+## 61. The Big Picture
 
 A CNN performs two broad stages.
 
-### Feature Extraction
+### 61.1. Feature Extraction
 
 ```text
 Image
@@ -1802,7 +1802,7 @@ More Convolutions
 High-Level Feature Maps
 ```
 
-### Prediction
+### 61.2. Prediction
 
 ```text
 Learned Features
@@ -1818,7 +1818,7 @@ Modern CNNs often blur this distinction architecturally, but it remains a useful
 
 ---
 
-## 1.62 Key Takeaways
+## 62. Key Takeaways
 
 - CNNs are neural networks designed to exploit spatial structure.
 - They are especially useful for image data.
@@ -1867,7 +1867,7 @@ O
 - Fine-tuning updates some pretrained layers for the new task.
 - CNNs still use the same fundamental forward-loss-backprop-optimizer training loop.
 
-### Memory Hook
+### 62.1. Memory Hook
 
 ```text
 CNN

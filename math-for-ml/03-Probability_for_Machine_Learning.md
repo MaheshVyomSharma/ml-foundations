@@ -20,11 +20,11 @@ Classification probabilities, uncertainty estimates, probability distributions, 
 
 ---
 
-## 1.1 Experiments, Outcomes, Sample Spaces, and Events
+## 1. Experiments, Outcomes, Sample Spaces, and Events
 
 Probability begins with four basic ideas.
 
-### Random Experiment
+### 1.1. Random Experiment
 
 A **random experiment** is a process whose exact outcome cannot be known beforehand.
 
@@ -39,7 +39,7 @@ Examples:
 
 The word *experiment* does not necessarily mean a laboratory experiment. It simply refers to some process that produces an uncertain outcome.
 
-### Outcome
+### 1.2. Outcome
 
 An **outcome** is one possible result of the experiment.
 
@@ -63,7 +63,7 @@ For a six-sided die, the possible outcomes are:
 1,2,3,4,5,6
 ```
 
-### Sample Space
+### 1.3. Sample Space
 
 The **sample space**, usually represented by \(S\) or \(\Omega\), is the set of **all possible outcomes**.
 
@@ -81,7 +81,7 @@ S = \{1,2,3,4,5,6\}
 
 The sample space defines the universe within which the probability problem exists.
 
-### Event
+### 1.4. Event
 
 An **event** is a set containing one or more outcomes from the sample space.
 
@@ -117,7 +117,7 @@ This connection between probability and set theory becomes important because eve
 
 ---
 
-## 1.2 Probability of an Event
+## 2. Probability of an Event
 
 The probability of an event \(A\) is written as:
 
@@ -173,7 +173,7 @@ So:
 P(A)=0.5
 ```
 
-### Probability as Long-Run Frequency
+### 2.1. Probability as Long-Run Frequency
 
 Probability can also be understood through repeated observations.
 
@@ -219,11 +219,11 @@ will later lead directly into statistical sampling and the **Law of Large Number
 
 ---
 
-## 1.3 Basic Probability Rules
+## 3. Basic Probability Rules
 
 Several simple rules form the foundation for more advanced probability.
 
-### Complement Rule
+### 3.1. Complement Rule
 
 The **complement** of event \(A\), written \(A^c\), means that \(A\) does **not** occur.
 
@@ -251,7 +251,7 @@ Then:
 P(\text{not spam})=1-0.2=0.8
 ```
 
-### Union — OR
+### 3.2. Union — OR
 
 The union of two events:
 
@@ -273,7 +273,7 @@ P(A)+P(B)-P(A\cap B)
 
 The intersection is subtracted because outcomes belonging to both events would otherwise be counted twice.
 
-### Intersection — AND
+### 3.3. Intersection — AND
 
 The intersection:
 
@@ -312,7 +312,7 @@ These same set relationships will appear repeatedly when working with conditiona
 
 ---
 
-## 1.4 Mutually Exclusive Events
+## 4. Mutually Exclusive Events
 
 Two events are **mutually exclusive** if they cannot occur simultaneously.
 
@@ -357,7 +357,7 @@ P(A\cup B)
 \frac{1}{3}
 ```
 
-### Mutually Exclusive Is Not the Same as Independent
+### 4.1. Mutually Exclusive Is Not the Same as Independent
 
 This distinction is extremely important.
 
@@ -379,7 +379,7 @@ We will formalize independence after introducing conditional probability.
 
 ---
 
-### Mental Model
+### 4.2. Mental Model
 
 The foundations of probability can be compressed into one picture:
 
@@ -407,7 +407,7 @@ That final phrase — **"given what I currently know"** — leads directly to on
 
 ---
 
-## 1.5 Conditional Probability
+## 5. Conditional Probability
 
 Ordinary probability asks:
 
@@ -451,7 +451,7 @@ A model observes some evidence and changes its estimate of what is likely to hap
 
 ---
 
-### Understanding Conditional Probability
+### 5.1. Understanding Conditional Probability
 
 Suppose 100 customers visit a website.
 
@@ -506,7 +506,7 @@ Instead of asking how often \(A\) occurs everywhere, we ask how often \(A\) occu
 
 ---
 
-### Conditional Probability Formula
+### 5.2. Conditional Probability Formula
 
 Formally:
 
@@ -557,7 +557,7 @@ The probabilities inside this reduced space must once again add up to 1.
 
 ---
 
-### Direction Matters
+### 5.3. Direction Matters
 
 Conditional probability is directional.
 
@@ -603,7 +603,7 @@ This distinction becomes extremely important when we reach **Bayes' theorem**, w
 
 ---
 
-## 1.6 The Multiplication Rule
+## 6. The Multiplication Rule
 
 Starting with the conditional probability definition:
 
@@ -644,7 +644,7 @@ It is the mathematical doorway to **Bayes' theorem**.
 
 ---
 
-## 1.7 Independent Events
+## 7. Independent Events
 
 Two events are **independent** when knowing that one occurred provides no information about whether the other occurs.
 
@@ -689,7 +689,7 @@ Therefore the events are independent.
 
 ---
 
-### Multiplication Rule for Independent Events
+### 7.1. Multiplication Rule for Independent Events
 
 Recall the general multiplication rule:
 
@@ -729,7 +729,7 @@ So the probability of obtaining two heads is \(0.25\).
 
 ---
 
-### Dependence
+### 7.2. Dependence
 
 If knowing \(B\) changes the probability of \(A\), the events are **dependent**.
 
@@ -771,7 +771,7 @@ In that probabilistic sense, \(X\) contains no predictive information about \(Y\
 
 ---
 
-### Independence vs Mutually Exclusive Events
+### 7.3. Independence vs Mutually Exclusive Events
 
 These two concepts sound similar but mean almost opposite things.
 
@@ -826,7 +826,7 @@ A useful mental distinction is:
 
 ---
 
-### A Useful ML Interpretation
+### 7.4. A Useful ML Interpretation
 
 Suppose \(X\) represents input features and \(Y\) represents the target.
 
@@ -866,7 +866,7 @@ This idea sits underneath logistic regression, probabilistic classifiers, Bayesi
 
 ---
 
-### Mental Model
+### 7.5. Mental Model
 
 Conditional probability:
 
@@ -918,7 +918,7 @@ The mathematics that formalizes exactly this process is **Bayes' theorem**.
 
 ---
 
-## 1.8 Bayes' Theorem
+## 8. Bayes' Theorem
 
 Bayes' theorem describes how we should **update a probability when new evidence becomes available**.
 
@@ -940,7 +940,7 @@ Bayes' theorem is therefore not merely a probability formula. It provides a gene
 
 ---
 
-### Deriving Bayes' Theorem
+### 8.1. Deriving Bayes' Theorem
 
 Recall the multiplication rule:
 
@@ -985,7 +985,7 @@ The meaning of the terms is far more important.
 
 ---
 
-### The Four Parts of Bayes' Theorem
+### 8.2. The Four Parts of Bayes' Theorem
 
 In machine learning and statistics, Bayes' theorem is commonly written as:
 
@@ -1003,7 +1003,7 @@ where:
 
 Each term has a specific interpretation.
 
-#### Prior
+#### 8.2.1. Prior
 
 ```math
 P(H)
@@ -1023,7 +1023,7 @@ This is our starting belief.
 
 ---
 
-#### Likelihood
+#### 8.2.2. Likelihood
 
 ```math
 P(D \mid H)
@@ -1055,7 +1055,7 @@ It tells us how compatible the observed evidence is with a particular hypothesis
 
 ---
 
-#### Evidence
+#### 8.2.3. Evidence
 
 ```math
 P(D)
@@ -1069,7 +1069,7 @@ Its important role is to normalize the result so that the posterior remains a va
 
 ---
 
-#### Posterior
+#### 8.2.4. Posterior
 
 ```math
 P(H \mid D)
@@ -1105,7 +1105,7 @@ The proportional form is commonly encountered because the evidence acts as a nor
 
 ---
 
-### Example: A Medical Test
+### 8.3. Example: A Medical Test
 
 Suppose a disease occurs in 1% of a population:
 
@@ -1252,7 +1252,7 @@ This is an important lesson:
 
 ---
 
-### A Frequency View
+### 8.4. A Frequency View
 
 The same example becomes intuitive if we imagine 10,000 people.
 
@@ -1312,7 +1312,7 @@ This frequency interpretation is often the easiest way to build intuition for Ba
 
 ---
 
-### Bayes as Belief Updating
+### 8.5. Bayes as Belief Updating
 
 The deeper idea is not the medical example.
 
@@ -1360,7 +1360,7 @@ This is one reason Bayesian reasoning fits naturally with machine learning: **le
 
 ---
 
-### Bayes' Theorem and Classification
+### 8.6. Bayes' Theorem and Classification
 
 Suppose a classifier wants to determine the class \(Y\) of an observation with features \(X\).
 
@@ -1412,7 +1412,7 @@ This idea forms the foundation of classifiers such as **Naive Bayes**.
 
 ---
 
-### A Useful Distinction
+### 8.7. A Useful Distinction
 
 Bayesian terminology can initially become confusing because several probabilities look almost identical.
 
@@ -1458,7 +1458,7 @@ Bayes' theorem exists precisely because these two quantities are **not generally
 
 ---
 
-### Mental Model
+### 8.8. Mental Model
 
 The mathematical form:
 
@@ -1504,7 +1504,7 @@ And the ML interpretation:
 
 ---
 
-## 1.9 From Events to Random Variables
+## 9. From Events to Random Variables
 
 So far, probability has dealt mainly with **events**:
 
@@ -1542,7 +1542,7 @@ Probability distributions, in turn, are among the most important mathematical ob
 
 ---
 
-## 1.10 Random Variables
+## 10. Random Variables
 
 A **random variable** is a numerical variable whose value depends on the outcome of a random experiment.
 
@@ -1596,7 +1596,7 @@ This allows us to apply mathematical and statistical operations to uncertain out
 
 ---
 
-### Random Variable vs Observed Value
+### 10.1. Random Variable vs Observed Value
 
 It is useful to distinguish between the random variable and a particular value it takes.
 
@@ -1640,11 +1640,11 @@ The notation is related, although in ML \(X\) often represents many variables co
 
 ---
 
-## 1.11 Discrete and Continuous Random Variables
+## 11. Discrete and Continuous Random Variables
 
 Random variables are broadly divided into two types.
 
-### Discrete Random Variables
+### 11.1. Discrete Random Variables
 
 A **discrete random variable** takes values from a finite or countably infinite set.
 
@@ -1666,7 +1666,7 @@ The possible values can be individually enumerated.
 
 ---
 
-### Continuous Random Variables
+### 11.2. Continuous Random Variables
 
 A **continuous random variable** can take any value within some interval.
 
@@ -1710,7 +1710,7 @@ This difference between discrete and continuous variables changes how probabilit
 
 ---
 
-## 1.12 Probability Mass Function — PMF
+## 12. Probability Mass Function — PMF
 
 For a **discrete random variable**, probabilities are described using a **Probability Mass Function (PMF)**.
 
@@ -1774,7 +1774,7 @@ The word **mass** is useful here: probability can be thought of as being placed 
 
 ---
 
-## 1.13 Probability Density Function — PDF
+## 13. Probability Density Function — PDF
 
 For a **continuous random variable**, the situation is different.
 
@@ -1814,7 +1814,7 @@ This is one of the places where the calculus we studied earlier enters probabili
 
 ---
 
-### Density Is Not Probability
+### 13.1. Density Is Not Probability
 
 This distinction is important.
 
@@ -1872,7 +1872,7 @@ whereas:
 
 ---
 
-## 1.14 Cumulative Distribution Function — CDF
+## 14. Cumulative Distribution Function — CDF
 
 There is another way to describe a random variable that works for **both discrete and continuous variables**.
 
@@ -1892,7 +1892,7 @@ It accumulates probability from the left up to \(x\).
 
 ---
 
-### CDF for a Discrete Variable
+### 14.1. CDF for a Discrete Variable
 
 Return to the two-coin example.
 
@@ -1922,7 +1922,7 @@ So the CDF accumulates the probability mass as \(x\) increases.
 
 ---
 
-### CDF for a Continuous Variable
+### 14.2. CDF for a Continuous Variable
 
 For a continuous random variable:
 
@@ -1966,7 +1966,7 @@ This is a direct application of the Fundamental Theorem of Calculus.
 
 ---
 
-### Using the CDF to Calculate Probabilities
+### 14.3. Using the CDF to Calculate Probabilities
 
 Because:
 
@@ -1994,7 +1994,7 @@ leaves only the probability between \(a\) and \(b\).
 
 ---
 
-## 1.15 PMF vs PDF vs CDF
+## 15. PMF vs PDF vs CDF
 
 These three terms are easy to mix up, so keep their jobs separate.
 
@@ -2018,7 +2018,7 @@ A compact memory hook:
 
 ---
 
-### ML Connection
+### 15.1. ML Connection
 
 Probability distributions allow us to move beyond individual observations and describe the **behaviour of an entire variable**.
 
@@ -2058,7 +2058,7 @@ Probability distributions give us a mathematical model of the **process that cou
 
 ---
 
-### Mental Model
+### 15.2. Mental Model
 
 A random variable converts uncertain outcomes into numbers:
 
@@ -2098,7 +2098,7 @@ That leads to **expected value, variance, and standard deviation**.
 
 ---
 
-## 1.16 Expected Value
+## 16. Expected Value
 
 The **expected value** of a random variable represents its probability-weighted long-run average.
 
@@ -2120,7 +2120,7 @@ Instead, it describes the average value we would expect if the random experiment
 
 ---
 
-### Expected Value of a Discrete Random Variable
+### 16.1. Expected Value of a Discrete Random Variable
 
 For a discrete random variable:
 
@@ -2182,7 +2182,7 @@ The expected value is not necessarily a possible outcome. It is the **long-run a
 
 ---
 
-### Expected Value of a Continuous Random Variable
+### 16.2. Expected Value of a Continuous Random Variable
 
 For a continuous random variable, summation becomes integration:
 
@@ -2206,7 +2206,7 @@ The principle remains identical:
 
 ---
 
-### Expected Value as the Mean
+### 16.3. Expected Value as the Mean
 
 The expected value of a probability distribution is also called its **population mean**:
 
@@ -2246,7 +2246,7 @@ The sample mean is used to **estimate** the unknown population mean.
 
 ---
 
-### Linearity of Expectation
+### 16.4. Linearity of Expectation
 
 Expected values have a very useful property.
 
@@ -2272,7 +2272,7 @@ This makes expectation particularly convenient mathematically and is one reason 
 
 ---
 
-## 1.17 Variance
+## 17. Variance
 
 Expected value tells us where a distribution is **centered**.
 
@@ -2343,7 +2343,7 @@ Therefore:
 
 ---
 
-### Why Square the Deviations?
+### 17.1. Why Square the Deviations?
 
 A natural first thought might be to calculate:
 
@@ -2377,7 +2377,7 @@ This squared-error idea should already look familiar.
 
 ---
 
-### Alternative Variance Formula
+### 17.2. Alternative Variance Formula
 
 Expanding the variance expression gives a useful identity:
 
@@ -2399,7 +2399,7 @@ This form is frequently useful in probability derivations.
 
 ---
 
-## 1.18 Standard Deviation
+## 18. Standard Deviation
 
 Variance has one inconvenience.
 
@@ -2445,7 +2445,7 @@ A smaller standard deviation means observations tend to cluster more closely aro
 
 ---
 
-### Mean and Standard Deviation Together
+### 18.1. Mean and Standard Deviation Together
 
 Two quantities provide a useful first description of many distributions:
 
@@ -2473,7 +2473,7 @@ and:
 
 ---
 
-## 1.19 Covariance
+## 19. Covariance
 
 Variance describes how **one variable varies around its own mean**.
 
@@ -2510,7 +2510,7 @@ Covariance asks:
 
 ---
 
-### Positive Covariance
+### 19.1. Positive Covariance
 
 If larger values of \(X\) tend to occur with larger values of \(Y\):
 
@@ -2532,7 +2532,7 @@ Both variables tend to move together.
 
 ---
 
-### Negative Covariance
+### 19.2. Negative Covariance
 
 If larger values of \(X\) tend to occur with smaller values of \(Y\):
 
@@ -2554,7 +2554,7 @@ The variables tend to move in opposite directions.
 
 ---
 
-### Zero Covariance
+### 19.3. Zero Covariance
 
 If:
 
@@ -2610,7 +2610,7 @@ This distinction becomes important when working with nonlinear relationships in 
 
 ---
 
-### Variance Is Covariance with Itself
+### 19.4. Variance Is Covariance with Itself
 
 There is an elegant connection:
 
@@ -2647,7 +2647,7 @@ Covariance asks:
 
 ---
 
-## 1.20 Covariance Matrix
+## 20. Covariance Matrix
 
 Machine learning datasets rarely contain only two variables.
 
@@ -2710,7 +2710,7 @@ This reconnects probability directly with linear algebra.
 
 ---
 
-## 1.21 Covariance vs Correlation
+## 21. Covariance vs Correlation
 
 Covariance tells us the **direction** of a linear relationship, but its magnitude depends on the units and scales of the variables.
 
@@ -2762,7 +2762,7 @@ A correlation close to zero does not prove that two variables are unrelated.
 
 ---
 
-### ML Connection
+### 21.1. ML Connection
 
 These quantities appear everywhere in machine learning.
 
@@ -2828,7 +2828,7 @@ These concepts provide the mathematical vocabulary for describing how data is di
 
 ---
 
-### Mental Model
+### 21.2. Mental Model
 
 We can now describe much more than whether an event occurs.
 
@@ -2873,7 +2873,7 @@ We now have the machinery needed to study specific **probability distributions**
 
 ---
 
-## 1.22 Probability Distributions
+## 22. Probability Distributions
 
 A **probability distribution** describes how probability is distributed across the possible values of a random variable.
 
@@ -2892,7 +2892,7 @@ Choosing a probability distribution means making a mathematical assumption about
 
 ---
 
-## 1.23 Bernoulli Distribution
+## 23. Bernoulli Distribution
 
 The **Bernoulli distribution** models a single experiment having exactly two possible outcomes.
 
@@ -2983,7 +2983,7 @@ p^0(1-p)^1
 
 ---
 
-### Mean and Variance
+### 23.1. Mean and Variance
 
 For a Bernoulli random variable:
 
@@ -3013,7 +3013,7 @@ then over many Bernoulli trials, approximately 70% of the observations are expec
 
 ---
 
-### Bernoulli Distribution and Binary Classification
+### 23.2. Bernoulli Distribution and Binary Classification
 
 Suppose the target in a binary classification problem is:
 
@@ -3065,7 +3065,7 @@ It emerges naturally from the probability model assumed for a binary target.
 
 ---
 
-## 1.24 Binomial Distribution
+## 24. Binomial Distribution
 
 A Bernoulli distribution describes **one** binary trial.
 
@@ -3113,7 +3113,7 @@ counts the number of different ways in which \(k\) successes can occur among \(n
 
 ---
 
-### Example
+### 24.1. Example
 
 Suppose a fair coin is tossed 10 times.
 
@@ -3163,7 +3163,7 @@ So there is about a 20.5% probability of obtaining exactly six heads in ten fair
 
 ---
 
-### Mean and Variance
+### 24.2. Mean and Variance
 
 For:
 
@@ -3203,7 +3203,7 @@ We expect approximately 70 successes.
 
 ---
 
-### Bernoulli vs Binomial
+### 24.3. Bernoulli vs Binomial
 
 The distinction is simple:
 
@@ -3233,7 +3233,7 @@ of the Binomial distribution.
 
 ---
 
-## 1.25 Gaussian or Normal Distribution
+## 25. Gaussian or Normal Distribution
 
 The **Gaussian distribution**, also called the **Normal distribution**, is one of the most important probability distributions in statistics and machine learning.
 
@@ -3313,7 +3313,7 @@ This produces the characteristic bell shape.
 
 ---
 
-### Role of the Mean
+### 25.1. Role of the Mean
 
 The mean determines where the Gaussian is centered.
 
@@ -3339,7 +3339,7 @@ because the distribution is symmetric around its centre.
 
 ---
 
-### Role of the Variance
+### 25.2. Role of the Variance
 
 The variance determines how widely the Gaussian is spread.
 
@@ -3379,7 +3379,7 @@ Thus:
 
 ---
 
-### The 68–95–99.7 Rule
+### 25.3. The 68–95–99.7 Rule
 
 For a Gaussian distribution, approximately:
 
@@ -3441,11 +3441,11 @@ It gives standard deviation an immediate probabilistic interpretation when the d
 
 ---
 
-## 1.26 Why the Gaussian Distribution Matters So Much
+## 26. Why the Gaussian Distribution Matters So Much
 
 The Gaussian distribution appears throughout statistics and ML for several reasons.
 
-### Many Natural Measurements Are Approximately Gaussian
+### 26.1. Many Natural Measurements Are Approximately Gaussian
 
 Quantities influenced by many small independent factors often become approximately normally distributed.
 
@@ -3462,7 +3462,7 @@ But the Gaussian is common enough to be exceptionally useful.
 
 ---
 
-### The Central Limit Theorem
+### 26.2. The Central Limit Theorem
 
 One major reason for the importance of the Gaussian distribution is the **Central Limit Theorem (CLT)**.
 
@@ -3500,7 +3500,7 @@ This is one reason the Normal distribution sits at the heart of statistical infe
 
 ---
 
-### Gaussian Noise and Regression
+### 26.3. Gaussian Noise and Regression
 
 Suppose a linear regression model is:
 
@@ -3556,7 +3556,7 @@ It has a probabilistic foundation.
 
 ---
 
-## 1.27 Standard Normal Distribution and Z-Scores
+## 27. Standard Normal Distribution and Z-Scores
 
 A special Gaussian distribution has:
 
@@ -3636,7 +3636,7 @@ It does not magically change its **shape**.
 
 ---
 
-## 1.28 Poisson Distribution
+## 28. Poisson Distribution
 
 The **Poisson distribution** models the number of events occurring within a fixed interval of time, space, area, or another exposure measure when events occur independently at an approximately constant average rate.
 
@@ -3713,7 +3713,7 @@ Poisson-based models appear in count-data modeling, event prediction, reliabilit
 
 ---
 
-## 1.29 Choosing the Distribution by the Question
+## 29. Choosing the Distribution by the Question
 
 A useful way to distinguish these distributions is to ask what kind of random quantity is being modeled.
 
@@ -3739,7 +3739,7 @@ The corresponding mental map is:
 
 ---
 
-### Distribution Assumptions Matter
+### 29.1. Distribution Assumptions Matter
 
 A probability distribution is not merely a curve fitted to data.
 
@@ -3795,7 +3795,7 @@ These connections are worth remembering because they turn apparently unrelated M
 
 ---
 
-### Mental Model
+### 29.2. Mental Model
 
 Probability distributions provide mathematical models for uncertainty:
 
@@ -3834,7 +3834,7 @@ This is the foundation of **maximum likelihood estimation**.
 
 ---
 
-## 1.30 Joint, Marginal, and Conditional Probability Distributions
+## 30. Joint, Marginal, and Conditional Probability Distributions
 
 Machine learning rarely deals with one random variable in isolation.
 
@@ -3854,7 +3854,7 @@ Three related ideas become important:
 
 ---
 
-### Joint Distribution
+### 30.1. Joint Distribution
 
 A **joint probability distribution** describes the probability behaviour of two or more random variables simultaneously.
 
@@ -3895,7 +3895,7 @@ Conceptually:
 
 ---
 
-### Marginal Distribution
+### 30.2. Marginal Distribution
 
 Suppose we know the joint distribution of \(X\) and \(Y\), but only care about \(X\).
 
@@ -3934,7 +3934,7 @@ Conceptually:
 
 ---
 
-### Conditional Distribution
+### 30.3. Conditional Distribution
 
 A **conditional distribution** describes the distribution of one random variable when another variable is known.
 
@@ -3974,7 +3974,7 @@ Given features \(X\), what can we infer about target \(Y\)?
 
 ---
 
-### Joint, Marginal, and Conditional — One Mental Model
+### 30.4. Joint, Marginal, and Conditional — One Mental Model
 
 These three concepts can be remembered as:
 
@@ -3994,7 +3994,7 @@ They are different views of the same underlying probabilistic system.
 
 ---
 
-## 1.31 Probability vs Likelihood
+## 31. Probability vs Likelihood
 
 Probability and likelihood use closely related mathematics, but they ask different questions.
 
@@ -4006,7 +4006,7 @@ Suppose a probability model has parameter \(\theta\):
 P(X\mid\theta)
 ```
 
-### Probability
+### 31.1. Probability
 
 When the parameter \(\theta\) is known and the data \(X\) is unknown, we ask:
 
@@ -4034,7 +4034,7 @@ Here the model parameter is fixed, while the outcome is uncertain.
 
 ---
 
-### Likelihood
+### 31.2. Likelihood
 
 In machine learning, the situation is often reversed.
 
@@ -4081,7 +4081,7 @@ This is subtle but fundamental.
 
 ---
 
-## 1.32 Maximum Likelihood Estimation
+## 32. Maximum Likelihood Estimation
 
 Suppose we observe training data:
 
@@ -4151,7 +4151,7 @@ We want the **parameters**.
 
 ---
 
-### A Simple Coin Example
+### 32.1. A Simple Coin Example
 
 Suppose we toss an unknown coin 10 times and observe:
 
@@ -4240,7 +4240,7 @@ That is remarkably close to what we mean when we say a machine learning model **
 
 ---
 
-## 1.33 Why Log-Likelihood Is Used
+## 33. Why Log-Likelihood Is Used
 
 Likelihoods frequently involve products:
 
@@ -4298,7 +4298,7 @@ This is another place where the logarithms encountered throughout ML acquire a c
 
 ---
 
-## 1.34 From Maximum Likelihood to Loss Functions
+## 34. From Maximum Likelihood to Loss Functions
 
 Machine learning algorithms are usually described as **minimizing a loss function**, while MLE is described as **maximizing likelihood**.
 
@@ -4338,7 +4338,7 @@ And negative log-likelihood frequently appears in ML under another familiar name
 
 ---
 
-### Bernoulli → Binary Cross-Entropy
+### 34.1. Bernoulli → Binary Cross-Entropy
 
 For a Bernoulli target:
 
@@ -4386,7 +4386,7 @@ The loss function is a direct consequence of the probabilistic model.
 
 ---
 
-### Gaussian → Squared Error
+### 34.2. Gaussian → Squared Error
 
 Suppose regression errors are assumed Gaussian:
 
@@ -4427,7 +4427,7 @@ This connects probability directly to linear regression.
 
 ---
 
-## 1.35 Probability as the Mathematical Foundation of Learning
+## 35. Probability as the Mathematical Foundation of Learning
 
 We can now connect the entire chapter.
 
@@ -4529,7 +4529,7 @@ Finally, likelihood turned observed data into a mechanism for learning model par
 
 ---
 
-### The Probability → Machine Learning Bridge
+### 35.1. The Probability → Machine Learning Bridge
 
 The entire connection can be compressed into one chain:
 
@@ -4601,7 +4601,7 @@ It provides the language for describing **uncertainty**, while machine learning 
 
 ---
 
-### Final Mental Model
+### 35.2. Final Mental Model
 
 If only one idea from this chapter is retained, let it be this:
 

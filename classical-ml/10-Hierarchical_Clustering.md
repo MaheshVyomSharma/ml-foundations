@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 K-Means divides data into a fixed number of clusters.
 
@@ -16,7 +16,7 @@ Hierarchical Clustering answers these questions by building a hierarchy of clust
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Imagine organizing a large family reunion.
 
@@ -40,7 +40,7 @@ It gradually builds a tree showing how clusters are formed.
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -52,7 +52,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is Hierarchical Clustering?
+## 4. What is Hierarchical Clustering?
 
 **Hierarchical Clustering** is an **unsupervised learning algorithm** that groups similar samples by building a hierarchy of clusters.
 
@@ -62,7 +62,7 @@ Unlike K-Means, Hierarchical Clustering does not require the number of clusters 
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 Sometimes we do not know how many natural groups exist in the data.
 
@@ -70,7 +70,7 @@ Rather than forcing the data into a fixed number of clusters, Hierarchical Clust
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -82,7 +82,7 @@ Rather than forcing the data into a fixed number of clusters, Hierarchical Clust
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Suppose every student in a classroom initially stands alone.
 
@@ -96,7 +96,7 @@ This gradual merging is the idea behind **Agglomerative Hierarchical Clustering*
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Imagine building a family tree upside down.
 
@@ -110,9 +110,9 @@ A dendrogram represents exactly this process.
 
 ---
 
-# Types of Hierarchical Clustering
+## 9. Types of Hierarchical Clustering
 
-## Agglomerative (Bottom-Up)
+## 10. Agglomerative (Bottom-Up)
 
 Agglomerative clustering begins with every sample in its own cluster.
 
@@ -122,7 +122,7 @@ This is the approach most commonly implemented in Machine Learning libraries.
 
 ---
 
-## Divisive (Top-Down)
+## 11. Divisive (Top-Down)
 
 Divisive clustering begins with all samples in a single cluster.
 
@@ -132,7 +132,7 @@ Although conceptually simple, divisive clustering is used less frequently becaus
 
 ---
 
-# How Agglomerative Clustering Works
+## 12. How Agglomerative Clustering Works
 
 The algorithm follows these steps:
 
@@ -161,7 +161,7 @@ Repeat
 
 ---
 
-# Linkage Methods
+## 13. Linkage Methods
 
 When deciding which clusters should merge, the algorithm must define the distance between clusters.
 
@@ -178,7 +178,7 @@ Different linkage methods can produce different cluster structures.
 
 ---
 
-# The Dendrogram
+## 14. The Dendrogram
 
 A **dendrogram** is the primary output of Hierarchical Clustering.
 
@@ -194,7 +194,7 @@ Every branch intersected by that line becomes a separate cluster.
 
 ---
 
-# Feature Scaling
+## 15. Feature Scaling
 
 Like K-Means and KNN, Hierarchical Clustering relies on distance calculations.
 
@@ -204,7 +204,7 @@ Feature scaling is therefore usually recommended.
 
 ---
 
-# Common Hyperparameters
+## 16. Common Hyperparameters
 
 | Hyperparameter | Purpose |
 |---------------|---------|
@@ -214,7 +214,7 @@ Feature scaling is therefore usually recommended.
 
 ---
 
-# Advantages
+## 17. Advantages
 
 - Does not require specifying K before building the hierarchy.
 - Produces an informative dendrogram.
@@ -223,7 +223,7 @@ Feature scaling is therefore usually recommended.
 
 ---
 
-# Limitations
+## 18. Limitations
 
 - Computationally expensive for large datasets.
 - Sensitive to noise and outliers.
@@ -232,7 +232,7 @@ Feature scaling is therefore usually recommended.
 
 ---
 
-# Common Applications
+## 19. Common Applications
 
 Hierarchical Clustering is commonly used in:
 
@@ -244,7 +244,7 @@ Hierarchical Clustering is commonly used in:
 
 ---
 
-# Memory Hook
+## 20. Memory Hook
 
 > **K-Means creates groups.**
 >
@@ -252,7 +252,7 @@ Hierarchical Clustering is commonly used in:
 
 ---
 
-# Common Mistakes
+## 21. Common Mistakes
 
 - Assuming the dendrogram automatically determines the correct number of clusters.
 - Ignoring feature scaling.
@@ -261,9 +261,9 @@ Hierarchical Clustering is commonly used in:
 
 ---
 
-# Frequently Asked Questions
+## 22. Frequently Asked Questions
 
-### Does Hierarchical Clustering require K beforehand?
+### 22.1. Does Hierarchical Clustering require K beforehand?
 
 No.
 
@@ -273,19 +273,19 @@ The desired number of clusters can be chosen later by cutting the dendrogram.
 
 ---
 
-### What is a dendrogram?
+### 22.2. What is a dendrogram?
 
 A dendrogram is a tree diagram that shows how clusters are formed through successive merging or splitting.
 
 ---
 
-### Which type is more common in practice?
+### 22.3. Which type is more common in practice?
 
 Agglomerative Hierarchical Clustering is by far the most commonly used approach.
 
 ---
 
-# 30-Second Revision
+## 23. 30-Second Revision
 
 - Unsupervised learning algorithm.
 - Builds a hierarchy of clusters.
@@ -297,7 +297,7 @@ Agglomerative Hierarchical Clustering is by far the most commonly used approach.
 
 ---
 
-# Looking Ahead
+## 24. Looking Ahead
 
 KNN, K-Means and Hierarchical Clustering all depend on one fundamental idea:
 

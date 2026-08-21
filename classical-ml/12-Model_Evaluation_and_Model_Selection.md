@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 Building a Machine Learning model is only half the job.
 
@@ -18,7 +18,7 @@ Model evaluation helps us measure performance, compare different models, and sel
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Imagine two students preparing for an examination.
 
@@ -38,7 +38,7 @@ Machine Learning models face exactly the same challenge.
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -53,7 +53,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# Why Evaluation Matters
+## 4. Why Evaluation Matters
 
 A model should not be judged by how well it remembers the training data.
 
@@ -63,7 +63,7 @@ The primary goal of Machine Learning is **generalization**.
 
 ---
 
-# Train, Validation and Test Sets
+## 5. Train, Validation and Test Sets
 
 A dataset is commonly divided into three parts.
 
@@ -77,7 +77,7 @@ The test set should only be used after all model development is complete.
 
 ---
 
-# Classification Evaluation
+## 6. Classification Evaluation
 
 Classification models are evaluated differently from regression models.
 
@@ -85,7 +85,7 @@ The foundation of classification evaluation is the **Confusion Matrix**.
 
 ---
 
-# Confusion Matrix
+## 7. Confusion Matrix
 
 A Confusion Matrix summarizes the predictions made by a classification model.
 
@@ -98,9 +98,9 @@ Every classification metric is derived from these four values.
 
 ---
 
-# Understanding the Four Outcomes
+## 8. Understanding the Four Outcomes
 
-### True Positive (TP)
+### 8.1. True Positive (TP)
 
 Correctly predicting the positive class.
 
@@ -110,7 +110,7 @@ A patient with a disease is correctly diagnosed.
 
 ---
 
-### True Negative (TN)
+### 8.2. True Negative (TN)
 
 Correctly predicting the negative class.
 
@@ -120,7 +120,7 @@ A healthy patient is correctly identified.
 
 ---
 
-### False Positive (FP)
+### 8.3. False Positive (FP)
 
 Predicting the positive class when it is actually negative.
 
@@ -128,7 +128,7 @@ Often called a **False Alarm**.
 
 ---
 
-### False Negative (FN)
+### 8.4. False Negative (FN)
 
 Predicting the negative class when it is actually positive.
 
@@ -136,9 +136,9 @@ Often considered the most serious error in medical diagnosis.
 
 ---
 
-# Classification Metrics
+## 9. Classification Metrics
 
-## Accuracy
+## 10. Accuracy
 
 Measures the proportion of correct predictions.
 
@@ -146,7 +146,7 @@ Useful when classes are reasonably balanced.
 
 ---
 
-## Precision
+## 11. Precision
 
 Answers the question:
 
@@ -161,7 +161,7 @@ Examples:
 
 ---
 
-## Recall (Sensitivity)
+## 12. Recall (Sensitivity)
 
 Answers the question:
 
@@ -176,7 +176,7 @@ Examples:
 
 ---
 
-## Specificity
+## 13. Specificity
 
 Measures how well the model identifies Negative cases.
 
@@ -184,7 +184,7 @@ Important in medical testing and diagnostic applications.
 
 ---
 
-## F1 Score
+## 14. F1 Score
 
 Balances Precision and Recall.
 
@@ -192,7 +192,7 @@ Useful when the dataset is imbalanced.
 
 ---
 
-## ROC Curve
+## 15. ROC Curve
 
 Shows the trade-off between:
 
@@ -203,7 +203,7 @@ across different classification thresholds.
 
 ---
 
-## ROC-AUC
+## 16. ROC-AUC
 
 Measures the model's overall ability to distinguish between classes.
 
@@ -211,7 +211,7 @@ Higher values generally indicate better classification performance.
 
 ---
 
-# Regression Evaluation
+## 17. Regression Evaluation
 
 Regression models predict numerical values.
 
@@ -228,11 +228,11 @@ These metrics were first introduced in the Linear Regression chapter.
 
 ---
 
-# Overfitting and Underfitting
+## 18. Overfitting and Underfitting
 
 A model can fail in two ways.
 
-### Underfitting
+### 18.1. Underfitting
 
 The model is too simple.
 
@@ -240,7 +240,7 @@ It performs poorly on both training and test data.
 
 ---
 
-### Overfitting
+### 18.2. Overfitting
 
 The model memorizes the training data.
 
@@ -250,7 +250,7 @@ Regularization, pruning and cross-validation help reduce overfitting.
 
 ---
 
-# Cross-Validation
+## 19. Cross-Validation
 
 Instead of evaluating a model using a single train-test split, **cross-validation** repeatedly trains and evaluates the model on different portions of the dataset.
 
@@ -260,7 +260,7 @@ The most commonly used approach is **K-Fold Cross-Validation**.
 
 ---
 
-# Choosing the Right Metric
+## 20. Choosing the Right Metric
 
 | Problem | Recommended Metrics |
 |----------|---------------------|
@@ -275,7 +275,7 @@ The choice depends on the problem and the cost of different types of errors.
 
 ---
 
-# Advantages of Proper Evaluation
+## 21. Advantages of Proper Evaluation
 
 - Detects overfitting.
 - Enables fair model comparison.
@@ -285,7 +285,7 @@ The choice depends on the problem and the cost of different types of errors.
 
 ---
 
-# Memory Hook
+## 22. Memory Hook
 
 > **Build. Evaluate. Improve. Repeat.**
 
@@ -297,7 +297,7 @@ Everything in classification begins with the Confusion Matrix.
 
 ---
 
-# Common Mistakes
+## 23. Common Mistakes
 
 - Evaluating only on training data.
 - Relying solely on accuracy.
@@ -307,9 +307,9 @@ Everything in classification begins with the Confusion Matrix.
 
 ---
 
-# Frequently Asked Questions
+## 24. Frequently Asked Questions
 
-### Is accuracy always the best metric?
+### 24.1. Is accuracy always the best metric?
 
 No.
 
@@ -317,19 +317,19 @@ Accuracy can be misleading for imbalanced datasets.
 
 ---
 
-### Why shouldn't the test set be used for tuning?
+### 24.2. Why shouldn't the test set be used for tuning?
 
 Because doing so leaks information about unseen data and produces overly optimistic performance estimates.
 
 ---
 
-### Why is cross-validation useful?
+### 24.3. Why is cross-validation useful?
 
 It reduces dependence on a single train-test split and provides a more robust estimate of model performance.
 
 ---
 
-# 30-Second Revision
+## 25. 30-Second Revision
 
 - Evaluate models on unseen data.
 - Confusion Matrix is the foundation of classification evaluation.
@@ -341,7 +341,7 @@ It reduces dependence on a single train-test split and provides a more robust es
 
 ---
 
-# Looking Ahead
+## 26. Looking Ahead
 
 The next stage is to understand **why models behave the way they do**, not just how they work.
 

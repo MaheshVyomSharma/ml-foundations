@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 Almost every Machine Learning model learns by improving itself little by little.
 
@@ -18,7 +18,7 @@ It is one of the most widely used optimization algorithms in Machine Learning an
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Imagine standing halfway down a mountain on a foggy day.
 
@@ -42,7 +42,7 @@ Instead of walking down a mountain, it gradually adjusts a model's parameters un
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -54,7 +54,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is Gradient Descent?
+## 4. What is Gradient Descent?
 
 Gradient Descent is an **optimization algorithm** used to minimize the prediction error of a Machine Learning model by repeatedly updating its parameters in the direction that reduces the error.
 
@@ -64,7 +64,7 @@ Simply put,
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 Suppose a Linear Regression model predicts house prices poorly.
 
@@ -81,7 +81,7 @@ Gradient Descent repeatedly uses both to improve the model.
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -93,7 +93,7 @@ Gradient Descent repeatedly uses both to improve the model.
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Imagine rolling a ball down a hill.
 
@@ -109,7 +109,7 @@ This process repeats until further improvement becomes negligible.
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Imagine wearing a blindfold while walking down a hill.
 
@@ -131,7 +131,7 @@ That is Gradient Descent.
 
 ---
 
-# How Gradient Descent Works
+## 9. How Gradient Descent Works
 
 The learning process follows these steps:
 
@@ -163,7 +163,7 @@ Repeat
 
 ---
 
-# Why Move in the Negative Direction?
+## 10. Why Move in the Negative Direction?
 
 The gradient always points toward the direction of **maximum increase** in the cost function.
 
@@ -173,16 +173,16 @@ Therefore, the parameters are updated in the **negative direction of the gradien
 
 ---
 
-# Learning Rate
+## 11. Learning Rate
 
 The **learning rate** determines the size of each update.
 
-### If the learning rate is too small
+### 11.1. If the learning rate is too small
 
 - Learning becomes very slow.
 - Many iterations are required.
 
-### If the learning rate is too large
+### 11.2. If the learning rate is too large
 
 - The algorithm may overshoot the optimum.
 - Learning may become unstable.
@@ -192,9 +192,9 @@ Choosing an appropriate learning rate is therefore important for efficient learn
 
 ---
 
-# Types of Gradient Descent
+## 12. Types of Gradient Descent
 
-## Batch Gradient Descent
+## 13. Batch Gradient Descent
 
 Uses the entire training dataset to calculate each update.
 
@@ -209,7 +209,7 @@ Uses the entire training dataset to calculate each update.
 
 ---
 
-## Stochastic Gradient Descent (SGD)
+## 14. Stochastic Gradient Descent (SGD)
 
 Updates the parameters after processing **one training sample**.
 
@@ -224,7 +224,7 @@ Updates the parameters after processing **one training sample**.
 
 ---
 
-## Mini-batch Gradient Descent
+## 15. Mini-batch Gradient Descent
 
 Updates parameters using a small group of samples.
 
@@ -234,7 +234,7 @@ It is the most commonly used approach in modern Machine Learning.
 
 ---
 
-# Advantages
+## 16. Advantages
 
 - Simple and effective.
 - Scales to large datasets.
@@ -243,7 +243,7 @@ It is the most commonly used approach in modern Machine Learning.
 
 ---
 
-# Limitations
+## 17. Limitations
 
 - Choice of learning rate is important.
 - Can converge slowly.
@@ -252,7 +252,7 @@ It is the most commonly used approach in modern Machine Learning.
 
 ---
 
-# Common Applications
+## 18. Common Applications
 
 Gradient Descent is used in:
 
@@ -264,7 +264,7 @@ Gradient Descent is used in:
 
 ---
 
-# Memory Hook
+## 19. Memory Hook
 
 > **Gradient tells you where the hill climbs fastest.**
 >
@@ -272,7 +272,7 @@ Gradient Descent is used in:
 
 ---
 
-# Common Mistakes
+## 20. Common Mistakes
 
 - Thinking the gradient always points downhill.
 - Choosing an excessively large learning rate.
@@ -281,9 +281,9 @@ Gradient Descent is used in:
 
 ---
 
-# Frequently Asked Questions
+## 21. Frequently Asked Questions
 
-### Is Gradient Descent a Machine Learning model?
+### 21.1. Is Gradient Descent a Machine Learning model?
 
 No.
 
@@ -291,7 +291,7 @@ It is an optimization algorithm used to train many Machine Learning models.
 
 ---
 
-### Does every Machine Learning algorithm use Gradient Descent?
+### 21.2. Does every Machine Learning algorithm use Gradient Descent?
 
 No.
 
@@ -299,13 +299,13 @@ Some algorithms, such as Decision Trees and Random Forests, use entirely differe
 
 ---
 
-### Why does learning take many iterations?
+### 21.3. Why does learning take many iterations?
 
 Each update is intentionally small to allow the model to improve gradually without making unstable jumps.
 
 ---
 
-# 30-Second Revision
+## 22. 30-Second Revision
 
 - Optimization algorithm.
 - Minimizes prediction error.
@@ -317,7 +317,7 @@ Each update is intentionally small to allow the model to improve gradually witho
 
 ---
 
-# Looking Ahead
+## 23. Looking Ahead
 
 Linear Regression predicts continuous values.
 

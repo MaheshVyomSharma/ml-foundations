@@ -1,6 +1,6 @@
 # 21. Transformers
 
-## 1.1 Why Transformers?
+## 1. Why Transformers?
 
 RNNs, LSTMs, and GRUs process sequences recurrently.
 
@@ -44,7 +44,7 @@ Positional Information
 
 ---
 
-## 1.2 The Core Transformer Idea
+## 2. The Core Transformer Idea
 
 Suppose the input sequence is:
 
@@ -82,7 +82,7 @@ Each position can learn which other positions are relevant.
 
 ---
 
-## 1.3 Transformer Input
+## 3. Transformer Input
 
 For text, the input normally begins with **tokens**.
 
@@ -116,7 +116,7 @@ These embeddings form the initial numerical representation of the sequence.
 
 ---
 
-## 1.4 Embeddings Alone Do Not Represent Order
+## 4. Embeddings Alone Do Not Represent Order
 
 Consider:
 
@@ -148,7 +148,7 @@ Transformer Input
 
 ---
 
-## 1.5 Positional Encoding
+## 5. Positional Encoding
 
 A positional representation is added to each token embedding.
 
@@ -178,7 +178,7 @@ even though the underlying token embedding is the same.
 
 ---
 
-## 1.6 Sinusoidal Positional Encoding
+## 6. Sinusoidal Positional Encoding
 
 The original Transformer introduced deterministic sinusoidal positional encodings.
 
@@ -221,7 +221,7 @@ Does Not Encode Order
 
 ---
 
-## 1.7 Learned Positional Embeddings
+## 7. Learned Positional Embeddings
 
 Positional information does not have to be sinusoidal.
 
@@ -259,7 +259,7 @@ Modern architectures use several different positional strategies.
 
 ---
 
-## 1.8 Relative Position Information
+## 8. Relative Position Information
 
 Instead of representing only:
 
@@ -281,7 +281,7 @@ Several modern transformers use such mechanisms.
 
 ---
 
-## 1.9 Self-Attention Inside a Transformer
+## 9. Self-Attention Inside a Transformer
 
 Each input representation produces:
 
@@ -321,7 +321,7 @@ This produces contextualized representations for every sequence position.
 
 ---
 
-## 1.10 Multi-Head Attention
+## 10. Multi-Head Attention
 
 Transformers use several attention heads in parallel.
 
@@ -369,7 +369,7 @@ Richer Representation
 
 ---
 
-## 1.11 Attention Is Only Part of a Transformer Block
+## 11. Attention Is Only Part of a Transformer Block
 
 A transformer block is not simply:
 
@@ -403,7 +403,7 @@ The exact ordering of normalization differs across transformer variants.
 
 ---
 
-## 1.12 Position-Wise Feed-Forward Network
+## 12. Position-Wise Feed-Forward Network
 
 After attention, each sequence position is passed through the same feed-forward network.
 
@@ -442,7 +442,7 @@ This distinction is central.
 
 ---
 
-## 1.13 Attention Mixes Tokens, FFN Mixes Features
+## 13. Attention Mixes Tokens, FFN Mixes Features
 
 A useful mental model is:
 
@@ -463,7 +463,7 @@ Together they form the core computation of a transformer block.
 
 ---
 
-## 1.14 Residual Connections
+## 14. Residual Connections
 
 Transformers use residual or skip connections.
 
@@ -500,7 +500,7 @@ They make deep transformer stacks easier to train.
 
 ---
 
-## 1.15 Layer Normalization
+## 15. Layer Normalization
 
 Transformers commonly use **Layer Normalization**.
 
@@ -522,7 +522,7 @@ LayerNorm is especially suitable because transformer training does not need to r
 
 ---
 
-## 1.16 Residual + LayerNorm
+## 16. Residual + LayerNorm
 
 A transformer sublayer commonly appears conceptually as:
 
@@ -566,7 +566,7 @@ The exact ordering differs, but both combine normalization with residual pathway
 
 ---
 
-## 1.17 Transformer Encoder
+## 17. Transformer Encoder
 
 The original Transformer architecture contains an **encoder** and a **decoder**.
 
@@ -592,7 +592,7 @@ Several encoder layers can be stacked.
 
 ---
 
-## 1.18 Stacked Encoder Layers
+## 18. Stacked Encoder Layers
 
 A transformer encoder typically uses multiple layers:
 
@@ -620,7 +620,7 @@ This continues the hierarchical representation-learning idea seen throughout dee
 
 ---
 
-## 1.19 Encoder Self-Attention
+## 19. Encoder Self-Attention
 
 In the encoder, each token can generally attend to all input positions.
 
@@ -645,7 +645,7 @@ in the sense that a token can use both earlier and later input context.
 
 ---
 
-## 1.20 Transformer Decoder
+## 20. Transformer Decoder
 
 The decoder generates an output sequence.
 
@@ -675,7 +675,7 @@ Cross-Attention
 
 ---
 
-## 1.21 Masked Self-Attention in the Decoder
+## 21. Masked Self-Attention in the Decoder
 
 When generating a sequence autoregressively, the decoder must not see future output tokens.
 
@@ -717,7 +717,7 @@ This prevents information leakage during training.
 
 ---
 
-## 1.22 Cross-Attention in the Decoder
+## 22. Cross-Attention in the Decoder
 
 The decoder also needs information from the encoded input.
 
@@ -743,7 +743,7 @@ This connects the input and output sequences.
 
 ---
 
-## 1.23 Encoder-Decoder Transformer
+## 23. Encoder-Decoder Transformer
 
 The complete original architecture can be summarized as:
 
@@ -774,7 +774,7 @@ Input Sequence
 
 ---
 
-## 1.24 Encoder-Only Transformers
+## 24. Encoder-Only Transformers
 
 Not every transformer uses both encoder and decoder.
 
@@ -801,7 +801,7 @@ The model can use bidirectional context across the input.
 
 ---
 
-## 1.25 Decoder-Only Transformers
+## 25. Decoder-Only Transformers
 
 A **decoder-only** transformer primarily uses masked self-attention.
 
@@ -833,7 +833,7 @@ Many modern generative language models use this broad architecture.
 
 ---
 
-## 1.26 Encoder-Decoder Transformers
+## 26. Encoder-Decoder Transformers
 
 Encoder-decoder transformers retain both major components.
 
@@ -861,7 +861,7 @@ The decoder generates the output while attending to those representations.
 
 ---
 
-## 1.27 The Three Broad Transformer Families
+## 27. The Three Broad Transformer Families
 
 A useful summary is:
 
@@ -875,7 +875,7 @@ This is a conceptual classification rather than an absolute limitation.
 
 ---
 
-## 1.28 Autoregressive Generation
+## 28. Autoregressive Generation
 
 A decoder-only language model generates text one token at a time.
 
@@ -917,7 +917,7 @@ This is **autoregressive generation**.
 
 ---
 
-## 1.29 Next-Token Prediction
+## 29. Next-Token Prediction
 
 During language-model training, the model may learn to predict each next token.
 
@@ -958,7 +958,7 @@ means all previous tokens.
 
 ---
 
-## 1.30 Softmax Vocabulary Output
+## 30. Softmax Vocabulary Output
 
 Suppose the vocabulary contains:
 
@@ -987,7 +987,7 @@ The model therefore predicts a probability distribution over possible next token
 
 ---
 
-## 1.31 Language Model Loss
+## 31. Language Model Loss
 
 Next-token prediction commonly uses cross-entropy loss.
 
@@ -1017,7 +1017,7 @@ The learning mechanism is exactly the same general neural-network machinery cove
 
 ---
 
-## 1.32 Transformers Are Still Neural Networks
+## 32. Transformers Are Still Neural Networks
 
 Despite their complexity, transformers still contain familiar ingredients.
 
@@ -1041,7 +1041,7 @@ It is an architecture built from neural-network components.
 
 ---
 
-## 1.33 Transformer Parameters
+## 33. Transformer Parameters
 
 Trainable parameters include:
 
@@ -1079,7 +1079,7 @@ The same training loop survives.
 
 ---
 
-## 1.34 Why Transformers Parallelize Better Than RNNs
+## 34. Why Transformers Parallelize Better Than RNNs
 
 An RNN requires:
 
@@ -1120,7 +1120,7 @@ This allows much more efficient use of modern accelerators.
 
 ---
 
-## 1.35 Why Parallelism Matters
+## 35. Why Parallelism Matters
 
 Deep learning training relies heavily on GPUs and other accelerators.
 
@@ -1138,7 +1138,7 @@ This made it practical to train sequence models at scales that were much harder 
 
 ---
 
-## 1.36 Long-Range Dependency Advantage
+## 36. Long-Range Dependency Advantage
 
 Suppose two related tokens are 500 positions apart.
 
@@ -1157,7 +1157,7 @@ This short path is one major reason transformers handle long-range relationships
 
 ---
 
-## 1.37 Transformer Limitation: Attention Cost
+## 37. Transformer Limitation: Attention Cost
 
 The attention score matrix for sequence length:
 
@@ -1199,7 +1199,7 @@ This is a major limitation for very long contexts.
 
 ---
 
-## 1.38 Context Window
+## 38. Context Window
 
 A transformer's **context window** is the amount of sequence information it can process within one model invocation.
 
@@ -1217,7 +1217,7 @@ Longer context windows provide access to more information but increase memory an
 
 ---
 
-## 1.39 Attention Does Not Mean Unlimited Memory
+## 39. Attention Does Not Mean Unlimited Memory
 
 Transformers are sometimes loosely described as having access to an entire sequence.
 
@@ -1236,7 +1236,7 @@ Long-context modelling remains an active engineering challenge.
 
 ---
 
-## 1.40 Model Dimension
+## 40. Model Dimension
 
 A major transformer hyperparameter is:
 
@@ -1258,7 +1258,7 @@ Larger dimensions increase representational capacity but also increase computati
 
 ---
 
-## 1.41 Number of Attention Heads
+## 41. Number of Attention Heads
 
 The number of attention heads:
 
@@ -1286,7 +1286,7 @@ The number of heads must work with:
 
 ---
 
-## 1.42 Feed-Forward Dimension
+## 42. Feed-Forward Dimension
 
 Transformer blocks commonly expand the representation inside the feed-forward network.
 
@@ -1317,7 +1317,7 @@ This gives each position additional nonlinear transformation capacity.
 
 ---
 
-## 1.43 Number of Transformer Layers
+## 43. Number of Transformer Layers
 
 Transformers are built by stacking blocks.
 
@@ -1352,7 +1352,7 @@ Like other deep networks, additional depth can improve representational power bu
 
 ---
 
-## 1.44 Transformer Scaling
+## 44. Transformer Scaling
 
 Transformer capacity broadly increases through dimensions such as:
 
@@ -1381,7 +1381,7 @@ However, simply making a model larger does not remove the need for:
 
 ---
 
-## 1.45 Residual Connections Revisited
+## 45. Residual Connections Revisited
 
 A transformer may contain dozens or hundreds of layers.
 
@@ -1401,7 +1401,7 @@ The same fundamental training problem reappears, and the same architectural idea
 
 ---
 
-## 1.46 LayerNorm Revisited
+## 46. LayerNorm Revisited
 
 LayerNorm appears throughout transformers because it helps keep representations numerically stable.
 
@@ -1422,7 +1422,7 @@ This is why LayerNorm became strongly associated with transformer architectures.
 
 ---
 
-## 1.47 Dropout in Transformers
+## 47. Dropout in Transformers
 
 Dropout may be applied to:
 
@@ -1445,7 +1445,7 @@ The same regularization principles from ordinary neural networks remain applicab
 
 ---
 
-## 1.48 Training a Transformer
+## 48. Training a Transformer
 
 The training loop remains:
 
@@ -1473,7 +1473,7 @@ The learning principle did not.
 
 ---
 
-## 1.49 Transformer Optimization
+## 49. Transformer Optimization
 
 Transformers are often trained using optimizers such as:
 
@@ -1505,7 +1505,7 @@ remain directly relevant.
 
 ---
 
-## 1.50 Learning Rate Warm-Up
+## 50. Learning Rate Warm-Up
 
 Large transformer models may begin training with a very small learning rate and gradually increase it.
 
@@ -1528,7 +1528,7 @@ It can reduce instability during the earliest optimization steps.
 
 ---
 
-## 1.51 Pretraining
+## 51. Pretraining
 
 A transformer can be trained on a very large general dataset before being adapted to a specific task.
 
@@ -1550,7 +1550,7 @@ This follows the same broad transfer-learning principle seen with CNNs.
 
 ---
 
-## 1.52 Fine-Tuning
+## 52. Fine-Tuning
 
 After pretraining, the model can be trained further on a smaller task-specific dataset.
 
@@ -1570,7 +1570,7 @@ Fine-tuning modifies pretrained parameters rather than learning the entire model
 
 ---
 
-## 1.53 Feature Extraction With Transformers
+## 53. Feature Extraction With Transformers
 
 A pretrained transformer can also be used as a representation generator.
 
@@ -1592,7 +1592,7 @@ This is analogous to using a pretrained CNN as a feature extractor.
 
 ---
 
-## 1.54 Foundation Models
+## 54. Foundation Models
 
 When very large models are pretrained on broad datasets and later adapted to many downstream tasks, they are often called **foundation models**.
 
@@ -1608,7 +1608,7 @@ Large language models are prominent examples of this broader paradigm.
 
 ---
 
-## 1.55 What Is a Language Model?
+## 55. What Is a Language Model?
 
 A **language model** estimates probabilities over sequences of tokens.
 
@@ -1634,7 +1634,7 @@ A transformer can implement these conditional probability estimates at large sca
 
 ---
 
-## 1.56 From Transformer to LLM
+## 56. From Transformer to LLM
 
 A **Large Language Model (LLM)** is not a fundamentally new mathematical mechanism beyond transformers.
 
@@ -1678,7 +1678,7 @@ There is continuity throughout.
 
 ---
 
-## 1.57 Small Language Models
+## 57. Small Language Models
 
 A **Small Language Model (SLM)** uses the same broad modelling ideas at a smaller scale.
 
@@ -1709,7 +1709,7 @@ This makes SLMs especially useful for:
 
 ---
 
-## 1.58 Transformer vs RNN
+## 58. Transformer vs RNN
 
 | RNN | Transformer |
 |---|---|
@@ -1724,7 +1724,7 @@ Transformers solve some major RNN limitations while introducing different comput
 
 ---
 
-## 1.59 Transformer vs CNN
+## 59. Transformer vs CNN
 
 CNNs exploit:
 
@@ -1748,7 +1748,7 @@ Therefore transformers are not restricted to text.
 
 ---
 
-## 1.60 Transformers Beyond Language
+## 60. Transformers Beyond Language
 
 Transformer architectures have been applied to:
 
@@ -1778,7 +1778,7 @@ Among Structured Elements
 
 ---
 
-## 1.61 Vision Transformers
+## 61. Vision Transformers
 
 A **Vision Transformer (ViT)** divides an image into patches.
 
@@ -1802,7 +1802,7 @@ This demonstrates how transformer principles extend beyond language.
 
 ---
 
-## 1.62 Multimodal Transformers
+## 62. Multimodal Transformers
 
 A multimodal model may process several data types:
 
@@ -1829,7 +1829,7 @@ This enables models to learn relationships across modalities.
 
 ---
 
-## 1.63 Why Transformers Became Dominant
+## 63. Why Transformers Became Dominant
 
 Transformers combine several powerful properties:
 
@@ -1859,7 +1859,7 @@ Computational
 
 ---
 
-## 1.64 Transformers Are Not Magic
+## 64. Transformers Are Not Magic
 
 Despite their capabilities, transformers still fundamentally perform:
 
@@ -1888,7 +1888,7 @@ The scale can be enormous, but the underlying principles connect directly to the
 
 ---
 
-## 1.65 The Complete Conceptual Journey
+## 65. The Complete Conceptual Journey
 
 The progression through neural-network architectures can now be summarized as:
 
@@ -1931,7 +1931,7 @@ Every step solves limitations of earlier structures while building on the same n
 
 ---
 
-## 1.66 Key Takeaways
+## 66. Key Takeaways
 
 - Transformers are neural-network architectures built primarily around attention rather than recurrence.
 - Their major components include self-attention, feed-forward networks, residual connections, normalization, and positional information.
@@ -1979,7 +1979,7 @@ Every step solves limitations of earlier structures while building on the same n
 - Transformers are used beyond text, including vision, audio, time series, and multimodal systems.
 - Transformers are powerful because of architecture, scale, data, and compute—not because they abandon the mathematical foundations of neural networks.
 
-### Memory Hook
+### 66.1. Memory Hook
 
 ```text
 TRANSFORMER

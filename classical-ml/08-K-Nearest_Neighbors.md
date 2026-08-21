@@ -4,7 +4,7 @@
 
 ---
 
-# Why Should I Care?
+## 1. Why Should I Care?
 
 Many Machine Learning algorithms spend time learning an explicit mathematical model from the training data.
 
@@ -16,7 +16,7 @@ When a new sample arrives, KNN simply looks for the most similar examples it has
 
 ---
 
-# Five-Minute Story
+## 2. Five-Minute Story
 
 Imagine you move into a new neighbourhood.
 
@@ -36,7 +36,7 @@ Instead of asking nearby people, it asks the **nearest data points**.
 
 ---
 
-# Learning Objectives
+## 3. Learning Objectives
 
 After reading this chapter, you should be able to:
 
@@ -48,7 +48,7 @@ After reading this chapter, you should be able to:
 
 ---
 
-# What is K-Nearest Neighbors?
+## 4. What is K-Nearest Neighbors?
 
 **K-Nearest Neighbors (KNN)** is a **supervised learning algorithm** that predicts the output for a new sample by examining the **K most similar samples** in the training dataset.
 
@@ -58,7 +58,7 @@ For regression, the neighbours' target values are averaged.
 
 ---
 
-# Problem It Solves
+## 5. Problem It Solves
 
 Some datasets do not follow a simple mathematical relationship.
 
@@ -70,7 +70,7 @@ This simple assumption is often surprisingly effective.
 
 ---
 
-# Key Terminology
+## 6. Key Terminology
 
 | Term | Meaning |
 |------|---------|
@@ -82,7 +82,7 @@ This simple assumption is often surprisingly effective.
 
 ---
 
-# Intuition
+## 7. Intuition
 
 Suppose a fruit has unknown species.
 
@@ -104,7 +104,7 @@ The prediction comes entirely from nearby examples.
 
 ---
 
-# Mental Picture
+## 8. Mental Picture
 
 Imagine dropping a pin onto a map.
 
@@ -114,7 +114,7 @@ Those neighbours determine the prediction.
 
 ---
 
-# How KNN Works
+## 9. How KNN Works
 
 The prediction process follows these steps:
 
@@ -145,16 +145,16 @@ Average
 
 ---
 
-# Choosing the Value of K
+## 10. Choosing the Value of K
 
 The choice of **K** influences the behaviour of the model.
 
-### Small K
+### 10.1. Small K
 
 - Sensitive to noise.
 - Can overfit.
 
-### Large K
+### 10.2. Large K
 
 - Produces smoother predictions.
 - May overlook important local patterns.
@@ -164,7 +164,7 @@ Selecting an appropriate value of **K** is therefore important.
 
 ---
 
-# Distance Metrics
+## 11. Distance Metrics
 
 KNN depends entirely on measuring similarity.
 
@@ -178,7 +178,7 @@ The choice of distance metric depends on the problem and the nature of the data.
 
 ---
 
-# Why Feature Scaling Matters
+## 12. Why Feature Scaling Matters
 
 Suppose a dataset contains:
 
@@ -195,7 +195,7 @@ Feature scaling ensures that all features contribute more fairly to the distance
 
 ---
 
-# Common Hyperparameters
+## 13. Common Hyperparameters
 
 | Hyperparameter | Purpose |
 |---------------|---------|
@@ -205,7 +205,7 @@ Feature scaling ensures that all features contribute more fairly to the distance
 
 ---
 
-# Advantages
+## 14. Advantages
 
 - Simple to understand.
 - No explicit training phase.
@@ -214,7 +214,7 @@ Feature scaling ensures that all features contribute more fairly to the distance
 
 ---
 
-# Limitations
+## 15. Limitations
 
 - Prediction becomes slow for large datasets.
 - Requires feature scaling.
@@ -224,7 +224,7 @@ Feature scaling ensures that all features contribute more fairly to the distance
 
 ---
 
-# Common Applications
+## 16. Common Applications
 
 KNN is commonly used in:
 
@@ -236,7 +236,7 @@ KNN is commonly used in:
 
 ---
 
-# Memory Hook
+## 17. Memory Hook
 
 > **KNN asks its nearest neighbours before making a decision.**
 
@@ -248,7 +248,7 @@ Just nearby examples.
 
 ---
 
-# Common Mistakes
+## 18. Common Mistakes
 
 - Forgetting to scale features.
 - Choosing K arbitrarily.
@@ -257,9 +257,9 @@ Just nearby examples.
 
 ---
 
-# Frequently Asked Questions
+## 19. Frequently Asked Questions
 
-### Is KNN a lazy learning algorithm?
+### 19.1. Is KNN a lazy learning algorithm?
 
 Yes.
 
@@ -267,7 +267,7 @@ KNN stores the training data and delays most of its computation until a predicti
 
 ---
 
-### Can KNN perform regression?
+### 19.2. Can KNN perform regression?
 
 Yes.
 
@@ -275,13 +275,13 @@ Instead of majority voting, it predicts the average value of the nearest neighbo
 
 ---
 
-### Why is KNN slow during prediction?
+### 19.3. Why is KNN slow during prediction?
 
 Because it compares the query point with many or all training samples before making a prediction.
 
 ---
 
-# 30-Second Revision
+## 20. 30-Second Revision
 
 - Supervised learning algorithm.
 - Predicts using the K nearest neighbours.
@@ -293,7 +293,7 @@ Because it compares the query point with many or all training samples before mak
 
 ---
 
-# Looking Ahead
+## 21. Looking Ahead
 
 KNN predicts labels using nearby examples.
 

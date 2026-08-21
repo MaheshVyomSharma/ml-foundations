@@ -1,6 +1,6 @@
 # 15. Hyperparameters and Hyperparameter Tuning
 
-## 1.1 What Is a Hyperparameter?
+## 1. What Is a Hyperparameter?
 
 A **hyperparameter** is a configuration value chosen before or around the training process rather than learned directly from the training data through backpropagation.
 
@@ -33,11 +33,11 @@ Learned Model
 
 ---
 
-## 1.2 Parameters vs Hyperparameters
+## 2. Parameters vs Hyperparameters
 
 This distinction is fundamental.
 
-### Parameters
+### 2.1. Parameters
 
 Parameters are learned during training.
 
@@ -55,7 +55,7 @@ b
 
 Backpropagation and the optimizer modify them.
 
-### Hyperparameters
+### 2.2. Hyperparameters
 
 Hyperparameters control the training process or model design.
 
@@ -85,7 +85,7 @@ Hyperparameters
 
 ---
 
-## 1.3 A Concrete Example
+## 3. A Concrete Example
 
 Suppose we build:
 
@@ -127,7 +127,7 @@ These are learned from data.
 
 ---
 
-## 1.4 Parameters vs Optimizer State
+## 4. Parameters vs Optimizer State
 
 Optimizer state is another concept that should remain separate.
 
@@ -162,7 +162,7 @@ Optimizer State
 
 ---
 
-## 1.5 Why Hyperparameters Matter
+## 5. Why Hyperparameters Matter
 
 The same dataset and same broad model type can behave very differently under different hyperparameter choices.
 
@@ -192,11 +192,11 @@ Hyperparameters therefore strongly influence both optimization and generalizatio
 
 ---
 
-## 1.6 Major Categories of Hyperparameters
+## 6. Major Categories of Hyperparameters
 
 Hyperparameters can be grouped into several categories.
 
-### Architecture Hyperparameters
+### 6.1. Architecture Hyperparameters
 
 ```text
 Number of Layers
@@ -204,7 +204,7 @@ Number of Neurons
 Activation Functions
 ```
 
-### Optimization Hyperparameters
+### 6.2. Optimization Hyperparameters
 
 ```text
 Learning Rate
@@ -213,14 +213,14 @@ Momentum
 Learning Rate Schedule
 ```
 
-### Data / Training Hyperparameters
+### 6.3. Data / Training Hyperparameters
 
 ```text
 Batch Size
 Number of Epochs
 ```
 
-### Regularization Hyperparameters
+### 6.4. Regularization Hyperparameters
 
 ```text
 Dropout Rate
@@ -232,7 +232,7 @@ The distinction is conceptual rather than absolute, but it helps organize the tu
 
 ---
 
-## 1.7 Learning Rate
+## 7. Learning Rate
 
 The learning rate is one of the most important hyperparameters.
 
@@ -258,7 +258,7 @@ It controls the size of the optimizer's steps through parameter space.
 
 ---
 
-## 1.8 Learning Rate Too Small
+## 8. Learning Rate Too Small
 
 If:
 
@@ -286,7 +286,7 @@ The loss curve may decrease very slowly.
 
 ---
 
-## 1.9 Learning Rate Too Large
+## 9. Learning Rate Too Large
 
 If the learning rate is too large:
 
@@ -312,7 +312,7 @@ Extremely large learning rates can make training numerically unstable.
 
 ---
 
-## 1.10 A Useful Learning Rate Intuition
+## 10. A Useful Learning Rate Intuition
 
 Think of descending a mountain.
 
@@ -343,7 +343,7 @@ Appropriate Learning Rate
 
 ---
 
-## 1.11 Batch Size
+## 11. Batch Size
 
 The **batch size** determines how many training examples are used to estimate a gradient before performing an update.
 
@@ -369,7 +369,7 @@ examples, the approximate number of updates per epoch is:
 
 ---
 
-## 1.12 Small Batch Size
+## 12. Small Batch Size
 
 Smaller batches produce noisier gradient estimates.
 
@@ -396,7 +396,7 @@ Potential disadvantages include:
 
 ---
 
-## 1.13 Large Batch Size
+## 13. Large Batch Size
 
 Larger batches use more examples per gradient estimate.
 
@@ -421,7 +421,7 @@ Potential disadvantages include:
 
 ---
 
-## 1.14 Full-Batch Gradient Descent
+## 14. Full-Batch Gradient Descent
 
 At the extreme:
 
@@ -449,7 +449,7 @@ Mini-batch training therefore dominates modern deep learning.
 
 ---
 
-## 1.15 Number of Epochs
+## 15. Number of Epochs
 
 An **epoch** means one complete pass through the training dataset.
 
@@ -474,7 +474,7 @@ Eventually the model may begin overfitting.
 
 ---
 
-## 1.16 Epochs and Early Stopping
+## 16. Epochs and Early Stopping
 
 Suppose:
 
@@ -504,7 +504,7 @@ Stop When Improvement Ends
 
 ---
 
-## 1.17 Number of Hidden Layers
+## 17. Number of Hidden Layers
 
 Network depth is itself a hyperparameter.
 
@@ -549,7 +549,7 @@ However, unnecessary depth can increase:
 
 ---
 
-## 1.18 Number of Neurons
+## 18. Number of Neurons
 
 The width of hidden layers is also a hyperparameter.
 
@@ -583,7 +583,7 @@ There is no universal ideal layer width.
 
 ---
 
-## 1.19 Activation Function
+## 19. Activation Function
 
 Activation choice is also part of model design.
 
@@ -621,7 +621,7 @@ Activation functions influence both representational power and gradient behaviou
 
 ---
 
-## 1.20 Optimizer Choice
+## 20. Optimizer Choice
 
 The optimizer is another hyperparameter.
 
@@ -654,19 +654,19 @@ The best optimizer remains problem-dependent.
 
 ---
 
-## 1.21 Regularization Hyperparameters
+## 21. Regularization Hyperparameters
 
 Regularization introduces additional hyperparameters.
 
 Examples include:
 
-### L2 / Weight Decay Strength
+### 21.1. L2 / Weight Decay Strength
 
 ```math
 \lambda
 ```
 
-### Dropout Rate
+### 21.2. Dropout Rate
 
 ```math
 p
@@ -688,7 +688,7 @@ These values control how strongly the network is regularized.
 
 ---
 
-## 1.22 Hyperparameter Tuning
+## 22. Hyperparameter Tuning
 
 **Hyperparameter tuning** is the process of searching for hyperparameter values that produce strong validation performance.
 
@@ -716,7 +716,7 @@ The hyperparameters are selected **across training runs**.
 
 ---
 
-## 1.23 Training Set, Validation Set and Test Set
+## 23. Training Set, Validation Set and Test Set
 
 Hyperparameter tuning requires careful separation of data.
 
@@ -737,7 +737,7 @@ The test set should not repeatedly guide hyperparameter choices.
 
 ---
 
-## 1.24 Why Not Tune on the Test Set?
+## 24. Why Not Tune on the Test Set?
 
 Suppose we repeatedly try models and choose whichever performs best on the test set.
 
@@ -770,7 +770,7 @@ Test
 
 ---
 
-## 1.25 Manual Tuning
+## 25. Manual Tuning
 
 The simplest method is manual experimentation.
 
@@ -802,7 +802,7 @@ But it becomes inefficient for large search spaces.
 
 ---
 
-## 1.26 Grid Search
+## 26. Grid Search
 
 **Grid search** defines a fixed set of candidate values.
 
@@ -834,7 +834,7 @@ The search cost therefore grows rapidly.
 
 ---
 
-## 1.27 Grid Search Example
+## 27. Grid Search Example
 
 Suppose:
 
@@ -861,7 +861,7 @@ Grid search is systematic, but it can waste computation exploring combinations t
 
 ---
 
-## 1.28 Random Search
+## 28. Random Search
 
 **Random search** samples hyperparameter combinations from specified ranges or distributions.
 
@@ -885,7 +885,7 @@ This can be surprisingly effective.
 
 ---
 
-## 1.29 Why Random Search Can Beat Grid Search
+## 29. Why Random Search Can Beat Grid Search
 
 Suppose model performance depends strongly on learning rate but only weakly on another hyperparameter.
 
@@ -907,7 +907,7 @@ In high-dimensional hyperparameter spaces, random search can therefore be more e
 
 ---
 
-## 1.30 Searching on a Logarithmic Scale
+## 30. Searching on a Logarithmic Scale
 
 Some hyperparameters span several orders of magnitude.
 
@@ -939,7 +939,7 @@ Therefore, learning rates and regularization strengths are frequently explored o
 
 ---
 
-## 1.31 Bayesian Optimization
+## 31. Bayesian Optimization
 
 More advanced tuning systems can use previous experiments to decide what to try next.
 
@@ -965,7 +965,7 @@ This can reduce the number of expensive training runs.
 
 ---
 
-## 1.32 Successive Halving
+## 32. Successive Halving
 
 Another idea is to avoid spending equal resources on every candidate.
 
@@ -993,7 +993,7 @@ It allocates more computational resources to promising candidates.
 
 ---
 
-## 1.33 Hyperband
+## 33. Hyperband
 
 **Hyperband** builds upon resource-allocation ideas such as successive halving.
 
@@ -1010,7 +1010,7 @@ This can substantially reduce tuning cost.
 
 ---
 
-## 1.34 Which Hyperparameters Matter Most?
+## 34. Which Hyperparameters Matter Most?
 
 Not every hyperparameter deserves equal attention.
 
@@ -1038,7 +1038,7 @@ But learning rate is almost always among the most influential.
 
 ---
 
-## 1.35 Tune Coarsely Before Tuning Finely
+## 35. Tune Coarsely Before Tuning Finely
 
 Suppose the useful learning-rate region is unknown.
 
@@ -1077,7 +1077,7 @@ This saves computation.
 
 ---
 
-## 1.36 Hyperparameters Interact
+## 36. Hyperparameters Interact
 
 Hyperparameters should not always be considered independently.
 
@@ -1115,7 +1115,7 @@ Hyperparameter tuning searches configurations, not isolated numbers.
 
 ---
 
-## 1.37 Validation Performance Can Be Noisy
+## 37. Validation Performance Can Be Noisy
 
 Neural-network training contains randomness from:
 
@@ -1139,7 +1139,7 @@ For important comparisons, multiple runs with different random seeds may provide
 
 ---
 
-## 1.38 Reproducibility During Tuning
+## 38. Reproducibility During Tuning
 
 Random seeds can help make comparisons fairer.
 
@@ -1161,7 +1161,7 @@ For final evaluation, performance across multiple seeds can be useful.
 
 ---
 
-## 1.39 Computational Cost
+## 39. Computational Cost
 
 Hyperparameter tuning can be expensive.
 
@@ -1189,11 +1189,11 @@ This is why efficient search strategies and early termination methods are import
 
 ---
 
-## 1.40 Tuning Is an Outer Optimization Loop
+## 40. Tuning Is an Outer Optimization Loop
 
 There are effectively two optimization processes.
 
-### Inner Loop
+### 40.1. Inner Loop
 
 The neural network learns parameters:
 
@@ -1210,7 +1210,7 @@ Backpropagation
 Optimizer
 ```
 
-### Outer Loop
+### 40.2. Outer Loop
 
 We search for hyperparameters:
 
@@ -1242,7 +1242,7 @@ This distinction provides a powerful mental model for hyperparameter tuning.
 
 ---
 
-## 1.41 Hyperparameter Tuning and Overfitting
+## 41. Hyperparameter Tuning and Overfitting
 
 It is possible to overfit the validation set.
 
@@ -1267,7 +1267,7 @@ For large projects, additional validation strategies or cross-validation may be 
 
 ---
 
-## 1.42 Cross-Validation in Deep Learning
+## 42. Cross-Validation in Deep Learning
 
 In classical machine learning, `k`-fold cross-validation is common.
 
@@ -1293,7 +1293,7 @@ Cross-validation remains useful when data is limited and computational cost is m
 
 ---
 
-## 1.43 Keep an Experiment Record
+## 43. Keep an Experiment Record
 
 Hyperparameter tuning quickly becomes confusing without systematic tracking.
 
@@ -1324,7 +1324,7 @@ Experiment tracking is therefore an important engineering practice, not mere adm
 
 ---
 
-## 1.44 Do Not Tune Everything at Once
+## 44. Do Not Tune Everything at Once
 
 A practical workflow is:
 
@@ -1346,11 +1346,11 @@ Always establish a functioning baseline first.
 
 ---
 
-## 1.45 Diagnose Before Tuning
+## 45. Diagnose Before Tuning
 
 Hyperparameter tuning should be guided by observed behaviour.
 
-### If Training Loss Is High
+### 45.1. If Training Loss Is High
 
 Possible actions:
 
@@ -1361,7 +1361,7 @@ Check Learning Rate
 Reduce Excessive Regularization
 ```
 
-### If Training Loss Is Low but Validation Loss Is High
+### 45.2. If Training Loss Is Low but Validation Loss Is High
 
 Possible actions:
 
@@ -1374,7 +1374,7 @@ Reduce Model Capacity
 Get More Data
 ```
 
-### If Training Is Unstable
+### 45.3. If Training Is Unstable
 
 Possible actions:
 
@@ -1390,7 +1390,7 @@ Tuning becomes far more efficient when driven by diagnosis.
 
 ---
 
-## 1.46 Hyperparameter Tuning Workflow
+## 46. Hyperparameter Tuning Workflow
 
 A practical sequence is:
 
@@ -1420,11 +1420,11 @@ The exact order can vary, but this gives a disciplined starting point.
 
 ---
 
-## 1.47 Hyperparameters in the Complete Learning System
+## 47. Hyperparameters in the Complete Learning System
 
 We can now separate the entire training system into two categories.
 
-### Learned During Training
+### 47.1. Learned During Training
 
 ```text
 Weights
@@ -1433,7 +1433,7 @@ BatchNorm γ and β
 Other Trainable Parameters
 ```
 
-### Chosen Around Training
+### 47.2. Chosen Around Training
 
 ```text
 Architecture
@@ -1473,7 +1473,7 @@ Train Again
 
 ---
 
-## 1.48 Key Takeaways
+## 48. Key Takeaways
 
 - Hyperparameters control model architecture or training behaviour.
 - Model parameters are learned through backpropagation and optimization.
@@ -1501,7 +1501,7 @@ Train Again
 - Diagnose the model's problem before blindly changing hyperparameters.
 - Hyperparameter tuning forms an outer optimization loop around parameter learning.
 
-### Memory Hook
+### 48.1. Memory Hook
 
 ```text
 Parameters

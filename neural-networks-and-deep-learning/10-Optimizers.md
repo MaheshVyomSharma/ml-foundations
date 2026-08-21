@@ -1,6 +1,6 @@
 # 10. Optimizers
 
-## 1.1 What Is an Optimizer?
+## 1. What Is an Optimizer?
 
 An **optimizer** is the algorithm that uses gradients computed during backpropagation to update a neural network's trainable parameters.
 
@@ -44,7 +44,7 @@ Optimizer
 
 ---
 
-## 1.2 The Basic Gradient Descent Update
+## 2. The Basic Gradient Descent Update
 
 The simplest update rule is gradient descent:
 
@@ -83,7 +83,7 @@ Modern optimizers build upon this fundamental principle.
 
 ---
 
-## 1.3 Why Do We Need More Sophisticated Optimizers?
+## 3. Why Do We Need More Sophisticated Optimizers?
 
 Plain gradient descent can encounter several difficulties.
 
@@ -114,7 +114,7 @@ More advanced optimizers attempt to make this movement faster and more stable.
 
 ---
 
-## 1.4 Stochastic Gradient Descent
+## 4. Stochastic Gradient Descent
 
 In deep learning, **Stochastic Gradient Descent (SGD)** usually operates using mini-batches.
 
@@ -144,7 +144,7 @@ This introduces some randomness or **noise** into the optimization process.
 
 ---
 
-## 1.5 Gradient Noise
+## 5. Gradient Noise
 
 Different mini-batches may produce slightly different gradients:
 
@@ -172,7 +172,7 @@ It can sometimes help optimization move through flat regions or escape certain u
 
 ---
 
-## 1.6 Limitation of Plain SGD
+## 6. Limitation of Plain SGD
 
 Suppose optimization occurs inside a narrow valley.
 
@@ -199,7 +199,7 @@ One important solution is **momentum**.
 
 ---
 
-## 1.7 Momentum
+## 7. Momentum
 
 Momentum allows the optimizer to retain information about previous movement.
 
@@ -251,7 +251,7 @@ controls how strongly previous movement is retained.
 
 ---
 
-## 1.8 Intuition Behind Momentum
+## 8. Intuition Behind Momentum
 
 Think of a ball rolling downhill.
 
@@ -297,7 +297,7 @@ Momentum therefore provides a form of short-term memory to the optimizer.
 
 ---
 
-## 1.9 Why Momentum Helps
+## 9. Why Momentum Helps
 
 Consider again a narrow valley.
 
@@ -323,7 +323,7 @@ This often allows SGD to converge considerably faster.
 
 ---
 
-## 1.10 Momentum Coefficient
+## 10. Momentum Coefficient
 
 The momentum coefficient is commonly represented by:
 
@@ -353,7 +353,7 @@ The exact value is a hyperparameter.
 
 ---
 
-## 1.11 Adaptive Learning Rates
+## 11. Adaptive Learning Rates
 
 Plain SGD normally uses the same global learning rate for every parameter:
 
@@ -374,7 +374,7 @@ Adaptive optimizers modify the effective learning rate for individual parameters
 
 ---
 
-## 1.12 AdaGrad
+## 12. AdaGrad
 
 **AdaGrad**, or Adaptive Gradient, accumulates squared gradients.
 
@@ -418,7 +418,7 @@ is a small constant that prevents division by zero and improves numerical stabil
 
 ---
 
-## 1.13 AdaGrad Intuition
+## 13. AdaGrad Intuition
 
 Suppose a parameter repeatedly receives large gradients.
 
@@ -454,7 +454,7 @@ AdaGrad can therefore work particularly well when gradients are sparse.
 
 ---
 
-## 1.14 AdaGrad's Main Limitation
+## 14. AdaGrad's Main Limitation
 
 The accumulated quantity:
 
@@ -485,7 +485,7 @@ This is the main limitation of AdaGrad.
 
 ---
 
-## 1.15 RMSProp
+## 15. RMSProp
 
 **RMSProp** addresses AdaGrad's continually accumulating denominator.
 
@@ -515,7 +515,7 @@ Older gradients gradually lose influence.
 
 ---
 
-## 1.16 RMSProp Intuition
+## 16. RMSProp Intuition
 
 RMSProp approximately asks:
 
@@ -539,7 +539,7 @@ RMSProp therefore adapts the learning rate without allowing the historical squar
 
 ---
 
-## 1.17 Adam
+## 17. Adam
 
 **Adam** stands for **Adaptive Moment Estimation**.
 
@@ -573,7 +573,7 @@ Adam is one of the most widely used optimizers in deep learning.
 
 ---
 
-## 1.18 Adam's First Moment
+## 18. Adam's First Moment
 
 Adam maintains a moving average of the gradients:
 
@@ -598,7 +598,7 @@ First Moment
 
 ---
 
-## 1.19 Adam's Second Moment
+## 19. Adam's Second Moment
 
 Adam also maintains a moving average of squared gradients:
 
@@ -626,7 +626,7 @@ The two estimates are then combined to determine the parameter update.
 
 ---
 
-## 1.20 Bias Correction in Adam
+## 20. Bias Correction in Adam
 
 Adam usually initializes:
 
@@ -664,7 +664,7 @@ These are called **bias-corrected moment estimates**.
 
 ---
 
-## 1.21 Adam Parameter Update
+## 21. Adam Parameter Update
 
 Adam updates the parameters using:
 
@@ -694,7 +694,7 @@ Adaptive Parameter Update
 
 ---
 
-## 1.22 Common Adam Hyperparameters
+## 22. Common Adam Hyperparameters
 
 Common starting values are:
 
@@ -724,7 +724,7 @@ These are useful defaults, not universal laws.
 
 ---
 
-## 1.23 SGD vs Adam
+## 23. SGD vs Adam
 
 A simplified comparison is:
 
@@ -744,7 +744,7 @@ The best choice depends on the problem.
 
 ---
 
-## 1.24 Why Adam Is Popular
+## 24. Why Adam Is Popular
 
 Adam is popular because it:
 
@@ -768,7 +768,7 @@ SGD with momentum remains highly effective in many applications.
 
 ---
 
-## 1.25 Optimizer State
+## 25. Optimizer State
 
 More advanced optimizers need to remember information from previous iterations.
 
@@ -808,7 +808,7 @@ Saving optimizer state allows training to resume consistently.
 
 ---
 
-## 1.26 Adaptive Optimizers Still Need a Learning Rate
+## 26. Adaptive Optimizers Still Need a Learning Rate
 
 Adam and RMSProp adapt effective step sizes, but they still contain a base learning rate:
 
@@ -834,7 +834,7 @@ The optimizer and learning rate must work together.
 
 ---
 
-## 1.27 Learning Rate Schedules
+## 27. Learning Rate Schedules
 
 The learning rate does not have to remain constant throughout training.
 
@@ -862,7 +862,7 @@ This is called a **learning rate schedule**.
 
 ---
 
-## 1.28 Step Decay
+## 28. Step Decay
 
 A simple schedule reduces the learning rate at predetermined intervals.
 
@@ -885,7 +885,7 @@ Smaller later steps allow finer optimization.
 
 ---
 
-## 1.29 Exponential Decay
+## 29. Exponential Decay
 
 The learning rate can also decrease smoothly.
 
@@ -919,7 +919,7 @@ As training progresses:
 
 ---
 
-## 1.30 Reduce Learning Rate on Plateau
+## 30. Reduce Learning Rate on Plateau
 
 Another strategy monitors validation performance.
 
@@ -939,7 +939,7 @@ This allows the optimizer to take larger steps while useful progress is occurrin
 
 ---
 
-## 1.31 Optimizer vs Learning Rate Scheduler
+## 31. Optimizer vs Learning Rate Scheduler
 
 These concepts have different responsibilities.
 
@@ -968,7 +968,7 @@ They work together during training.
 
 ---
 
-## 1.32 Weight Decay
+## 32. Weight Decay
 
 An optimizer may also apply **weight decay**.
 
@@ -1003,7 +1003,7 @@ It is closely related to L2 regularization, although the exact relationship depe
 
 ---
 
-## 1.33 AdamW
+## 33. AdamW
 
 **AdamW** is a widely used variation of Adam.
 
@@ -1025,7 +1025,7 @@ AdamW is widely used in modern deep-learning systems.
 
 ---
 
-## 1.34 Gradient Clipping
+## 34. Gradient Clipping
 
 If gradients become extremely large, optimizer updates can become unstable.
 
@@ -1071,7 +1071,7 @@ Gradient clipping is especially useful when exploding gradients are a risk.
 
 ---
 
-## 1.35 Optimizers Do Not Compute Gradients
+## 35. Optimizers Do Not Compute Gradients
 
 The optimizer does not perform backpropagation.
 
@@ -1103,7 +1103,7 @@ Keeping these responsibilities separate is important.
 
 ---
 
-## 1.36 Choosing an Optimizer
+## 36. Choosing an Optimizer
 
 A useful practical starting point is:
 
@@ -1127,7 +1127,7 @@ Optimizer choice is a **hyperparameter decision**.
 
 ---
 
-## 1.37 Optimizers in the Complete Training Loop
+## 37. Optimizers in the Complete Training Loop
 
 The complete training process is now:
 
@@ -1164,7 +1164,7 @@ The optimizer determines how the network moves through parameter space.
 
 ---
 
-## 1.38 Key Takeaways
+## 38. Key Takeaways
 
 - An optimizer uses gradients to update trainable parameters.
 - Backpropagation computes gradients; the optimizer uses them.
@@ -1185,7 +1185,7 @@ The optimizer determines how the network moves through parameter space.
 - Gradient clipping helps control exploding gradients.
 - Optimizer choice is a hyperparameter decision.
 
-### Memory Hook
+### 38.1. Memory Hook
 
 ```text
 Backpropagation

@@ -1,6 +1,6 @@
 # 09. Weight Initialization
 
-## 1.1 Why Initialization Matters
+## 1. Why Initialization Matters
 
 Before training begins, a neural network needs initial values for its trainable weights.
 
@@ -34,7 +34,7 @@ A poor initialization can make an otherwise valid network difficult to train.
 
 ---
 
-## 1.2 Why Not Initialize All Weights to Zero?
+## 2. Why Not Initialize All Weights to Zero?
 
 Suppose every neuron in a hidden layer starts with identical weights:
 
@@ -68,7 +68,7 @@ This is called the **symmetry problem**.
 
 ---
 
-## 1.3 Breaking Symmetry
+## 3. Breaking Symmetry
 
 To break symmetry, weights are usually initialized using random values.
 
@@ -98,7 +98,7 @@ Randomness is therefore useful not because the model should remain random, but b
 
 ---
 
-## 1.4 Why Small Random Values?
+## 4. Why Small Random Values?
 
 Early neural-network implementations often used small random values such as:
 
@@ -146,7 +146,7 @@ The scale should depend on the network structure.
 
 ---
 
-## 1.5 The Variance Problem
+## 5. The Variance Problem
 
 Consider a neuron:
 
@@ -193,7 +193,7 @@ Good initialization tries to keep signal magnitudes reasonably stable across lay
 
 ---
 
-## 1.6 Fan-In and Fan-Out
+## 6. Fan-In and Fan-Out
 
 Two important terms are:
 
@@ -233,7 +233,7 @@ Modern initialization strategies scale their random weights according to these v
 
 ---
 
-## 1.7 Xavier / Glorot Initialization
+## 7. Xavier / Glorot Initialization
 
 **Xavier initialization**, also called **Glorot initialization**, was designed to keep activation and gradient variances reasonably stable across layers.
 
@@ -269,7 +269,7 @@ The exact formulation depends on the framework and chosen distribution.
 
 ---
 
-## 1.8 Why Xavier Initialization Works
+## 8. Why Xavier Initialization Works
 
 The basic goal is:
 
@@ -314,7 +314,7 @@ where preserving variance across layers is important.
 
 ---
 
-## 1.9 Xavier Uniform Initialization
+## 9. Xavier Uniform Initialization
 
 Instead of sampling weights from a normal distribution, Xavier initialization can also use a uniform distribution.
 
@@ -342,7 +342,7 @@ Normal and uniform Xavier initializations pursue the same basic goal: keeping si
 
 ---
 
-## 1.10 He Initialization
+## 10. He Initialization
 
 **He initialization** is designed primarily for ReLU-family activations.
 
@@ -372,7 +372,7 @@ This is known as **He normal initialization**.
 
 ---
 
-## 1.11 Why He Initialization Fits ReLU
+## 11. Why He Initialization Fits ReLU
 
 ReLU is:
 
@@ -400,7 +400,7 @@ The goal is again to prevent the forward signal from shrinking excessively acros
 
 ---
 
-## 1.12 Xavier vs He Initialization
+## 12. Xavier vs He Initialization
 
 A practical rule is:
 
@@ -426,7 +426,7 @@ This is a default guideline rather than an absolute law.
 
 ---
 
-## 1.13 Bias Initialization
+## 13. Bias Initialization
 
 Biases are often initialized to zero:
 
@@ -454,7 +454,7 @@ Biases
 
 ---
 
-## 1.14 Can Biases Be Non-Zero?
+## 14. Can Biases Be Non-Zero?
 
 Yes.
 
@@ -470,7 +470,7 @@ However, zero remains a common and effective default.
 
 ---
 
-## 1.15 Initialization and Sigmoid Saturation
+## 15. Initialization and Sigmoid Saturation
 
 Suppose sigmoid receives a very large positive input:
 
@@ -518,7 +518,7 @@ Initialization therefore directly interacts with activation choice.
 
 ---
 
-## 1.16 Initialization and ReLU
+## 16. Initialization and ReLU
 
 ReLU does not saturate for large positive values.
 
@@ -548,7 +548,7 @@ He initialization helps create a more suitable activation scale for ReLU network
 
 ---
 
-## 1.17 Forward Signal Preservation
+## 17. Forward Signal Preservation
 
 Suppose:
 
@@ -590,7 +590,7 @@ The main objective is to avoid rapid collapse or explosion.
 
 ---
 
-## 1.18 Backward Gradient Preservation
+## 18. Backward Gradient Preservation
 
 Initialization also affects backward propagation.
 
@@ -631,7 +631,7 @@ Backward Gradient Flow
 
 ---
 
-## 1.19 Initialization Does Not Replace Training
+## 19. Initialization Does Not Replace Training
 
 Initialization only determines the starting point.
 
@@ -659,7 +659,7 @@ Even an excellent initialization still requires:
 
 ---
 
-## 1.20 Initialization Affects Convergence
+## 20. Initialization Affects Convergence
 
 Two identical networks with different random initializations can train differently.
 
@@ -685,7 +685,7 @@ This is one reason experiments often use random seeds for reproducibility.
 
 ---
 
-## 1.21 Random Seed
+## 21. Random Seed
 
 A **random seed** controls the pseudo-random number generator used by software.
 
@@ -709,7 +709,7 @@ This is useful during experimentation and debugging.
 
 ---
 
-## 1.22 Reproducibility Is Not Always Exact
+## 22. Reproducibility Is Not Always Exact
 
 Even with a fixed random seed, exact reproducibility may not always occur.
 
@@ -734,7 +734,7 @@ This is especially relevant in large deep-learning systems.
 
 ---
 
-## 1.23 Initialization in Deep-Learning Frameworks
+## 23. Initialization in Deep-Learning Frameworks
 
 Modern frameworks generally provide sensible default initializers.
 
@@ -751,7 +751,7 @@ However, understanding initialization remains important because it explains:
 
 ---
 
-## 1.24 Initialization and Deep Networks
+## 24. Initialization and Deep Networks
 
 The deeper the network, the more important initialization becomes.
 
@@ -789,7 +789,7 @@ Variance-aware initialization helps prevent this accumulation.
 
 ---
 
-## 1.25 Why Initialization Became Important Historically
+## 25. Why Initialization Became Important Historically
 
 Early deep networks were difficult to train partly because:
 
@@ -811,7 +811,7 @@ Initialization is therefore one piece of a larger training-stability puzzle.
 
 ---
 
-## 1.26 Initialization and Model Capacity
+## 26. Initialization and Model Capacity
 
 Initialization does not change the architecture's theoretical capacity.
 
@@ -835,7 +835,7 @@ A model may have enough theoretical capacity yet still train poorly because opti
 
 ---
 
-## 1.27 Initialization and Symmetry in Convolutional Networks
+## 27. Initialization and Symmetry in Convolutional Networks
 
 The same symmetry principle applies beyond dense layers.
 
@@ -857,7 +857,7 @@ Random initialization encourages different filters to specialize in different fe
 
 ---
 
-## 1.28 Zero Initialization Is Fine for Some Parameters
+## 28. Zero Initialization Is Fine for Some Parameters
 
 The rule:
 
@@ -885,7 +885,7 @@ The problem is **symmetry among learnable units**.
 
 ---
 
-## 1.29 Initialization Strategy Summary
+## 29. Initialization Strategy Summary
 
 A practical workflow is:
 
@@ -916,7 +916,7 @@ Biases
 
 ---
 
-## 1.30 Initialization and the Complete Training Loop
+## 30. Initialization and the Complete Training Loop
 
 Initialization occurs before the normal training loop:
 
@@ -944,7 +944,7 @@ Everything afterward determines how the parameters evolve.
 
 ---
 
-## 1.31 Key Takeaways
+## 31. Key Takeaways
 
 - Neural networks require initial weight values before training begins.
 - All weights in a layer should not be initialized identically.
@@ -964,7 +964,7 @@ Everything afterward determines how the parameters evolve.
 - Initialization provides the starting point; it does not replace learning.
 - Deeper networks are generally more sensitive to poor initialization.
 
-### Memory Hook
+### 31.1. Memory Hook
 
 ```text
 All Weights Equal
