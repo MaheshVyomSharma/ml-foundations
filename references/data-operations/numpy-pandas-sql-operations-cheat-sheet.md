@@ -1,6 +1,6 @@
 # NumPy — pandas — SQL Operations Cheat Sheet
 
-## Introduction
+## 1. Introduction
 
 This cheat sheet provides a compact side-by-side reference for common data operations using **NumPy**, **pandas**, and **SQL**. It is intended for quick lookup after the concepts have been introduced in the [NumPy, pandas, and SQL Operations Reference](numpy_pandas_sql_operations_reference.md).
 
@@ -12,33 +12,9 @@ The document is structured as:
 
 
 
-## Table of contents
+## 2. Sample dataset
 
-- [Sample dataset](#sample-dataset)
-- [Assumption for NumPy examples](#assumption-for-numpy-examples)
-- [Load / create data](#load--create-data)
-- [Select rows and columns](#select-rows-and-columns)
-- [Filter rows](#filter-rows)
-- [Sort data](#sort-data)
-- [Aggregation](#aggregation)
-- [Group by](#group-by)
-- [Merge / Join](#merge--join)
-- [Handling missing values](#handling-missing-values)
-- [Derived columns](#derived-columns)
-- [Wide ↔ Long reshape](#wide--long-reshape)
-- [Handling duplicates](#handling-duplicates)
-- [Type conversion](#type-conversion)
-- [String operations](#string-operations)
-- [Summary](#summary)
-- [Appendix A — Best practices](#appendix-a--best-practices)
-- [Appendix B — Concept mapping](#appendix-b--concept-mapping)
-- [Appendix C — SQL caveats](#appendix-c--sql-caveats)
-
----
-
-## Sample dataset
-
-### Employees
+### 2.1. Employees
 | emp_id | name  | dept_id | age | salary |
 |---|---|---:|---:|---:|
 | 101 | Asha  | 10 | 29 | 60000 |
@@ -47,14 +23,14 @@ The document is structured as:
 | 104 | Kiran | 30 | 28 | 52000 |
 | 105 | Zoya  | 20 | 41 | 82000 |
 
-### Departments
+### 2.2. Departments
 | dept_id | dept_name |
 |---:|---|
 | 10 | Engineering |
 | 20 | HR |
 | 30 | Finance |
 
-### Dependents
+### 2.3. Dependents
 | dep_id | emp_id | dependent_name | relation |
 |---:|---:|---|---|
 | 1 | 101 | Anya  | Child |
@@ -64,7 +40,7 @@ The document is structured as:
 
 ---
 
-## Assumption for NumPy examples
+## 3. Assumption for NumPy examples
 
 `employees_np` is a **2D object array** with columns in this order:
 
@@ -78,11 +54,11 @@ The document is structured as:
 
 ---
 
-## Core operations — NumPy / pandas / SQL comparison
+## 4. Core operations — NumPy / pandas / SQL comparison
 
 This section compresses the core operations into side-by-side comparisons for quick lookup.
 
-### Load / create data
+### 4.1. Load / create data
 
 | NumPy | pandas | SQL |
 |---|---|---|
@@ -90,7 +66,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### Select rows and columns
+### 4.2. Select rows and columns
 
 | Task | NumPy | pandas | SQL |
 |---|---|---|---|
@@ -100,7 +76,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### Filter rows
+### 4.3. Filter rows
 
 | NumPy | pandas | SQL |
 |---|---|---|
@@ -108,7 +84,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### Sort data
+### 4.4. Sort data
 
 | NumPy | pandas | SQL |
 |---|---|---|
@@ -116,7 +92,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### Aggregation
+### 4.5. Aggregation
 
 | Task | NumPy | pandas | SQL |
 |---|---|---|---|
@@ -126,15 +102,15 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### Group by
+### 4.6. Group by
 
 | NumPy | pandas | SQL |
 |---|---|---|
-| Manual filtering per group | `employees_pd.groupby("dept_id")["salary"].mean()` | `SELECT dept_id, AVG(salary) FROM employees GROUP BY dept_id;` |
+| Manual masking per group | `employees_pd.groupby("dept_id")["salary"].mean()` | `SELECT dept_id, AVG(salary) FROM employees GROUP BY dept_id;` |
 
 ---
 
-### Merge / join
+### 4.7. Merge / join
 
 | NumPy | pandas | SQL |
 |---|---|---|
@@ -142,16 +118,16 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### Handling missing values
+### 4.8. Handling missing values
 
 | NumPy | pandas | SQL |
 |---|---|---|
 | `np.isnan(col)` | `employees_pd["salary"].isna()` | `WHERE salary IS NULL` |
-| Replace missing | manual assignment | `fillna(0)` | `COALESCE(salary,0)` |
+| Replace missing | manual assignment | `fillna(0)` | `COALESCE(salary, 0)` |
 
 ---
 
-### Derived columns
+### 4.9. Derived columns
 
 | NumPy | pandas | SQL |
 |---|---|---|
@@ -159,17 +135,16 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### Wide ↔ Long reshape
+### 4.10. Wide ↔ Long reshape
 
 | Transformation | NumPy | pandas | SQL |
 |---|---|---|---|
 | Wide → Long | manual reconstruction | `pd.melt()` | `UNION ALL` or `UNPIVOT` |
 | Long → Wide | manual reconstruction | `pivot()` | `CASE + GROUP BY` |
-| Long → Wide | `pivot()` | `CASE + GROUP BY` | manual reconstruction |
 
 ---
 
-### Handling duplicates
+### 4.11. Handling duplicates
 
 | NumPy | pandas | SQL |
 |---|---|---|
@@ -177,7 +152,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### Type conversion
+### 4.12. Type conversion
 
 | NumPy | pandas | SQL |
 |---|---|---|
@@ -185,7 +160,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-### String operations
+### 4.13. String operations
 
 | NumPy | pandas | SQL |
 |---|---|---|
@@ -193,15 +168,15 @@ This section compresses the core operations into side-by-side comparisons for qu
 
 ---
 
-## Summary
+## 5. Summary
 
 Although **NumPy**, **pandas**, and **SQL** operate in different environments, they share many conceptual similarities when working with tabular data. NumPy focuses on efficient numerical arrays, pandas provides powerful data manipulation tools for analysis, and SQL offers declarative querying for relational databases. Understanding how common operations map across these systems allows practitioners to move more easily between data science workflows and database querying.
 
 ---
 
-## Appendix A — Best practices
+## 6. Best practices
 
-### pandas row and column selection
+### 6.1. pandas row and column selection
 
 Simplified example used earlier:
 
@@ -219,9 +194,11 @@ Reason:
 - avoids chained indexing
 - clearer semantics
 
+The chained form is possible for selection, but the single-step form is preferred because it avoids intermediate results and makes later assignments less ambiguous.
+
 ---
 
-### NumPy sorting with argsort
+### 6.2. NumPy sorting with argsort
 
 ```python
 employees_np[np.argsort(employees_np[:,4])]
@@ -233,7 +210,7 @@ Explanation:
 
 ---
 
-### SQL row ordering
+### 6.3. SQL row ordering
 
 SQL tables have **no guaranteed row order**.
 
@@ -247,7 +224,7 @@ ORDER BY salary;
 
 ---
 
-## Appendix B — Concept mapping
+## 7. Concept mapping
 
 | Concept | NumPy | pandas | SQL |
 |---|---|---|---|
@@ -258,9 +235,9 @@ ORDER BY salary;
 
 ---
 
-## Appendix C — SQL caveats
+## 8. SQL caveats
 
-Some SQL features depend on the database vendor.
+SQL syntax and behavior can vary by database vendor. Check database-specific features before using them in production.
 
 | Feature | ANSI SQL | Vendor specific |
 |---|---|---|
