@@ -65,7 +65,7 @@ For a six-sided die, the possible outcomes are:
 
 ### 1.3. Sample Space
 
-The **sample space**, usually represented by \(S\) or \(\Omega\), is the set of **all possible outcomes**.
+The **sample space**, usually represented by $S$ or $\Omega$, is the set of **all possible outcomes**.
 
 For a coin:
 
@@ -93,7 +93,7 @@ The sample space is:
 S = \{1,2,3,4,5,6\}
 ```
 
-Define event \(A\) as:
+Define event $A$ as:
 
 > Rolling an even number.
 
@@ -119,7 +119,7 @@ This connection between probability and set theory becomes important because eve
 
 ## 2. Probability of an Event
 
-The probability of an event \(A\) is written as:
+The probability of an event $A$ is written as:
 
 ```math
 P(A)
@@ -199,7 +199,7 @@ giving an observed proportion:
 \frac{7}{10}=0.7
 ```
 
-This does **not** imply that the probability of heads has become \(0.7\). It is simply random variation in a small sample.
+This does **not** imply that the probability of heads has become $0.7$. It is simply random variation in a small sample.
 
 This distinction between:
 
@@ -225,9 +225,9 @@ Several simple rules form the foundation for more advanced probability.
 
 ### 3.1. Complement Rule
 
-The **complement** of event \(A\), written \(A^c\), means that \(A\) does **not** occur.
+The **complement** of event $A$, written $A^c$, means that $A$ does **not** occur.
 
-Since either \(A\) occurs or it does not:
+Since either $A$ occurs or it does not:
 
 ```math
 P(A)+P(A^c)=1
@@ -261,7 +261,7 @@ A \cup B
 
 means:
 
-> \(A\) occurs **or** \(B\) occurs, or both occur.
+> $A$ occurs **or** $B$ occurs, or both occur.
 
 For two general events:
 
@@ -283,12 +283,12 @@ A\cap B
 
 means:
 
-> Both \(A\) **and** \(B\) occur.
+> Both $A$ **and** $B$ occur.
 
 For example:
 
-- \(A\): customer is under 30
-- \(B\): customer purchases the product
+- $A$: customer is under 30
+- $B$: customer purchases the product
 
 Then:
 
@@ -336,8 +336,8 @@ P(A\cup B)=P(A)+P(B)
 
 For example, on a single die roll:
 
-- \(A=\{2\}\)
-- \(B=\{5\}\)
+- $A=\{2\}$
+- $B=\{5\}$
 
 The die cannot simultaneously show both 2 and 5.
 
@@ -371,7 +371,7 @@ This distinction is extremely important.
 
 In fact, two events with non-zero probability that are mutually exclusive **cannot be independent**.
 
-If \(A\) occurs and therefore makes \(B\) impossible, then knowing that \(A\) occurred clearly gives us information about \(B\).
+If $A$ occurs and therefore makes $B$ impossible, then knowing that $A$ occurred clearly gives us information about $B$.
 
 We will formalize independence after introducing conditional probability.
 
@@ -411,11 +411,11 @@ That final phrase — **"given what I currently know"** — leads directly to on
 
 Ordinary probability asks:
 
-> What is the probability that event \(A\) occurs?
+> What is the probability that event $A$ occurs?
 
 Conditional probability asks a more interesting question:
 
-> What is the probability that event \(A\) occurs **given that we already know event \(B\) has occurred?**
+> What is the probability that event $A$ occurs **given that we already know event $B$ has occurred?**
 
 It is written as:
 
@@ -425,9 +425,9 @@ P(A \mid B)
 
 and read as:
 
-> "Probability of \(A\), given \(B\)."
+> "Probability of $A$, given $B$."
 
-The vertical bar \( \mid \) means **given**.
+The vertical bar $ \mid $ means **given**.
 
 This simple idea is enormously important in machine learning because predictions are almost always made **given some observed information**.
 
@@ -461,8 +461,8 @@ Suppose 100 customers visit a website.
 
 Let:
 
-- \(A\) = customer makes a purchase
-- \(B\) = customer uses a mobile device
+- $A$ = customer makes a purchase
+- $B$ = customer uses a mobile device
 
 Without knowing anything else:
 
@@ -502,7 +502,7 @@ This is the central intuition behind conditional probability:
 
 > **Conditioning changes the universe under consideration.**
 
-Instead of asking how often \(A\) occurs everywhere, we ask how often \(A\) occurs **inside the region where \(B\) is already known to be true**.
+Instead of asking how often $A$ occurs everywhere, we ask how often $A$ occurs **inside the region where $B$ is already known to be true**.
 
 ---
 
@@ -523,9 +523,9 @@ provided:
 P(B)>0
 ```
 
-The numerator represents cases where **both \(A\) and \(B\)** occur.
+The numerator represents cases where **both $A$ and $B$** occur.
 
-The denominator restricts our attention to cases where \(B\) occurs.
+The denominator restricts our attention to cases where $B$ occurs.
 
 Using the customer example:
 
@@ -551,7 +551,7 @@ P(A \mid B)
 
 The denominator is doing something conceptually important:
 
-> It **renormalizes the probability space** after we restrict ourselves to event \(B\).
+> It **renormalizes the probability space** after we restrict ourselves to event $B$.
 
 The probabilities inside this reduced space must once again add up to 1.
 
@@ -648,7 +648,7 @@ It is the mathematical doorway to **Bayes' theorem**.
 
 Two events are **independent** when knowing that one occurred provides no information about whether the other occurs.
 
-Mathematically, if \(A\) and \(B\) are independent:
+Mathematically, if $A$ and $B$ are independent:
 
 ```math
 P(A \mid B)=P(A)
@@ -662,14 +662,14 @@ P(B \mid A)=P(B)
 
 In plain English:
 
-> Knowing \(B\) happened does not change the probability of \(A\).
+> Knowing $B$ happened does not change the probability of $A$.
 
 Consider tossing two fair coins.
 
 Let:
 
-- \(A\) = first coin produces heads
-- \(B\) = second coin produces heads
+- $A$ = first coin produces heads
+- $B$ = second coin produces heads
 
 Then:
 
@@ -725,13 +725,13 @@ P(H_1 \cap H_2)
 \frac{1}{4}
 ```
 
-So the probability of obtaining two heads is \(0.25\).
+So the probability of obtaining two heads is $0.25$.
 
 ---
 
 ### 7.2. Dependence
 
-If knowing \(B\) changes the probability of \(A\), the events are **dependent**.
+If knowing $B$ changes the probability of $A$, the events are **dependent**.
 
 That is:
 
@@ -763,11 +763,11 @@ If:
 P(Y \mid X)=P(Y)
 ```
 
-then knowing \(X\) does not change our knowledge of \(Y\).
+then knowing $X$ does not change our knowledge of $Y$.
 
-In that probabilistic sense, \(X\) contains no predictive information about \(Y\).
+In that probabilistic sense, $X$ contains no predictive information about $Y$.
 
-> **ML connection:** Machine learning searches for information in features \(X\) that changes what we can infer about target \(Y\). A useful predictive relationship therefore often manifests itself as some form of statistical dependence.
+> **ML connection:** Machine learning searches for information in features $X$ that changes what we can infer about target $Y$. A useful predictive relationship therefore often manifests itself as some form of statistical dependence.
 
 ---
 
@@ -781,7 +781,7 @@ For **mutually exclusive events**:
 P(A \cap B)=0
 ```
 
-If \(A\) happens, \(B\) cannot happen.
+If $A$ happens, $B$ cannot happen.
 
 For **independent events**:
 
@@ -789,14 +789,14 @@ For **independent events**:
 P(A \cap B)=P(A)P(B)
 ```
 
-If \(A\) happens, it tells us nothing about whether \(B\) happens.
+If $A$ happens, it tells us nothing about whether $B$ happens.
 
 Consider rolling a die.
 
 Let:
 
-- \(A\) = roll a 2
-- \(B\) = roll a 5
+- $A$ = roll a 2
+- $B$ = roll a 5
 
 These are mutually exclusive because both cannot occur on the same roll.
 
@@ -808,13 +808,13 @@ Before observing the die:
 P(B)=\frac{1}{6}
 ```
 
-After learning that \(A\) occurred:
+After learning that $A$ occurred:
 
 ```math
 P(B \mid A)=0
 ```
 
-Knowledge of \(A\) dramatically changed the probability of \(B\).
+Knowledge of $A$ dramatically changed the probability of $B$.
 
 Therefore they are dependent.
 
@@ -828,7 +828,7 @@ A useful mental distinction is:
 
 ### 7.4. A Useful ML Interpretation
 
-Suppose \(X\) represents input features and \(Y\) represents the target.
+Suppose $X$ represents input features and $Y$ represents the target.
 
 Machine learning is fundamentally interested in:
 
@@ -852,11 +852,11 @@ P(Y \mid X)
 P(Y)
 ```
 
-The model's knowledge of \(X\) changes its belief about \(Y\).
+The model's knowledge of $X$ changes its belief about $Y$.
 
 That is exactly what we want.
 
-A classifier can therefore be viewed conceptually as a machine that takes evidence \(X\) and estimates:
+A classifier can therefore be viewed conceptually as a machine that takes evidence $X$ and estimates:
 
 ```math
 \boxed{P(Y \mid X)}
@@ -888,7 +888,7 @@ P(A \mid B)=P(A)
 
 means:
 
-> Learning \(B\) taught us nothing about \(A\).
+> Learning $B$ taught us nothing about $A$.
 
 Dependence:
 
@@ -900,7 +900,7 @@ P(A \mid B)\neq P(A)
 
 means:
 
-> Learning \(B\) changed what we believe about \(A\).
+> Learning $B$ changed what we believe about $A$.
 
 And that gives us the central probabilistic pattern behind prediction:
 
@@ -966,7 +966,7 @@ P(A \mid B)P(B)
 P(B \mid A)P(A)
 ```
 
-Dividing by \(P(B)\):
+Dividing by $P(B)$:
 
 ```math
 \boxed{
@@ -998,8 +998,8 @@ P(H \mid D)
 
 where:
 
-- \(H\) represents a **hypothesis**
-- \(D\) represents observed **data or evidence**
+- $H$ represents a **hypothesis**
+- $D$ represents observed **data or evidence**
 
 Each term has a specific interpretation.
 
@@ -1322,7 +1322,7 @@ Suppose we begin with:
 P(H)
 ```
 
-Then we observe evidence \(D\).
+Then we observe evidence $D$.
 
 Bayes' theorem transforms our belief into:
 
@@ -1362,7 +1362,7 @@ This is one reason Bayesian reasoning fits naturally with machine learning: **le
 
 ### 8.6. Bayes' Theorem and Classification
 
-Suppose a classifier wants to determine the class \(Y\) of an observation with features \(X\).
+Suppose a classifier wants to determine the class $Y$ of an observation with features $X$.
 
 We ultimately want:
 
@@ -1556,7 +1556,7 @@ The sample space is:
 S=\{HH,HT,TH,TT\}
 ```
 
-Define a random variable \(X\) as:
+Define a random variable $X$ as:
 
 > Number of heads obtained.
 
@@ -1614,7 +1614,7 @@ x
 
 represents a particular observed value.
 
-For example, \(X\) might represent the number of purchases made by a randomly selected customer.
+For example, $X$ might represent the number of purchases made by a randomly selected customer.
 
 An observation might then be:
 
@@ -1636,7 +1636,7 @@ Y
 
 for the target variable.
 
-The notation is related, although in ML \(X\) often represents many variables collectively rather than one random variable.
+The notation is related, although in ML $X$ often represents many variables collectively rather than one random variable.
 
 ---
 
@@ -1654,7 +1654,7 @@ Examples include:
 - number of customers arriving at a shop
 - number of defects in a product
 - number of clicks on an advertisement
-- class labels such as \(0\) and \(1\)
+- class labels such as $0$ and $1$
 
 For example:
 
@@ -1714,13 +1714,13 @@ This difference between discrete and continuous variables changes how probabilit
 
 For a **discrete random variable**, probabilities are described using a **Probability Mass Function (PMF)**.
 
-It gives the probability that \(X\) takes a particular value \(x\):
+It gives the probability that $X$ takes a particular value $x$:
 
 ```math
 P(X=x)
 ```
 
-Consider the two-coin example where \(X\) is the number of heads.
+Consider the two-coin example where $X$ is the number of heads.
 
 The possible values are:
 
@@ -1800,7 +1800,7 @@ P(a\leq X\leq b)
 
 This should look familiar from calculus.
 
-The integral accumulates the probability density between \(a\) and \(b).
+The integral accumulates the probability density between $a$ and $b$.
 
 The total area under the PDF must equal 1:
 
@@ -1824,7 +1824,7 @@ For a continuous random variable:
 f(x)
 ```
 
-is a **density**, not the probability that \(X=x\).
+is a **density**, not the probability that $X=x$.
 
 In fact:
 
@@ -1884,11 +1884,11 @@ F(x)=P(X\leq x)
 
 It answers:
 
-> What is the probability that the random variable takes a value less than or equal to \(x\)?
+> What is the probability that the random variable takes a value less than or equal to $x$?
 
 The word **cumulative** is the key.
 
-It accumulates probability from the left up to \(x\).
+It accumulates probability from the left up to $x$.
 
 ---
 
@@ -1918,7 +1918,7 @@ F(1)=P(X\leq1)=0.25+0.50=0.75
 F(2)=P(X\leq2)=1
 ```
 
-So the CDF accumulates the probability mass as \(x\) increases.
+So the CDF accumulates the probability mass as $x$ increases.
 
 ---
 
@@ -1990,7 +1990,7 @@ Conceptually:
 \text{probability up to }a
 ```
 
-leaves only the probability between \(a\) and \(b\).
+leaves only the probability between $a$ and $b$.
 
 ---
 
@@ -2174,7 +2174,7 @@ which gives:
 3.5
 ```
 
-A die can never actually produce \(3.5\).
+A die can never actually produce $3.5$.
 
 That is perfectly acceptable.
 
@@ -2192,7 +2192,7 @@ For a continuous random variable, summation becomes integration:
 \int_{-\infty}^{\infty}x f(x)\,dx
 ```
 
-where \(f(x)\) is the probability density function.
+where $f(x)$ is the probability density function.
 
 This is the continuous counterpart of:
 
@@ -2250,7 +2250,7 @@ The sample mean is used to **estimate** the unknown population mean.
 
 Expected values have a very useful property.
 
-For random variables \(X\) and \(Y\):
+For random variables $X$ and $Y$:
 
 ```math
 \mathbb{E}[X+Y]
@@ -2266,7 +2266,7 @@ More generally:
 a\mathbb{E}[X]+b\mathbb{E}[Y]
 ```
 
-This property holds even when \(X\) and \(Y\) are not independent.
+This property holds even when $X$ and $Y$ are not independent.
 
 This makes expectation particularly convenient mathematically and is one reason it appears constantly in probability, statistics, and machine learning.
 
@@ -2405,7 +2405,7 @@ Variance has one inconvenience.
 
 Because deviations are squared, its units are also squared.
 
-If \(X\) is measured in kilograms, variance is measured in:
+If $X$ is measured in kilograms, variance is measured in:
 
 ```math
 kg^2
@@ -2479,7 +2479,7 @@ Variance describes how **one variable varies around its own mean**.
 
 Covariance extends this idea to **two variables**.
 
-The covariance between random variables \(X\) and \(Y\) is:
+The covariance between random variables $X$ and $Y$ is:
 
 ```math
 \boxed{
@@ -2506,13 +2506,13 @@ and:
 
 Covariance asks:
 
-> When \(X\) moves away from its mean, does \(Y\) tend to move in the same direction or the opposite direction?
+> When $X$ moves away from its mean, does $Y$ tend to move in the same direction or the opposite direction?
 
 ---
 
 ### 19.1. Positive Covariance
 
-If larger values of \(X\) tend to occur with larger values of \(Y\):
+If larger values of $X$ tend to occur with larger values of $Y$:
 
 ```math
 \mathrm{Cov}(X,Y)>0
@@ -2534,7 +2534,7 @@ Both variables tend to move together.
 
 ### 19.2. Negative Covariance
 
-If larger values of \(X\) tend to occur with smaller values of \(Y\):
+If larger values of $X$ tend to occur with smaller values of $Y$:
 
 ```math
 \mathrm{Cov}(X,Y)<0
@@ -2576,11 +2576,11 @@ For example, suppose:
 Y=X^2
 ```
 
-and \(X\) is distributed symmetrically around zero.
+and $X$ is distributed symmetrically around zero.
 
-Clearly, \(Y\) depends completely on \(X\).
+Clearly, $Y$ depends completely on $X$.
 
-Yet positive and negative values of \(X\) can cancel in the covariance calculation, potentially producing:
+Yet positive and negative values of $X$ can cancel in the covariance calculation, potentially producing:
 
 ```math
 \mathrm{Cov}(X,Y)=0
@@ -2639,11 +2639,11 @@ So variance is really a special case of covariance.
 
 Variance asks:
 
-> How does \(X\) vary with itself?
+> How does $X$ vary with itself?
 
 Covariance asks:
 
-> How do \(X\) and \(Y\) vary together?
+> How do $X$ and $Y$ vary together?
 
 ---
 
@@ -2832,7 +2832,7 @@ These concepts provide the mathematical vocabulary for describing how data is di
 
 We can now describe much more than whether an event occurs.
 
-Starting with a random variable \(X\):
+Starting with a random variable $X$:
 
 ```math
 \boxed{
@@ -2926,7 +2926,7 @@ Examples include:
 - churn / remain
 - disease / no disease
 
-If the probability of success is \(p\):
+If the probability of success is $p$:
 
 ```math
 P(X=1)=p
@@ -3009,7 +3009,7 @@ If:
 p=0.7
 ```
 
-then over many Bernoulli trials, approximately 70% of the observations are expected to be \(1\).
+then over many Bernoulli trials, approximately 70% of the observations are expected to be $1$.
 
 ---
 
@@ -3071,15 +3071,15 @@ A Bernoulli distribution describes **one** binary trial.
 
 The **Binomial distribution** describes the number of successes across multiple independent Bernoulli trials.
 
-Suppose an experiment is repeated \(n\) times.
+Suppose an experiment is repeated $n$ times.
 
 Each trial:
 
 - has two possible outcomes
-- has probability of success \(p\)
+- has probability of success $p$
 - is independent of the other trials
 
-Let \(X\) represent the number of successes.
+Let $X$ represent the number of successes.
 
 Then:
 
@@ -3089,7 +3089,7 @@ X
 \mathrm{Binomial}(n,p)
 ```
 
-The probability of obtaining exactly \(k\) successes is:
+The probability of obtaining exactly $k$ successes is:
 
 ```math
 \boxed{
@@ -3109,7 +3109,7 @@ where:
 \frac{n!}{k!(n-k)!}
 ```
 
-counts the number of different ways in which \(k\) successes can occur among \(n\) trials.
+counts the number of different ways in which $k$ successes can occur among $n$ trials.
 
 ---
 
@@ -3189,7 +3189,7 @@ and the variance is:
 
 This makes intuitive sense.
 
-If 100 independent trials each have a success probability of \(0.7\):
+If 100 independent trials each have a success probability of $0.7$:
 
 ```math
 \mathbb{E}[X]
@@ -3286,7 +3286,7 @@ Look at its central term:
 
 It measures the squared distance from the mean.
 
-As \(x\) moves farther from \(\mu\), this squared distance increases.
+As $x$ moves farther from $\mu$, this squared distance increases.
 
 Because it appears inside a negative exponential:
 
@@ -3482,7 +3482,7 @@ Symbolically:
 \right)
 ```
 
-for sufficiently large \(n\), under suitable assumptions.
+for sufficiently large $n$, under suitable assumptions.
 
 We will treat the CLT properly in the Statistics chapter.
 
@@ -3751,7 +3751,7 @@ For example, saying:
 Y\sim\mathrm{Bernoulli}(p)
 ```
 
-means \(Y\) has two possible outcomes.
+means $Y$ has two possible outcomes.
 
 Saying:
 
@@ -3759,7 +3759,7 @@ Saying:
 X\sim\mathcal{N}(\mu,\sigma^2)
 ```
 
-means we are modeling \(X\) as continuous, symmetric around its mean, with Gaussian-shaped tails.
+means we are modeling $X$ as continuous, symmetric around its mean, with Gaussian-shaped tails.
 
 These assumptions influence the mathematics of the model.
 
@@ -3858,7 +3858,7 @@ Three related ideas become important:
 
 A **joint probability distribution** describes the probability behaviour of two or more random variables simultaneously.
 
-For two discrete random variables \(X\) and \(Y\):
+For two discrete random variables $X$ and $Y$:
 
 ```math
 P(X=x,Y=y)
@@ -3866,12 +3866,12 @@ P(X=x,Y=y)
 
 asks:
 
-> What is the probability that \(X=x\) **and** \(Y=y\)?
+> What is the probability that $X=x$ **and** $Y=y$?
 
 For example, suppose:
 
-- \(X\) = customer device type
-- \(Y\) = whether the customer purchases
+- $X$ = customer device type
+- $Y$ = whether the customer purchases
 
 Then:
 
@@ -3897,9 +3897,9 @@ Conceptually:
 
 ### 30.2. Marginal Distribution
 
-Suppose we know the joint distribution of \(X\) and \(Y\), but only care about \(X\).
+Suppose we know the joint distribution of $X$ and $Y$, but only care about $X$.
 
-We can remove \(Y\) by summing over all its possible values:
+We can remove $Y$ by summing over all its possible values:
 
 ```math
 P(X=x)
@@ -3907,7 +3907,7 @@ P(X=x)
 \sum_y P(X=x,Y=y)
 ```
 
-This produces the **marginal distribution** of \(X\).
+This produces the **marginal distribution** of $X$.
 
 For continuous variables, summation becomes integration:
 
@@ -3944,7 +3944,7 @@ For example:
 P(Y\mid X)
 ```
 
-describes how the probability distribution of \(Y\) changes after \(X\) is observed.
+describes how the probability distribution of $Y$ changes after $X$ is observed.
 
 For discrete variables:
 
@@ -3970,7 +3970,7 @@ P(Y\mid X)
 
 because supervised machine learning is often fundamentally interested in exactly this quantity.
 
-Given features \(X\), what can we infer about target \(Y\)?
+Given features $X$, what can we infer about target $Y$?
 
 ---
 
@@ -3990,7 +3990,7 @@ P(Y\mid X) &\rightarrow \text{Y after X is known}
 
 They are different views of the same underlying probabilistic system.
 
-> **ML connection:** Supervised learning commonly attempts to learn the relationship between \(X\) and \(Y\), often directly or indirectly approximating the conditional distribution \(P(Y\mid X)\).
+> **ML connection:** Supervised learning commonly attempts to learn the relationship between $X$ and $Y$, often directly or indirectly approximating the conditional distribution $P(Y\mid X)$.
 
 ---
 
@@ -4000,7 +4000,7 @@ Probability and likelihood use closely related mathematics, but they ask differe
 
 This distinction is extremely important in machine learning.
 
-Suppose a probability model has parameter \(\theta\):
+Suppose a probability model has parameter $\theta$:
 
 ```math
 P(X\mid\theta)
@@ -4008,7 +4008,7 @@ P(X\mid\theta)
 
 ### 31.1. Probability
 
-When the parameter \(\theta\) is known and the data \(X\) is unknown, we ask:
+When the parameter $\theta$ is known and the data $X$ is unknown, we ask:
 
 > Given this model, how probable is a particular observation?
 
@@ -4052,7 +4052,7 @@ but do not know the best model parameter:
 
 We therefore treat the observed data as fixed and ask:
 
-> Which value of \(\theta\) makes the data we actually observed most plausible?
+> Which value of $\theta$ makes the data we actually observed most plausible?
 
 The resulting function is the **likelihood function**:
 
@@ -4089,7 +4089,7 @@ Suppose we observe training data:
 x_1,x_2,\ldots,x_n
 ```
 
-and assume the observations were generated by a probability distribution controlled by parameter \(\theta\).
+and assume the observations were generated by a probability distribution controlled by parameter $\theta$.
 
 The likelihood is:
 
@@ -4108,7 +4108,7 @@ L(\theta)
 P(x_i\mid\theta)
 ```
 
-Different values of \(\theta\) produce different likelihoods.
+Different values of $\theta$ produce different likelihoods.
 
 **Maximum Likelihood Estimation (MLE)** chooses the parameter that makes the observed training data most likely:
 
@@ -4143,7 +4143,7 @@ asks for the maximum likelihood value itself, whereas:
 \arg\max_\theta L(\theta)
 ```
 
-asks which value of \(\theta\) produces that maximum.
+asks which value of $\theta$ produces that maximum.
 
 In machine learning, we usually want the latter.
 
@@ -4173,7 +4173,7 @@ heads and:
 
 tails.
 
-Let \(p\) represent the unknown probability of heads.
+Let $p$ represent the unknown probability of heads.
 
 Assuming independent tosses, the likelihood of the observed sequence is:
 
@@ -4183,7 +4183,7 @@ L(p)
 p^7(1-p)^3
 ```
 
-Now consider different possible values of \(p\).
+Now consider different possible values of $p$.
 
 If:
 
@@ -4346,7 +4346,7 @@ For a Bernoulli target:
 Y\in\{0,1\}
 ```
 
-with predicted probability \(p\), the probability of observing \(y\) is:
+with predicted probability $p$, the probability of observing $y$ is:
 
 ```math
 P(Y=y)
