@@ -427,7 +427,7 @@ and read as:
 
 > "Probability of $A$, given $B$."
 
-The vertical bar $ \mid $ means **given**.
+The vertical bar $\mid$ means **given**.
 
 This simple idea is enormously important in machine learning because predictions are almost always made **given some observed information**.
 
