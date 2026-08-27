@@ -2,6 +2,11 @@
 
 A structured collection of notes covering the mathematics, classical algorithms, and neural-network concepts that form the foundations of machine learning.
 
+## Practical Data Operations
+
+1. [NumPy, pandas, and SQL Operations Reference](references/data-operations/numpy-pandas-sql-operations-reference.md)
+2. [NumPy, pandas, and SQL Operations Cheat Sheet](references/data-operations/numpy-pandas-sql-operations-cheat-sheet.md)
+
 ## Classical Machine Learning
 
 1. [Linear Regression](classical-ml/01-Linear_Regression.md)
@@ -48,3 +53,7 @@ A structured collection of notes covering the mathematics, classical algorithms,
 19. [Deep Learning Workflow and Model Development](neural-networks-and-deep-learning/19-Deep_Learning_Workflow.md)
 20. [Attention Mechanism](neural-networks-and-deep-learning/20-Attention_Mechanism.md)
 21. [Transformers](neural-networks-and-deep-learning/21-Transformers.md)
+
+## Reference
+
+1. [Glossary](Glossary.md)
