@@ -57,3 +57,13 @@ A structured collection of notes covering the mathematics, classical algorithms,
 ## Reference
 
 1. [Glossary](Glossary.md)
+
+## License
+
+This repository is licensed under the [**Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)**](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+
+You are free to use, share, and adapt this material for non-commercial purposes, provided that appropriate attribution is given and any adapted material is distributed under the same license.
+
+Commercial use is not permitted under this license. For commercial licensing or other permissions, please contact the repository owner.
+
+See the [`LICENSE`](LICENSE) file for the complete license terms.
