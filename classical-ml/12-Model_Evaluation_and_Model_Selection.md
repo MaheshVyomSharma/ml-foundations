@@ -260,6 +260,10 @@ The most commonly used approach is **K-Fold Cross-Validation**.
 
 ---
 
+The equations behind the metrics introduced in this chapter are collected in [Appendix A: Model Evaluation Metrics](Appendix-A_Model_Evaluation_Metrics.md).
+
+---
+
 ## 20. Choosing the Right Metric
 
 | Problem | Recommended Metrics |
