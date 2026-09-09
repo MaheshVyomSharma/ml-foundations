@@ -24,7 +24,7 @@ The total number of observations is $TP + TN + FP + FN$.
 Accuracy is the proportion of all predictions that are correct.
 
 ```math
-\operatorname{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
+\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}
 ```
 
 ### 2.2. Error Rate
@@ -32,7 +32,7 @@ Accuracy is the proportion of all predictions that are correct.
 Error rate is the proportion of all predictions that are incorrect.
 
 ```math
-\operatorname{Error\ Rate} = \frac{FP + FN}{TP + TN + FP + FN} = 1 - \operatorname{Accuracy}
+\text{Error Rate} = \frac{FP + FN}{TP + TN + FP + FN} = 1 - \text{Accuracy}
 ```
 
 ### 2.3. Precision
@@ -40,7 +40,7 @@ Error rate is the proportion of all predictions that are incorrect.
 Precision is the proportion of predicted Positives that are truly Positive.
 
 ```math
-\operatorname{Precision} = \frac{TP}{TP + FP}
+\text{Precision} = \frac{TP}{TP + FP}
 ```
 
 ### 2.4. Recall or Sensitivity
@@ -48,7 +48,7 @@ Precision is the proportion of predicted Positives that are truly Positive.
 Recall is the proportion of actual Positives that the model identifies.
 
 ```math
-\operatorname{Recall} = \operatorname{Sensitivity} = \operatorname{TPR} = \frac{TP}{TP + FN}
+\text{Recall} = \text{Sensitivity} = \text{TPR} = \frac{TP}{TP + FN}
 ```
 
 ### 2.5. Specificity
@@ -56,13 +56,13 @@ Recall is the proportion of actual Positives that the model identifies.
 Specificity is the proportion of actual Negatives that the model identifies.
 
 ```math
-\operatorname{Specificity} = \operatorname{TNR} = \frac{TN}{TN + FP}
+\text{Specificity} = \text{TNR} = \frac{TN}{TN + FP}
 ```
 
 The false-positive rate is the complement of specificity:
 
 ```math
-\operatorname{FPR} = \frac{FP}{FP + TN} = 1 - \operatorname{Specificity}
+\text{FPR} = \frac{FP}{FP + TN} = 1 - \text{Specificity}
 ```
 
 ### 2.6. F1 Score
@@ -70,7 +70,7 @@ The false-positive rate is the complement of specificity:
 The F1 score is the harmonic mean of Precision and Recall. It is high only when both are high.
 
 ```math
-F_1 = 2 \cdot \frac{\operatorname{Precision} \cdot \operatorname{Recall}}{\operatorname{Precision} + \operatorname{Recall}}
+F_1 = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}
 ```
 
 Equivalently, in terms of the confusion-matrix counts:
@@ -84,7 +84,7 @@ F_1 = \frac{2TP}{2TP + FP + FN}
 Balanced accuracy gives equal weight to each class, which is useful when class sizes differ substantially.
 
 ```math
-\operatorname{Balanced\ Accuracy} = \frac{\operatorname{Sensitivity} + \operatorname{Specificity}}{2}
+\text{Balanced Accuracy} = \frac{\text{Sensitivity} + \text{Specificity}}{2}
 ```
 
 ## 3. Threshold-Based Metrics
@@ -96,13 +96,13 @@ Many classifiers produce a score or probability. A threshold converts that value
 The ROC curve plots the True Positive Rate against the False Positive Rate as the classification threshold varies:
 
 ```math
-\operatorname{TPR} = \frac{TP}{TP + FN}, \qquad \operatorname{FPR} = \frac{FP}{FP + TN}
+\text{TPR} = \frac{TP}{TP + FN}, \qquad \text{FPR} = \frac{FP}{FP + TN}
 ```
 
 ROC-AUC is the area under this curve:
 
 ```math
-\operatorname{ROC\text{-}AUC} = \int_0^1 \operatorname{TPR}(\operatorname{FPR})\,d(\operatorname{FPR})
+\text{ROC-AUC} = \int_0^1 \text{TPR}(\text{FPR})\,d(\text{FPR})
 ```
 
 It can also be interpreted as the probability that a randomly chosen Positive receives a higher model score than a randomly chosen Negative.
@@ -112,7 +112,7 @@ It can also be interpreted as the probability that a randomly chosen Positive re
 The precision-recall curve plots Precision against Recall as the threshold varies. Average Precision summarizes this curve by weighting precision by the increase in recall:
 
 ```math
-\operatorname{AP} = \sum_k (R_k - R_{k-1})P_k
+\text{AP} = \sum_k (R_k - R_{k-1})P_k
 ```
 
 where $P_k$ and $R_k$ are the precision and recall at threshold $k$. This curve is often more informative than ROC-AUC when the Positive class is rare.
@@ -130,7 +130,7 @@ e_i = y_i - \hat{y}_i
 MAE is the average absolute difference between observed and predicted values.
 
 ```math
-\operatorname{MAE} = \frac{1}{n}\sum_{i=1}^{n} \lvert y_i - \hat{y}_i \rvert
+\text{MAE} = \frac{1}{n}\sum_{i=1}^{n} \lvert y_i - \hat{y}_i \rvert
 ```
 
 ### 4.2. Mean Squared Error (MSE)
@@ -138,7 +138,7 @@ MAE is the average absolute difference between observed and predicted values.
 MSE is the average squared residual. Squaring gives larger errors more influence.
 
 ```math
-\operatorname{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
+\text{MSE} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
 ```
 
 ### 4.3. Root Mean Squared Error (RMSE)
@@ -146,7 +146,7 @@ MSE is the average squared residual. Squaring gives larger errors more influence
 RMSE is the square root of MSE, so it has the same units as the target variable.
 
 ```math
-\operatorname{RMSE} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}
+\text{RMSE} = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}
 ```
 
 ### 4.4. Coefficient of Determination ($R^2$)
@@ -164,7 +164,7 @@ The baseline in this comparison predicts $\bar{y}$ for every observation. $R^2=1
 MAPE expresses absolute errors as percentages of the observed values.
 
 ```math
-\operatorname{MAPE} = \frac{100}{n}\sum_{i=1}^{n}\left\lvert\frac{y_i - \hat{y}_i}{y_i}\right\rvert
+\text{MAPE} = \frac{100}{n}\sum_{i=1}^{n}\left\lvert\frac{y_i - \hat{y}_i}{y_i}\right\rvert
 ```
 
 MAPE is undefined when $y_i=0$ and can become disproportionately large when observed values are close to zero.
