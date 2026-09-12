@@ -21,6 +21,7 @@ A structured collection of notes covering the mathematics, classical algorithms,
 10. [Hierarchical Clustering](classical-ml/10-Hierarchical_Clustering.md)
 11. [Similarity Measures](classical-ml/11-Similarity_Measures.md)
 12. [Model Evaluation and Model Selection](classical-ml/12-Model_Evaluation_and_Model_Selection.md)
+13. [Multicollinearity](classical-ml/13-Multicollinearity.md)
 
 ## Mathematics for Machine Learning
 
@@ -29,6 +30,7 @@ A structured collection of notes covering the mathematics, classical algorithms,
 3. [Probability for Machine Learning](math-for-ml/03-Probability_for_Machine_Learning.md)
 4. [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md)
 5. [Appendix A: Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md)
+6. [Appendix B: Statistical Measures](math-for-ml/Appendix-B_Statistical_Measures.md)
 
 ## Neural Networks and Deep Learning
 
