@@ -22,6 +22,7 @@ A structured collection of notes covering the mathematics, classical algorithms,
 11. [Similarity Measures](classical-ml/11-Similarity_Measures.md)
 12. [Model Evaluation and Model Selection](classical-ml/12-Model_Evaluation_and_Model_Selection.md)
 13. [Multicollinearity](classical-ml/13-Multicollinearity.md)
+14. [Appendix A: Model Evaluation Metrics](classical-ml/Appendix-A_Model_Evaluation_Metrics.md)
 
 ## Mathematics for Machine Learning
 
