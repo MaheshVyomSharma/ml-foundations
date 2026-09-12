@@ -351,6 +351,38 @@ The matrix of second-order partial derivatives of a scalar-valued function. It d
 
 `curvature` · `gradient` · `positive definite`
 
+## Heteroscedasticity
+
+### Statistics and Regression
+
+Also spelled **heteroskedasticity**.
+
+A condition in which the variability of a model’s errors changes across the range of the predicted values or an input variable. A residual plot may show this as a widening or narrowing spread.
+
+Heteroscedasticity can make standard error estimates and statistical inferences unreliable when the model does not account for the changing variance.
+
+**Reference:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md), [Linear Regression](classical-ml/01-Linear_Regression.md)
+
+### Related Terms
+
+`homoscedasticity` · `residual` · `variance`
+
+## Homoscedasticity
+
+### Statistics and Regression
+
+Also spelled **homoskedasticity**.
+
+A condition in which the variability of a model’s errors remains approximately constant across the range of the predicted values or an input variable. It is one of the classical assumptions used in linear regression.
+
+Homoscedasticity is the opposite of heteroscedasticity.
+
+**Reference:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md), [Linear Regression](classical-ml/01-Linear_Regression.md)
+
+### Related Terms
+
+`heteroscedasticity` · `residual` · `variance`
+
 ## Hyperparameter
 
 ### Machine Learning
@@ -514,6 +546,20 @@ A point on a multivariable function where the gradient may be zero, but the poin
 ### Related Terms
 
 `gradient` · `Hessian` · `local minimum` · `stationary point`
+
+## Scedasticity
+
+### Statistics and Regression
+
+Also spelled **skedasticity**.
+
+The pattern or behavior of the variance of errors or observations across a variable’s range. Homoscedasticity describes approximately constant variance, whereas heteroscedasticity describes changing variance.
+
+**Reference:** [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md), [Linear Regression](classical-ml/01-Linear_Regression.md)
+
+### Related Terms
+
+`heteroscedasticity` · `homoscedasticity` · `residual` · `variance`
 
 ## Singular Value Decomposition
 
