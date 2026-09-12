@@ -21,6 +21,7 @@ A structured collection of notes covering the mathematics, classical algorithms,
 10. [Hierarchical Clustering](classical-ml/10-Hierarchical_Clustering.md)
 11. [Similarity Measures](classical-ml/11-Similarity_Measures.md)
 12. [Model Evaluation and Model Selection](classical-ml/12-Model_Evaluation_and_Model_Selection.md)
+13. [Multicollinearity](classical-ml/13-Multicollinearity.md)
 
 ## Mathematics for Machine Learning
 
