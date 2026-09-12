@@ -7,7 +7,7 @@ This appendix collects the formulas behind the metrics introduced in Chapter 12.
 For binary classification, designate one class as **Positive** and the other as **Negative**.
 
 | Symbol | Meaning |
-|--------|---------|
+| -------- | --------- |
 | TP | True Positive: predicted Positive and actually Positive |
 | TN | True Negative: predicted Negative and actually Negative |
 | FP | False Positive: predicted Positive but actually Negative |
@@ -174,7 +174,7 @@ MAPE is undefined when $y_i=0$ and can become disproportionately large when obse
 No metric is universally best. Choose one whose error meaning matches the application:
 
 | Situation | Useful metric |
-|-----------|---------------|
+| --------- | --------------- |
 | Classes are balanced and errors have similar cost | Accuracy |
 | False Positives are costly | Precision |
 | False Negatives are costly | Recall or Sensitivity |
