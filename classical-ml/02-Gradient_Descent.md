@@ -84,7 +84,7 @@ Gradient Descent repeatedly uses both to improve the model.
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Parameter | A value learned by the model (for example, slope or intercept). |
 | Cost Function | A numerical measure of prediction error. Lower is better. |
 | Gradient | The direction of the steepest increase in the cost function. |

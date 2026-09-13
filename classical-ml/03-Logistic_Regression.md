@@ -94,7 +94,7 @@ Logistic Regression solves this problem by transforming its output into a valid 
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Probability | Likelihood that an event occurs (between 0 and 1). |
 | Class | The predicted category. |
 | Positive Class | The event of interest (for example, Spam or Disease). |
@@ -199,7 +199,7 @@ A commonly used threshold is **0.5**.
 For example:
 
 | Predicted Probability | Predicted Class |
-|-----------------------|-----------------|
+| --- | --- |
 | 0.18 | Negative |
 | 0.41 | Negative |
 | 0.52 | Positive |

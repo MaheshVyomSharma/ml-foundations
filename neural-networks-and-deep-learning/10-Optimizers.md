@@ -729,7 +729,7 @@ These are useful defaults, not universal laws.
 A simplified comparison is:
 
 | Property | SGD | Adam |
-|---|---|---|
+| --- | --- | --- |
 | Uses current gradient | Yes | Yes |
 | Uses gradient history | No, unless momentum is added | Yes |
 | Adaptive step size | No | Yes |

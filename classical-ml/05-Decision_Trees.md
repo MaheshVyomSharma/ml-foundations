@@ -95,7 +95,7 @@ Decision Trees overcome this limitation by learning **non-linear decision bounda
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Root Node | The starting point of the tree. |
 | Decision Node | A node where a question is asked. |
 | Leaf Node | The final prediction produced by the tree. |
@@ -214,7 +214,7 @@ Common ways to reduce overfitting include:
 ## 13. Common Hyperparameters
 
 | Hyperparameter | Purpose |
-|---------------|---------|
+| --- | --- |
 | max_depth | Maximum depth of the tree. |
 | min_samples_split | Minimum samples required before splitting a node. |
 | min_samples_leaf | Minimum samples allowed in a leaf node. |

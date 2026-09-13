@@ -15,28 +15,28 @@ The document is structured as:
 ## 2. Sample dataset
 
 ### 2.1. Employees
-| emp_id | name  | dept_id | age | salary |
-|---|---|---:|---:|---:|
-| 101 | Asha  | 10 | 29 | 60000 |
-| 102 | Ravi  | 20 | 35 | 75000 |
+| emp_id | name | dept_id | age | salary |
+| --- | --- | ---: | ---: | ---: |
+| 101 | Asha | 10 | 29 | 60000 |
+| 102 | Ravi | 20 | 35 | 75000 |
 | 103 | Meera | 10 | 31 | 68000 |
 | 104 | Kiran | 30 | 28 | 52000 |
-| 105 | Zoya  | 20 | 41 | 82000 |
+| 105 | Zoya | 20 | 41 | 82000 |
 
 ### 2.2. Departments
 | dept_id | dept_name |
-|---:|---|
+| ---: | --- |
 | 10 | Engineering |
 | 20 | HR |
 | 30 | Finance |
 
 ### 2.3. Dependents
 | dep_id | emp_id | dependent_name | relation |
-|---:|---:|---|---|
-| 1 | 101 | Anya  | Child |
-| 2 | 102 | Neha  | Spouse |
+| ---: | ---: | --- | --- |
+| 1 | 101 | Anya | Child |
+| 2 | 102 | Neha | Spouse |
 | 3 | 102 | Rohan | Child |
-| 4 | 105 | Sara  | Spouse |
+| 4 | 105 | Sara | Spouse |
 
 ---
 
@@ -61,7 +61,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.1. Load / create data
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | `np.array([...], dtype=object)` | `pd.DataFrame({...})` | `SELECT * FROM employees;` |
 
 ---
@@ -69,7 +69,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.2. Select rows and columns
 
 | Task | NumPy | pandas | SQL |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Select columns | `employees_np[:, [1,4]]` | `employees_pd[["name","salary"]]` | `SELECT name, salary FROM employees;` |
 | Select rows | `employees_np[1:4]` | `employees_pd.iloc[1:4]` | Not positional in generic SQL |
 | Rows + columns | `employees_np[1:4,[1,4]]` | `employees_pd.iloc[1:4][["name","salary"]]` | Requires ordering + row numbering |
@@ -79,7 +79,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.3. Filter rows
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | `employees_np[employees_np[:,4] > 65000]` | `employees_pd[employees_pd["salary"] > 65000]` | `SELECT * FROM employees WHERE salary > 65000;` |
 
 ---
@@ -87,7 +87,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.4. Sort data
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | `employees_np[np.argsort(employees_np[:,4])]` | `employees_pd.sort_values("salary")` | `SELECT * FROM employees ORDER BY salary;` |
 
 ---
@@ -95,7 +95,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.5. Aggregation
 
 | Task | NumPy | pandas | SQL |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Average salary | `np.mean(employees_np[:,4].astype(int))` | `employees_pd["salary"].mean()` | `SELECT AVG(salary) FROM employees;` |
 | Total salary | `np.sum(employees_np[:,4].astype(int))` | `employees_pd["salary"].sum()` | `SELECT SUM(salary) FROM employees;` |
 | Row count | `employees_np.shape[0]` | `employees_pd.shape[0]` | `SELECT COUNT(*) FROM employees;` |
@@ -105,7 +105,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.6. Group by
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | Manual masking per group | `employees_pd.groupby("dept_id")["salary"].mean()` | `SELECT dept_id, AVG(salary) FROM employees GROUP BY dept_id;` |
 
 ---
@@ -113,7 +113,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.7. Merge / join
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | Manual matching logic | `employees_pd.merge(departments_pd, on="dept_id")` | `SELECT e.*, d.dept_name FROM employees e JOIN departments d ON e.dept_id=d.dept_id;` |
 
 ---
@@ -123,14 +123,14 @@ This section compresses the core operations into side-by-side comparisons for qu
 | NumPy | pandas | SQL |
 |---|---|---|
 | `np.isnan(col)` | `employees_pd["salary"].isna()` | `WHERE salary IS NULL` |
-| Replace missing | manual assignment | `fillna(0)` | `COALESCE(salary, 0)` |
+| Replace missing | manual assignment | `fillna(0)` / `COALESCE(salary, 0)` |
 
 ---
 
 ### 4.9. Derived columns
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | `np.column_stack((employees_np, salary_k))` | `employees_pd["salary_k"] = employees_pd["salary"]/1000` | `SELECT *, salary/1000 AS salary_k FROM employees;` |
 
 ---
@@ -138,7 +138,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.10. Wide ↔ Long reshape
 
 | Transformation | NumPy | pandas | SQL |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Wide → Long | manual reconstruction | `pd.melt()` | `UNION ALL` or `UNPIVOT` |
 | Long → Wide | manual reconstruction | `pivot()` | `CASE + GROUP BY` |
 
@@ -147,7 +147,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.11. Handling duplicates
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | `np.unique(arr, axis=0)` | `drop_duplicates()` | `SELECT DISTINCT *` |
 
 ---
@@ -155,7 +155,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.12. Type conversion
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | `astype(int)` | `astype(int)` | `CAST(column AS INT)` |
 
 ---
@@ -163,7 +163,7 @@ This section compresses the core operations into side-by-side comparisons for qu
 ### 4.13. String operations
 
 | NumPy | pandas | SQL |
-|---|---|---|
+| --- | --- | --- |
 | `np.char.upper()` | `.str.upper()` | `UPPER(column)` |
 
 ---
@@ -227,7 +227,7 @@ ORDER BY salary;
 ## 7. Concept mapping
 
 | Concept | NumPy | pandas | SQL |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Table | 2D array | DataFrame | Table |
 | Column | array slice | Series | Column |
 | Row | array row | row | row |
@@ -240,7 +240,7 @@ ORDER BY salary;
 SQL syntax and behavior can vary by database vendor. Check database-specific features before using them in production.
 
 | Feature | ANSI SQL | Vendor specific |
-|---|---|---|
+| --- | --- | --- |
 | PIVOT | not standard | SQL Server / Oracle |
 | LIMIT | MySQL/Postgres | not ANSI |
 | TOP | SQL Server | not portable |

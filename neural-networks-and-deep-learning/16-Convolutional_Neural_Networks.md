@@ -1452,7 +1452,7 @@ Classification architectures aim to develop increasing tolerance or invariance t
 ## 49. CNNs vs Dense Neural Networks
 
 | Dense Network | CNN |
-|---|---|
+| --- | --- |
 | Every neuron connects to every input | Local connections |
 | Separate weights for connections | Shared filter weights |
 | Ignores spatial structure when flattened | Preserves spatial structure |

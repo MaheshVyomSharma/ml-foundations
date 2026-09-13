@@ -405,7 +405,7 @@ The goal is again to prevent the forward signal from shrinking excessively acros
 A practical rule is:
 
 | Activation | Common Initialization |
-|---|---|
+| --- | --- |
 | Sigmoid | Xavier / Glorot |
 | Tanh | Xavier / Glorot |
 | ReLU | He |

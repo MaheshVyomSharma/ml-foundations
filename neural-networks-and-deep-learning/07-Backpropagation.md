@@ -1368,7 +1368,7 @@ This loop is repeated across batches and epochs.
 ## 38. Forward Propagation vs Backpropagation
 
 | Forward Propagation | Backpropagation |
-|---|---|
+| --- | --- |
 | Moves input toward output | Moves gradient information backward |
 | Computes activations | Computes derivatives |
 | Produces prediction | Determines parameter sensitivity |
@@ -1390,7 +1390,7 @@ Why did it produce that error?
 ## 39. Backpropagation vs Optimizer
 
 | Backpropagation | Optimizer |
-|---|---|
+| --- | --- |
 | Computes gradients | Updates parameters |
 | Uses chain rule | Uses optimization rule |
 | Produces ∂J/∂W | Produces new W |

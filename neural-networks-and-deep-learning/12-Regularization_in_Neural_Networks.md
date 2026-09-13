@@ -292,7 +292,7 @@ L2
 A useful comparison is:
 
 | Property | L1 | L2 |
-|---|---|---|
+| --- | --- | --- |
 | Penalty | Absolute weight | Squared weight |
 | Encourages small weights | Yes | Yes |
 | Encourages exact zeros | More strongly | Less strongly |
@@ -800,7 +800,7 @@ Overfitting
 A useful simplified diagnostic is:
 
 | Training Performance | Validation Performance | Likely Situation |
-|---|---|---|
+| --- | --- | --- |
 | Poor | Poor | Underfitting |
 | Excellent | Much poorer | Overfitting |
 | Good | Good and similar | Healthy generalization |

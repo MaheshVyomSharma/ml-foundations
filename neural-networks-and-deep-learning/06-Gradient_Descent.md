@@ -588,7 +588,7 @@ This is the standard approach used in most modern deep-learning systems.
 ## 16. Comparing the Three Forms
 
 | Method | Data Per Update | Main Advantage | Main Limitation |
-|---|---:|---|---|
+| --- | ---: | --- | --- |
 | Batch Gradient Descent | Entire dataset | Stable gradient | Expensive |
 | SGD | 1 sample | Frequent updates | Very noisy |
 | Mini-Batch Gradient Descent | Small batch | Efficient and practical | Batch size must be chosen |

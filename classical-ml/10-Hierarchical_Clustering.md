@@ -73,7 +73,7 @@ Rather than forcing the data into a fixed number of clusters, Hierarchical Clust
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Cluster | A group of similar samples. |
 | Dendrogram | A tree diagram showing how clusters are merged or divided. |
 | Linkage | Rule used to measure the distance between clusters. |
@@ -168,7 +168,7 @@ When deciding which clusters should merge, the algorithm must define the distanc
 Common linkage methods include:
 
 | Linkage | Description |
-|---------|-------------|
+| --- | --- |
 | Single Linkage | Uses the closest pair of samples. |
 | Complete Linkage | Uses the farthest pair of samples. |
 | Average Linkage | Uses the average distance between all pairs of samples. |
@@ -207,7 +207,7 @@ Feature scaling is therefore usually recommended.
 ## 16. Common Hyperparameters
 
 | Hyperparameter | Purpose |
-|---------------|---------|
+| --- | --- |
 | n_clusters | Desired number of final clusters. |
 | linkage | Method used to merge clusters. |
 | metric | Distance measure used to compare samples. |

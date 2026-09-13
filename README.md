@@ -32,6 +32,7 @@ A structured collection of notes covering the mathematics, classical algorithms,
 4. [Statistics for Machine Learning](math-for-ml/04-Statistics_for_Machine_Learning.md)
 5. [Appendix A: Types of Matrices](math-for-ml/Appendix-A_Types_of_Matrices.md)
 6. [Appendix B: Statistical Measures](math-for-ml/Appendix-B_Statistical_Measures.md)
+7. [Appendix C: Set Theory](math-for-ml/Appendix-C_Set_Theory.md)
 
 ## Neural Networks and Deep Learning
 

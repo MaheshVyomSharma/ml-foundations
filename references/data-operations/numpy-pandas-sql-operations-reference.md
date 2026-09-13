@@ -25,28 +25,28 @@ The document is structured as:
 ## 2. Sample dataset
 
 ### 2.1. Employees
-| emp_id | name  | dept_id | age | salary |
-|---|---|---:|---:|---:|
-| 101 | Asha  | 10 | 29 | 60000 |
-| 102 | Ravi  | 20 | 35 | 75000 |
+| emp_id | name | dept_id | age | salary |
+| --- | --- | ---: | ---: | ---: |
+| 101 | Asha | 10 | 29 | 60000 |
+| 102 | Ravi | 20 | 35 | 75000 |
 | 103 | Meera | 10 | 31 | 68000 |
 | 104 | Kiran | 30 | 28 | 52000 |
-| 105 | Zoya  | 20 | 41 | 82000 |
+| 105 | Zoya | 20 | 41 | 82000 |
 
 ### 2.2. Departments
 | dept_id | dept_name |
-|---:|---|
+| ---: | --- |
 | 10 | Engineering |
 | 20 | HR |
 | 30 | Finance |
 
 ### 2.3. Dependents
 | dep_id | emp_id | dependent_name | relation |
-|---:|---:|---|---|
-| 1 | 101 | Anya  | Child |
-| 2 | 102 | Neha  | Spouse |
+| ---: | ---: | --- | --- |
+| 1 | 101 | Anya | Child |
+| 2 | 102 | Neha | Spouse |
 | 3 | 102 | Rohan | Child |
-| 4 | 105 | Sara  | Spouse |
+| 4 | 105 | Sara | Spouse |
 
 ---
 
@@ -514,7 +514,7 @@ GROUP BY dept_id;
 For the sample data, both approaches produce the following grouped results:
 
 | dept_id | average salary | employee count |
-|---:|---:|---:|
+| ---: | ---: | ---: |
 | 10 | 64000 | 2 |
 | 20 | 78500 | 2 |
 | 30 | 52000 | 1 |
@@ -729,7 +729,7 @@ FROM employees;
 ### 13.2. Example wide dataset (salary by year)
 
 | emp_id | salary_2022 | salary_2023 |
-|---|---|---|
+| --- | --- | --- |
 | 101 | 58000 | 60000 |
 | 102 | 72000 | 75000 |
 | 103 | 65000 | 68000 |
@@ -954,7 +954,7 @@ ORDER BY salary;
 ## 18. Concept mapping
 
 | Concept | NumPy | pandas | SQL |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Table | 2D array | DataFrame | Table |
 | Column | array slice | Series | Column |
 | Row | array row | row | row |
@@ -967,7 +967,7 @@ ORDER BY salary;
 SQL syntax and behavior can vary by database vendor. The examples in this document use broadly recognizable SQL, but they should be checked against the target database before being used in production.
 
 | Feature | ANSI SQL | Vendor specific |
-|---|---|---|
+| --- | --- | --- |
 | PIVOT | not standard | SQL Server / Oracle |
 | LIMIT | MySQL/Postgres | not ANSI |
 | TOP | SQL Server | not portable |

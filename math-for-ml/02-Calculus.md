@@ -315,7 +315,7 @@ x^2
 Some values of the function are:
 
 | $x$ | $f(x)=x^2$ |
-|---:|---:|
+| ---: | ---: |
 | 0 | 0 |
 | 1 | 1 |
 | 2 | 4 |
