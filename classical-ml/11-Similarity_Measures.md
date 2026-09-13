@@ -79,7 +79,7 @@ Similarity measures provide a consistent way to compare samples.
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Distance | Numerical measure of how far apart two samples are. |
 | Similarity | Numerical measure of how alike two samples are. |
 | Feature Space | The multidimensional space formed by all features. |
@@ -202,7 +202,7 @@ Two vectors pointing in the same direction have a similarity close to **1**, eve
 
 ## 13. Jaccard Similarity
 
-Jaccard Similarity compares two sets by measuring how many elements they share.
+Jaccard Similarity compares two sets by measuring how many elements they share. Its set-theory foundation is summarized in the [set similarity reference](../math-for-ml/Appendix-C_Set_Theory.md#set-similarity).
 
 It is defined as:
 
@@ -230,7 +230,7 @@ It is defined as:
 ## 14. Choosing the Right Measure
 
 | Data Type | Recommended Measure |
-|-----------|---------------------|
+| --- | --- |
 | Numerical | Euclidean Distance |
 | Numerical with outliers | Manhattan Distance |
 | Generalized numerical | Minkowski Distance |

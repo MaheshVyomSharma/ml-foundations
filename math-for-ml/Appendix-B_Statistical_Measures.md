@@ -5,7 +5,7 @@ This appendix is a formula-first reference for the statistical measures used thr
 ## 1. Notation
 
 | Symbol | Meaning |
-| -------- | --------- |
+| --- | --- |
 | $x_i$ | The $i$-th observation |
 | $n$ | Number of observations in a sample |
 | $N$ | Number of observations in a population |
@@ -144,7 +144,7 @@ The $p$-th percentile is a value below which approximately $p\%$ of the observat
 Quartiles divide ordered data into four parts:
 
 | Quartile | Approximate position |
-| ---------- | ---------------------- |
+| --- | --- |
 | $Q_1$ | 25th percentile |
 | $Q_2$ | 50th percentile, the median |
 | $Q_3$ | 75th percentile |
@@ -228,7 +228,7 @@ r_{XY} =
 Its value lies between $-1$ and $1$:
 
 | Value | Interpretation |
-| ----- | -------------- |
+| --- | --- |
 | $r=1$ | Perfect positive linear relationship |
 | $r=0$ | No linear relationship measured by Pearson correlation |
 | $r=-1$ | Perfect negative linear relationship |
@@ -238,7 +238,7 @@ Pearson correlation measures linear association, not causation. A value near zer
 ### 6.3. Covariance and Correlation Compared
 
 | Property | Covariance | Pearson correlation |
-| ---------- | ------------ | --------------------- |
+| --- | --- | --- |
 | Units | Product of the two variables' units | Unitless |
 | Scale | Changes when either variable is rescaled | Unchanged by positive rescaling |
 | Range | Unbounded | Between $-1$ and $1$ |
@@ -247,7 +247,7 @@ Pearson correlation measures linear association, not causation. A value near zer
 ## 7. Quick Comparison
 
 | Question | Useful measure |
-| ---------- | ---------------- |
+| --- | --- |
 | Where is the centre? | Mean, median, or mode |
 | How widely are observations spread? | Range, variance, standard deviation, or mean absolute deviation |
 | How can spread be summarized robustly? | Median, IQR, or median absolute deviation |

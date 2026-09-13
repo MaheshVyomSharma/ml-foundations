@@ -103,13 +103,13 @@ Then:
 A = \{2,4,6\}
 ```
 
-Therefore, an event is simply a **subset of the sample space**:
+Therefore, an event is simply a [**subset of the sample space**](Appendix-C_Set_Theory.md#subset):
 
 ```math
 A \subseteq S
 ```
 
-This connection between probability and set theory becomes important because events can be combined using operations such as:
+This connection between probability and [set operations](Appendix-C_Set_Theory.md#set-operations) becomes important because events can be combined using operations such as:
 
 - union
 - intersection
@@ -1745,7 +1745,7 @@ P(X=2)=\frac{1}{4}
 The complete probability distribution is therefore:
 
 | $x$ | $P(X=x)$ |
-|---:|---:|
+| ---: | ---: |
 | 0 | $0.25$ |
 | 1 | $0.50$ |
 | 2 | $0.25$ |
@@ -1899,7 +1899,7 @@ Return to the two-coin example.
 The PMF is:
 
 | $x$ | $P(X=x)$ |
-|---:|---:|
+| ---: | ---: |
 | 0 | $0.25$ |
 | 1 | $0.50$ |
 | 2 | $0.25$ |
@@ -1999,7 +1999,7 @@ leaves only the probability between $a$ and $b$.
 These three terms are easy to mix up, so keep their jobs separate.
 
 | Function | Used for | Meaning |
-|---|---|---|
+| --- | --- | --- |
 | PMF | Discrete variables | Probability at each possible value |
 | PDF | Continuous variables | Probability density |
 | CDF | Both | Probability accumulated up to a value |
@@ -3718,7 +3718,7 @@ Poisson-based models appear in count-data modeling, event prediction, reliabilit
 A useful way to distinguish these distributions is to ask what kind of random quantity is being modeled.
 
 | Question | Typical Distribution |
-|---|---|
+| --- | --- |
 | Did one binary event happen? | Bernoulli |
 | How many successes occurred in $n$ binary trials? | Binomial |
 | How is a continuous quantity distributed around a mean? | Gaussian |

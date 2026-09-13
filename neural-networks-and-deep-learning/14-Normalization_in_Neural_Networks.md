@@ -586,7 +586,7 @@ Its central role is improving optimization and training behaviour.
 Both can influence generalization, but their primary purposes differ.
 
 | Batch Normalization | Dropout |
-|---|---|
+| --- | --- |
 | Normalizes activations | Randomly removes activations |
 | Primarily improves optimization | Primarily reduces overfitting |
 | Uses batch statistics | Uses random masks |

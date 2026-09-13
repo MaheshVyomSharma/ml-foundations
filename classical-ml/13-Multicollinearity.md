@@ -259,12 +259,12 @@ Collect data in situations where the predictors vary independently when possible
 
 The best response depends on the objective.
 
-|Goal|Typical priority|Possible response|
-|---|---|---|
-|Prediction|Stable validation performance|Ridge, Elastic Net, or careful feature reduction|
-|Coefficient interpretation|Defensible individual effects|Remove or combine redundant predictors using domain knowledge|
-|Causal analysis|A valid causal design and assumptions|Do not treat VIF alone as a causal diagnostic|
-|Dimensionality reduction|Compact independent representation|PCA or another representation method|
+| Goal | Typical priority | Possible response |
+| --- | --- | --- |
+| Prediction | Stable validation performance | Ridge, Elastic Net, or careful feature reduction |
+| Coefficient interpretation | Defensible individual effects | Remove or combine redundant predictors using domain knowledge |
+| Causal analysis | A valid causal design and assumptions | Do not treat VIF alone as a causal diagnostic |
+| Dimensionality reduction | Compact independent representation | PCA or another representation method |
 
 A model can be acceptable for prediction and unsuitable for explaining individual feature effects. These are different standards.
 

@@ -675,7 +675,7 @@ Leaky ReLU
 The choice depends strongly on the problem.
 
 | Problem | Typical output activation |
-|---|---|
+| --- | --- |
 | Regression | Linear / no activation |
 | Binary classification | Sigmoid |
 | Multiclass classification | Softmax |
@@ -809,7 +809,7 @@ This is why the choice of activation function affects not only what the network 
 ## 20. Activation Function Comparison
 
 | Activation | Output Range | Major Strength | Major Weakness | Common Use |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Step | `0` or `1` | Simple classification | Not gradient-friendly | Classical perceptron |
 | Sigmoid | `(0,1)` | Probability-like output | Vanishing gradients | Binary output |
 | Tanh | `(-1,1)` | Zero-centred | Vanishing gradients | Some recurrent networks |

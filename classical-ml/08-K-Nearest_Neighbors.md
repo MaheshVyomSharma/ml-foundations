@@ -73,7 +73,7 @@ This simple assumption is often surprisingly effective.
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Neighbour | A training sample close to the new sample. |
 | K | Number of neighbours considered. |
 | Distance Metric | Method used to measure similarity between samples. |
@@ -198,7 +198,7 @@ Feature scaling ensures that all features contribute more fairly to the distance
 ## 13. Common Hyperparameters
 
 | Hyperparameter | Purpose |
-|---------------|---------|
+| --- | --- |
 | n_neighbors | Number of neighbours (K). |
 | metric | Distance measure used. |
 | weights | Equal weighting or distance-based weighting of neighbours. |

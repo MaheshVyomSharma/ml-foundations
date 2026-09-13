@@ -68,7 +68,7 @@ The primary goal of Machine Learning is **generalization**.
 A dataset is commonly divided into three parts.
 
 | Dataset | Purpose |
-|----------|----------|
+| --- | --- |
 | Training Set | Learn model parameters. |
 | Validation Set | Tune hyperparameters and compare models. |
 | Test Set | Estimate final performance on unseen data. |
@@ -89,8 +89,8 @@ The foundation of classification evaluation is the **Confusion Matrix**.
 
 A Confusion Matrix summarizes the predictions made by a classification model.
 
-|                | Actual Positive | Actual Negative |
-|----------------|-----------------|-----------------|
+| | Actual Positive | Actual Negative |
+| --- | --- | --- |
 | Predicted Positive | True Positive (TP) | False Positive (FP) |
 | Predicted Negative | False Negative (FN) | True Negative (TN) |
 
@@ -218,7 +218,7 @@ Regression models predict numerical values.
 Common metrics include:
 
 | Metric | Purpose |
-|---------|----------|
+| --- | --- |
 | MAE | Average prediction error. |
 | MSE | Penalizes larger errors. |
 | RMSE | Error expressed in original units. |
@@ -267,7 +267,7 @@ The equations behind the metrics introduced in this chapter are collected in [Ap
 ## 20. Choosing the Right Metric
 
 | Problem | Recommended Metrics |
-|----------|---------------------|
+| --- | --- |
 | Balanced Classification | Accuracy |
 | Imbalanced Classification | Precision, Recall, F1 |
 | Regression | MAE, RMSE, R² |

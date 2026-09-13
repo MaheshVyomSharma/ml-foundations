@@ -866,7 +866,7 @@ The decoder generates the output while attending to those representations.
 A useful summary is:
 
 | Architecture | Main Strength |
-|---|---|
+| --- | --- |
 | Encoder-only | Understanding / representation |
 | Decoder-only | Autoregressive generation |
 | Encoder-decoder | Sequence-to-sequence transformation |
@@ -1712,7 +1712,7 @@ This makes SLMs especially useful for:
 ## 58. Transformer vs RNN
 
 | RNN | Transformer |
-|---|---|
+| --- | --- |
 | Recurrent hidden state | Attention-based interaction |
 | Sequential processing | Highly parallel training |
 | Context carried step by step | Context retrieved directly |

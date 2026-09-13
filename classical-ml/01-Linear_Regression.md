@@ -190,7 +190,7 @@ Predict New Values
 Regression models are commonly evaluated using:
 
 | Metric | Purpose |
-|---------|---------|
+| --- | --- |
 | MAE | Average prediction error |
 | MSE | Penalises larger errors more heavily |
 | RMSE | Error expressed in the original unit of the target |

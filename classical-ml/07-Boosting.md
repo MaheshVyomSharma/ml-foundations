@@ -73,7 +73,7 @@ Boosting improves performance by allowing each new tree to pay more attention to
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Weak Learner | A simple model that performs only slightly better than random guessing. |
 | Ensemble | Multiple models working together. |
 | Sequential Learning | Training models one after another. |
@@ -152,7 +152,7 @@ Combined Prediction
 ## 10. Boosting vs Bagging
 
 | Bagging | Boosting |
-|---------|----------|
+| --- | --- |
 | Models are trained independently. | Models are trained sequentially. |
 | All models have equal importance. | Later models focus on earlier mistakes. |
 | Reduces variance. | Reduces bias and often improves accuracy. |
@@ -198,7 +198,7 @@ LightGBM is another optimized Gradient Boosting implementation designed for spee
 ## 16. Common Hyperparameters
 
 | Hyperparameter | Purpose |
-|---------------|---------|
+| --- | --- |
 | n_estimators | Number of trees. |
 | learning_rate | Contribution of each tree to the final model. |
 | max_depth | Maximum depth of each tree. |

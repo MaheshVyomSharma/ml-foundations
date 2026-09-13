@@ -945,7 +945,7 @@ Huge Parameter Updates
 A useful summary is:
 
 | Problem | Common Techniques |
-|---|---|
+| --- | --- |
 | Vanishing gradients | ReLU-family activations |
 | Vanishing gradients | Xavier / He initialization |
 | Vanishing gradients | Residual connections |

@@ -85,7 +85,7 @@ These groups can then be analysed for business insights.
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Cluster | A group of similar samples. |
 | Centroid | The centre of a cluster. |
 | K | Number of clusters to create. |
@@ -194,7 +194,7 @@ Feature scaling is therefore usually recommended before applying K-Means.
 ## 13. Common Hyperparameters
 
 | Hyperparameter | Purpose |
-|---------------|---------|
+| --- | --- |
 | n_clusters | Number of clusters (K). |
 | init | Method used to initialize centroids. |
 | max_iter | Maximum number of iterations. |

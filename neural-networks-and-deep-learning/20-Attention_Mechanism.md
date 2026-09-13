@@ -1525,7 +1525,7 @@ This is an important conceptual distinction.
 ## 47. RNN vs Attention
 
 | RNN | Attention |
-|---|---|
+| --- | --- |
 | Information passed sequentially | Information retrieved by relevance |
 | Hidden state carries context | Weighted combinations create context |
 | Long paths between distant tokens | Direct interaction possible |

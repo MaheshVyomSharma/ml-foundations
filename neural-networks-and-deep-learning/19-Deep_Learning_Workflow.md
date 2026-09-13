@@ -481,7 +481,7 @@ The output representation and loss function must agree.
 Common combinations are:
 
 | Task | Output | Common Loss |
-|---|---|---|
+| --- | --- | --- |
 | Regression | Linear | MSE / MAE |
 | Binary Classification | Sigmoid | Binary Cross-Entropy |
 | Multiclass Classification | Softmax | Cross-Entropy |
@@ -1642,7 +1642,7 @@ Inference is primarily a forward computation.
 ## 52. Training vs Inference
 
 | Training | Inference |
-|---|---|
+| --- | --- |
 | Forward propagation | Forward propagation |
 | Loss calculation | Usually no training loss |
 | Backpropagation | No backpropagation |
@@ -1858,7 +1858,7 @@ For example:
 The architectures studied in this handbook can now be placed side by side.
 
 | Architecture | Core Idea | Best Known For |
-|---|---|---|
+| --- | --- | --- |
 | Feed-Forward NN | Layered nonlinear transformation | General prediction |
 | CNN | Local connectivity + shared filters | Spatial / image data |
 | RNN | Recurrent hidden state | Sequential data |

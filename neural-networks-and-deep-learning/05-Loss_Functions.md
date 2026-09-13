@@ -306,7 +306,7 @@ This makes MSE more sensitive to large errors.
 A useful comparison is:
 
 | Property | MSE | MAE |
-|---|---|---|
+| --- | --- | --- |
 | Large errors | Strongly penalized | Linearly penalized |
 | Outlier sensitivity | Higher | Lower |
 | Smooth derivative | Yes | Not at zero |
@@ -912,7 +912,7 @@ For example, L2 regularization adds a penalty related to squared weight magnitud
 A practical summary is:
 
 | Task | Output Activation | Typical Loss |
-|---|---|---|
+| --- | --- | --- |
 | Regression | Linear | MSE or MAE |
 | Binary classification | Sigmoid | Binary Cross-Entropy |
 | Multiclass classification | Softmax | Categorical Cross-Entropy |

@@ -127,7 +127,7 @@ Almost everything in AI is eventually expressed using these mathematical objects
 Everything in Linear Algebra begins with three simple objects.
 
 | Object | Intuition | Example |
-|----------|-----------|---------|
+| --- | --- | --- |
 | Scalar | One number | 5 |
 | Vector | One ordered list of numbers | $\begin{bmatrix}3 & 8 & 2\end{bmatrix}$ |
 | Matrix | A table of numbers | $3 \times 3$ matrix |
@@ -229,10 +229,10 @@ Every dataset used in Machine Learning can be represented as a matrix.
 Suppose you open a spreadsheet.
 
 | Height | Weight | Age |
-|---------|---------|------|
-|170|68|25|
-|180|82|31|
-|165|60|22|
+| --- | --- | --- |
+| 170 | 68 | 25 |
+| 180 | 82 | 31 |
+| 165 | 60 | 22 |
 
 Humans see a table.
 
@@ -614,7 +614,7 @@ Unit vectors become extremely important in optimization and geometry.
 We have now learned four fundamental vector operations.
 
 | Operation | Purpose |
-|-----------|---------|
+| --- | --- |
 | Addition | Combine vectors |
 | Subtraction | Find differences |
 | Scalar Multiplication | Scale vectors |
@@ -1007,7 +1007,7 @@ Reversing the order reverses the direction:
 The two operations answer different geometric questions.
 
 | Operation | Result | Main meaning |
-|-----------|--------|--------------|
+| --- | --- | --- |
 | Dot product | Scalar | Measures alignment |
 | Cross product | Vector | Produces a perpendicular direction and measures area |
 
@@ -2774,7 +2774,7 @@ Span, linear independence, basis and rank are not separate topics.
 They describe the same structure from different perspectives.
 
 | Concept | Main Question |
-|---------|---------------|
+| --- | --- |
 | Span | What space can these vectors generate? |
 | Linear Independence | Does each vector add a genuinely new direction? |
 | Basis | What is the smallest independent set that spans the space? |
@@ -4225,7 +4225,7 @@ Nothing was introduced in isolation.
 The following table summarizes where these ideas appear in Machine Learning.
 
 | Linear Algebra Concept | Machine Learning Applications |
-|-------------------------|-------------------------------|
+| --- | --- |
 | Scalars | Learning rate, regularization strength, probabilities, loss values |
 | Vectors | Feature vectors, embeddings, model parameters |
 | Matrices | Datasets, weight matrices, covariance matrices |

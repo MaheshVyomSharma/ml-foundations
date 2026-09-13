@@ -1417,7 +1417,7 @@ Applications can include:
 ## 44. RNNs vs Ordinary Dense Networks
 
 | Dense Network | RNN |
-|---|---|
+| --- | --- |
 | No built-in sequential memory | Maintains hidden state |
 | Inputs often treated independently | Order matters |
 | No recurrent connection | Recurrent hidden connection |

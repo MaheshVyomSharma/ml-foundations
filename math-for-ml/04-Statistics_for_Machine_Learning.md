@@ -211,7 +211,7 @@ including houses that are not present in our dataset.
 
 ### 2.2. Sample
 
-A **sample** is a subset of the population that we actually observe.
+A **sample** is a [subset](Appendix-C_Set_Theory.md#subset) of the population that we actually observe.
 
 If:
 
@@ -298,7 +298,7 @@ A numerical quantity calculated from a **sample** is called a **statistic**.
 For example:
 
 | Population Parameter | Sample Statistic |
-|---|---|
+| --- | --- |
 | Mean $\mu$ | Mean $\bar{x}$ |
 | Variance $\sigma^2$ | Variance $s^2$ |
 | Standard deviation $\sigma$ | Standard deviation $s$ |
@@ -1357,7 +1357,7 @@ These are often called **robust statistics**.
 A useful comparison is:
 
 | Sensitive to Outliers | More Robust |
-|---|---|
+| --- | --- |
 | Mean | Median |
 | Variance | IQR |
 | Standard deviation | Median absolute deviation |
@@ -3149,7 +3149,7 @@ P(\text{Type II Error})=\beta
 The two errors can be summarized as:
 
 | Reality | Reject $H_0$ | Fail to Reject $H_0$ |
-|---|---|---|
+| --- | --- | --- |
 | $H_0$ true | Type I error | Correct decision |
 | $H_0$ false | Correct decision | Type II error |
 
@@ -3598,7 +3598,7 @@ That is the statistical foundation of **generalization** in machine learning.
 ## 38. Quick Reference
 
 | Concept | Core Idea | ML Connection |
-|---|---|---|
+| --- | --- | --- |
 | Population | Complete target group/process | All data the model may encounter |
 | Sample | Observed subset of population | Training/test dataset |
 | Parameter | Population quantity | Unknown true relationship/performance |

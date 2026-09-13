@@ -819,7 +819,7 @@ A **confusion matrix** summarizes the predictions of a classification model by c
 For binary classification,
 
 |  | Predicted Positive | Predicted Negative |
-|---|---:|---:|
+| --- | ---: | ---: |
 | Actual Positive | True Positive | False Negative |
 | Actual Negative | False Positive | True Negative |
 
@@ -868,7 +868,7 @@ is simultaneously:
 ## 12. Quick Reference
 
 | Matrix Type | Defining Feature | Typical Shape |
-|---|---|---|
+| --- | --- | --- |
 | Row | Exactly one row | $1 \times n$ |
 | Column | Exactly one column | $m \times 1$ |
 | Rectangular | Different numbers of rows and columns | $m \times n$, where $m \ne n$ |

@@ -1101,7 +1101,7 @@ Instead of keeping a separate long-term cell state, GRU integrates memory direct
 A simplified comparison:
 
 | LSTM | GRU |
-|---|---|
+| --- | --- |
 | Cell state + hidden state | Hidden state only |
 | Forget gate | No separate forget gate |
 | Input gate | Combined largely into update mechanism |
@@ -1202,7 +1202,7 @@ However, greater architectural complexity does not automatically guarantee bette
 ## 35. Basic RNN vs LSTM vs GRU
 
 | Feature | Basic RNN | LSTM | GRU |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Hidden state | Yes | Yes | Yes |
 | Separate cell state | No | Yes | No |
 | Gates | No | 3 major gates | 2 major gates |

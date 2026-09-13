@@ -191,7 +191,7 @@ A biological neuron contains structures such as:
 A simplified analogy is:
 
 | Biological neuron | Artificial neuron |
-|---|---|
+| --- | --- |
 | Dendrites | Inputs |
 | Synaptic strength | Weights |
 | Soma | Weighted summation |

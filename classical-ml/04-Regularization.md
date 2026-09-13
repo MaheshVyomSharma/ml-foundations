@@ -80,7 +80,7 @@ Regularization reduces this tendency by discouraging excessive model complexity.
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Overfitting | Performing well on training data but poorly on unseen data. |
 | Generalization | Ability of a model to perform well on new data. |
 | Penalty | Additional cost imposed on model complexity. |
@@ -185,7 +185,7 @@ As a result, most or all features remain in the model, but their influence is re
 ## 13. L1 vs L2
 
 | Property | L1 | L2 |
-|----------|----|----|
+| --- | --- | --- |
 | Common Name | Lasso | Ridge |
 | Penalizes | Absolute coefficient values | Squared coefficient values |
 | Can produce zero coefficients | Yes | Usually no |

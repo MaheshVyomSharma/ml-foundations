@@ -75,7 +75,7 @@ This generally improves the model's ability to generalize to unseen data.
 ## 6. Key Terminology
 
 | Term | Meaning |
-|------|---------|
+| --- | --- |
 | Ensemble | A collection of multiple models working together. |
 | Tree | An individual Decision Tree within the forest. |
 | Bagging | Training each tree on a different random sample of the training data. |
@@ -185,7 +185,7 @@ For **regression**, the predictions of all trees are averaged.
 ## 13. Common Hyperparameters
 
 | Hyperparameter | Purpose |
-|---------------|---------|
+| --- | --- |
 | n_estimators | Number of trees in the forest. |
 | max_depth | Maximum depth of each tree. |
 | min_samples_split | Minimum samples required before splitting. |
