@@ -3323,7 +3323,7 @@ L(2.56)
 
 Repeating this process gives:
 
-```text 
+```text
 w = 4.000
 w = 3.200
 w = 2.560
@@ -3374,7 +3374,7 @@ Each step uses the gradient calculated at the **current** parameter values.
 
 Conceptually:
 
-```text 
+```text
 1. Start with parameters
 2. Make predictions
 3. Calculate loss
@@ -3431,7 +3431,7 @@ This may produce stable progress, but training can become unnecessarily slow.
 
 Conceptually:
 
-```text 
+```text
 start  •
         ↓
        •
@@ -3453,7 +3453,7 @@ If the learning rate is too large, an update may jump across the minimum.
 
 Instead of approaching the bottom smoothly:
 
-```text 
+```text
       \       /
        \     /
         \   /
@@ -3462,7 +3462,7 @@ Instead of approaching the bottom smoothly:
 
 the optimizer may repeatedly overshoot:
 
-```text 
+```text
       •\       /•
         \     /
          \   /
